@@ -16,14 +16,14 @@ namespace CarLand.Database
 
         public void Insert(User user)
         {
-            query = $"Insert into Users (userName, password, isAdmin) values ('{user.Name}' , '{user.Password}' , {user.Admin})";
+            query = $"Insert into Users (userName, password, isAdmin) values ('{user.Name}' , '{user.Password}' , {user.isAdmin})";
             _context.CommandWithoutReturn(query);
         }
 
         public void Update(User user)
         {
             query = $@"Update Users 
-                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.Admin} 
+                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.isAdmin} 
                     WHERE idUser = {user.Id}";
             _context.CommandWithoutReturn(query);
         }

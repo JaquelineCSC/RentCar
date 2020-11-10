@@ -82,10 +82,9 @@ namespace CarLand.Forms.Car
         {
             if (RowView != null)
             {
-                string board = RowView["Board"].ToString();
                 int id = int.Parse(RowView["idCar"].ToString());
                 _appImage.Delete(id);
-                _appCar.Delete(board);
+                _appCar.Delete(id);
                 MetroMessageBox.Show(this, "Carro deletado com sucesso", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
             }
             else

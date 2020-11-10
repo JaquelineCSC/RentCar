@@ -40,7 +40,7 @@ namespace CarLand.Forms
                 var user = _appUser.GetUser(username, password);
                 if (user.Id != 0)
                 {
-                    if (user.Admin)
+                    if (user.isAdmin)
                     {
                         FrmPrincipal admin = new FrmPrincipal();
                         admin.User = user;

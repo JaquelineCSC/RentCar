@@ -96,6 +96,12 @@
     <Compile Include="Domain\Entities\Payment.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Forms\Aluguel\Rent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluguel\Rent.Designer.cs">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Car\Carros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Aluguel\Rent.resx">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\Carros.resx">
       <DependentUpon>Carros.cs</DependentUpon>
     </EmbeddedResource>

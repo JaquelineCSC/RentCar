@@ -15,8 +15,6 @@ namespace CarLand.Database
         private SqlConnection cn = new SqlConnection();
         private SqlCommand cd = new SqlCommand();
 
-        public int Campo { get; set; }
-
         private void Connect()
         {
             cn.ConnectionString = Servers.Paulo;
@@ -130,7 +128,7 @@ namespace CarLand.Database
                 Id = reader.GetInt32(0),
                 Name = reader.GetString(1),
                 Password = reader.GetString(2),
-                Admin = reader.GetBoolean(3),
+                isAdmin = reader.GetBoolean(3),
             };
         }
 
