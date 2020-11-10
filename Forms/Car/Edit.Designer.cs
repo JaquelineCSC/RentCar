@@ -85,6 +85,7 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            this.metroPanel3.Click += new System.EventHandler(this.metroButton1_Click);
             this.metroPanel3.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.verificarPreenchimento);
             // 
             // metroButton1

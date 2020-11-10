@@ -18,13 +18,11 @@ namespace CarLand.Forms
     {
         private readonly DBUser _appUser = new DBUser();
 
-        public Esqueceu(MetroStyleManager manager)
+        public Esqueceu()
         {
             InitializeComponent();
-            this.StyleManager = manager;
-            Load_Style(this.StyleManager.Style);
-            Load_Theme(this.StyleManager.Theme);
         }
+
         private void Esqueceu_Load(object sender, EventArgs e)
         {
         }
@@ -94,7 +92,7 @@ namespace CarLand.Forms
             }
             else
             {
-                var user = _appUser.GetUser(usuario, 0);
+                var user = _appUser.GetUser(usuario, "");
                 if(user.Id == 0)
                     MetroMessageBox.Show(this, "Usuário não Encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, 100);
                 else

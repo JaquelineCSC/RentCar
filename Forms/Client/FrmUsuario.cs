@@ -1,5 +1,6 @@
 ﻿using CarLand.Domain.Entities;
 using CarLand.Forms;
+using CarLand.Forms.Logout;
 using MetroFramework;
 using MetroFramework.Components;
 using System;
@@ -18,12 +19,9 @@ namespace CarLand
     {
         public User User { get; set; }
 
-        public FrmUsuario(MetroStyleManager manager)
+        public FrmUsuario()
         {
             InitializeComponent();
-            this.StyleManager = manager;
-            Load_Style(manager.Style);
-            Load_Theme(manager.Theme);
         }
 
         public void Load_Theme(MetroThemeStyle style)
@@ -51,6 +49,14 @@ namespace CarLand
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
+            this.Close();
+        }
+
+        private void metroTile5_Click(object sender, EventArgs e)
+        {
+            AboutUs form = new AboutUs();
+            this.Hide();
+            form.ShowDialog();
             this.Close();
         }
     }

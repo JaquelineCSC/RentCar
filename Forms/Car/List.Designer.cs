@@ -43,12 +43,13 @@
             this.doorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.integradoraDataSet1 = new CarLand.IntegradoraDataSet1();
+            this.integradoraDataSet1 = new CarLand.DataSets.IntegradoraDataSet1();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.metroLink3 = new MetroFramework.Controls.MetroLink();
+            this.carTableAdapter1 = new CarLand.DataSets.IntegradoraDataSet1TableAdapters.CarTableAdapter();
+            this.metroLink4 = new MetroFramework.Controls.MetroLink();
             this.metrotooltipo = new MetroFramework.Components.MetroToolTip();
-            this.carTableAdapter1 = new CarLand.IntegradoraDataSet1TableAdapters.CarTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet1)).BeginInit();
@@ -196,6 +197,7 @@
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(25, 25);
             this.metroLink1.TabIndex = 1;
+            this.metrotooltipo.SetToolTip(this.metroLink1, "Adicionar");
             this.metroLink1.UseSelectable = true;
             this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             this.metroLink1.MouseHover += new System.EventHandler(this.toolTip);
@@ -208,6 +210,7 @@
             this.metroLink2.Name = "metroLink2";
             this.metroLink2.Size = new System.Drawing.Size(25, 25);
             this.metroLink2.TabIndex = 3;
+            this.metrotooltipo.SetToolTip(this.metroLink2, "Deletar");
             this.metroLink2.UseSelectable = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             this.metroLink2.MouseHover += new System.EventHandler(this.toolTip);
@@ -220,9 +223,26 @@
             this.metroLink3.Name = "metroLink3";
             this.metroLink3.Size = new System.Drawing.Size(25, 25);
             this.metroLink3.TabIndex = 2;
+            this.metrotooltipo.SetToolTip(this.metroLink3, "Editar");
             this.metroLink3.UseSelectable = true;
             this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
             this.metroLink3.MouseHover += new System.EventHandler(this.toolTip);
+            // 
+            // carTableAdapter1
+            // 
+            this.carTableAdapter1.ClearBeforeFill = true;
+            // 
+            // metroLink4
+            // 
+            this.metroLink4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink4.BackgroundImage")));
+            this.metroLink4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroLink4.Location = new System.Drawing.Point(841, 54);
+            this.metroLink4.Name = "metroLink4";
+            this.metroLink4.Size = new System.Drawing.Size(25, 25);
+            this.metroLink4.TabIndex = 4;
+            this.metrotooltipo.SetToolTip(this.metroLink4, "Recarregar Pagina");
+            this.metroLink4.UseSelectable = true;
+            this.metroLink4.Click += new System.EventHandler(this.metroLink4_Click);
             // 
             // metrotooltipo
             // 
@@ -230,15 +250,12 @@
             this.metrotooltipo.StyleManager = null;
             this.metrotooltipo.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // carTableAdapter1
-            // 
-            this.carTableAdapter1.ClearBeforeFill = true;
-            // 
             // ListCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(923, 543);
+            this.Controls.Add(this.metroLink4);
             this.Controls.Add(this.metroLink3);
             this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroLink1);
@@ -262,10 +279,9 @@
         private MetroFramework.Controls.MetroLink metroLink1;
         private MetroFramework.Controls.MetroLink metroLink2;
         private MetroFramework.Controls.MetroLink metroLink3;
-        private MetroFramework.Components.MetroToolTip metrotooltipo;
-        private IntegradoraDataSet1 integradoraDataSet1;
+        private DataSets.IntegradoraDataSet1 integradoraDataSet1;
         private System.Windows.Forms.BindingSource carBindingSource1;
-        private IntegradoraDataSet1TableAdapters.CarTableAdapter carTableAdapter1;
+        private DataSets.IntegradoraDataSet1TableAdapters.CarTableAdapter carTableAdapter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn boardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn branchDataGridViewTextBoxColumn;
@@ -274,5 +290,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doorsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fuelDataGridViewTextBoxColumn;
+        private MetroFramework.Components.MetroToolTip metrotooltipo;
+        private MetroFramework.Controls.MetroLink metroLink4;
     }
 }

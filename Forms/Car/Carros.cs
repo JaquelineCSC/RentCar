@@ -3,6 +3,7 @@ using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace CarLand.Forms
             var cars = _appCar.List();
             var count = cars.Count;
             int x = card.Location.X, y = card.Location.Y, i = 0, linhas, colunas = 0;
-            if(count % 3 == 0)
+            if (count % 3 == 0)
             {
                 linhas = cars.Count / 3;
             }
@@ -50,21 +51,30 @@ namespace CarLand.Forms
             }
             for (int l = 0; l < linhas; l++, i++, y += 333)
             {
-                if(count > 3)
+                if (count > 3)
                 {
                     colunas = 3;
                 }
-                else{
+                else
+                {
                     colunas = count + 1;
                 }
-                for (int c = 0; c < colunas && i < cars.Count ; c++, i++, x += 318)
+                for (int c = 0; c < colunas && i < cars.Count; c++, i++, x += 318)
                 {
-                    panel.Controls.Add(addCard(cars[i],i, x, y));
+                    panel.Controls.Add(addCard(cars[i], i, x, y));
                 }
                 x = card.Location.X;
                 count -= 3;
             }
-            if(User.Id == 0)
+            if (cars.Count == 0)
+            {
+                record_not_found.Visible = true;
+            }
+            else
+            {
+                record_not_found.Visible = false;
+            }
+            if (User.Id == 0)
             {
                 logout.Visible = false;
                 login.Visible = true;
@@ -73,6 +83,7 @@ namespace CarLand.Forms
             {
                 logout.Visible = true;
                 login.Visible = false;
+                email.Text = User.Name;
             }
         }
 
@@ -96,17 +107,18 @@ namespace CarLand.Forms
         {
             var picture = (_appImage.GetImages(id)).FirstOrDefault();
             PictureBox pic = new PictureBox();
-            if(picture != null)
-            {
-                pic.Image = (Bitmap) Image.FromFile(picture.Path + picture.Name);
-            }
-            else
-            {
-                pic.Image = pictureBox2.Image;
-            }
             pic.Size = pictureBox2.Size;
             pic.Location = new Point(0, 0);
             pic.SizeMode = PictureBoxSizeMode.StretchImage;
+            if (picture == null)
+            {
+                pic.Image = pictureBox2.Image;
+            }
+            else
+            {
+                pic.Image = Image.FromFile(Path.Combine(Servers.path + picture.Path + picture.Name));
+                pic.Name = picture.Name;
+            }
             return pic;
         }
 
@@ -117,7 +129,6 @@ namespace CarLand.Forms
             title.Text = $"{car.Branch} {car.Model} {car.Year}";
             title.Location = metroLabel3.Location;
             title.Name = "Title" + car.Id;
-            //title.Size = new Size();
             title.TextAlign = ContentAlignment.MiddleCenter;
             title.MinimumSize = new Size(280, 0);
             title.MinimumSize = new Size(280, 0);
@@ -147,7 +158,7 @@ namespace CarLand.Forms
             return Cifrao;
 
         }
-           
+
         public MetroLink addButton(int i)
         {
             MetroLink button = new MetroLink();
@@ -160,11 +171,6 @@ namespace CarLand.Forms
             button.Location = metroLink2.Location;
 
             return button;
-        }
-
-        private void metroToolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
         }
 
         private void metroLinkLogout_Click(object sender, EventArgs e)
@@ -185,6 +191,26 @@ namespace CarLand.Forms
             MetroLink link = (MetroLink)sender;
             DetalhesCarro form = new DetalhesCarro(link.TabIndex);
             form.ShowDialog();
+        }
+
+        private void metroLabel7_Click(object sender, EventArgs e)
+        {
+            User.Clear();
+            metroPanel3.Visible = false;
+            logout.Visible = false;
+            login.Visible = true;
+        }
+
+        private void metroPanel5_Paint(object sender, EventArgs e)
+        {
+            if (metroPanel3.Visible)
+            {
+                metroPanel3.Visible = false;
+            }
+            else
+            {
+                metroPanel3.Visible = true;
+            }
         }
     }
 }

@@ -38,9 +38,13 @@ namespace CarLand.Forms
             combustivelTxt.Text = Car.Fuel;
             if(Images.Count > 0)
             {
-                pictureBox1.Image = (Bitmap)System.Drawing.Image.FromFile(Images[i].Path + Images[i].Name);
+                pictureBox1.Image = (Bitmap)System.Drawing.Image.FromFile(Servers.path + Images[i].Path + Images[i].Name);
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

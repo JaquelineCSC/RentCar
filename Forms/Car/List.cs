@@ -93,5 +93,10 @@ namespace CarLand.Forms.Car
                 MetroMessageBox.Show(this, "Selecione a linha que deseja editar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, 100);
             }
         }
+
+        private void metroLink4_Click(object sender, EventArgs e)
+        {
+            ListCar_Load(this, new EventArgs());
+        }
     }
 }

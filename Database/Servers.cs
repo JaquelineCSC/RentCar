@@ -15,7 +15,7 @@ namespace CarLand.Database
         public static string Ramires = @"";
         public static string Samuel = @"Server=SAMU-PC\SQLEXPRESS;Database=Integradora;UID=sa;PWD=19764582";
         private static string exeFile = (new System.Uri(Assembly.GetEntryAssembly().CodeBase)).AbsolutePath;
-        private static string path = Path.GetDirectoryName(exeFile);
-        public static string PathImages = "..\\..\\Images";
+        public static string path = Path.GetDirectoryName(exeFile).Replace("\\bin\\Debug", "");
+        public static string PathImages = "\\Images\\";
     }
 }
