@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using CarLand.Database;
+using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System.Linq;
@@ -10,12 +11,13 @@ namespace CarLand.Forms
 {
     public partial class Registrar_se : MetroForm
     {
-        public Registrar_se(MetroStyleManager manager)
+        public Domain.Entities.User User { get; set; }
+        public DBUser _appCar { get; set; }
+
+        public Registrar_se()
         {
             InitializeComponent();
-            this.StyleManager = manager;
-            Load_Style(this.StyleManager.Style);
-            Load_Theme(this.StyleManager.Theme);
+            _appCar = new DBUser();
         }
 
         public void Load_Style(MetroColorStyle style)
@@ -31,21 +33,6 @@ namespace CarLand.Forms
             mtxtSenhaClientes.Theme = style;
             metroTextBox1.Theme = style;
             metroLink1.Theme = style;
-        }
-
-        private void metroLabel2_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void mtxtUsuarioClientes_Click(object sender, System.EventArgs e)
-        {
-
-        }
-
-        private void mtxtSenhaClientes_Click(object sender, System.EventArgs e)
-        {
-
         }
 
         private void verficiarPreenchimento(object sender, System.EventArgs e)
@@ -64,7 +51,7 @@ namespace CarLand.Forms
             {
                 errors.SetError(this.metroTextBox1, "Campo Obrigatório");
             }
-            if(mtxtUsuarioClientes.Text != "")
+            if (mtxtUsuarioClientes.Text != "")
             {
                 errors.SetError(this.mtxtUsuarioClientes, "Campo Obrigatório");
             }
@@ -73,16 +60,21 @@ namespace CarLand.Forms
                 errors.SetError(this.mtxtSenhaClientes, "Os campos não conferem");
                 errors.SetError(this.metroTextBox1, "Os campos não conferem");
             }
-            if(mtxtUsuarioClientes.Text != "" && metroTextBox1.Text == mtxtSenhaClientes.Text)
+            if (mtxtUsuarioClientes.Text != "" && metroTextBox1.Text == mtxtSenhaClientes.Text)
             {
-                Completar_Cadastro form = new Completar_Cadastro(this.StyleManager);
-                form.ShowDialog();
+                var userDomain = _appCar.GetUser(mtxtUsuarioClientes.Text);
+                if (userDomain.Name == null)
+                {
+                    User = new Domain.Entities.User(mtxtUsuarioClientes.Text, mtxtSenhaClientes.Text, false);
+                    Completar_Cadastro form = new Completar_Cadastro(this.StyleManager);
+                    form.User = User;
+                    form.ShowDialog();
+                }
+                else
+                {
+                    MetroMessageBox.Show(this, "Usuário já cadastrado", "Cadastro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                }
             }
-        }
-
-        private void Registrar_se_Load(object sender, System.EventArgs e)
-        {
-
         }
 
         private void tooltipo(object sender, System.EventArgs e)

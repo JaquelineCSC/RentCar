@@ -97,7 +97,7 @@
             this.metroTile6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroTile6.BackColor = System.Drawing.Color.Black;
             this.metroTile6.ForeColor = System.Drawing.Color.Black;
-            this.metroTile6.Location = new System.Drawing.Point(574, 205);
+            this.metroTile6.Location = new System.Drawing.Point(571, 205);
             this.metroTile6.Name = "metroTile6";
             this.metroTile6.Size = new System.Drawing.Size(132, 258);
             this.metroTile6.Style = MetroFramework.MetroColorStyle.Orange;
@@ -114,7 +114,7 @@
             // 
             this.metroTile5.ActiveControl = null;
             this.metroTile5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile5.Location = new System.Drawing.Point(712, 336);
+            this.metroTile5.Location = new System.Drawing.Point(708, 336);
             this.metroTile5.Name = "metroTile5";
             this.metroTile5.Size = new System.Drawing.Size(132, 126);
             this.metroTile5.Style = MetroFramework.MetroColorStyle.Orange;
@@ -124,6 +124,7 @@
             this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile5.UseSelectable = true;
             this.metroTile5.UseTileImage = true;
+            this.metroTile5.Click += new System.EventHandler(this.metroTile5_Click);
             // 
             // metroTile4
             // 

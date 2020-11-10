@@ -5,7 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,7 +51,8 @@ namespace CarLand.Forms.Car
                     foreach (var item in images)
                     {
                         PictureBox pic = new PictureBox();
-                        pic.Image = (Bitmap)Image.FromFile(item.Path + item.Name);
+                        pic.Image = (Bitmap)Image.FromFile(Servers.path + item.Path + item.Name);
+                        pic.Name = item.Name;
                         pic.Location = new Point(x, y);
                         pic.SizeMode = PictureBoxSizeMode.StretchImage;
                         x += pic.Width + 23;
@@ -67,16 +70,15 @@ namespace CarLand.Forms.Car
 
         private void metroButton1_Click(object sender, EventArgs e)
         {
-            metroPanel3.Controls.Clear();
-
             OpenFileDialog OpenFd = new OpenFileDialog();
             OpenFd.Multiselect = true;
-            OpenFd.Filter = "Images only. |*.jpg; *.jpeg; *.png; *.gif;";
+            OpenFd.Filter = "Images only. |*.jpg; *.jpeg; *.png;";
 
             DialogResult dr = OpenFd.ShowDialog();
 
             if (dr == DialogResult.OK)
             {
+                metroPanel3.Controls.Clear();
                 string[] files = OpenFd.FileNames;
                 int x = 20, y = 20, maxHeight = -1;
                 foreach (string img in files)
@@ -98,12 +100,12 @@ namespace CarLand.Forms.Car
         {
             try
             {
-                int id = _appCar.Insert(Car);
-                _appImage.Delete(id);
+                _appCar.Update(Car);
+                _appImage.Delete(Car.Id);
                 Domain.Entities.Image img = new Domain.Entities.Image();
                 foreach (var item in Images)
                 {
-                    _appImage.SetImage(id, item);
+                    _appImage.SetImage(Car.Id, item);
                 }
                 MetroMessageBox.Show(this, "Carro cadastro com sucess", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
             }

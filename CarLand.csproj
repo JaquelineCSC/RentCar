@@ -126,6 +126,12 @@
     <Compile Include="Forms\Car\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Logout\AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Logout\AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Logout\Completar Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,12 +180,12 @@
     <Compile Include="Forms\Logout\Registrar-se.Designer.cs">
       <DependentUpon>Registrar-se.cs</DependentUpon>
     </Compile>
-    <Compile Include="IntegradoraDataSet1.Designer.cs">
+    <Compile Include="DataSets\IntegradoraDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="IntegradoraDataSet4.Designer.cs">
+    <Compile Include="DataSets\IntegradoraDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\List.resx">
       <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Logout\AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\Completar Cadastro.resx">
       <DependentUpon>Completar Cadastro.cs</DependentUpon>
@@ -235,26 +244,26 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="IntegradoraDataSet1.xsc">
+    <None Include="DataSets\IntegradoraDataSet1.xsc">
       <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="IntegradoraDataSet1.xsd">
+    <None Include="DataSets\IntegradoraDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>IntegradoraDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="IntegradoraDataSet1.xss">
+    <None Include="DataSets\IntegradoraDataSet1.xss">
       <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="IntegradoraDataSet4.xsc">
+    <None Include="DataSets\IntegradoraDataSet4.xsc">
       <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="IntegradoraDataSet4.xsd">
+    <None Include="DataSets\IntegradoraDataSet4.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>IntegradoraDataSet4.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="IntegradoraDataSet4.xss">
+    <None Include="DataSets\IntegradoraDataSet4.xss">
       <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />

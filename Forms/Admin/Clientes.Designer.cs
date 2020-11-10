@@ -59,9 +59,9 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
             this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
-            this.integradoraDataSet4 = new CarLand.IntegradoraDataSet4();
+            this.integradoraDataSet4 = new CarLand.DataSets.IntegradoraDataSet4();
             this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientTableAdapter = new CarLand.IntegradoraDataSet4TableAdapters.ClientTableAdapter();
+            this.clientTableAdapter = new CarLand.DataSets.IntegradoraDataSet4TableAdapters.ClientTableAdapter();
             this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPFDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -724,9 +724,9 @@
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroLink metroLinkVoltar;
         private MetroFramework.Controls.MetroLink metroLinkSalvar;
-        private IntegradoraDataSet4 integradoraDataSet4;
+        private DataSets.IntegradoraDataSet4 integradoraDataSet4;
         private System.Windows.Forms.BindingSource clientBindingSource;
-        private IntegradoraDataSet4TableAdapters.ClientTableAdapter clientTableAdapter;
+        private DataSets.IntegradoraDataSet4TableAdapters.ClientTableAdapter clientTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idClientDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clientnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cPFDataGridViewTextBoxColumn;

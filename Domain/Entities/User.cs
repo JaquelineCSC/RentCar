@@ -11,5 +11,24 @@ namespace CarLand.Domain.Entities
         public string Name { get; set; }
         public string Password { get; set; }
         public bool Admin { get; set; }
+
+        public void Clear()
+        {
+            Id = 0;
+            Name = null;
+            Password = null;
+        }
+
+        public User(string name, string password, bool isAdmin)
+        {
+            Name = name;
+            Password = password;
+            Admin = isAdmin;
+        }
+
+        public User()
+        {
+
+        }
     }
 }

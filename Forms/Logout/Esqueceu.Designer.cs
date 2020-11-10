@@ -67,17 +67,17 @@
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(230, 34);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTextBox1.TabIndex = 1;
             this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.UseStyleColors = true;
             this.metroTextBox1.WaterMark = "Usuário";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroButton1
             // 
-            this.metroButton1.BackColor = System.Drawing.Color.Yellow;
+            this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.metroButton1.Location = new System.Drawing.Point(169, 169);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(133, 41);
@@ -109,6 +109,7 @@
             this.Controls.Add(this.metroTextBox1);
             this.Name = "Esqueceu";
             this.Resizable = false;
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Esqueci minha senha";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Esqueceu_Load);

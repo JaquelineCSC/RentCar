@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CarLand {
+namespace CarLand.DataSets {
     
     
     /// <summary>
@@ -894,7 +894,7 @@ namespace CarLand {
         }
     }
 }
-namespace CarLand.IntegradoraDataSet1TableAdapters {
+namespace CarLand.DataSets.IntegradoraDataSet1TableAdapters {
     
     
     /// <summary>

@@ -50,6 +50,10 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel = new MetroFramework.Controls.MetroPanel();
+            this.record_not_found = new MetroFramework.Controls.MetroLabel();
+            this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.logout.SuspendLayout();
             this.login.SuspendLayout();
@@ -58,6 +62,7 @@
             this.card.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel.SuspendLayout();
+            this.metroPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -86,7 +91,7 @@
             this.logout.HorizontalScrollbarBarColor = true;
             this.logout.HorizontalScrollbarHighlightOnWheel = false;
             this.logout.HorizontalScrollbarSize = 10;
-            this.logout.Location = new System.Drawing.Point(757, 6);
+            this.logout.Location = new System.Drawing.Point(991, 3);
             this.logout.Name = "logout";
             this.logout.Size = new System.Drawing.Size(285, 67);
             this.logout.TabIndex = 4;
@@ -100,8 +105,8 @@
             // 
             this.email.AutoSize = true;
             this.email.Location = new System.Drawing.Point(15, 25);
-            this.email.MaximumSize = new System.Drawing.Size(250, 0);
-            this.email.MinimumSize = new System.Drawing.Size(250, 0);
+            this.email.MaximumSize = new System.Drawing.Size(200, 0);
+            this.email.MinimumSize = new System.Drawing.Size(200, 0);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(41, 19);
             this.email.TabIndex = 5;
@@ -122,6 +127,7 @@
             this.metroPanel5.VerticalScrollbarBarColor = true;
             this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel5.VerticalScrollbarSize = 10;
+            this.metroPanel5.Click += new System.EventHandler(this.metroPanel5_Paint);
             // 
             // login
             // 
@@ -277,7 +283,7 @@
             this.card.Location = new System.Drawing.Point(30, 17);
             this.card.Name = "card";
             this.card.Size = new System.Drawing.Size(284, 297);
-            this.card.TabIndex = 2;
+            this.card.TabIndex = 1000000;
             this.card.VerticalScrollbarBarColor = true;
             this.card.VerticalScrollbarHighlightOnWheel = false;
             this.card.VerticalScrollbarSize = 10;
@@ -343,6 +349,7 @@
             // panel
             // 
             this.panel.AutoScroll = true;
+            this.panel.Controls.Add(this.record_not_found);
             this.panel.Controls.Add(this.card);
             this.panel.HorizontalScrollbar = true;
             this.panel.HorizontalScrollbarBarColor = true;
@@ -360,11 +367,59 @@
             this.panel.VerticalScrollbarHighlightOnWheel = false;
             this.panel.VerticalScrollbarSize = 10;
             // 
+            // record_not_found
+            // 
+            this.record_not_found.AutoSize = true;
+            this.record_not_found.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.record_not_found.Location = new System.Drawing.Point(401, 27);
+            this.record_not_found.Name = "record_not_found";
+            this.record_not_found.Size = new System.Drawing.Size(233, 25);
+            this.record_not_found.TabIndex = 3;
+            this.record_not_found.Text = "Nenhum registro encontrado";
+            this.record_not_found.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.record_not_found.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // metroPanel3
+            // 
+            this.metroPanel3.Controls.Add(this.metroLabel7);
+            this.metroPanel3.Controls.Add(this.metroLabel6);
+            this.metroPanel3.HorizontalScrollbarBarColor = true;
+            this.metroPanel3.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.HorizontalScrollbarSize = 10;
+            this.metroPanel3.Location = new System.Drawing.Point(1196, 91);
+            this.metroPanel3.Name = "metroPanel3";
+            this.metroPanel3.Size = new System.Drawing.Size(59, 67);
+            this.metroPanel3.TabIndex = 6;
+            this.metroPanel3.VerticalScrollbarBarColor = true;
+            this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel3.VerticalScrollbarSize = 10;
+            this.metroPanel3.Visible = false;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.Location = new System.Drawing.Point(13, 38);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel7.TabIndex = 3;
+            this.metroLabel7.Text = "Sair";
+            this.metroLabel7.Click += new System.EventHandler(this.metroLabel7_Click);
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(13, 10);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(38, 19);
+            this.metroLabel6.TabIndex = 2;
+            this.metroLabel6.Text = "Perfil";
+            // 
             // Carros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 788);
+            this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
@@ -386,6 +441,9 @@
             this.card.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
+            this.metroPanel3.ResumeLayout(false);
+            this.metroPanel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -413,5 +471,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MetroFramework.Controls.MetroPanel panel;
+        private MetroFramework.Controls.MetroPanel metroPanel3;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
+        private MetroFramework.Controls.MetroLabel record_not_found;
     }
 }

@@ -25,7 +25,7 @@ namespace CarLand.Database
         public void Update(Image image)
         {
             query = $@"Update [Image] 
-                    set Path = '{image.Path}', Name = '{image.Name}
+                    set Name = '{image.Name}
                     WHERE idImage = {image.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -45,16 +45,16 @@ namespace CarLand.Database
         {
             Image img = new Image();
             img.idCar = carId;
-            img.Name = Path.GetFileName(image.Name);
+            img.Name = DateTime.Now.Ticks + "_" + Path.GetFileName(image.Name);
             img.Path = Servers.PathImages;
             var extensions = Path.GetExtension(image.Name);
             if (extensions.Contains(".jp"))
             {
-                image.Image.Save(img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Jpeg);
+                image.Image.Save(Servers.path + img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Jpeg);
             }
             else if (extensions.Contains(".png"))
             {
-                image.Image.Save(img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Png);
+                image.Image.Save( Servers.path + img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Png);
             }
             Insert(img);
         }

@@ -67,13 +67,14 @@
             this.mtxtSenhaClientes.SelectionStart = 0;
             this.mtxtSenhaClientes.ShortcutsEnabled = true;
             this.mtxtSenhaClientes.Size = new System.Drawing.Size(236, 24);
+            this.mtxtSenhaClientes.Style = MetroFramework.MetroColorStyle.Orange;
             this.mtxtSenhaClientes.TabIndex = 45;
+            this.mtxtSenhaClientes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtxtSenhaClientes.UseSelectable = true;
             this.mtxtSenhaClientes.WaterMark = "Senha";
             this.mtxtSenhaClientes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtSenhaClientes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtSenhaClientes.TextChanged += new System.EventHandler(this.verficiarPreenchimento);
-            this.mtxtSenhaClientes.Click += new System.EventHandler(this.mtxtSenhaClientes_Click);
             // 
             // mtxtUsuarioClientes
             // 
@@ -103,13 +104,14 @@
             this.mtxtUsuarioClientes.SelectionStart = 0;
             this.mtxtUsuarioClientes.ShortcutsEnabled = true;
             this.mtxtUsuarioClientes.Size = new System.Drawing.Size(236, 24);
+            this.mtxtUsuarioClientes.Style = MetroFramework.MetroColorStyle.Orange;
             this.mtxtUsuarioClientes.TabIndex = 34;
+            this.mtxtUsuarioClientes.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtxtUsuarioClientes.UseSelectable = true;
             this.mtxtUsuarioClientes.WaterMark = "Usuário";
             this.mtxtUsuarioClientes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtUsuarioClientes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.mtxtUsuarioClientes.TextChanged += new System.EventHandler(this.verficiarPreenchimento);
-            this.mtxtUsuarioClientes.Click += new System.EventHandler(this.mtxtUsuarioClientes_Click);
             // 
             // metroTextBox1
             // 
@@ -139,7 +141,9 @@
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
             this.metroTextBox1.Size = new System.Drawing.Size(236, 24);
+            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTextBox1.TabIndex = 48;
+            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.WaterMark = "Confirmar Senha";
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -154,6 +158,7 @@
             this.metroLink1.Location = new System.Drawing.Point(379, 36);
             this.metroLink1.Name = "metroLink1";
             this.metroLink1.Size = new System.Drawing.Size(51, 47);
+            this.metroLink1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroLink1.TabIndex = 49;
             this.metroLink1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLink1.UseSelectable = true;
@@ -183,9 +188,9 @@
             this.Controls.Add(this.mtxtUsuarioClientes);
             this.Name = "Registrar_se";
             this.Resizable = false;
+            this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Registrar";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.Load += new System.EventHandler(this.Registrar_se_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errors)).EndInit();
             this.ResumeLayout(false);
 
