@@ -164,5 +164,39 @@ namespace CarLand.Database
 
         #endregion
 
+        #region Client
+
+        public Client GetClientByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Client client = new Client();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                client = ConstructorClient(reader);
+            }
+            cn.Close();
+            return client;
+        }
+
+        public Client ConstructorClient (SqlDataReader reader)
+        {
+            return new Client()
+            {
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                User_Id = reader.GetInt32(2),
+                CPF = reader.GetInt32(3),
+                CNH = reader.GetInt32(4),
+                DateOfBirth = reader.GetDateTime(5),
+                Phone = reader.GetInt32(6),
+                Email = reader.GetString(7),
+                Genero = reader.GetString(8)
+            };
+        }
+
+        #endregion
     }
 }

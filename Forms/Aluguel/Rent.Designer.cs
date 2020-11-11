@@ -43,11 +43,12 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.name = new MetroFramework.Controls.MetroTextBox();
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.carousselImages = new MetroFramework.Controls.MetroPanel();
+            this.arrow_right = new MetroFramework.Controls.MetroLink();
+            this.arrow_left = new MetroFramework.Controls.MetroLink();
             this.fuel = new MetroFramework.Controls.MetroLabel();
             this.year = new MetroFramework.Controls.MetroLabel();
-            this.arrow_left = new MetroFramework.Controls.MetroLink();
-            this.arrow_right = new MetroFramework.Controls.MetroLink();
-            this.carousselImages = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
             this.carousselImages.SuspendLayout();
             this.SuspendLayout();
@@ -78,11 +79,12 @@
             this.email.CustomButton.UseSelectable = true;
             this.email.CustomButton.Visible = false;
             this.email.Lines = new string[0];
-            this.email.Location = new System.Drawing.Point(305, 106);
+            this.email.Location = new System.Drawing.Point(499, 63);
             this.email.MaxLength = 32767;
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
+            this.email.ReadOnly = true;
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -272,7 +274,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.Location = new System.Drawing.Point(411, 13);
+            this.metroLabel1.Location = new System.Drawing.Point(158, 41);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(49, 19);
             this.metroLabel1.TabIndex = 70;
@@ -294,11 +296,12 @@
             this.name.CustomButton.UseSelectable = true;
             this.name.CustomButton.Visible = false;
             this.name.Lines = new string[0];
-            this.name.Location = new System.Drawing.Point(411, 35);
+            this.name.Location = new System.Drawing.Point(158, 63);
             this.name.MaxLength = 32767;
             this.name.Multiline = true;
             this.name.Name = "name";
             this.name.PasswordChar = '\0';
+            this.name.ReadOnly = true;
             this.name.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.name.SelectedText = "";
             this.name.SelectionLength = 0;
@@ -334,6 +337,46 @@
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel1.VerticalScrollbarSize = 10;
             // 
+            // carousselImages
+            // 
+            this.carousselImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carousselImages.BackgroundImage")));
+            this.carousselImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.carousselImages.Controls.Add(this.arrow_right);
+            this.carousselImages.Controls.Add(this.arrow_left);
+            this.carousselImages.HorizontalScrollbarBarColor = true;
+            this.carousselImages.HorizontalScrollbarHighlightOnWheel = false;
+            this.carousselImages.HorizontalScrollbarSize = 10;
+            this.carousselImages.Location = new System.Drawing.Point(23, 24);
+            this.carousselImages.Name = "carousselImages";
+            this.carousselImages.Size = new System.Drawing.Size(347, 206);
+            this.carousselImages.TabIndex = 78;
+            this.carousselImages.VerticalScrollbarBarColor = true;
+            this.carousselImages.VerticalScrollbarHighlightOnWheel = false;
+            this.carousselImages.VerticalScrollbarSize = 10;
+            // 
+            // arrow_right
+            // 
+            this.arrow_right.BackColor = System.Drawing.Color.Transparent;
+            this.arrow_right.Image = ((System.Drawing.Image)(resources.GetObject("arrow_right.Image")));
+            this.arrow_right.Location = new System.Drawing.Point(304, 110);
+            this.arrow_right.Name = "arrow_right";
+            this.arrow_right.Size = new System.Drawing.Size(28, 19);
+            this.arrow_right.TabIndex = 80;
+            this.arrow_right.UseCustomForeColor = true;
+            this.arrow_right.UseSelectable = true;
+            // 
+            // arrow_left
+            // 
+            this.arrow_left.BackColor = System.Drawing.Color.Transparent;
+            this.arrow_left.ForeColor = System.Drawing.Color.Transparent;
+            this.arrow_left.Image = ((System.Drawing.Image)(resources.GetObject("arrow_left.Image")));
+            this.arrow_left.Location = new System.Drawing.Point(25, 110);
+            this.arrow_left.Name = "arrow_left";
+            this.arrow_left.Size = new System.Drawing.Size(28, 19);
+            this.arrow_left.TabIndex = 79;
+            this.arrow_left.UseCustomForeColor = true;
+            this.arrow_left.UseSelectable = true;
+            // 
             // fuel
             // 
             this.fuel.AutoSize = true;
@@ -356,51 +399,23 @@
             this.year.Text = "Ano";
             this.year.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // arrow_left
+            // metroLabel2
             // 
-            this.arrow_left.BackColor = System.Drawing.Color.Transparent;
-            this.arrow_left.ForeColor = System.Drawing.Color.Transparent;
-            this.arrow_left.Image = ((System.Drawing.Image)(resources.GetObject("arrow_left.Image")));
-            this.arrow_left.Location = new System.Drawing.Point(25, 110);
-            this.arrow_left.Name = "arrow_left";
-            this.arrow_left.Size = new System.Drawing.Size(28, 19);
-            this.arrow_left.TabIndex = 79;
-            this.arrow_left.UseCustomForeColor = true;
-            this.arrow_left.UseSelectable = true;
-            // 
-            // arrow_right
-            // 
-            this.arrow_right.BackColor = System.Drawing.Color.Transparent;
-            this.arrow_right.Image = ((System.Drawing.Image)(resources.GetObject("arrow_right.Image")));
-            this.arrow_right.Location = new System.Drawing.Point(304, 110);
-            this.arrow_right.Name = "arrow_right";
-            this.arrow_right.Size = new System.Drawing.Size(28, 19);
-            this.arrow_right.TabIndex = 80;
-            this.arrow_right.UseCustomForeColor = true;
-            this.arrow_right.UseSelectable = true;
-            // 
-            // carousselImages
-            // 
-            this.carousselImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carousselImages.BackgroundImage")));
-            this.carousselImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carousselImages.Controls.Add(this.arrow_right);
-            this.carousselImages.Controls.Add(this.arrow_left);
-            this.carousselImages.HorizontalScrollbarBarColor = true;
-            this.carousselImages.HorizontalScrollbarHighlightOnWheel = false;
-            this.carousselImages.HorizontalScrollbarSize = 10;
-            this.carousselImages.Location = new System.Drawing.Point(23, 24);
-            this.carousselImages.Name = "carousselImages";
-            this.carousselImages.Size = new System.Drawing.Size(347, 206);
-            this.carousselImages.TabIndex = 78;
-            this.carousselImages.VerticalScrollbarBarColor = true;
-            this.carousselImages.VerticalScrollbarHighlightOnWheel = false;
-            this.carousselImages.VerticalScrollbarSize = 10;
+            this.metroLabel2.AutoSize = true;
+            this.metroLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel2.Location = new System.Drawing.Point(499, 41);
+            this.metroLabel2.Name = "metroLabel2";
+            this.metroLabel2.Size = new System.Drawing.Size(41, 19);
+            this.metroLabel2.TabIndex = 86;
+            this.metroLabel2.Text = "Email";
+            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // Rent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 788);
+            this.Controls.Add(this.metroLabel2);
             this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.email);
@@ -449,5 +464,6 @@
         private MetroFramework.Controls.MetroLink arrow_right;
         private MetroFramework.Controls.MetroLink arrow_left;
         private MetroFramework.Controls.MetroPanel carousselImages;
+        private MetroFramework.Controls.MetroLabel metroLabel2;
     }
 }

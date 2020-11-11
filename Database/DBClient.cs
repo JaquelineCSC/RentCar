@@ -14,10 +14,9 @@ namespace CarLand.Database
         Connection _context = new Connection();
         private string query;
 
-
         public void Insert(Client client)
         {
-            query = $"Insert into Client (Clientname, idCNH, Birth, Email, Phone, idUser, Gener, CPF) values ('{client.Name}' , {client.CNH} , {client.DateOfBirth} , '{client.Email}' , {client.Phone} , {client.User_Id} , '{client.Genero}' , {client.CPF})";
+            query = $"Insert into Client (Clientname, idCNH, Birth, Email, Phone, idUser, Gener, CPF) values ('{client.Name}' , {client.CNH} , '{client.DateOfBirth}' , '{client.Email}' , {client.Phone} , {client.User_Id} , '{client.Genero}' , {client.CPF})";
             _context.CommandWithoutReturn(query);
         }
         public void Update(Client client)
@@ -38,6 +37,12 @@ namespace CarLand.Database
             query = $"Select idClient from Client where Clientename LIKE '" + clientName + "%'";
             var reader = _context.Consult(query);
             return ConstructorClient(reader);
+        }
+
+        public Client GetClientByUser(int idUser)
+        {
+            query = $"Select * from Client where idUser = {idUser}";
+            return _context.GetClientByUserId(query);
         }
 
         public Client ConstructorClient(SqlDataReader reader)

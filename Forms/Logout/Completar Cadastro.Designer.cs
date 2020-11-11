@@ -381,7 +381,6 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonSave.Enabled = false;
             this.buttonSave.Location = new System.Drawing.Point(612, 325);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(105, 45);
@@ -390,6 +389,7 @@
             this.buttonSave.Theme = MetroFramework.MetroThemeStyle.Light;
             this.buttonSave.UseCustomBackColor = true;
             this.buttonSave.UseSelectable = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // metroLabel2
             // 

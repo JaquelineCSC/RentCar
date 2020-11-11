@@ -245,8 +245,7 @@ namespace CarLand.Forms
         {
             MetroLink link = (MetroLink)sender;
             var car = _appCar.GetCar(link.TabIndex);
-            Rent form = new Rent(car);
-            form.User = User;
+            Rent form = new Rent(car, User);
             this.Hide();
             form.ShowDialog();
             this.Close();

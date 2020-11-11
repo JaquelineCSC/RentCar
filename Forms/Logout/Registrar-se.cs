@@ -66,9 +66,11 @@ namespace CarLand.Forms
                 if (userDomain.Name == null)
                 {
                     User = new Domain.Entities.User(mtxtUsuarioClientes.Text, mtxtSenhaClientes.Text, false);
+                    this.Hide();
                     Completar_Cadastro form = new Completar_Cadastro(this.StyleManager);
                     form.User = User;
                     form.ShowDialog();
+                    this.Close();
                 }
                 else
                 {

@@ -9,20 +9,26 @@ namespace CarLand.Forms.Aluguel
 {
     public partial class Rent : MetroForm
     {
+        public Client Client { get; set; }
         public User User { get; set; }
         public CarLand.Domain.Entities.Car Car { get; set; }
         public List<Image> Images { get; set; }
         public DBImage _appImage { get; set; }
+        public DBClient _appClient { get; set; }
 
-        public Rent(Domain.Entities.Car car)
+        public Rent(Domain.Entities.Car car, User user)
         {
             InitializeComponent();
             _appImage = new DBImage();
+            _appClient = new DBClient();
+            Images = new List<Image>();
             User = new User();
+            Client = new Client();
             Car = new Domain.Entities.Car();
             Car = car;
-            Images = new List<Image>();
+            User = user;
             Images = _appImage.GetImages(car.Id);
+            Client = _appClient.GetClientByUser(User.Id);
         }
 
         private void arrow_right_Click(object sender, EventArgs e)
@@ -44,6 +50,9 @@ namespace CarLand.Forms.Aluguel
                 arrow_left.Parent = carousselImages;
                 arrow_right.Parent = carousselImages;
             }
+            name.Text = Client.Name;
+            email.Text = Client.Email;
+
         }
     }
 }
