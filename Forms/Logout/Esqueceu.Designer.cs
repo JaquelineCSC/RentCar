@@ -110,6 +110,7 @@
             this.ClientSize = new System.Drawing.Size(494, 319);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Esqueceu";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

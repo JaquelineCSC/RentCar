@@ -542,7 +542,7 @@
             // 
             this.metroLink16.Image = ((System.Drawing.Image)(resources.GetObject("metroLink16.Image")));
             this.metroLink16.ImageSize = 45;
-            this.metroLink16.Location = new System.Drawing.Point(23, 75);
+            this.metroLink16.Location = new System.Drawing.Point(23, 63);
             this.metroLink16.Name = "metroLink16";
             this.metroLink16.Size = new System.Drawing.Size(48, 43);
             this.metroLink16.Style = MetroFramework.MetroColorStyle.Orange;
@@ -556,7 +556,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackImagePadding = new System.Windows.Forms.Padding(-19, 9, -1, -1);
             this.BackMaxSize = 220;
             this.ClientSize = new System.Drawing.Size(1280, 788);
@@ -568,9 +567,11 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AboutUs";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
+            this.Text = "Sobre Nós";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.AboutUs_Load);

@@ -528,6 +528,7 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Completar_Cadastro";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

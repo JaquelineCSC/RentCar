@@ -263,6 +263,7 @@
             this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroGrid1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListCar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

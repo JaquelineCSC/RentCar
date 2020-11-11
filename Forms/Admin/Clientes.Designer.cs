@@ -682,6 +682,7 @@
             this.BackMaxSize = 210;
             this.ClientSize = new System.Drawing.Size(873, 504);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Clientes";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

@@ -189,6 +189,7 @@
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.mtxtSenhaClientes);
             this.Controls.Add(this.mtxtUsuarioClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registrar_se";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

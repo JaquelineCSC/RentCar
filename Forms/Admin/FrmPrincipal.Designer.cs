@@ -581,6 +581,7 @@
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.metroLinkLogout);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

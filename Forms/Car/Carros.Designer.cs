@@ -423,6 +423,7 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Carros";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

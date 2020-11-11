@@ -313,6 +313,7 @@
             this.Controls.Add(this.metroLinkVoltar);
             this.Controls.Add(this.metroLinkSalvar);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Funcionarios";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Funcionarios_Load);

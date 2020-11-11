@@ -488,6 +488,7 @@
             this.Controls.Add(this.Modelo);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditCar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
