@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Carros : MetroForm
+    public partial class Cars : MetroForm
     {
         public CarLand.Domain.Entities.User User { get; set; }
 
         public DBCar _appCar;
         public DBImage _appImage;
 
-        public Carros()
+        public Cars()
         {
             InitializeComponent();
             _appCar = new DBCar();
@@ -244,7 +244,8 @@ namespace CarLand.Forms
         private void metroLink3_Click(object sender, EventArgs e)
         {
             MetroLink link = (MetroLink)sender;
-            Rent form = new Rent();
+            var car = _appCar.GetCar(link.TabIndex);
+            Rent form = new Rent(car);
             form.User = User;
             this.Hide();
             form.ShowDialog();

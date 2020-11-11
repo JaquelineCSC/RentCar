@@ -84,7 +84,7 @@ namespace CarLand.Forms
 
         private void metroLink2_Click(object sender, EventArgs e)
         {
-            Carros car = new Carros();
+            Cars car = new Cars();
             this.Hide();
             car.ShowDialog();
             this.Close();

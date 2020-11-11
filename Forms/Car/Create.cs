@@ -112,7 +112,7 @@ namespace CarLand.Forms.Car
                 MetroMessageBox.Show(this, "Carro cadastro com sucess", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
                 metroLinkSalvar.Enabled = false;
             }
-            catch(Exception excep)
+            catch
             {
                 _appCar.Delete(id);
                 MetroMessageBox.Show(this, "Ocorreu um erro ao salvar. Entre em contato com o administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);

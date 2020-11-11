@@ -14,7 +14,7 @@ namespace CarLand
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Carros());
+            Application.Run(new Cars());
         }
     }
 }
