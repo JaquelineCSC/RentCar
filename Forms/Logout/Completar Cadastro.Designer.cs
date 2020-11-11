@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Completar_Cadastro));
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.iAgreeCheck = new MetroFramework.Controls.MetroCheckBox();
@@ -497,6 +498,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroLabel16);
             this.Controls.Add(this.metroLabel15);
@@ -527,7 +531,6 @@
             this.Name = "Completar_Cadastro";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Completar_Cadastro";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
             this.ResumeLayout(false);

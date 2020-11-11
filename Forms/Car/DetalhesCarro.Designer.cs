@@ -342,6 +342,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 9, -1, -1);
+            this.BackMaxSize = 240;
             this.ClientSize = new System.Drawing.Size(873, 341);
             this.Controls.Add(this.combustivelTxt);
             this.Controls.Add(this.textLabel);
@@ -360,7 +363,6 @@
             this.Name = "DetalhesCarro";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Detalhe";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.DetalhesCarro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

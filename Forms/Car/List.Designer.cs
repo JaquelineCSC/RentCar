@@ -254,6 +254,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
+            this.BackMaxSize = 240;
             this.ClientSize = new System.Drawing.Size(923, 543);
             this.Controls.Add(this.metroLink4);
             this.Controls.Add(this.metroLink3);
@@ -263,7 +266,6 @@
             this.Name = "ListCar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Carros";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.ListCar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();

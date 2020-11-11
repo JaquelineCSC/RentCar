@@ -466,6 +466,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroLinkSalvar);
             this.Controls.Add(this.metroLabel15);
@@ -488,7 +491,6 @@
             this.Name = "EditCar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Editar Carro";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.EditCar_Load);
             this.metroPanel2.ResumeLayout(false);
