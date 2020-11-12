@@ -96,6 +96,18 @@
     <Compile Include="Domain\Entities\Payment.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="Forms\Aluguel\DetalheAluguel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluguel\DetalheAluguel.Designer.cs">
+      <DependentUpon>DetalheAluguel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Aluguel\Rent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Aluguel\Rent.Designer.cs">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Car\Carros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,11 +138,17 @@
     <Compile Include="Forms\Car\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Client\AluguelCliente.cs">
+    <Compile Include="Forms\Admin\AluguelCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Client\AluguelCliente.Designer.cs">
+    <Compile Include="Forms\Admin\AluguelCliente.Designer.cs">
       <DependentUpon>AluguelCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Logout\AboutUs.cs">
       <SubType>Form</SubType>
@@ -196,8 +214,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\LisRent.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LisRent.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListFuncionarios.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Aluguel\DetalheAluguel.resx">
+      <DependentUpon>DetalheAluguel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Aluguel\Rent.resx">
+      <DependentUpon>Rent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\Carros.resx">
       <DependentUpon>Carros.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,8 +247,11 @@
     <EmbeddedResource Include="Forms\Car\List.resx">
       <DependentUpon>List.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Client\AluguelCliente.resx">
+    <EmbeddedResource Include="Forms\Admin\AluguelCliente.resx">
       <DependentUpon>AluguelCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
@@ -274,6 +311,28 @@
     </None>
     <None Include="DataSets\IntegradoraDataSet4.xss">
       <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LisRent.xsc">
+      <DependentUpon>LisRent.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\LisRent.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LisRent.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSets\LisRent.xss">
+      <DependentUpon>LisRent.xsd</DependentUpon>
+    </None>
+    <None Include="ListFuncionarios.xsc">
+      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
+    </None>
+    <None Include="ListFuncionarios.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListFuncionarios.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListFuncionarios.xss">
+      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

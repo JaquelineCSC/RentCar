@@ -59,5 +59,14 @@ namespace CarLand
             form.ShowDialog();
             this.Close();
         }
+
+        private void metroTile4_Click(object sender, EventArgs e)
+        {
+            Cars form = new Cars();
+            form.User = User;
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
     }
 }

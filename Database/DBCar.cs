@@ -31,9 +31,9 @@ namespace CarLand.Database
                     WHERE idCar = {car.Id}";
             _context.CommandWithoutReturn(query);
         }
-        public void Delete(string board)
+        public void Delete(int id)
         {
-            query = $"Delete from Car WHERE Board = '{board}'";
+            query = $"Delete from Car WHERE idCar = '{id}'";
             _context.CommandWithoutReturn(query);
         }
 

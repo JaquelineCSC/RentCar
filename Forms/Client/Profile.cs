@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms.Client
 {
-    public partial class AluguelCliente : MetroFramework.Forms.MetroForm
+    public partial class Profile : MetroFramework.Forms.MetroForm
     {
-        public AluguelCliente()
+        public Profile()
         {
             InitializeComponent();
         }
 
-        private void AluguelCliente_Load(object sender, EventArgs e)
+        private void Profile_Load(object sender, EventArgs e)
         {
 
         }

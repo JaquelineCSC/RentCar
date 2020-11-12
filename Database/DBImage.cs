@@ -54,7 +54,7 @@ namespace CarLand.Database
             }
             else if (extensions.Contains(".png"))
             {
-                image.Image.Save( Servers.path + img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Png);
+                image.Image.Save(Servers.path + img.Path + img.Name, System.Drawing.Imaging.ImageFormat.Png);
             }
             Insert(img);
         }

@@ -14,16 +14,17 @@ namespace CarLand.Database
         Connection _context = new Connection();
         private string query;
 
-        public void Insert(User user)
+        public int Insert(User user)
         {
-            query = $"Insert into Users (userName, password, isAdmin) values ('{user.Name}' , '{user.Password}' , {user.Admin})";
-            _context.CommandWithoutReturn(query);
+            int bit = user.isAdmin == true ? 1 : 0;
+            query = $"Insert into Users (userName, password, isAdmin) output inserted.idUser values ('{user.Name}' , '{user.Password}' , {bit})";
+            return _context.CommandWithReturnId(query);
         }
 
         public void Update(User user)
         {
             query = $@"Update Users 
-                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.Admin} 
+                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.isAdmin} 
                     WHERE idUser = {user.Id}";
             _context.CommandWithoutReturn(query);
         }

@@ -1,7 +1,9 @@
 ﻿using CarLand.Domain.Entities;
 using CarLand.Forms.Car;
+using CarLand.Forms.Client;
 using MetroFramework;
 using MetroFramework.Components;
+using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,29 +23,86 @@ namespace CarLand.Forms
         public FrmPrincipal()
         {
             InitializeComponent();
-            this.StyleManager = manager;
+            StyleManagerControllers(metroStyleManager1);
+            this.StyleManager = metroStyleManager1;
             panelSettings.Visible = false;
             panelSettings.Location = new Point(1276, 28);
         }
 
-        public void Load_Theme(MetroThemeStyle style)
+        public void StyleManagerControllers(MetroStyleManager manager)
         {
-            manager.Theme = style;
-            metroTabPage1.Theme = manager.Theme;
-            metroTabControl1.Theme = manager.Theme;
-            metroLabel6.Theme = manager.Theme;
-            metroPanel2.Theme = manager.Theme;
-            settings.Theme = manager.Theme;
-            metroTabPage3.Theme = manager.Theme;
-            metroTabControl2.Theme = manager.Theme;
-            metroTabPage2.Theme = manager.Theme;
-            panelSettings.Theme = manager.Theme;
-
+            tabControlPrincipal.StyleManager = manager;
+            tabControl.StyleManager = manager;
+            metroPanel2.StyleManager = manager;
+            themes.StyleManager = manager;
+            styles.StyleManager = manager;
+            metroTabPage2.StyleManager = manager;
+            metroTabPage3.StyleManager = manager;
+            panelSettings.StyleManager = manager;
+            metroLinkLogout.StyleManager = manager;
+            carsTile.StyleManager = manager;
+            clientsTile.StyleManager = manager;
+            employeeTile.StyleManager = manager;
+            listRentTile.StyleManager = manager;
+            paymentTile.StyleManager = manager;
+            rentTile.StyleManager = manager;
+            reportTile.StyleManager = manager;
+            settingsTile.StyleManager = manager;
         }
 
-        public void Load_Style(MetroColorStyle style)
+        private void setColor(object sender, EventArgs e)
         {
+            MetroButton linkSender = (MetroButton)sender;
 
+            switch (linkSender.Tag)
+            {
+                case "Orange":
+                    metroStyleManager1.Style = MetroColorStyle.Orange;
+                    break;
+                case "Green":
+                    metroStyleManager1.Style = MetroColorStyle.Green;
+                    break;
+                case "Pink":
+                    metroStyleManager1.Style = MetroColorStyle.Pink;
+                    break;
+                case "Purple":
+                    metroStyleManager1.Style = MetroColorStyle.Purple;
+                    break;
+                case "Red":
+                    metroStyleManager1.Style = MetroColorStyle.Red;
+                    break;
+                case "Silver":
+                    metroStyleManager1.Style = MetroColorStyle.Silver;
+                    break;
+                case "Yellow":
+                    metroStyleManager1.Style = MetroColorStyle.Yellow;
+                    break;
+                case "Brown":
+                    metroStyleManager1.Style = MetroColorStyle.Brown;
+                    break;
+                case "Magenta":
+                    metroStyleManager1.Style = MetroColorStyle.Magenta;
+                    break;
+                case "Blue":
+                    metroStyleManager1.Style = MetroColorStyle.Blue;
+                    break;
+                case "Lime":
+                    metroStyleManager1.Style = MetroColorStyle.Lime;
+                    break;
+                case "Teal":
+                    metroStyleManager1.Style = MetroColorStyle.Teal;
+                    break;
+            }
+        }
+
+        private void setDark(object sender, EventArgs e)
+        {
+            metroStyleManager1.Theme = MetroThemeStyle.Dark;
+        }
+
+        private void setLight(object sender, EventArgs e)
+        {
+            metroStyleManager1.Theme = MetroThemeStyle.Light;
         }
 
         public Color GetColor(MetroColorStyle color)
@@ -91,16 +150,7 @@ namespace CarLand.Forms
             return retorno;
         }
 
-        private void Reload(object sender, EventArgs e)
-        {
-        }
-
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroLinkLogout_Click(object sender, EventArgs e)
+        private void ShowLogin(object sender, EventArgs e)
         {
             Login login = new Login();
             this.Hide();
@@ -108,22 +158,22 @@ namespace CarLand.Forms
             this.Close();
         }
 
-        private void metroTile1_Click(object sender, EventArgs e)
+        private void ShowListCar(object sender, EventArgs e)
         {
             ListCar listCar = new ListCar();
             listCar.ShowDialog();
         }
 
-        private void metroTile4_Click(object sender, EventArgs e)
+        private void ShowCars(object sender, EventArgs e)
         {
-            Carros car = new Carros();
+            Cars car = new Cars();
             car.User = User;
             this.Hide();
             car.ShowDialog();
             this.Close();
         }
 
-        private void metroTile2_Click(object sender, EventArgs e)
+        private void settingsShowAndHide(object sender, EventArgs e)
         {
             if (panelSettings.Visible)
             {
@@ -134,74 +184,6 @@ namespace CarLand.Forms
                 panelSettings.Visible = true;
                 mostrar.Enabled = true;
             }
-        }
-
-        private void orange_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Orange);
-        }
-
-        private void green_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Green);
-
-        }
-
-        private void pink_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Pink);
-
-        }
-
-        private void silver_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Silver);
-
-        }
-
-        private void red_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Red);
-
-        }
-
-        private void purple_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Purple);
-
-        }
-
-        private void yellow_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Yellow);
-
-        }
-
-        private void brown_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Brown);
-        }
-
-        private void magenta_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Magenta);
-
-        }
-
-        private void teal_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Teal);
-        }
-
-        private void lime_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Lime);
-
-        }
-
-        private void blue_Click(object sender, EventArgs e)
-        {
-            Load_Style(MetroColorStyle.Blue);
         }
 
         private void mostrar_Tick(object sender, EventArgs e)
@@ -216,7 +198,7 @@ namespace CarLand.Forms
             }
         }
 
-        private void esconder_Tick_1(object sender, EventArgs e)
+        private void esconder_Tick(object sender, EventArgs e)
         {
             if (panelSettings.Location.X < 1276)
             {
@@ -229,14 +211,28 @@ namespace CarLand.Forms
             }
         }
 
-        private void metroButton13_Click_2(object sender, EventArgs e)
+        private void clientsTile_Click(object sender, EventArgs e)
         {
-            Load_Theme(MetroThemeStyle.Dark);
+            Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.ShowDialog();
+            this.Close();
         }
 
-        private void metroButton12_Click(object sender, EventArgs e)
+        private void employeeTile_Click(object sender, EventArgs e)
         {
-            Load_Theme(MetroThemeStyle.Light);
+            Funcionarios funcionarios = new Funcionarios();
+            this.Hide();
+            funcionarios.ShowDialog();
+            this.Close();
+        }
+
+        private void listRentTile_Click(object sender, EventArgs e)
+        {
+            AluguelCliente aluguelcliente = new AluguelCliente();
+            this.Hide();
+            aluguelcliente.ShowDialog();
+            this.Close();
         }
     }
 }
