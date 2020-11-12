@@ -9,7 +9,7 @@ namespace CarLand.Domain.Entities
     public class CNH : Base
     {
         public string Name { get; set; }
-        public int Number { get; set; }
-        public DateTime validate { get; set; }
+        public long Number { get; set; }
+        public DateTime ValidateDate { get; set; }
     }
 }

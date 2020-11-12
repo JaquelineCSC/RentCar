@@ -9,12 +9,12 @@ namespace CarLand.Domain.Entities
     public class Client : Base
     {
         public string Name { get; set; }
-        public int CNH { get; set; }
+        public int CNH_Id { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Email { get; set; }
-        public int Phone { get; set; }
+        public long Phone { get; set; }
         public int User_Id { get; set; }
-        public int CPF { get; set; }
+        public long CPF { get; set; }
         public string Genero { get; set; }
     }
 }

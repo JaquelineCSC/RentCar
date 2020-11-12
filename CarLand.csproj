@@ -90,6 +90,7 @@
     <Compile Include="Domain\Entities\Car.cs" />
     <Compile Include="Domain\Entities\Card.cs" />
     <Compile Include="Domain\Entities\Client.cs" />
+    <Compile Include="Domain\Entities\ClientCard.cs" />
     <Compile Include="Domain\Entities\CNH.cs" />
     <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\Entities\Image.cs" />
@@ -131,6 +132,12 @@
     </Compile>
     <Compile Include="Forms\Car\List.Designer.cs">
       <DependentUpon>List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Client\NewCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Client\NewCard.Designer.cs">
+      <DependentUpon>NewCard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Logout\AboutUs.cs">
       <SubType>Form</SubType>
@@ -215,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\List.resx">
       <DependentUpon>List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\NewCard.resx">
+      <DependentUpon>NewCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>

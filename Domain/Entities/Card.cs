@@ -10,7 +10,7 @@ namespace CarLand.Domain.Entities
     {
         public int idClient { get; set; }
         public string Name { get; set; }
-        public int Number { get; set; }
+        public long Number { get; set; }
         public int CVC { get; set; }
         public DateTime ValidateDate { get; set; }
     }

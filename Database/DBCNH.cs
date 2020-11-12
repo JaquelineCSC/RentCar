@@ -14,16 +14,16 @@ namespace CarLand.Database
         Connection _context = new Connection();
         private string query;
 
-        public void Insert(CNH cnh)
+        public int Insert(CNH cnh)
         {
-            query = $"Insert into CNH (CNHname, CNHnumber, validateDate) values ('{cnh.Name}' , {cnh.Number} , {cnh.validate})";
-            _context.CommandWithoutReturn(query);
+            query = $"Insert into CNH (CNHname, CNHnumber, validateDate) output inserted.idCNH values ('{cnh.Name}' , {cnh.Number} , '{cnh.ValidateDate}')";
+            return _context.CommandWithReturnId(query);
         }
 
         public void Update(CNH cnh)
         {
             query = $@"Update CNH 
-                    set CNHname = '{cnh.Name}', CNHnumber = {cnh.Number}, validateDate = {cnh.validate} 
+                    set CNHname = '{cnh.Name}', CNHnumber = {cnh.Number}, validateDate = {cnh.ValidateDate} 
                     WHERE idCNH = {cnh.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -47,7 +47,7 @@ namespace CarLand.Database
                 Id = reader.GetInt32(1),
                 Name = reader.GetString(2),
                 Number = reader.GetInt32(3),
-                validate = reader.GetDateTime(4)
+                ValidateDate = reader.GetDateTime(4)
             };
         }
     }
