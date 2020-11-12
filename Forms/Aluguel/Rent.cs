@@ -1,6 +1,7 @@
 ﻿using CarLand.Database;
 using CarLand.Domain.Entities;
 using CarLand.Forms.Client;
+using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -19,6 +20,7 @@ namespace CarLand.Forms.Aluguel
         public List<Image> Images { get; set; }
         public DBImage _appImage { get; set; }
         public DBClient _appClient { get; set; }
+        public DBRent _appRent { get; set; }
         public RadioButton Billet { get; set; }
         public IEnumerable<RadioButton> Card { get; set; }
         public RadioButton Money { get; set; }
@@ -26,14 +28,19 @@ namespace CarLand.Forms.Aluguel
         public Rent(Domain.Entities.Car car, User user)
         {
             InitializeComponent();
+
             _appImage = new DBImage();
             _appClient = new DBClient();
+            _appRent = new DBRent();
+
             Images = new List<Image>();
             User = new User();
             FullClient = new Domain.Entities.ClientCardCNH();
             Car = new Domain.Entities.Car();
+
             Car = car;
             User = user;
+
             Images = _appImage.GetImages(car.Id);
             FullClient = _appClient.GetClientCardCNHByUser(User.Id);
 
@@ -54,8 +61,8 @@ namespace CarLand.Forms.Aluguel
             Load_Cards();
             Set_date(this, new EventArgs());
 
-            Money = panelMoney.Controls.OfType<RadioButton>().FirstOrDefault();
-            Billet = panelBillet.Controls.OfType<RadioButton>().FirstOrDefault();
+            Money = money;
+            Billet = billet;
             if (panelMoney.Controls.OfType<RadioButton>().Any())
             {
                 Card = panelCard.Controls.OfType<RadioButton>();
@@ -73,12 +80,13 @@ namespace CarLand.Forms.Aluguel
         {
             if (FullClient.Card.Any())
             {
-                int i = 0, y = 25;
+                int i = 0, y = 45;
                 foreach (var item in FullClient.Card)
                 {
-                    AddRadioCard(item, y);
+                    panelCard.Controls.Add(AddRadioCard(item, y));
                     y += 23;
                     panelCard.Size = new System.Drawing.Size(panelCard.Size.Width, panelCard.Size.Height + 31);
+                    registerNewCard.Location = new System.Drawing.Point(registerNewCard.Location.X, registerNewCard.Location.Y + 29);
                     payments.Size = new System.Drawing.Size(payments.Size.Width, payments.Size.Height + 28);
                     i++;
                     if(i == 4)
@@ -93,8 +101,12 @@ namespace CarLand.Forms.Aluguel
         {
             MetroRadioButton newRadio = new MetroRadioButton();
             newRadio.Name = "Card" + card.Id;
-            newRadio.Text = " Cartão XXXX.XXXX.XXXX." + card.Number.ToString().Substring(card.Number.ToString().Length - 4);
-            newRadio.Location = new System.Drawing.Point(37, y);
+            newRadio.Text = " Cartão Final " + card.Number.ToString().Substring(card.Number.ToString().Length - 4);
+            newRadio.Location = new System.Drawing.Point(19, y);
+            newRadio.TabIndex = card.Id;
+            newRadio.Size = new System.Drawing.Size(300, 15);
+            newRadio.Style = MetroFramework.MetroColorStyle.Orange;
+            newRadio.Click += new EventHandler(RadioButtonSelected);
 
             return newRadio;
         }
@@ -152,7 +164,64 @@ namespace CarLand.Forms.Aluguel
 
         private void confirmButton_Click(object sender, EventArgs e)
         {
+            MetroRadioButton payment = new MetroRadioButton();
+            PaymentTypeEnum paymentType;
+            if (billet.Checked)
+            {
+                payment = billet;
+                paymentType = PaymentTypeEnum.Billet;
+            }
+            else if(money.Checked)
+            {
+                payment = money;
+                paymentType = PaymentTypeEnum.Money;
+            }
+            else
+            {
+                payment = Card.OfType<MetroRadioButton>().Where(x => x.Checked == true).FirstOrDefault();
+                paymentType = PaymentTypeEnum.Card;
+            }
 
+
+            Domain.Entities.Rent rent = new Domain.Entities.Rent() {
+                idCar = Car.Id,
+                idClient = FullClient.Client.Id,
+                PickUpDate = pick_upDate.Value,
+                DropOffDate = drop_offDate.Value,
+                Value = double.Parse(value.Text.Replace("R$", "")),
+                PaymentType = paymentType,
+            };
+
+            if(rent.PaymentType == PaymentTypeEnum.Card)
+            {
+                rent.idCard = payment.TabIndex;
+            }
+
+            try
+            {
+                _appRent.Insert(rent);
+                MetroMessageBox.Show(this, "Aluguel registrado.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                if (User.isAdmin)
+                {
+                    FrmPrincipal form = new FrmPrincipal();
+                    form.User = User;
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    FrmUsuario form = new FrmUsuario();
+                    form.User = User;
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+            }
+            catch
+            {
+                MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+            }
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -170,7 +239,7 @@ namespace CarLand.Forms.Aluguel
             daysRight.Text = daysPrint.ToString();
             var amountDay = float.Parse(AmountPerDay.Text.Replace("R$", ""));
             var total = (amountDay * daysPrint).ToString("C", CultureInfo.CurrentCulture);
-            metroLabel22.Text = total;
+            value.Text = total;
         }
 
         private void RadioButtonSelected(object sender, EventArgs e)
@@ -183,10 +252,7 @@ namespace CarLand.Forms.Aluguel
                 Billet.Checked = false;
                 if (Card.Any())
                 {
-                    foreach (var item in Card)
-                    {
-                        item.Checked = false;
-                    }
+                    Card.OfType<RadioButton>().ToList().ForEach(x => x.Checked = false);
                 }
             }
             else if (radio.Name.Contains("billet"))
@@ -195,10 +261,7 @@ namespace CarLand.Forms.Aluguel
                 Billet.Checked = true;
                 if (Card.Any())
                 {
-                    foreach (var item in Card)
-                    {
-                        item.Checked = false;
-                    }
+                    Card.OfType<RadioButton>().ToList().ForEach(x => x.Checked = false);
                 }
             }
             else

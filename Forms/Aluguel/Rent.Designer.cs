@@ -49,7 +49,7 @@
             this.label = new MetroFramework.Controls.MetroLabel();
             this.branch = new MetroFramework.Controls.MetroLabel();
             this.laebl3 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
+            this.value = new MetroFramework.Controls.MetroLabel();
             this.metroLabel21 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel23 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel19 = new MetroFramework.Controls.MetroLabel();
@@ -62,8 +62,8 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.payments = new MetroFramework.Controls.MetroPanel();
             this.panelMoney = new MetroFramework.Controls.MetroPanel();
-            this.money = new MetroFramework.Controls.MetroRadioButton();
             this.metroLabel17 = new MetroFramework.Controls.MetroLabel();
+            this.money = new MetroFramework.Controls.MetroRadioButton();
             this.panelCard = new MetroFramework.Controls.MetroPanel();
             this.registerNewCard = new MetroFramework.Controls.MetroButton();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -78,9 +78,6 @@
             this.hour_DropOff = new MetroFramework.Controls.MetroDateTime();
             this.drop_offDate = new MetroFramework.Controls.MetroDateTime();
             this.pick_upDate = new MetroFramework.Controls.MetroDateTime();
-            this.metroRadioButton1 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton2 = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
             this.metroPanel1.SuspendLayout();
             this.metroPanel5.SuspendLayout();
             this.carousselImages.SuspendLayout();
@@ -257,7 +254,7 @@
             this.metroPanel5.Controls.Add(this.label);
             this.metroPanel5.Controls.Add(this.branch);
             this.metroPanel5.Controls.Add(this.laebl3);
-            this.metroPanel5.Controls.Add(this.metroLabel22);
+            this.metroPanel5.Controls.Add(this.value);
             this.metroPanel5.Controls.Add(this.metroLabel21);
             this.metroPanel5.Controls.Add(this.metroLabel23);
             this.metroPanel5.Controls.Add(this.metroLabel19);
@@ -412,22 +409,22 @@
             this.laebl3.Text = "Cor";
             this.laebl3.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroLabel22
+            // value
             // 
-            this.metroLabel22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroLabel22.AutoSize = true;
-            this.metroLabel22.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel22.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel22.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel22.ForeColor = System.Drawing.Color.OrangeRed;
-            this.metroLabel22.Location = new System.Drawing.Point(240, 350);
-            this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(34, 25);
-            this.metroLabel22.TabIndex = 91;
-            this.metroLabel22.Text = "R$";
-            this.metroLabel22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.metroLabel22.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroLabel22.UseCustomForeColor = true;
+            this.value.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.value.AutoSize = true;
+            this.value.BackColor = System.Drawing.Color.Transparent;
+            this.value.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.value.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.value.ForeColor = System.Drawing.Color.OrangeRed;
+            this.value.Location = new System.Drawing.Point(240, 350);
+            this.value.Name = "value";
+            this.value.Size = new System.Drawing.Size(34, 25);
+            this.value.TabIndex = 91;
+            this.value.Text = "R$";
+            this.value.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.value.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.value.UseCustomForeColor = true;
             // 
             // metroLabel21
             // 
@@ -567,7 +564,7 @@
             this.payments.HorizontalScrollbarSize = 10;
             this.payments.Location = new System.Drawing.Point(65, 288);
             this.payments.Name = "payments";
-            this.payments.Size = new System.Drawing.Size(742, 477);
+            this.payments.Size = new System.Drawing.Size(742, 398);
             this.payments.TabIndex = 87;
             this.payments.VerticalScrollbarBarColor = true;
             this.payments.VerticalScrollbarHighlightOnWheel = false;
@@ -577,6 +574,7 @@
             // 
             this.panelMoney.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMoney.Controls.Add(this.metroLabel17);
+            this.panelMoney.Controls.Add(this.money);
             this.panelMoney.HorizontalScrollbarBarColor = true;
             this.panelMoney.HorizontalScrollbarHighlightOnWheel = false;
             this.panelMoney.HorizontalScrollbarSize = 10;
@@ -587,18 +585,6 @@
             this.panelMoney.VerticalScrollbarBarColor = true;
             this.panelMoney.VerticalScrollbarHighlightOnWheel = false;
             this.panelMoney.VerticalScrollbarSize = 10;
-            // 
-            // money
-            // 
-            this.money.AutoSize = true;
-            this.money.Location = new System.Drawing.Point(37, 41);
-            this.money.Name = "money";
-            this.money.Size = new System.Drawing.Size(115, 15);
-            this.money.Style = MetroFramework.MetroColorStyle.Orange;
-            this.money.TabIndex = 75;
-            this.money.Text = "Pague na retirada";
-            this.money.UseSelectable = true;
-            this.money.Click += new System.EventHandler(this.RadioButtonSelected);
             // 
             // metroLabel17
             // 
@@ -612,13 +598,21 @@
             this.metroLabel17.Text = "Dinheiro";
             this.metroLabel17.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
+            // money
+            // 
+            this.money.AutoSize = true;
+            this.money.Location = new System.Drawing.Point(20, 35);
+            this.money.Name = "money";
+            this.money.Size = new System.Drawing.Size(115, 15);
+            this.money.Style = MetroFramework.MetroColorStyle.Orange;
+            this.money.TabIndex = 75;
+            this.money.Text = "Pague na retirada";
+            this.money.UseSelectable = true;
+            this.money.Click += new System.EventHandler(this.RadioButtonSelected);
+            // 
             // panelCard
             // 
             this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCard.Controls.Add(this.metroRadioButton3);
-            this.panelCard.Controls.Add(this.metroRadioButton2);
-            this.panelCard.Controls.Add(this.metroRadioButton1);
-            this.panelCard.Controls.Add(this.money);
             this.panelCard.Controls.Add(this.registerNewCard);
             this.panelCard.Controls.Add(this.metroLabel4);
             this.panelCard.HorizontalScrollbarBarColor = true;
@@ -626,7 +620,7 @@
             this.panelCard.HorizontalScrollbarSize = 10;
             this.panelCard.Location = new System.Drawing.Point(34, 279);
             this.panelCard.Name = "panelCard";
-            this.panelCard.Size = new System.Drawing.Size(643, 173);
+            this.panelCard.Size = new System.Drawing.Size(643, 96);
             this.panelCard.TabIndex = 82;
             this.panelCard.VerticalScrollbarBarColor = true;
             this.panelCard.VerticalScrollbarHighlightOnWheel = false;
@@ -634,7 +628,7 @@
             // 
             // registerNewCard
             // 
-            this.registerNewCard.Location = new System.Drawing.Point(292, 114);
+            this.registerNewCard.Location = new System.Drawing.Point(20, 41);
             this.registerNewCard.Name = "registerNewCard";
             this.registerNewCard.Size = new System.Drawing.Size(178, 36);
             this.registerNewCard.TabIndex = 75;
@@ -741,7 +735,7 @@
             this.hour_PickUp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.hour_PickUp.Location = new System.Drawing.Point(617, 130);
             this.hour_PickUp.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
-            this.hour_PickUp.MinimumSize = new System.Drawing.Size(0, 29);
+            this.hour_PickUp.MinimumSize = new System.Drawing.Size(4, 29);
             this.hour_PickUp.Name = "hour_PickUp";
             this.hour_PickUp.Size = new System.Drawing.Size(165, 29);
             this.hour_PickUp.Style = MetroFramework.MetroColorStyle.Orange;
@@ -795,39 +789,6 @@
             this.pick_upDate.UseStyleColors = true;
             this.pick_upDate.Value = new System.DateTime(2020, 11, 11, 20, 21, 9, 0);
             this.pick_upDate.ValueChanged += new System.EventHandler(this.Set_date);
-            // 
-            // metroRadioButton1
-            // 
-            this.metroRadioButton1.AutoSize = true;
-            this.metroRadioButton1.Location = new System.Drawing.Point(37, 106);
-            this.metroRadioButton1.Name = "metroRadioButton1";
-            this.metroRadioButton1.Size = new System.Drawing.Size(115, 15);
-            this.metroRadioButton1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroRadioButton1.TabIndex = 76;
-            this.metroRadioButton1.Text = "Pague na retirada";
-            this.metroRadioButton1.UseSelectable = true;
-            // 
-            // metroRadioButton2
-            // 
-            this.metroRadioButton2.AutoSize = true;
-            this.metroRadioButton2.Location = new System.Drawing.Point(37, 73);
-            this.metroRadioButton2.Name = "metroRadioButton2";
-            this.metroRadioButton2.Size = new System.Drawing.Size(115, 15);
-            this.metroRadioButton2.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroRadioButton2.TabIndex = 77;
-            this.metroRadioButton2.Text = "Pague na retirada";
-            this.metroRadioButton2.UseSelectable = true;
-            // 
-            // metroRadioButton3
-            // 
-            this.metroRadioButton3.AutoSize = true;
-            this.metroRadioButton3.Location = new System.Drawing.Point(37, 129);
-            this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(115, 15);
-            this.metroRadioButton3.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroRadioButton3.TabIndex = 78;
-            this.metroRadioButton3.Text = "Pague na retirada";
-            this.metroRadioButton3.UseSelectable = true;
             // 
             // Rent
             // 
@@ -898,7 +859,7 @@
         private MetroFramework.Controls.MetroDateTime hour_PickUp;
         private MetroFramework.Controls.MetroDateTime hour_DropOff;
         private MetroFramework.Controls.MetroPanel metroPanel5;
-        private MetroFramework.Controls.MetroLabel metroLabel22;
+        private MetroFramework.Controls.MetroLabel value;
         private MetroFramework.Controls.MetroLabel metroLabel21;
         private MetroFramework.Controls.MetroLabel metroLabel23;
         private MetroFramework.Controls.MetroLabel metroLabel19;
@@ -923,8 +884,5 @@
         private MetroFramework.Controls.MetroRadioButton money;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel label14;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton2;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton1;
     }
 }

@@ -95,6 +95,7 @@
     <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\Entities\Image.cs" />
     <Compile Include="Domain\Entities\Payment.cs" />
+    <Compile Include="Domain\Entities\PaymentTypeEnum.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
     <Compile Include="Domain\Entities\User.cs" />
     <Compile Include="Forms\Aluguel\Rent.cs">

@@ -69,9 +69,9 @@ namespace CarLand.Forms
                 form.ShowDialog();
                 this.Close();
             }
-            catch(Exception exp)
+            catch
             {
-                //ver erro
+                MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
     }

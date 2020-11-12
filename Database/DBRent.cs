@@ -16,14 +16,18 @@ namespace CarLand.Database
 
         public void Insert(Rent rent)
         {
-            query = $"Insert into Rent (idCar,idEmployee,idClient,PickUpTime,DropOfTime,Amount) values ({rent.idCar} , {rent.idEmployee} , {rent.idClient} , {rent.PickTime} , {rent.DropTime} , {rent.Value} )";
+            if(rent.idEmployee == 0)
+                query = $"Insert into Rent (idCar,idEmployee,idClient,PickUpTime,DropOfTime,Amount) values ({rent.idCar} , null , {rent.idClient} , '{rent.PickUpDate}' , '{rent.DropOffDate}' , {rent.Value} )";
+            else
+                query = $"Insert into Rent (idCar,idEmployee,idClient,PickUpTime,DropOfTime,Amount) values ({rent.idCar} , {rent.idEmployee} , {rent.idClient} , '{rent.PickUpDate}' , '{rent.DropOffDate}' , {rent.Value} )";
+
             _context.CommandWithoutReturn(query);
         }
 
         public void Update(Rent rent)
         {
             query = $@"Update Rent 
-                    set idCar = {rent.idCar}, idEmployee = {rent.idEmployee}, idClient = {rent.idClient}, PickUpTime = {rent.PickTime}, DropOfTime = {rent.DropTime}, Amount = {rent.Value}   
+                    set idCar = {rent.idCar}, idEmployee = {rent.idEmployee}, idClient = {rent.idClient}, PickUpTime = {rent.PickUpDate}, DropOfTime = {rent.DropOffDate}, Amount = {rent.Value}   
                     WHERE idRent = {rent.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -48,8 +52,8 @@ namespace CarLand.Database
                 idCar = reader.GetInt32(2),
                 idEmployee = reader.GetInt32(3),
                 idClient = reader.GetInt32(4),
-                PickTime = reader.GetInt32(5),
-                DropTime = reader.GetInt32(6),
+                PickUpDate = reader.GetDateTime(5),
+                DropOffDate = reader.GetDateTime(6),
                 Value = reader.GetDouble(7)
             };
         }

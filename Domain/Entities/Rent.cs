@@ -11,8 +11,10 @@ namespace CarLand.Domain.Entities
         public int idCar { get; set; }
         public int idEmployee { get; set; }
         public int idClient { get; set; }
-        public int PickTime { get; set; }
-        public int DropTime { get; set; }
+        public DateTime PickUpDate { get; set; }
+        public DateTime DropOffDate { get; set; }
         public double Value { get; set; }
+        public PaymentTypeEnum PaymentType { get; set; }
+        public int idCard { get; set; }
     }
 }
