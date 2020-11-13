@@ -118,6 +118,7 @@ namespace CarLand.Forms
             clientsTile.Theme = style;
             employeeTile.Theme = style;
             listRentTile.Theme = style;
+            metroLabel6.Theme = style;
             paymentTile.Theme = style;
             rentTile.Theme = style;
             reportTile.Theme = style;
@@ -270,7 +271,7 @@ namespace CarLand.Forms
 
         private void ShowListCar(object sender, EventArgs e)
         {
-            ListCar listCar = new ListCar();
+            Car.ListCar listCar = new Car.ListCar();
             listCar.ShowDialog();
         }
 
@@ -324,22 +325,18 @@ namespace CarLand.Forms
         private void clientsTile_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
-            this.Hide();
             clientes.ShowDialog();
-            this.Close();
         }
 
         private void employeeTile_Click(object sender, EventArgs e)
         {
             Funcionarios funcionarios = new Funcionarios();
-            this.Hide();
             funcionarios.ShowDialog();
-            this.Close();
         }
 
         private void listRentTile_Click(object sender, EventArgs e)
         {
-            AluguelCliente aluguelcliente = new AluguelCliente();
+            Client.ListCar aluguelcliente = new Client.ListCar();
             this.Hide();
             aluguelcliente.ShowDialog();
             this.Close();

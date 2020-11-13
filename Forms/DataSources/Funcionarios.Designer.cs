@@ -36,27 +36,27 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listFuncionarios = new CarLand.ListFuncionarios();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.employee = new CarLand.DataSets.Paulo.Employee();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
+            this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
+            this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
             this.mtxtSenha = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.mtxtUsuario = new MetroFramework.Controls.MetroTextBox();
             this.mtxtNome = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
-            this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
-            this.employeeTableAdapter = new CarLand.ListFuncionariosTableAdapters.EmployeeTableAdapter();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter = new CarLand.DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFuncionarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employee)).BeginInit();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -65,7 +65,7 @@
             this.metroTabControl1.Controls.Add(this.metroTabPage2);
             this.metroTabControl1.Location = new System.Drawing.Point(16, 78);
             this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 1;
+            this.metroTabControl1.SelectedIndex = 0;
             this.metroTabControl1.Size = new System.Drawing.Size(480, 291);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTabControl1.TabIndex = 0;
@@ -91,6 +91,8 @@
             // 
             // metroGrid1
             // 
+            this.metroGrid1.AllowUserToAddRows = false;
+            this.metroGrid1.AllowUserToDeleteRows = false;
             this.metroGrid1.AllowUserToResizeRows = false;
             this.metroGrid1.AutoGenerateColumns = false;
             this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
@@ -107,10 +109,8 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEmployeeDataGridViewTextBoxColumn,
-            this.employeeNameDataGridViewTextBoxColumn,
-            this.idUserDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.employeeBindingSource;
+            this.dataGridViewTextBoxColumn1});
+            this.metroGrid1.DataSource = this.employeeBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -122,8 +122,9 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroGrid1.Location = new System.Drawing.Point(27, 20);
+            this.metroGrid1.Location = new System.Drawing.Point(68, 20);
             this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
@@ -135,42 +136,34 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(410, 257);
+            this.metroGrid1.Size = new System.Drawing.Size(345, 257);
             this.metroGrid1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGrid1.TabIndex = 2;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // idEmployeeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "idEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "idEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            this.idEmployeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "EmployeeName";
+            this.dataGridViewTextBoxColumn1.FillWeight = 300F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "EmployeeName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 300;
             // 
-            // employeeNameDataGridViewTextBoxColumn
+            // employeeBindingSource1
             // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.employee;
             // 
-            // idUserDataGridViewTextBoxColumn
+            // employee
             // 
-            this.idUserDataGridViewTextBoxColumn.DataPropertyName = "idUser";
-            this.idUserDataGridViewTextBoxColumn.HeaderText = "idUser";
-            this.idUserDataGridViewTextBoxColumn.Name = "idUserDataGridViewTextBoxColumn";
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataMember = "Employee";
-            this.employeeBindingSource.DataSource = this.listFuncionarios;
-            // 
-            // listFuncionarios
-            // 
-            this.listFuncionarios.DataSetName = "ListFuncionarios";
-            this.listFuncionarios.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.employee.DataSetName = "Employee";
+            this.employee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroTabPage2
             // 
+            this.metroTabPage2.Controls.Add(this.metroLinkVoltar);
+            this.metroTabPage2.Controls.Add(this.metroLinkSalvar);
             this.metroTabPage2.Controls.Add(this.mtxtSenha);
             this.metroTabPage2.Controls.Add(this.metroLabel13);
             this.metroTabPage2.Controls.Add(this.mtxtUsuario);
@@ -189,6 +182,31 @@
             this.metroTabPage2.VerticalScrollbarBarColor = true;
             this.metroTabPage2.VerticalScrollbarHighlightOnWheel = false;
             this.metroTabPage2.VerticalScrollbarSize = 10;
+            // 
+            // metroLinkVoltar
+            // 
+            this.metroLinkVoltar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkVoltar.Image")));
+            this.metroLinkVoltar.ImageSize = 39;
+            this.metroLinkVoltar.Location = new System.Drawing.Point(386, 196);
+            this.metroLinkVoltar.Name = "metroLinkVoltar";
+            this.metroLinkVoltar.Size = new System.Drawing.Size(66, 57);
+            this.metroLinkVoltar.TabIndex = 26;
+            this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLinkVoltar.UseSelectable = true;
+            // 
+            // metroLinkSalvar
+            // 
+            this.metroLinkSalvar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.metroLinkSalvar.ForeColor = System.Drawing.Color.Black;
+            this.metroLinkSalvar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkSalvar.Image")));
+            this.metroLinkSalvar.ImageSize = 35;
+            this.metroLinkSalvar.Location = new System.Drawing.Point(335, 196);
+            this.metroLinkSalvar.Name = "metroLinkSalvar";
+            this.metroLinkSalvar.Size = new System.Drawing.Size(59, 57);
+            this.metroLinkSalvar.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLinkSalvar.TabIndex = 27;
+            this.metroLinkSalvar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLinkSalvar.UseSelectable = true;
             // 
             // mtxtSenha
             // 
@@ -323,30 +341,9 @@
             this.metroLabel12.Text = "Nome:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // metroLinkVoltar
+            // employeeBindingSource
             // 
-            this.metroLinkVoltar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkVoltar.Image")));
-            this.metroLinkVoltar.ImageSize = 39;
-            this.metroLinkVoltar.Location = new System.Drawing.Point(430, 35);
-            this.metroLinkVoltar.Name = "metroLinkVoltar";
-            this.metroLinkVoltar.Size = new System.Drawing.Size(66, 57);
-            this.metroLinkVoltar.TabIndex = 26;
-            this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLinkVoltar.UseSelectable = true;
-            // 
-            // metroLinkSalvar
-            // 
-            this.metroLinkSalvar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.metroLinkSalvar.ForeColor = System.Drawing.Color.Black;
-            this.metroLinkSalvar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkSalvar.Image")));
-            this.metroLinkSalvar.ImageSize = 35;
-            this.metroLinkSalvar.Location = new System.Drawing.Point(379, 35);
-            this.metroLinkSalvar.Name = "metroLinkSalvar";
-            this.metroLinkSalvar.Size = new System.Drawing.Size(59, 57);
-            this.metroLinkSalvar.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroLinkSalvar.TabIndex = 27;
-            this.metroLinkSalvar.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLinkSalvar.UseSelectable = true;
+            this.employeeBindingSource.DataMember = "Employee";
             // 
             // employeeTableAdapter
             // 
@@ -360,21 +357,21 @@
             this.BackImagePadding = new System.Windows.Forms.Padding(-22, 11, -1, -1);
             this.BackMaxSize = 210;
             this.ClientSize = new System.Drawing.Size(520, 416);
-            this.Controls.Add(this.metroLinkVoltar);
-            this.Controls.Add(this.metroLinkSalvar);
             this.Controls.Add(this.metroTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Funcionarios";
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Funcionarios_Load);
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listFuncionarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employee)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -393,11 +390,13 @@
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroLink metroLinkVoltar;
         private MetroFramework.Controls.MetroLink metroLinkSalvar;
-        private ListFuncionarios listFuncionarios;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private ListFuncionariosTableAdapters.EmployeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmployeeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idUserDataGridViewTextBoxColumn;
+        private DataSets.Paulo.Employee employee;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
+        private DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }

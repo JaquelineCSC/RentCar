@@ -17,7 +17,7 @@ namespace CarLand.Database
 
         private void Connect()
         {
-            cn.ConnectionString = Servers.Ramires;
+            cn.ConnectionString = Servers.Paulo;
             cn.Open();
         }
         public void CommandWithoutReturn(string sql)
@@ -72,9 +72,9 @@ namespace CarLand.Database
             return carros;
         }
 
-        public Car ConstructorCar(SqlDataReader reader)
+        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
         {
-            return new Car()
+            return new Domain.Entities.Car()
             {
                 Id = reader.GetInt32(0),
                 Color = reader.GetString(1),
@@ -87,7 +87,7 @@ namespace CarLand.Database
             };
         }
 
-        public Car GetCar(string sql)
+        public Domain.Entities.Car GetCar(string sql)
         {
             Connect();
             cd.Connection = cn;
@@ -253,5 +253,33 @@ namespace CarLand.Database
 
         #endregion
 
+        #region Employee
+
+        public Employee GetEmployeeByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Employee employee = new Employee();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                employee = ConstructorEmployee(reader);
+            }
+            cn.Close();
+            return employee;
+        }
+
+        public Employee ConstructorEmployee(SqlDataReader reader)
+        {
+            return new Employee()
+            {
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                idUser = reader.GetInt32(2),
+            };
+        }
+
+        #endregion
     }
 }

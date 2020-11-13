@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using CarLand.Domain.Entities;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,12 @@ namespace CarLand.Forms.Logout
 {
     public partial class AboutUs : MetroForm
     {
+        public User User{ get; set; }
+
         public AboutUs()
         {
             InitializeComponent();
+            User = new User();
         }
 
         private void AboutUs_Load(object sender, EventArgs e)
@@ -92,6 +96,7 @@ namespace CarLand.Forms.Logout
         private void metroLink16_Click(object sender, EventArgs e)
         {
             FrmUsuario form = new FrmUsuario();
+            form.User = User;
             this.Hide();
             form.ShowDialog();
             this.Close();

@@ -23,7 +23,6 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
-            this.carTableAdapter1.Fill(this.integradoraDataSet1.Car);
         }
 
         private void toolTip(object sender, EventArgs e)
@@ -96,6 +95,11 @@ namespace CarLand.Forms.Car
         private void metroLink4_Click(object sender, EventArgs e)
         {
             ListCar_Load(this, new EventArgs());
+        }
+
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

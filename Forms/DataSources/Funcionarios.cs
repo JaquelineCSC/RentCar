@@ -19,8 +19,9 @@ namespace CarLand.Forms
 
         private void Funcionarios_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'employee._Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.employee._Employee);
             // TODO: esta linha de código carrega dados na tabela 'listFuncionarios.Employee'. Você pode movê-la ou removê-la conforme necessário.
-            this.employeeTableAdapter.Fill(this.listFuncionarios.Employee);
 
         }
 

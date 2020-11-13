@@ -441,6 +441,7 @@
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 2;
             this.metroLabel6.Text = "Perfil";
+            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
             // Cars
             // 
@@ -452,7 +453,6 @@
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            
             this.Name = "Cars";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

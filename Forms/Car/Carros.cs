@@ -1,5 +1,7 @@
 ﻿using CarLand.Database;
+using CarLand.Forms.Admin;
 using CarLand.Forms.Aluguel;
+using CarLand.Forms.Client;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -268,6 +270,22 @@ namespace CarLand.Forms
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
+            }
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+            if (User.isAdmin)
+            {
+                ProfileAdmin form = new ProfileAdmin();
+                form.User = User;
+                form.ShowDialog();
+            }
+            else
+            {
+                Profile form = new Profile();
+                form.User = User;
+                form.ShowDialog();
             }
         }
     }

@@ -170,7 +170,7 @@
             this.paymentTile.Size = new System.Drawing.Size(129, 130);
             this.paymentTile.Style = MetroFramework.MetroColorStyle.Orange;
             this.paymentTile.TabIndex = 7;
-            this.paymentTile.Text = "Pagamentos";
+            this.paymentTile.Text = "Tabela de Preços";
             this.paymentTile.TileImage = ((System.Drawing.Image)(resources.GetObject("paymentTile.TileImage")));
             this.paymentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.paymentTile.UseSelectable = true;

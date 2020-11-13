@@ -23,7 +23,7 @@ namespace CarLand.Database
         public void Update(Employee employee)
         {
             query = $@"Update Employee 
-                    set EmployeeName = '{employee.Name}', idUser = {employee.idUser}
+                    set EmployeeName = '{employee.Name}'
                     WHERE idEmployee = {employee.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -33,21 +33,10 @@ namespace CarLand.Database
             _context.CommandWithoutReturn(query);
         }
 
-        public Employee GetWorker(string employname)
+        public Employee GetEmployee(int idUser)
         {
-            query = $"Select idEmployee from Employee where EmployeeName LIKE '" + employname + "%'";
-            var reader = _context.Consult(query);
-            return ConstructorEmployee(reader);
-        }
-
-        public Employee ConstructorEmployee(SqlDataReader reader)
-        {
-            return new Employee()
-            {
-                Id = reader.GetInt32(1),
-                Name = reader.GetString(2),
-                idUser = reader.GetInt32(3),
-            };
+            query = $"Select * from Employee where idUser = {idUser}";
+            return _context.GetEmployeeByUserId(query);
         }
     }
 }
