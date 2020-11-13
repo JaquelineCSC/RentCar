@@ -193,6 +193,7 @@
             this.ClientSize = new System.Drawing.Size(1280, 788);
             this.Controls.Add(this.metroLinkLogout);
             this.Controls.Add(this.metroTabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmUsuario";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

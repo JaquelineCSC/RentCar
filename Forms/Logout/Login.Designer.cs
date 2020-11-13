@@ -220,6 +220,7 @@ namespace CarLand.Forms
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.datetime);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

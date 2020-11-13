@@ -17,7 +17,7 @@ namespace CarLand.Database
 
         private void Connect()
         {
-            cn.ConnectionString = Servers.Paulo;
+            cn.ConnectionString = Servers.Ramires;
             cn.Open();
         }
         public void CommandWithoutReturn(string sql)

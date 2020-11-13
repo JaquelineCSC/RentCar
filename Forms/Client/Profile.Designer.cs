@@ -1,6 +1,6 @@
-﻿namespace CarLand.Forms
+﻿namespace CarLand.Forms.Client
 {
-    partial class Completar_Cadastro
+    partial class Profile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Completar_Cadastro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.iAgreeCheck = new MetroFramework.Controls.MetroCheckBox();
             this.dateOfBirth = new MetroFramework.Controls.MetroDateTime();
             this.genero = new MetroFramework.Controls.MetroComboBox();
             this.email = new MetroFramework.Controls.MetroTextBox();
@@ -47,67 +45,42 @@
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.buttonSave = new MetroFramework.Controls.MetroButton();
-            this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
-            this.manager = new MetroFramework.Components.MetroStyleManager(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.manager)).BeginInit();
+            this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
+            this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
             this.SuspendLayout();
             // 
             // dateValidateCNH
             // 
-            this.dateValidateCNH.Location = new System.Drawing.Point(265, 277);
+            this.dateValidateCNH.Location = new System.Drawing.Point(245, 297);
             this.dateValidateCNH.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateValidateCNH.Name = "dateValidateCNH";
             this.dateValidateCNH.Size = new System.Drawing.Size(223, 29);
             this.dateValidateCNH.Style = MetroFramework.MetroColorStyle.Orange;
-            this.dateValidateCNH.TabIndex = 60;
+            this.dateValidateCNH.TabIndex = 86;
             this.dateValidateCNH.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.dateValidateCNH.UseStyleColors = true;
-            this.dateValidateCNH.ValueChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel9.Location = new System.Drawing.Point(265, 255);
+            this.metroLabel9.Location = new System.Drawing.Point(245, 275);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(143, 19);
-            this.metroLabel9.TabIndex = 59;
+            this.metroLabel9.TabIndex = 85;
             this.metroLabel9.Text = "Data de Validade CNH:";
             this.metroLabel9.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // iAgreeCheck
-            // 
-            this.iAgreeCheck.AutoSize = true;
-            this.iAgreeCheck.Location = new System.Drawing.Point(69, 368);
-            this.iAgreeCheck.Name = "iAgreeCheck";
-            this.iAgreeCheck.Size = new System.Drawing.Size(394, 15);
-            this.iAgreeCheck.Style = MetroFramework.MetroColorStyle.Orange;
-            this.iAgreeCheck.TabIndex = 58;
-            this.iAgreeCheck.Text = "Li, entendi e concordo com os Termos de Uso e Política de Privacidade";
-            this.iAgreeCheck.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.iAgreeCheck.UseSelectable = true;
-            this.iAgreeCheck.UseStyleColors = true;
-            this.iAgreeCheck.Click += new System.EventHandler(this.verificarPreenchimento);
-            // 
             // dateOfBirth
             // 
-            this.dateOfBirth.Location = new System.Drawing.Point(555, 123);
+            this.dateOfBirth.Location = new System.Drawing.Point(535, 143);
             this.dateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(223, 29);
             this.dateOfBirth.Style = MetroFramework.MetroColorStyle.Orange;
-            this.dateOfBirth.TabIndex = 57;
+            this.dateOfBirth.TabIndex = 83;
             this.dateOfBirth.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.dateOfBirth.UseStyleColors = true;
-            this.dateOfBirth.ValueChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // genero
             // 
@@ -117,15 +90,14 @@
             "Masculino",
             "Feminino",
             "Prefiro não mencionar"});
-            this.genero.Location = new System.Drawing.Point(466, 200);
+            this.genero.Location = new System.Drawing.Point(446, 220);
             this.genero.Name = "genero";
             this.genero.Size = new System.Drawing.Size(180, 29);
             this.genero.Style = MetroFramework.MetroColorStyle.Orange;
-            this.genero.TabIndex = 56;
+            this.genero.TabIndex = 82;
             this.genero.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.genero.UseSelectable = true;
             this.genero.UseStyleColors = true;
-            this.genero.SelectedIndexChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // email
             // 
@@ -142,7 +114,7 @@
             this.email.CustomButton.UseSelectable = true;
             this.email.CustomButton.Visible = false;
             this.email.Lines = new string[0];
-            this.email.Location = new System.Drawing.Point(312, 123);
+            this.email.Location = new System.Drawing.Point(292, 143);
             this.email.MaxLength = 32767;
             this.email.Multiline = true;
             this.email.Name = "email";
@@ -154,13 +126,12 @@
             this.email.ShortcutsEnabled = true;
             this.email.Size = new System.Drawing.Size(223, 29);
             this.email.Style = MetroFramework.MetroColorStyle.Orange;
-            this.email.TabIndex = 55;
+            this.email.TabIndex = 81;
             this.email.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.email.UseSelectable = true;
             this.email.UseStyleColors = true;
             this.email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.email.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // telefone
             // 
@@ -177,7 +148,7 @@
             this.telefone.CustomButton.UseSelectable = true;
             this.telefone.CustomButton.Visible = false;
             this.telefone.Lines = new string[0];
-            this.telefone.Location = new System.Drawing.Point(280, 200);
+            this.telefone.Location = new System.Drawing.Point(260, 220);
             this.telefone.MaxLength = 32767;
             this.telefone.Multiline = true;
             this.telefone.Name = "telefone";
@@ -189,13 +160,12 @@
             this.telefone.ShortcutsEnabled = true;
             this.telefone.Size = new System.Drawing.Size(151, 29);
             this.telefone.Style = MetroFramework.MetroColorStyle.Orange;
-            this.telefone.TabIndex = 54;
+            this.telefone.TabIndex = 80;
             this.telefone.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.telefone.UseSelectable = true;
             this.telefone.UseStyleColors = true;
             this.telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.telefone.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // cnh
             // 
@@ -211,12 +181,14 @@
             this.cnh.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cnh.CustomButton.UseSelectable = true;
             this.cnh.CustomButton.Visible = false;
+            this.cnh.Enabled = false;
             this.cnh.Lines = new string[0];
-            this.cnh.Location = new System.Drawing.Point(69, 277);
+            this.cnh.Location = new System.Drawing.Point(49, 297);
             this.cnh.MaxLength = 32767;
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
+            this.cnh.ReadOnly = true;
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -224,13 +196,12 @@
             this.cnh.ShortcutsEnabled = true;
             this.cnh.Size = new System.Drawing.Size(155, 29);
             this.cnh.Style = MetroFramework.MetroColorStyle.Orange;
-            this.cnh.TabIndex = 53;
+            this.cnh.TabIndex = 79;
             this.cnh.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cnh.UseSelectable = true;
             this.cnh.UseStyleColors = true;
             this.cnh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cnh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.cnh.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // cpf
             // 
@@ -246,12 +217,14 @@
             this.cpf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.cpf.CustomButton.UseSelectable = true;
             this.cpf.CustomButton.Visible = false;
+            this.cpf.Enabled = false;
             this.cpf.Lines = new string[0];
-            this.cpf.Location = new System.Drawing.Point(69, 200);
+            this.cpf.Location = new System.Drawing.Point(49, 220);
             this.cpf.MaxLength = 32767;
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
+            this.cpf.ReadOnly = true;
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;
@@ -259,13 +232,12 @@
             this.cpf.ShortcutsEnabled = true;
             this.cpf.Size = new System.Drawing.Size(169, 29);
             this.cpf.Style = MetroFramework.MetroColorStyle.Orange;
-            this.cpf.TabIndex = 52;
+            this.cpf.TabIndex = 78;
             this.cpf.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cpf.UseSelectable = true;
             this.cpf.UseStyleColors = true;
             this.cpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cpf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.cpf.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // name
             // 
@@ -282,7 +254,7 @@
             this.name.CustomButton.UseSelectable = true;
             this.name.CustomButton.Visible = false;
             this.name.Lines = new string[0];
-            this.name.Location = new System.Drawing.Point(69, 123);
+            this.name.Location = new System.Drawing.Point(49, 143);
             this.name.MaxLength = 32767;
             this.name.Multiline = true;
             this.name.Name = "name";
@@ -294,22 +266,21 @@
             this.name.ShortcutsEnabled = true;
             this.name.Size = new System.Drawing.Size(223, 29);
             this.name.Style = MetroFramework.MetroColorStyle.Orange;
-            this.name.TabIndex = 51;
+            this.name.TabIndex = 77;
             this.name.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.name.UseSelectable = true;
             this.name.UseStyleColors = true;
             this.name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.name.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel8.Location = new System.Drawing.Point(466, 178);
+            this.metroLabel8.Location = new System.Drawing.Point(446, 198);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(55, 19);
-            this.metroLabel8.TabIndex = 50;
+            this.metroLabel8.TabIndex = 76;
             this.metroLabel8.Text = "Gênero:";
             this.metroLabel8.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -317,10 +288,10 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel7.Location = new System.Drawing.Point(312, 101);
+            this.metroLabel7.Location = new System.Drawing.Point(292, 121);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel7.TabIndex = 49;
+            this.metroLabel7.TabIndex = 75;
             this.metroLabel7.Text = "E-mail:";
             this.metroLabel7.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -328,10 +299,10 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel6.Location = new System.Drawing.Point(280, 178);
+            this.metroLabel6.Location = new System.Drawing.Point(260, 198);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(60, 19);
-            this.metroLabel6.TabIndex = 48;
+            this.metroLabel6.TabIndex = 74;
             this.metroLabel6.Text = "Telefone:";
             this.metroLabel6.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -339,10 +310,10 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel5.Location = new System.Drawing.Point(555, 101);
+            this.metroLabel5.Location = new System.Drawing.Point(535, 121);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(131, 19);
-            this.metroLabel5.TabIndex = 47;
+            this.metroLabel5.TabIndex = 73;
             this.metroLabel5.Text = "Data de Nascimento:";
             this.metroLabel5.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -350,10 +321,10 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel4.Location = new System.Drawing.Point(69, 255);
+            this.metroLabel4.Location = new System.Drawing.Point(49, 275);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(40, 19);
-            this.metroLabel4.TabIndex = 46;
+            this.metroLabel4.TabIndex = 72;
             this.metroLabel4.Text = "CNH:";
             this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -361,10 +332,10 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel3.Location = new System.Drawing.Point(69, 178);
+            this.metroLabel3.Location = new System.Drawing.Point(49, 198);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(36, 19);
-            this.metroLabel3.TabIndex = 45;
+            this.metroLabel3.TabIndex = 71;
             this.metroLabel3.Text = "CPF:";
             this.metroLabel3.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
@@ -372,148 +343,50 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.Location = new System.Drawing.Point(69, 101);
+            this.metroLabel1.Location = new System.Drawing.Point(49, 121);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(49, 19);
-            this.metroLabel1.TabIndex = 44;
+            this.metroLabel1.TabIndex = 70;
             this.metroLabel1.Text = "Nome:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // buttonSave
+            // metroLinkVoltar
             // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonSave.Location = new System.Drawing.Point(613, 338);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(105, 45);
-            this.buttonSave.TabIndex = 61;
-            this.buttonSave.Text = "Cadastrar";
-            this.buttonSave.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.buttonSave.UseCustomBackColor = true;
-            this.buttonSave.UseSelectable = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            this.metroLinkVoltar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkVoltar.Image")));
+            this.metroLinkVoltar.ImageSize = 39;
+            this.metroLinkVoltar.Location = new System.Drawing.Point(659, 27);
+            this.metroLinkVoltar.Name = "metroLinkVoltar";
+            this.metroLinkVoltar.Size = new System.Drawing.Size(66, 57);
+            this.metroLinkVoltar.TabIndex = 87;
+            this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLinkVoltar.UseSelectable = true;
             // 
-            // metroLabel2
+            // metroLinkSalvar
             // 
-            this.metroLabel2.AutoSize = true;
-            this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel2.Location = new System.Drawing.Point(113, 101);
-            this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel2.TabIndex = 62;
-            this.metroLabel2.Text = "*";
-            this.metroLabel2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel2.UseCustomForeColor = true;
+            this.metroLinkSalvar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.metroLinkSalvar.ForeColor = System.Drawing.Color.Black;
+            this.metroLinkSalvar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkSalvar.Image")));
+            this.metroLinkSalvar.ImageSize = 32;
+            this.metroLinkSalvar.Location = new System.Drawing.Point(718, 27);
+            this.metroLinkSalvar.Name = "metroLinkSalvar";
+            this.metroLinkSalvar.Size = new System.Drawing.Size(59, 57);
+            this.metroLinkSalvar.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroLinkSalvar.TabIndex = 88;
+            this.metroLinkSalvar.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLinkSalvar.UseSelectable = true;
             // 
-            // metroLabel10
-            // 
-            this.metroLabel10.AutoSize = true;
-            this.metroLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel10.Location = new System.Drawing.Point(103, 255);
-            this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel10.TabIndex = 63;
-            this.metroLabel10.Text = "*";
-            this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel10.UseCustomForeColor = true;
-            // 
-            // metroLabel11
-            // 
-            this.metroLabel11.AutoSize = true;
-            this.metroLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel11.Location = new System.Drawing.Point(103, 178);
-            this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel11.TabIndex = 64;
-            this.metroLabel11.Text = "*";
-            this.metroLabel11.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel11.UseCustomForeColor = true;
-            // 
-            // metroLabel12
-            // 
-            this.metroLabel12.AutoSize = true;
-            this.metroLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel12.Location = new System.Drawing.Point(336, 178);
-            this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel12.TabIndex = 65;
-            this.metroLabel12.Text = "*";
-            this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel12.UseCustomForeColor = true;
-            // 
-            // metroLabel13
-            // 
-            this.metroLabel13.AutoSize = true;
-            this.metroLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel13.Location = new System.Drawing.Point(520, 178);
-            this.metroLabel13.Name = "metroLabel13";
-            this.metroLabel13.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel13.TabIndex = 66;
-            this.metroLabel13.Text = "*";
-            this.metroLabel13.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel13.UseCustomForeColor = true;
-            // 
-            // metroLabel14
-            // 
-            this.metroLabel14.AutoSize = true;
-            this.metroLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel14.Location = new System.Drawing.Point(681, 101);
-            this.metroLabel14.Name = "metroLabel14";
-            this.metroLabel14.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel14.TabIndex = 67;
-            this.metroLabel14.Text = "*";
-            this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel14.UseCustomForeColor = true;
-            // 
-            // metroLabel15
-            // 
-            this.metroLabel15.AutoSize = true;
-            this.metroLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel15.Location = new System.Drawing.Point(359, 101);
-            this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel15.TabIndex = 68;
-            this.metroLabel15.Text = "*";
-            this.metroLabel15.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel15.UseCustomForeColor = true;
-            // 
-            // metroLabel16
-            // 
-            this.metroLabel16.AutoSize = true;
-            this.metroLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel16.Location = new System.Drawing.Point(404, 255);
-            this.metroLabel16.Name = "metroLabel16";
-            this.metroLabel16.Size = new System.Drawing.Size(15, 19);
-            this.metroLabel16.TabIndex = 69;
-            this.metroLabel16.Text = "*";
-            this.metroLabel16.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroLabel16.UseCustomForeColor = true;
-            // 
-            // manager
-            // 
-            this.manager.Owner = null;
-            this.manager.Style = MetroFramework.MetroColorStyle.Orange;
-            this.manager.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // Completar_Cadastro
+            // Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
-            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
-            this.BackMaxSize = 270;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.metroLabel16);
-            this.Controls.Add(this.metroLabel15);
-            this.Controls.Add(this.metroLabel14);
-            this.Controls.Add(this.metroLabel13);
-            this.Controls.Add(this.metroLabel12);
-            this.Controls.Add(this.metroLabel11);
-            this.Controls.Add(this.metroLabel10);
-            this.Controls.Add(this.metroLabel2);
-            this.Controls.Add(this.buttonSave);
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 11, -1, -1);
+            this.BackMaxSize = 240;
+            this.ClientSize = new System.Drawing.Size(800, 414);
+            this.Controls.Add(this.metroLinkVoltar);
+            this.Controls.Add(this.metroLinkSalvar);
             this.Controls.Add(this.dateValidateCNH);
             this.Controls.Add(this.metroLabel9);
-            this.Controls.Add(this.iAgreeCheck);
             this.Controls.Add(this.dateOfBirth);
             this.Controls.Add(this.genero);
             this.Controls.Add(this.email);
@@ -528,22 +401,19 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Completar_Cadastro";
+            this.Name = "Profile";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
-            ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
+            this.Load += new System.EventHandler(this.Profile_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private MetroFramework.Controls.MetroDateTime dateValidateCNH;
         private MetroFramework.Controls.MetroLabel metroLabel9;
-        private MetroFramework.Controls.MetroCheckBox iAgreeCheck;
         private MetroFramework.Controls.MetroDateTime dateOfBirth;
         private MetroFramework.Controls.MetroComboBox genero;
         private MetroFramework.Controls.MetroTextBox email;
@@ -558,15 +428,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private MetroFramework.Controls.MetroButton buttonSave;
-        private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroLabel metroLabel12;
-        private MetroFramework.Controls.MetroLabel metroLabel13;
-        private MetroFramework.Controls.MetroLabel metroLabel14;
-        private MetroFramework.Controls.MetroLabel metroLabel15;
-        private MetroFramework.Controls.MetroLabel metroLabel16;
-        private MetroFramework.Components.MetroStyleManager manager;
+        private MetroFramework.Controls.MetroLink metroLinkVoltar;
+        private MetroFramework.Controls.MetroLink metroLinkSalvar;
     }
 }

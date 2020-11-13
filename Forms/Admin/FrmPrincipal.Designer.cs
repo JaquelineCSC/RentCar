@@ -143,6 +143,7 @@
             this.listRentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.listRentTile.UseSelectable = true;
             this.listRentTile.UseTileImage = true;
+            this.listRentTile.Click += new System.EventHandler(this.listRentTile_Click);
             // 
             // rentTile
             // 
@@ -190,6 +191,7 @@
             this.clientsTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.clientsTile.UseSelectable = true;
             this.clientsTile.UseTileImage = true;
+            this.clientsTile.Click += new System.EventHandler(this.clientsTile_Click);
             // 
             // employeeTile
             // 
@@ -206,6 +208,7 @@
             this.employeeTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.employeeTile.UseSelectable = true;
             this.employeeTile.UseTileImage = true;
+            this.employeeTile.Click += new System.EventHandler(this.employeeTile_Click);
             // 
             // settingsTile
             // 
@@ -609,6 +612,7 @@
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.metroLinkLogout);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
