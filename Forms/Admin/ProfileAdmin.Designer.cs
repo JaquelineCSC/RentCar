@@ -191,7 +191,6 @@
             this.password.Multiline = true;
             this.password.Name = "password";
             this.password.PasswordChar = '\0';
-            this.password.PromptText = "****************";
             this.password.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.password.SelectedText = "";
             this.password.SelectionLength = 0;
@@ -227,7 +226,6 @@
             this.metroTextBox1.Multiline = true;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "****************";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -263,7 +261,6 @@
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "****************";
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;

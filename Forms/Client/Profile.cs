@@ -32,21 +32,21 @@ namespace CarLand.Forms.Client
 
         private void Profile_Load(object sender, EventArgs e)
         {
-            FullClient =_appClient.GetClientCardCNHByUser(User.Id);
+            FullClient =_appClient.GetClientCNHByUser(User.Id);
             if(FullClient != null)
             {
                 name.Text = FullClient.Client.Name;
                 email.Text = FullClient.Client.Email;
-                dateOfBirth.Text = string.Format(CultureInfo.CurrentCulture, "dd/MM/yyyy", FullClient.Client.DateOfBirth);
+                dateOfBirth.Text = FullClient.Client.DateOfBirth.ToString("dd/MM/yyyy");
                 cpf.Text = FullClient.Client.CPF.ToString();
                 phone.Text = FullClient.Client.Phone.ToString();
-                gener.SelectedText = FullClient.Client.Genero;
+                gener.SelectedItem = FullClient.Client.Genero;
                 cnh.Text = FullClient.CNH.Number.ToString();
-                dateValidateCNH.Text = string.Format(CultureInfo.CurrentCulture, "dd/MM/yyyy", FullClient.CNH.ValidateDate);
+                dateValidateCNH.Text = FullClient.CNH.ValidateDate.ToString("dd/MM/yyyy");
             }
             else
             {
-                MetroMessageBox.Show(this, "Erro ao abrir perfil por favor tente novamente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
                 this.Close();
             }
         }
@@ -60,17 +60,23 @@ namespace CarLand.Forms.Client
                 FullClient.Client.DateOfBirth = DateTime.Parse(dateOfBirth.Text);
                 FullClient.Client.CPF = long.Parse(cpf.Text);
                 FullClient.Client.Phone = long.Parse(phone.Text);
-                FullClient.Client.Genero = gener.SelectedValue.ToString();
-                FullClient.CNH.Number = int.Parse(cnh.Text);
+                FullClient.Client.Genero = gener.SelectedItem.ToString();
+                FullClient.CNH.Name = FullClient.Client.Name;
+                FullClient.CNH.Number = long.Parse(cnh.Text);
                 FullClient.CNH.ValidateDate = DateTime.Parse(dateValidateCNH.Text);
                 _appClient.Update(FullClient.Client);
                 _appCNH.Update(FullClient.CNH);
                 MetroMessageBox.Show(this, "Perfil atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
             }
-            catch (Exception exp)
+            catch
             {
-                MetroMessageBox.Show(this, "Ocorreu erro inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
+        }
+
+        private void metroLinkVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

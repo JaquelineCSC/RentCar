@@ -37,7 +37,7 @@ namespace CarLand.Forms
             }
             if (password != "" && username != "")
             {
-                var user = _appUser.GetUser(username, password);
+                var user = _appUser.GetUser(userName: username, password: password);
                 if (user.Id != 0)
                 {
                     if (user.isAdmin)

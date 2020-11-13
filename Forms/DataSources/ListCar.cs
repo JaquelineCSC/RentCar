@@ -97,9 +97,5 @@ namespace CarLand.Forms.Car
             ListCar_Load(this, new EventArgs());
         }
 
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

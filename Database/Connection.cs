@@ -106,7 +106,7 @@ namespace CarLand.Database
 
         #region User
 
-        public User GetUserByName(string sql)
+        public User GetUser(string sql)
         {
             Connect();
             cd.Connection = cn;
@@ -198,6 +198,21 @@ namespace CarLand.Database
             return client;
         }
 
+        public Client GetClientByEmail(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Client client = new Client();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                client = ConstructorClient(reader);
+            }
+            cn.Close();
+            return client;
+        }
+
         public Client ConstructorClient(SqlDataReader reader)
         {
             return new Client()
@@ -227,6 +242,7 @@ namespace CarLand.Database
                 ValidateDate = reader.GetDateTime(i + 3),
             };
         }
+
         #endregion
 
         #region InnerJoins
@@ -249,6 +265,22 @@ namespace CarLand.Database
             }
             cn.Close();
             return clientCardCNH;
+        }
+
+        public ClientCardCNH GetClientCNHByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            ClientCardCNH clientCNH = new ClientCardCNH();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                clientCNH.Client = ConstructorClient(reader);
+                clientCNH.CNH = ConstructorCNH(reader, 9);
+            }
+            cn.Close();
+            return clientCNH;
         }
 
         #endregion
@@ -277,6 +309,38 @@ namespace CarLand.Database
                 Id = reader.GetInt32(0),
                 Name = reader.GetString(1),
                 idUser = reader.GetInt32(2),
+            };
+        }
+
+        #endregion
+
+        #region Card
+
+        public List<Card> GetCard(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            List<Card> cards = new List<Card>();
+            SqlDataReader reader = cd.ExecuteReader();
+            while (reader.Read())
+            {
+                cards.Add(ConstructorCard(reader));
+            }
+            cn.Close();
+            return cards;
+        }
+
+        public Card ConstructorCard(SqlDataReader reader)
+        {
+            return new Card()
+            {
+                Id = reader.GetInt32(1),
+                idClient = reader.GetInt32(2),
+                Name = reader.GetString(3),
+                Number = reader.GetInt32(4),
+                CVC = reader.GetInt32(5),
+                ValidateDate = reader.GetDateTime(6)
             };
         }
 

@@ -73,7 +73,7 @@ namespace CarLand.Forms.Client
             }
             catch
             {
-                MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contrato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
 
         }

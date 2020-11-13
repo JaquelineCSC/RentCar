@@ -14,6 +14,8 @@ namespace CarLand.Domain.Entities
 
         public ClientCardCNH()
         {
+            Client = new Client();
+            CNH = new CNH();
             Card = new List<Card>();
         }
     }

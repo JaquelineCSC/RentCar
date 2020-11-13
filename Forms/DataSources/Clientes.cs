@@ -1,12 +1,15 @@
 ﻿using CarLand.Database;
 using CarLand.Domain.Entities;
 using System;
+using System.Data;
 using System.Runtime.CompilerServices;
 
 namespace CarLand.Forms
 {
     public partial class Clientes : MetroFramework.Forms.MetroForm
     {
+        public User User { get; set; }
+        public DataRowView RowView { get; set; }
         public DBUser _appUser { get; set; }
         public DBClient _appClient { get; set; }
         public DBCNH _appCNH { get; set; }
@@ -14,6 +17,7 @@ namespace CarLand.Forms
         public Clientes()
         {
             InitializeComponent();
+            User = new User();
             _appClient = new DBClient();
             _appCNH = new DBCNH();
             _appUser = new DBUser();
@@ -60,12 +64,39 @@ namespace CarLand.Forms
                 Client.CNH_Id = idCNH;
                 Client.User_Id = idUser;
                 _appClient.Insert(Client);
-                MetroFramework.MetroMessageBox.Show(this,"","",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question,100);
+                MetroFramework.MetroMessageBox.Show(this,"Cliente Cadastrado com sucesso","Sucesso",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question,100);
                 this.Close();
             }
-            catch (Exception exp)
+            catch
             {
+                MetroFramework.MetroMessageBox.Show(this,"Erro inesperado. Por favor entre em contato com seu administrador","Erro",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question,100);
+            }
+        }
 
+        private void rentLink_Click(object sender, EventArgs e)
+        {
+            if(RowView != null)
+            {
+                Cars form = new Cars();
+                var client = _appClient.GetClientByEmail(RowView["Email"].ToString());
+                form.User = User;
+                form.Client = client;
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                MetroFramework.MetroMessageBox.Show(this,"Selecione um cliente para criar um novo aluguel","Atenção",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning,100);
+            }
+
+        }
+
+        private void metroGrid1_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        {
+            if (metroGrid1.SelectedRows.Count > 0)
+            {
+                RowView = (DataRowView)metroGrid1.Rows[metroGrid1.SelectedRows[0].Index].DataBoundItem;
             }
         }
     }

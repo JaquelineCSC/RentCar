@@ -21,17 +21,21 @@ namespace CarLand.Forms.Aluguel
         public DBImage _appImage { get; set; }
         public DBClient _appClient { get; set; }
         public DBRent _appRent { get; set; }
+        public DBCard _appCard { get; set; }
+        public DBUser _appUser { get; set; }
         public RadioButton Billet { get; set; }
         public IEnumerable<RadioButton> Card { get; set; }
         public RadioButton Money { get; set; }
 
-        public Rent(Domain.Entities.Car car, User user)
+        public Rent(Domain.Entities.Car car, User user, Domain.Entities.Client client = null)
         {
             InitializeComponent();
 
             _appImage = new DBImage();
             _appClient = new DBClient();
             _appRent = new DBRent();
+            _appCard = new DBCard();
+            _appUser = new DBUser();
 
             Images = new List<Image>();
             User = new User();
@@ -42,7 +46,15 @@ namespace CarLand.Forms.Aluguel
             User = user;
 
             Images = _appImage.GetImages(car.Id);
-            FullClient = _appClient.GetClientCardCNHByUser(User.Id);
+            if (User.isAdmin)
+                FullClient = _appClient.GetClientCNHByUser(client.User_Id);
+            else
+                FullClient = _appClient.GetClientCNHByUser(User.Id);
+
+            List<Card> cards = new List<Card>();
+            cards = _appCard.GetCard(FullClient.Client.Id);
+
+            FullClient.Card.AddRange(cards);
 
             hour_PickUp.MinDate = DateTime.Now;
             hour_PickUp.Value = DateTime.Now;
@@ -89,7 +101,7 @@ namespace CarLand.Forms.Aluguel
                     registerNewCard.Location = new System.Drawing.Point(registerNewCard.Location.X, registerNewCard.Location.Y + 29);
                     payments.Size = new System.Drawing.Size(payments.Size.Width, payments.Size.Height + 28);
                     i++;
-                    if(i == 4)
+                    if (i == 4)
                     {
                         break;
                     }
@@ -171,7 +183,7 @@ namespace CarLand.Forms.Aluguel
                 payment = billet;
                 paymentType = PaymentTypeEnum.Billet;
             }
-            else if(money.Checked)
+            else if (money.Checked)
             {
                 payment = money;
                 paymentType = PaymentTypeEnum.Money;
@@ -183,7 +195,8 @@ namespace CarLand.Forms.Aluguel
             }
 
 
-            Domain.Entities.Rent rent = new Domain.Entities.Rent() {
+            Domain.Entities.Rent rent = new Domain.Entities.Rent()
+            {
                 idCar = Car.Id,
                 idClient = FullClient.Client.Id,
                 PickUpDate = pick_upDate.Value,
@@ -192,7 +205,7 @@ namespace CarLand.Forms.Aluguel
                 PaymentType = paymentType,
             };
 
-            if(rent.PaymentType == PaymentTypeEnum.Card)
+            if (rent.PaymentType == PaymentTypeEnum.Card)
             {
                 rent.idCard = payment.TabIndex;
             }
@@ -227,7 +240,11 @@ namespace CarLand.Forms.Aluguel
         private void metroButton1_Click(object sender, EventArgs e)
         {
             NewCard form = new NewCard();
-            form.User = User;
+            if (User.isAdmin)
+                form.User = _appUser.GetUser(id: FullClient.Client.User_Id);
+            else
+                form.User = User;
+
             form.ShowDialog();
         }
 

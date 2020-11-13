@@ -325,7 +325,10 @@ namespace CarLand.Forms
         private void clientsTile_Click(object sender, EventArgs e)
         {
             Clientes clientes = new Clientes();
+            this.Hide();
+            clientes.User = User;
             clientes.ShowDialog();
+            this.Close();
         }
 
         private void employeeTile_Click(object sender, EventArgs e)

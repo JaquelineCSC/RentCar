@@ -34,13 +34,13 @@ namespace CarLand.Database
             _context.CommandWithoutReturn(query);
         }
 
-        public User GetUser(string userName, string password = "")
+        public User GetUser(string userName = "", string password = "", int id = 0)
         {
-            if(password == "")
-                query = $@"select * from Users where userName like '{userName}'";
+            if(id == 0)
+                query = $@"select * from Users where username like '%{userName}%' and password like '%{password}%'";
             else
-                query = $@"select * from Users where username like '{userName}' and password = '{password}'";
-            return _context.GetUserByName(query);
+                query = $@"select * from Users where idUser = {id}";
+            return _context.GetUser(query);
         }
 
     }

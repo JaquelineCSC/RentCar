@@ -360,6 +360,7 @@
             this.metroLinkVoltar.TabIndex = 87;
             this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLinkVoltar.UseSelectable = true;
+            this.metroLinkVoltar.Click += new System.EventHandler(this.metroLinkVoltar_Click);
             // 
             // metroLinkSalvar
             // 

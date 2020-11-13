@@ -23,7 +23,7 @@ namespace CarLand.Database
         public void Update(CNH cnh)
         {
             query = $@"Update CNH 
-                    set CNHname = '{cnh.Name}', CNHnumber = {cnh.Number}, validateDate = {cnh.ValidateDate} 
+                    set CNHname = '{cnh.Name}', CNHnumber = {cnh.Number}, validateDate = '{cnh.ValidateDate} '
                     WHERE idCNH = {cnh.Id}";
             _context.CommandWithoutReturn(query);
         }
