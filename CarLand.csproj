@@ -352,6 +352,9 @@
     <Folder Include="Images\" />
     <Folder Include="Resources\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database\Imagens Eye\invisible.png" />
+    <Content Include="Database\Imagens Eye\visibilidade.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

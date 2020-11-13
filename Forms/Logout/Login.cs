@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -88,6 +89,28 @@ namespace CarLand.Forms
             this.Hide();
             car.ShowDialog();
             this.Close();
+        }
+
+        private void metroTextBox2_ButtonClick(object sender, EventArgs e)
+        {
+            if (metroTextBox2.CustomButton.TabIndex == 1)
+            {
+                metroTextBox2.UseSystemPasswordChar = true;
+                metroTextBox2.CustomButton.Image = System.Drawing.Image.FromFile(Path.Combine(@"C:\Repositorio\RentCar\Database\Imagens Eye\", "visibilidade.png"));
+                metroTextBox2.CustomButton.TabIndex = 2;
+            }
+            else
+            {
+                metroTextBox2.UseSystemPasswordChar = false;
+                metroTextBox2.CustomButton.Image = System.Drawing.Image.FromFile(Path.Combine(@"C:\Repositorio\RentCar\Database\Imagens Eye\", "invisible.png"));
+                metroTextBox2.CustomButton.TabIndex = 1;
+            }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            metroTextBox2.CustomButton.Image = System.Drawing.Image.FromFile(Path.Combine(@"C:\Repositorio\RentCar\Database\Imagens Eye\","invisible.png"));
+            metroTextBox2.CustomButton.TabIndex = 1;
         }
     }
 }

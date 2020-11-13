@@ -60,6 +60,7 @@
             this.mtxtSenhaClientes.MaxLength = 32767;
             this.mtxtSenhaClientes.Name = "mtxtSenhaClientes";
             this.mtxtSenhaClientes.PasswordChar = '\0';
+            this.mtxtSenhaClientes.PromptText = "Senha";
             this.mtxtSenhaClientes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtSenhaClientes.SelectedText = "";
             this.mtxtSenhaClientes.SelectionLength = 0;
@@ -96,6 +97,7 @@
             this.mtxtUsuarioClientes.MaxLength = 32767;
             this.mtxtUsuarioClientes.Name = "mtxtUsuarioClientes";
             this.mtxtUsuarioClientes.PasswordChar = '\0';
+            this.mtxtUsuarioClientes.PromptText = "Usuário";
             this.mtxtUsuarioClientes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtUsuarioClientes.SelectedText = "";
             this.mtxtUsuarioClientes.SelectionLength = 0;
@@ -132,6 +134,7 @@
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
+            this.metroTextBox1.PromptText = "Confirmar Senha";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;

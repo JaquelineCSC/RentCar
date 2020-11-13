@@ -211,6 +211,7 @@
             this.metroLink1.TabIndex = 6;
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroTextBox1
             // 
@@ -452,7 +453,6 @@
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            
             this.Name = "Cars";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
