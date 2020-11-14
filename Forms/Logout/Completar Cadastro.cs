@@ -64,5 +64,10 @@ namespace CarLand.Forms
                 //ver erro
             }
         }
+
+        private void Completar_Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

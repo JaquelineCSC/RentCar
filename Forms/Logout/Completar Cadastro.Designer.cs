@@ -533,6 +533,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.Completar_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
