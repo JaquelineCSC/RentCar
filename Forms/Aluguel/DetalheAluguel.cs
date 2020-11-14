@@ -17,6 +17,7 @@ namespace CarLand.Forms.Aluguel
         public DetalheAluguel()
         {
             InitializeComponent();
+            Rent = new Domain.Entities.Rent();
         }
 
         private void DetalheAluguel_Load(object sender, EventArgs e)

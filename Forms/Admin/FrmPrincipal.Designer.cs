@@ -128,6 +128,7 @@
             this.reportTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.reportTile.UseSelectable = true;
             this.reportTile.UseTileImage = true;
+            this.reportTile.Click += new System.EventHandler(this.reportTile_Click);
             // 
             // listRentTile
             // 

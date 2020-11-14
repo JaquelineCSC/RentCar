@@ -340,5 +340,11 @@ namespace CarLand.Forms
             Client.ListCar aluguelcliente = new Client.ListCar();
             aluguelcliente.ShowDialog();
         }
+
+        private void reportTile_Click(object sender, EventArgs e)
+        {
+            Admin.Reports form = new Admin.Reports();
+            form.ShowDialog();
+        }
     }
 }

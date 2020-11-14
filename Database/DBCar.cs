@@ -43,6 +43,12 @@ namespace CarLand.Database
             return _context.GetCar(query);
         }
 
+        public DataSet Report()
+        {
+            query = "Select * from Car";
+            return _context.ReportCars(query);
+        }
+
         public List<Car> List()
         {
             query = "SELECT * FROM Car";

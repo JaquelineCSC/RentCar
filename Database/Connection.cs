@@ -345,5 +345,32 @@ namespace CarLand.Database
         }
 
         #endregion
+
+        #region Reports
+
+        public DataSet ReportRent(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public DataSet ReportCars(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        #endregion
+
     }
 }

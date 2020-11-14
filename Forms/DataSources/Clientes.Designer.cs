@@ -43,7 +43,7 @@
             this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientCNHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.client = new CarLand.DataSets.Paulo.Client();
+            this.client = new CarLand.Forms.DataSets.Paulo.Client();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
             this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
@@ -67,7 +67,7 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.clientCNHTableAdapter = new CarLand.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter();
+            this.clientCNHTableAdapter = new CarLand.Forms.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.rentLink = new MetroFramework.Controls.MetroLink();
             this.metroTabControl1.SuspendLayout();
@@ -739,9 +739,9 @@
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroLink metroLinkVoltar;
         private MetroFramework.Controls.MetroLink metroLinkSalvar;
-        private CarLand.DataSets.Paulo.Client client;
+        private CarLand.Forms.DataSets.Paulo.Client client;
         private System.Windows.Forms.BindingSource clientCNHBindingSource;
-        private CarLand.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter;
+        private CarLand.Forms.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aniversárioDataGridViewTextBoxColumn;

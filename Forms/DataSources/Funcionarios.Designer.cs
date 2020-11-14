@@ -38,7 +38,7 @@
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.employee = new CarLand.DataSets.Paulo.Employee();
+            this.employee = new CarLand.Forms.DataSets.Paulo.Employee();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
             this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
@@ -49,7 +49,7 @@
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.employeeTableAdapter = new CarLand.DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter();
+            this.employeeTableAdapter = new CarLand.Forms.DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();

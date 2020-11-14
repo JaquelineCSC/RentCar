@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CarLand.DataSets.Paulo {
+namespace CarLand.Forms.DataSets.Paulo {
     
     
     /// <summary>
@@ -584,7 +584,7 @@ namespace CarLand.DataSets.Paulo {
         }
     }
 }
-namespace CarLand.DataSets.Paulo.EmployeeTableAdapters {
+namespace CarLand.Forms.DataSets.Paulo.EmployeeTableAdapters {
     
     
     /// <summary>
