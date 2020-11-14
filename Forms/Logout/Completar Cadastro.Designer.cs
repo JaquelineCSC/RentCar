@@ -64,6 +64,7 @@
             // dateValidateCNH
             // 
             this.dateValidateCNH.Location = new System.Drawing.Point(264, 264);
+            this.dateValidateCNH.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateValidateCNH.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateValidateCNH.Name = "dateValidateCNH";
             this.dateValidateCNH.Size = new System.Drawing.Size(223, 29);

@@ -19,15 +19,18 @@ namespace CarLand.Forms
 {
     public partial class Completar_Cadastro : MetroForm
     {
-        public Domain.Entities.Client Cl { get; set; }
         public User User { get; set; }
-        public DBClient Client { get; set; }
+        public Domain.Entities.Client Client { get; set; }
+        public DBClient _appClient { get; set; }
+        public DBUser _appUser { get; set; }
 
         public Completar_Cadastro(MetroStyleManager manager)
         {
             InitializeComponent();
             User = new User();
             this.StyleManager = manager;
+            _appClient = new DBClient();
+            _appUser = new DBUser();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -56,14 +59,41 @@ namespace CarLand.Forms
             {
                 error.SetError(this.cnh, "Insira um número de CNH válido");
             }
+            if (dateValidateCNH.Value < dateOfBirth.Value)
+            {
+                error.SetError(this.dateValidateCNH, "Insira uma data válida");
+            }
+            if (dateOfBirth.Value > dateValidateCNH.Value)
+            {
+                error.SetError(this.dateOfBirth, "Insira uma data válida");
+            }
             else
             {
-                // em produção 
-                MetroMessageBox.Show(this, "Cadastro Concluído", "Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Information, 100);
-                Carros C1 = new Carros();
-                this.Hide();
-                C1.ShowDialog();
-                this.Close();
+                Client = new Domain.Entities.Client()
+                {
+                    Name = nomeTXT.Text,
+                    Email = email.Text,
+                    CNH = int.Parse(cnh.Text),
+                    CPF = int.Parse(cpf.Text),
+                    DateOfBirth = DateTime.Parse(dateOfBirth.Text),
+                    Genero = genero.Text,
+                    Phone = int.Parse(telefone.Text),
+                };
+                try
+                {
+                    User.Id = _appUser.Insert(User);
+                    Client.User_Id = User.Id;
+                    _appClient.Insert(Client);
+                    MetroMessageBox.Show(this, "Cliente Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                    Login form = new Login();
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
+                }
+                catch
+                {
+                    MetroMessageBox.Show(this, "Erro no cadastro, verifique os dados preenchidos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                }
             }
         }
 
