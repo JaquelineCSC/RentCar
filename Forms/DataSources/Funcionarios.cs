@@ -1,4 +1,5 @@
-﻿using MetroFramework;
+﻿using CarLand.Forms.Admin;
+using MetroFramework;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace CarLand.Forms
 {
     public partial class Funcionarios : MetroFramework.Forms.MetroForm
     {
+        public DataRowView RowView { get; set; }
+        public DataRowView NewRowView { get; set; }
+        string employeeName;
         public Database.DBEmployee _appEmployee { get; set; }
         public Database.DBUser _appUser { get; set; }
 
@@ -25,20 +29,7 @@ namespace CarLand.Forms
 
         private void Funcionarios_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'employee._Employee' table. You can move, or remove it, as needed.
             this.employeeTableAdapter.Fill(this.employee._Employee);
-            // TODO: esta linha de código carrega dados na tabela 'listFuncionarios.Employee'. Você pode movê-la ou removê-la conforme necessário.
-
-        }
-
-        private void metroLabel13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void metroLinkSalvar_Click(object sender, EventArgs e)
@@ -63,6 +54,38 @@ namespace CarLand.Forms
         private void metroLinkVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void metroLink2_Click(object sender, EventArgs e)
+        {
+            if (metroGrid1.SelectedRows.Count > 0)
+            {
+                MetroMessageBox.Show(this, "Tem certeza que deseja excluir esse funcionários?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, 150);
+
+                RowView = (DataRowView)metroGrid1.Rows[metroGrid1.SelectedRows[0].Index].DataBoundItem;
+                employeeName = RowView["EmployeeName"].ToString();
+            }
+        }
+
+        private void metroGrid1_CellContentClick(object sender, EventArgs e)
+        {
+            if (metroGrid1.SelectedRows.Count > 0)
+            {
+                RowView = (DataRowView)metroGrid1.Rows[metroGrid1.SelectedRows[0].Index].DataBoundItem;
+                employeeName = RowView["EmployeeName"].ToString();
+            }
+        }
+
+        private void verificar(object sender, DataGridViewCellEventArgs e)
+        {
+            if (metroGrid1.SelectedRows.Count > 0)
+            {
+                NewRowView = (DataRowView)metroGrid1.Rows[metroGrid1.SelectedRows[0].Index].DataBoundItem;
+                var employee = _appEmployee.GetEmployee(employeeName: employeeName);
+                employee.Name = NewRowView["EmployeeName"].ToString();
+                _appEmployee.Update(employee);
+                Funcionarios_Load(this, new EventArgs());
+            }
         }
     }
 }

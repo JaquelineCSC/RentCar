@@ -335,12 +335,12 @@ namespace CarLand.Database
         {
             return new Card()
             {
-                Id = reader.GetInt32(1),
-                idClient = reader.GetInt32(2),
-                Name = reader.GetString(3),
-                Number = reader.GetInt32(4),
-                CVC = reader.GetInt32(5),
-                ValidateDate = reader.GetDateTime(6)
+                Id = reader.GetInt32(0),
+                idClient = reader.GetInt32(1),
+                Name = reader.GetString(2),
+                Number = reader.GetInt64(3),
+                CVC = reader.GetInt32(4),
+                ValidateDate = reader.GetDateTime(5)
             };
         }
 

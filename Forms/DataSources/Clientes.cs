@@ -64,35 +64,32 @@ namespace CarLand.Forms
                 Client.CNH_Id = idCNH;
                 Client.User_Id = idUser;
                 _appClient.Insert(Client);
-                MetroFramework.MetroMessageBox.Show(this,"Cliente Cadastrado com sucesso","Sucesso",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question,100);
+                MetroFramework.MetroMessageBox.Show(this, "Cliente Cadastrado com sucesso", "Sucesso", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
                 this.Close();
             }
             catch
             {
-                MetroFramework.MetroMessageBox.Show(this,"Erro inesperado. Por favor entre em contato com seu administrador","Erro",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question,100);
+                MetroFramework.MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
             }
         }
 
         private void rentLink_Click(object sender, EventArgs e)
         {
-            if(RowView != null)
+            if (RowView == null)
             {
-                Cars form = new Cars();
-                var client = _appClient.GetClientByEmail(RowView["Email"].ToString());
-                form.User = User;
-                form.Client = client;
-                this.Hide();
-                form.ShowDialog();
-                this.Close();
+                metroGrid1_CellContentClick(metroGrid1, new EventArgs());
             }
-            else
-            {
-                MetroFramework.MetroMessageBox.Show(this,"Selecione um cliente para criar um novo aluguel","Atenção",System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Warning,100);
-            }
+            Cars form = new Cars();
+            var client = _appClient.GetClientByEmail(RowView["Email"].ToString());
+            form.User = User;
+            form.Client = client;
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
 
         }
 
-        private void metroGrid1_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
+        private void metroGrid1_CellContentClick(object sender, EventArgs e)
         {
             if (metroGrid1.SelectedRows.Count > 0)
             {

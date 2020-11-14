@@ -33,9 +33,13 @@ namespace CarLand.Database
             _context.CommandWithoutReturn(query);
         }
 
-        public Employee GetEmployee(int idUser)
+        public Employee GetEmployee(int idUser = 0, string employeeName = null)
         {
-            query = $"Select * from Employee where idUser = {idUser}";
+            if(employeeName != null)
+                query = $"Select * from Employee where EmployeeName = '{employeeName}'";
+            else
+                query = $"Select * from Employee where idUser = {idUser}";
+
             return _context.GetEmployeeByUserId(query);
         }
     }
