@@ -113,7 +113,7 @@ namespace CarLand.Forms
             this.metroTextBox2.Icon = ((System.Drawing.Image)(resources.GetObject("metroTextBox2.Icon")));
             this.metroTextBox2.Lines = new string[0];
             this.metroTextBox2.Location = new System.Drawing.Point(507, 347);
-            this.metroTextBox2.MaxLength = 12;
+            this.metroTextBox2.MaxLength = 16;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '*';

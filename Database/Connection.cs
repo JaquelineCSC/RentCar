@@ -19,7 +19,7 @@ namespace CarLand.Database
 
         private void Connect()
         {
-            cn.ConnectionString = Servers.Paulo;
+            cn.ConnectionString = Servers.Samuel;
             cn.Open();
         }
         public void CommandWithoutReturn(string sql)

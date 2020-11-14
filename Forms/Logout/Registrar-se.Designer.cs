@@ -57,7 +57,7 @@
             this.mtxtSenhaClientes.DisplayIcon = true;
             this.mtxtSenhaClientes.Lines = new string[0];
             this.mtxtSenhaClientes.Location = new System.Drawing.Point(105, 168);
-            this.mtxtSenhaClientes.MaxLength = 32767;
+            this.mtxtSenhaClientes.MaxLength = 16;
             this.mtxtSenhaClientes.Name = "mtxtSenhaClientes";
             this.mtxtSenhaClientes.PasswordChar = '\0';
             this.mtxtSenhaClientes.PromptText = "Senha";
@@ -94,7 +94,7 @@
             this.mtxtUsuarioClientes.DisplayIcon = true;
             this.mtxtUsuarioClientes.Lines = new string[0];
             this.mtxtUsuarioClientes.Location = new System.Drawing.Point(105, 115);
-            this.mtxtUsuarioClientes.MaxLength = 32767;
+            this.mtxtUsuarioClientes.MaxLength = 20;
             this.mtxtUsuarioClientes.Name = "mtxtUsuarioClientes";
             this.mtxtUsuarioClientes.PasswordChar = '\0';
             this.mtxtUsuarioClientes.PromptText = "Usuário";
@@ -111,7 +111,8 @@
             this.mtxtUsuarioClientes.WaterMark = "Usuário";
             this.mtxtUsuarioClientes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtUsuarioClientes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mtxtUsuarioClientes.TextChanged += new System.EventHandler(this.verficiarPreenchimento);
+            this.mtxtUsuarioClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.verficiarPreenchimento);
+            this.mtxtUsuarioClientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verficiarPreenchimento);
             // 
             // metroTextBox1
             // 
@@ -131,7 +132,7 @@
             this.metroTextBox1.DisplayIcon = true;
             this.metroTextBox1.Lines = new string[0];
             this.metroTextBox1.Location = new System.Drawing.Point(105, 228);
-            this.metroTextBox1.MaxLength = 32767;
+            this.metroTextBox1.MaxLength = 16;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
             this.metroTextBox1.PromptText = "Confirmar Senha";
