@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CarLand.DataSets {
+namespace CarLand.DataSets.Paulo {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace CarLand.DataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("IntegradoraDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("ListCars")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class IntegradoraDataSet1 : global::System.Data.DataSet {
+    public partial class ListCars : global::System.Data.DataSet {
         
         private CarDataTable tableCar;
         
@@ -30,7 +30,7 @@ namespace CarLand.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public IntegradoraDataSet1() {
+        public ListCars() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CarLand.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected IntegradoraDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected ListCars(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -127,7 +127,7 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            IntegradoraDataSet1 cln = ((IntegradoraDataSet1)(base.Clone()));
+            ListCars cln = ((ListCars)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -199,9 +199,9 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "IntegradoraDataSet1";
+            this.DataSetName = "ListCars";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/IntegradoraDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/ListCars.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableCar = new CarDataTable();
@@ -225,7 +225,7 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            IntegradoraDataSet1 ds = new IntegradoraDataSet1();
+            ListCars ds = new ListCars();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -578,7 +578,7 @@ namespace CarLand.DataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                IntegradoraDataSet1 ds = new IntegradoraDataSet1();
+                ListCars ds = new ListCars();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -894,7 +894,7 @@ namespace CarLand.DataSets {
         }
     }
 }
-namespace CarLand.DataSets.IntegradoraDataSet1TableAdapters {
+namespace CarLand.DataSets.Paulo.ListCarsTableAdapters {
     
     
     /// <summary>
@@ -1111,7 +1111,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(IntegradoraDataSet1.CarDataTable dataTable) {
+        public virtual int Fill(ListCars.CarDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1124,9 +1124,9 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual IntegradoraDataSet1.CarDataTable GetData() {
+        public virtual ListCars.CarDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            IntegradoraDataSet1.CarDataTable dataTable = new IntegradoraDataSet1.CarDataTable();
+            ListCars.CarDataTable dataTable = new ListCars.CarDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1134,14 +1134,14 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(IntegradoraDataSet1.CarDataTable dataTable) {
+        public virtual int Update(ListCars.CarDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(IntegradoraDataSet1 dataSet) {
+        public virtual int Update(ListCars dataSet) {
             return this.Adapter.Update(dataSet, "Car");
         }
         
@@ -1538,7 +1538,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(IntegradoraDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(ListCars dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._carTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Car.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -1557,7 +1557,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(IntegradoraDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(ListCars dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._carTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Car.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -1575,7 +1575,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(IntegradoraDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(ListCars dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._carTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Car.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -1617,7 +1617,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(IntegradoraDataSet1 dataSet) {
+        public virtual int UpdateAll(ListCars dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

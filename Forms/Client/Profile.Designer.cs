@@ -32,9 +32,9 @@
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.dateOfBirth = new MetroFramework.Controls.MetroDateTime();
-            this.genero = new MetroFramework.Controls.MetroComboBox();
+            this.gener = new MetroFramework.Controls.MetroComboBox();
             this.email = new MetroFramework.Controls.MetroTextBox();
-            this.telefone = new MetroFramework.Controls.MetroTextBox();
+            this.phone = new MetroFramework.Controls.MetroTextBox();
             this.cnh = new MetroFramework.Controls.MetroTextBox();
             this.cpf = new MetroFramework.Controls.MetroTextBox();
             this.name = new MetroFramework.Controls.MetroTextBox();
@@ -82,22 +82,22 @@
             this.dateOfBirth.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.dateOfBirth.UseStyleColors = true;
             // 
-            // genero
+            // gener
             // 
-            this.genero.FormattingEnabled = true;
-            this.genero.ItemHeight = 23;
-            this.genero.Items.AddRange(new object[] {
+            this.gener.FormattingEnabled = true;
+            this.gener.ItemHeight = 23;
+            this.gener.Items.AddRange(new object[] {
             "Masculino",
             "Feminino",
             "Prefiro não mencionar"});
-            this.genero.Location = new System.Drawing.Point(446, 220);
-            this.genero.Name = "genero";
-            this.genero.Size = new System.Drawing.Size(180, 29);
-            this.genero.Style = MetroFramework.MetroColorStyle.Orange;
-            this.genero.TabIndex = 82;
-            this.genero.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.genero.UseSelectable = true;
-            this.genero.UseStyleColors = true;
+            this.gener.Location = new System.Drawing.Point(446, 220);
+            this.gener.Name = "gener";
+            this.gener.Size = new System.Drawing.Size(180, 29);
+            this.gener.Style = MetroFramework.MetroColorStyle.Orange;
+            this.gener.TabIndex = 82;
+            this.gener.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.gener.UseSelectable = true;
+            this.gener.UseStyleColors = true;
             // 
             // email
             // 
@@ -133,39 +133,39 @@
             this.email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // telefone
+            // phone
             // 
             // 
             // 
             // 
-            this.telefone.CustomButton.Image = null;
-            this.telefone.CustomButton.Location = new System.Drawing.Point(123, 1);
-            this.telefone.CustomButton.Name = "";
-            this.telefone.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.telefone.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.telefone.CustomButton.TabIndex = 1;
-            this.telefone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.telefone.CustomButton.UseSelectable = true;
-            this.telefone.CustomButton.Visible = false;
-            this.telefone.Lines = new string[0];
-            this.telefone.Location = new System.Drawing.Point(260, 220);
-            this.telefone.MaxLength = 32767;
-            this.telefone.Multiline = true;
-            this.telefone.Name = "telefone";
-            this.telefone.PasswordChar = '\0';
-            this.telefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.telefone.SelectedText = "";
-            this.telefone.SelectionLength = 0;
-            this.telefone.SelectionStart = 0;
-            this.telefone.ShortcutsEnabled = true;
-            this.telefone.Size = new System.Drawing.Size(151, 29);
-            this.telefone.Style = MetroFramework.MetroColorStyle.Orange;
-            this.telefone.TabIndex = 80;
-            this.telefone.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.telefone.UseSelectable = true;
-            this.telefone.UseStyleColors = true;
-            this.telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.phone.CustomButton.Image = null;
+            this.phone.CustomButton.Location = new System.Drawing.Point(123, 1);
+            this.phone.CustomButton.Name = "";
+            this.phone.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.phone.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.phone.CustomButton.TabIndex = 1;
+            this.phone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.phone.CustomButton.UseSelectable = true;
+            this.phone.CustomButton.Visible = false;
+            this.phone.Lines = new string[0];
+            this.phone.Location = new System.Drawing.Point(260, 220);
+            this.phone.MaxLength = 32767;
+            this.phone.Multiline = true;
+            this.phone.Name = "phone";
+            this.phone.PasswordChar = '\0';
+            this.phone.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.phone.SelectedText = "";
+            this.phone.SelectionLength = 0;
+            this.phone.SelectionStart = 0;
+            this.phone.ShortcutsEnabled = true;
+            this.phone.Size = new System.Drawing.Size(151, 29);
+            this.phone.Style = MetroFramework.MetroColorStyle.Orange;
+            this.phone.TabIndex = 80;
+            this.phone.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.phone.UseSelectable = true;
+            this.phone.UseStyleColors = true;
+            this.phone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.phone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // cnh
             // 
@@ -360,6 +360,7 @@
             this.metroLinkVoltar.TabIndex = 87;
             this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLinkVoltar.UseSelectable = true;
+            this.metroLinkVoltar.Click += new System.EventHandler(this.metroLinkVoltar_Click);
             // 
             // metroLinkSalvar
             // 
@@ -374,6 +375,7 @@
             this.metroLinkSalvar.TabIndex = 88;
             this.metroLinkSalvar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLinkSalvar.UseSelectable = true;
+            this.metroLinkSalvar.Click += new System.EventHandler(this.metroLinkSalvar_Click);
             // 
             // Profile
             // 
@@ -388,9 +390,9 @@
             this.Controls.Add(this.dateValidateCNH);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.dateOfBirth);
-            this.Controls.Add(this.genero);
+            this.Controls.Add(this.gener);
             this.Controls.Add(this.email);
-            this.Controls.Add(this.telefone);
+            this.Controls.Add(this.phone);
             this.Controls.Add(this.cnh);
             this.Controls.Add(this.cpf);
             this.Controls.Add(this.name);
@@ -416,9 +418,9 @@
         private MetroFramework.Controls.MetroDateTime dateValidateCNH;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroDateTime dateOfBirth;
-        private MetroFramework.Controls.MetroComboBox genero;
+        private MetroFramework.Controls.MetroComboBox gener;
         private MetroFramework.Controls.MetroTextBox email;
-        private MetroFramework.Controls.MetroTextBox telefone;
+        private MetroFramework.Controls.MetroTextBox phone;
         private MetroFramework.Controls.MetroTextBox cnh;
         private MetroFramework.Controls.MetroTextBox cpf;
         private MetroFramework.Controls.MetroTextBox name;

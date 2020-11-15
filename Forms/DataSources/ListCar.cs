@@ -23,7 +23,6 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
-            this.carTableAdapter1.Fill(this.integradoraDataSet1.Car);
         }
 
         private void toolTip(object sender, EventArgs e)
@@ -97,5 +96,6 @@ namespace CarLand.Forms.Car
         {
             ListCar_Load(this, new EventArgs());
         }
+
     }
 }

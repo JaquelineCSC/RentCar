@@ -116,8 +116,7 @@ namespace CarLand.Forms
             this.metroTextBox2.MaxLength = 12;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '*';
-            this.metroTextBox2.PromptText = "Senha";
+            this.metroTextBox2.PasswordChar = '\0';
             this.metroTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";

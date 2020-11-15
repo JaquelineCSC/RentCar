@@ -1,31 +1,25 @@
 ﻿using CarLand.Forms.Aluguel;
 using MetroFramework;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using MetroFramework.Controls;
 
 namespace CarLand.Forms.Client
 {
-    public partial class AluguelCliente : MetroFramework.Forms.MetroForm
+    public partial class ListCar : MetroFramework.Forms.MetroForm
     {
         public DataRowView RowView { get; set; }
 
-        public AluguelCliente()
+        public ListCar()
         {
             InitializeComponent();
         }
 
         private void AluguelCliente_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'lisRent.Rent'. Você pode movê-la ou removê-la conforme necessário.
-            this.rentTableAdapter.Fill(this.lisRent.Rent);
-
+            // TODO: This line of code loads data into the 'listRent.RentViewWithoutCards' table. You can move, or remove it, as needed.
+            this.rentViewWithoutCardsTableAdapter.Fill(this.listRent.RentViewWithoutCards);
         }
 
         private void metroLink2_Click(object sender, EventArgs e)
@@ -42,8 +36,8 @@ namespace CarLand.Forms.Client
                 detalhealuguel.Rent.idCar = int.Parse(RowView["idCar"].ToString());
                 detalhealuguel.Rent.idEmployee = int.Parse(RowView["idEmployee"].ToString());
                 detalhealuguel.Rent.idClient = int.Parse(RowView["idClient"].ToString());
-                detalhealuguel.Rent.PickTime = int.Parse(RowView["PickUpTime"].ToString());
-                detalhealuguel.Rent.DropTime = int.Parse(RowView["DropOfTime"].ToString());
+                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["PickUpTime"].ToString());
+                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["DropOfTime"].ToString());
                 detalhealuguel.Rent.Value = double.Parse(RowView["Amount"].ToString());
                 detalhealuguel.ShowDialog();
             }

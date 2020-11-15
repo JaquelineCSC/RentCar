@@ -1,6 +1,7 @@
 ﻿using CarLand.Database;
 using MetroFramework;
 using MetroFramework.Components;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -62,7 +63,7 @@ namespace CarLand.Forms
             }
             if (mtxtUsuarioClientes.Text != "" && metroTextBox1.Text == mtxtSenhaClientes.Text)
             {
-                var userDomain = _appCar.GetUser(mtxtUsuarioClientes.Text);
+                var userDomain = _appCar.GetUser(userName: mtxtUsuarioClientes.Text);
                 if (userDomain.Name == null)
                 {
                     User = new Domain.Entities.User(mtxtUsuarioClientes.Text, mtxtSenhaClientes.Text, false);

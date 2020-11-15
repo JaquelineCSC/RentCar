@@ -1,5 +1,6 @@
 ﻿using CarLand.Domain.Entities;
 using CarLand.Forms;
+using CarLand.Forms.Client;
 using CarLand.Forms.Logout;
 using MetroFramework;
 using MetroFramework.Components;
@@ -55,6 +56,7 @@ namespace CarLand
         private void metroTile5_Click(object sender, EventArgs e)
         {
             AboutUs form = new AboutUs();
+            form.User = User;
             this.Hide();
             form.ShowDialog();
             this.Close();
@@ -67,6 +69,18 @@ namespace CarLand
             this.Hide();
             form.ShowDialog();
             this.Close();
+        }
+
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            Profile form = new Profile();
+            form.User = User;
+            form.ShowDialog();
+        }
+
+        private void metroTile2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

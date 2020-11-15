@@ -109,11 +109,11 @@ namespace CarLand.Forms.Car
                 {
                     _appImage.SetImage(Car.Id, item);
                 }
-                MetroMessageBox.Show(this, "Carro cadastro com sucess", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                MetroMessageBox.Show(this, "Carro cadastro com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
             }
             catch
             {
-                MetroMessageBox.Show(this, "Ocorreu um erro ao salvar. Entre em contato com o administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
 

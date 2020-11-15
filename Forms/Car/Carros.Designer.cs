@@ -442,6 +442,7 @@
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 2;
             this.metroLabel6.Text = "Perfil";
+            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
             // Cars
             // 

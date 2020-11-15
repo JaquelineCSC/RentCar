@@ -1,5 +1,7 @@
 ﻿using CarLand.Database;
+using CarLand.Forms.Admin;
 using CarLand.Forms.Aluguel;
+using CarLand.Forms.Client;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -15,6 +17,7 @@ namespace CarLand.Forms
     public partial class Cars : MetroForm
     {
         public CarLand.Domain.Entities.User User { get; set; }
+        public Domain.Entities.Client Client { get; set; }
 
         public DBCar _appCar;
         public DBImage _appImage;
@@ -25,6 +28,7 @@ namespace CarLand.Forms
             _appCar = new DBCar();
             _appImage = new DBImage();
             User = new CarLand.Domain.Entities.User();
+            Client = new Domain.Entities.Client();
         }
 
         private void metroLabel2_Click(object sender, EventArgs e)
@@ -101,7 +105,7 @@ namespace CarLand.Forms
             newCard.Controls.Add(addCifrao(car));
             newCard.Controls.Add(addButton(car.Id));
             newCard.Controls.Add(addRentButton(car.Id));
-            if (User.Id != 0 && !User.isAdmin)
+            if (User.Id != 0 && !User.isAdmin || Client.Id != 0)
             {
                 var rentButton = newCard.Controls.OfType<MetroLink>().Where(btn => btn.Text == "Alugar");
                 foreach (var item in rentButton)
@@ -245,7 +249,7 @@ namespace CarLand.Forms
         {
             MetroLink link = (MetroLink)sender;
             var car = _appCar.GetCar(link.TabIndex);
-            Rent form = new Rent(car, User);
+            Rent form = new Rent(car, User, Client);
             this.Hide();
             form.ShowDialog();
             this.Close();
@@ -268,6 +272,22 @@ namespace CarLand.Forms
                 this.Hide();
                 form.ShowDialog();
                 this.Close();
+            }
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+            if (User.isAdmin)
+            {
+                ProfileAdmin form = new ProfileAdmin();
+                form.User = User;
+                form.ShowDialog();
+            }
+            else
+            {
+                Profile form = new Profile();
+                form.User = User;
+                form.ShowDialog();
             }
         }
 

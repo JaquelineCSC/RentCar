@@ -117,7 +117,7 @@ namespace CarLand.Forms.Car
             catch
             {
                 _appCar.Delete(id);
-                MetroMessageBox.Show(this, "Ocorreu um erro ao salvar. Entre em contato com o administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
 

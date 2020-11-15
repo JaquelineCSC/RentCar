@@ -92,11 +92,11 @@ namespace CarLand.Forms
             }
             else
             {
-                var user = _appUser.GetUser(usuario, "");
+                var user = _appUser.GetUser(userName: usuario);
                 if(user.Id == 0)
                     MetroMessageBox.Show(this, "Usuário não Encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, 100);
                 else
-                    MetroMessageBox.Show(this, user.Password, "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                    MetroMessageBox.Show(this, user.Password, "Sua senha é", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
 
             }
         }

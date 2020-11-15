@@ -1,6 +1,6 @@
 ﻿namespace CarLand.Forms.Client
 {
-    partial class AluguelCliente
+    partial class ListCar
     {
         /// <summary>
         /// Required designer variable.
@@ -29,33 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AluguelCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListCar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLink4 = new MetroFramework.Controls.MetroLink();
             this.metroLink3 = new MetroFramework.Controls.MetroLink();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.idRentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idEmployeeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pickUpTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dropOfTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lisRent = new CarLand.DataSets.LisRent();
-            this.rentTableAdapter = new CarLand.DataSets.LisRentTableAdapters.RentTableAdapter();
+            this.listRent = new CarLand.DataSets.Paulo.listRent();
+            this.rentViewWithoutCardsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rentViewWithoutCardsTableAdapter = new CarLand.DataSets.Paulo.listRentTableAdapters.RentViewWithoutCardsTableAdapter();
+            this.idAluguelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.anoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.funcionarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataRetiradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDevoluçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lisRent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listRent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentViewWithoutCardsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLink4
             // 
             this.metroLink4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink4.BackgroundImage")));
             this.metroLink4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink4.Location = new System.Drawing.Point(727, 76);
+            this.metroLink4.Location = new System.Drawing.Point(912, 95);
             this.metroLink4.Name = "metroLink4";
             this.metroLink4.Size = new System.Drawing.Size(25, 25);
             this.metroLink4.TabIndex = 9;
@@ -66,7 +68,7 @@
             // 
             this.metroLink3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink3.BackgroundImage")));
             this.metroLink3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink3.Location = new System.Drawing.Point(696, 76);
+            this.metroLink3.Location = new System.Drawing.Point(881, 95);
             this.metroLink3.Name = "metroLink3";
             this.metroLink3.Size = new System.Drawing.Size(25, 25);
             this.metroLink3.TabIndex = 7;
@@ -93,14 +95,16 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idRentDataGridViewTextBoxColumn,
-            this.idCarDataGridViewTextBoxColumn,
-            this.idEmployeeDataGridViewTextBoxColumn,
-            this.idClientDataGridViewTextBoxColumn,
-            this.pickUpTimeDataGridViewTextBoxColumn,
-            this.dropOfTimeDataGridViewTextBoxColumn,
-            this.amountDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.rentBindingSource;
+            this.idAluguelDataGridViewTextBoxColumn,
+            this.modeloDataGridViewTextBoxColumn,
+            this.anoDataGridViewTextBoxColumn,
+            this.funcionarioDataGridViewTextBoxColumn,
+            this.clienteDataGridViewTextBoxColumn,
+            this.dataRetiradaDataGridViewTextBoxColumn,
+            this.dataDevoluçãoDataGridViewTextBoxColumn,
+            this.valorDataGridViewTextBoxColumn,
+            this.paymentTypeDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.rentViewWithoutCardsBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -112,7 +116,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroGrid1.Location = new System.Drawing.Point(23, 107);
+            this.metroGrid1.Location = new System.Drawing.Point(23, 126);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -126,74 +130,87 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(754, 358);
+            this.metroGrid1.Size = new System.Drawing.Size(948, 473);
             this.metroGrid1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroGrid1.TabIndex = 5;
+            this.metroGrid1.TabIndex = 10;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_SelectionChanged);
             // 
-            // idRentDataGridViewTextBoxColumn
+            // listRent
             // 
-            this.idRentDataGridViewTextBoxColumn.DataPropertyName = "idRent";
-            this.idRentDataGridViewTextBoxColumn.HeaderText = "idRent";
-            this.idRentDataGridViewTextBoxColumn.Name = "idRentDataGridViewTextBoxColumn";
-            this.idRentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.listRent.DataSetName = "listRent";
+            this.listRent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // idCarDataGridViewTextBoxColumn
+            // rentViewWithoutCardsBindingSource
             // 
-            this.idCarDataGridViewTextBoxColumn.DataPropertyName = "idCar";
-            this.idCarDataGridViewTextBoxColumn.HeaderText = "idCar";
-            this.idCarDataGridViewTextBoxColumn.Name = "idCarDataGridViewTextBoxColumn";
-            this.idCarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rentViewWithoutCardsBindingSource.DataMember = "RentViewWithoutCards";
+            this.rentViewWithoutCardsBindingSource.DataSource = this.listRent;
             // 
-            // idEmployeeDataGridViewTextBoxColumn
+            // rentViewWithoutCardsTableAdapter
             // 
-            this.idEmployeeDataGridViewTextBoxColumn.DataPropertyName = "idEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.HeaderText = "idEmployee";
-            this.idEmployeeDataGridViewTextBoxColumn.Name = "idEmployeeDataGridViewTextBoxColumn";
-            this.idEmployeeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rentViewWithoutCardsTableAdapter.ClearBeforeFill = true;
             // 
-            // idClientDataGridViewTextBoxColumn
+            // idAluguelDataGridViewTextBoxColumn
             // 
-            this.idClientDataGridViewTextBoxColumn.DataPropertyName = "idClient";
-            this.idClientDataGridViewTextBoxColumn.HeaderText = "idClient";
-            this.idClientDataGridViewTextBoxColumn.Name = "idClientDataGridViewTextBoxColumn";
-            this.idClientDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idAluguelDataGridViewTextBoxColumn.DataPropertyName = "Id Aluguel";
+            this.idAluguelDataGridViewTextBoxColumn.HeaderText = "Id Aluguel";
+            this.idAluguelDataGridViewTextBoxColumn.Name = "idAluguelDataGridViewTextBoxColumn";
+            this.idAluguelDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // pickUpTimeDataGridViewTextBoxColumn
+            // modeloDataGridViewTextBoxColumn
             // 
-            this.pickUpTimeDataGridViewTextBoxColumn.DataPropertyName = "PickUpTime";
-            this.pickUpTimeDataGridViewTextBoxColumn.HeaderText = "PickUpTime";
-            this.pickUpTimeDataGridViewTextBoxColumn.Name = "pickUpTimeDataGridViewTextBoxColumn";
-            this.pickUpTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modeloDataGridViewTextBoxColumn.DataPropertyName = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modeloDataGridViewTextBoxColumn.Name = "modeloDataGridViewTextBoxColumn";
+            this.modeloDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // dropOfTimeDataGridViewTextBoxColumn
+            // anoDataGridViewTextBoxColumn
             // 
-            this.dropOfTimeDataGridViewTextBoxColumn.DataPropertyName = "DropOfTime";
-            this.dropOfTimeDataGridViewTextBoxColumn.HeaderText = "DropOfTime";
-            this.dropOfTimeDataGridViewTextBoxColumn.Name = "dropOfTimeDataGridViewTextBoxColumn";
-            this.dropOfTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.anoDataGridViewTextBoxColumn.DataPropertyName = "Ano";
+            this.anoDataGridViewTextBoxColumn.HeaderText = "Ano";
+            this.anoDataGridViewTextBoxColumn.Name = "anoDataGridViewTextBoxColumn";
+            this.anoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // amountDataGridViewTextBoxColumn
+            // funcionarioDataGridViewTextBoxColumn
             // 
-            this.amountDataGridViewTextBoxColumn.DataPropertyName = "Amount";
-            this.amountDataGridViewTextBoxColumn.HeaderText = "Amount";
-            this.amountDataGridViewTextBoxColumn.Name = "amountDataGridViewTextBoxColumn";
-            this.amountDataGridViewTextBoxColumn.ReadOnly = true;
+            this.funcionarioDataGridViewTextBoxColumn.DataPropertyName = "Funcionario";
+            this.funcionarioDataGridViewTextBoxColumn.HeaderText = "Funcionario";
+            this.funcionarioDataGridViewTextBoxColumn.Name = "funcionarioDataGridViewTextBoxColumn";
+            this.funcionarioDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentBindingSource
+            // clienteDataGridViewTextBoxColumn
             // 
-            this.rentBindingSource.DataMember = "Rent";
-            this.rentBindingSource.DataSource = this.lisRent;
+            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
+            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // lisRent
+            // dataRetiradaDataGridViewTextBoxColumn
             // 
-            this.lisRent.DataSetName = "LisRent";
-            this.lisRent.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dataRetiradaDataGridViewTextBoxColumn.DataPropertyName = "Data Retirada";
+            this.dataRetiradaDataGridViewTextBoxColumn.HeaderText = "Retirada";
+            this.dataRetiradaDataGridViewTextBoxColumn.Name = "dataRetiradaDataGridViewTextBoxColumn";
+            this.dataRetiradaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // rentTableAdapter
+            // dataDevoluçãoDataGridViewTextBoxColumn
             // 
-            this.rentTableAdapter.ClearBeforeFill = true;
+            this.dataDevoluçãoDataGridViewTextBoxColumn.DataPropertyName = "Data Devolução";
+            this.dataDevoluçãoDataGridViewTextBoxColumn.HeaderText = "Devolução";
+            this.dataDevoluçãoDataGridViewTextBoxColumn.Name = "dataDevoluçãoDataGridViewTextBoxColumn";
+            this.dataDevoluçãoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // valorDataGridViewTextBoxColumn
+            // 
+            this.valorDataGridViewTextBoxColumn.DataPropertyName = "Valor";
+            this.valorDataGridViewTextBoxColumn.HeaderText = "Valor";
+            this.valorDataGridViewTextBoxColumn.Name = "valorDataGridViewTextBoxColumn";
+            this.valorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // paymentTypeDataGridViewTextBoxColumn
+            // 
+            this.paymentTypeDataGridViewTextBoxColumn.DataPropertyName = "PaymentType";
+            this.paymentTypeDataGridViewTextBoxColumn.HeaderText = "Tipo Pagamento";
+            this.paymentTypeDataGridViewTextBoxColumn.Name = "paymentTypeDataGridViewTextBoxColumn";
+            this.paymentTypeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // AluguelCliente
             // 
@@ -202,18 +219,18 @@
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackImagePadding = new System.Windows.Forms.Padding(-19, 14, -1, -1);
             this.BackMaxSize = 270;
-            this.ClientSize = new System.Drawing.Size(800, 488);
+            this.ClientSize = new System.Drawing.Size(1017, 635);
+            this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.metroLink4);
             this.Controls.Add(this.metroLink3);
-            this.Controls.Add(this.metroGrid1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AluguelCliente";
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.AluguelCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lisRent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listRent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rentViewWithoutCardsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,10 +239,6 @@
 
         private MetroFramework.Controls.MetroLink metroLink4;
         private MetroFramework.Controls.MetroLink metroLink3;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private DataSets.LisRent lisRent;
-        private System.Windows.Forms.BindingSource rentBindingSource;
-        private DataSets.LisRentTableAdapters.RentTableAdapter rentTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idRentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCarDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idEmployeeDataGridViewTextBoxColumn;
@@ -233,5 +246,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pickUpTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dropOfTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
+        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private DataSets.Paulo.listRent listRent;
+        private System.Windows.Forms.BindingSource rentViewWithoutCardsBindingSource;
+        private DataSets.Paulo.listRentTableAdapters.RentViewWithoutCardsTableAdapter rentViewWithoutCardsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idAluguelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modeloDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn anoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn funcionarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataRetiradaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDevoluçãoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paymentTypeDataGridViewTextBoxColumn;
     }
 }

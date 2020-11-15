@@ -12,5 +12,6 @@ namespace CarLand.Domain.Entities
         public int idCar { get; set; }
         public string Path { get; set; }
         public string Name { get; set; }
+        public bool Main { get; set; }
     }
 }

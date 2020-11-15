@@ -74,6 +74,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\Paulo\Client.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Client.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Database\Connect.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\DBCar.cs" />
@@ -90,12 +95,25 @@
     <Compile Include="Domain\Entities\Car.cs" />
     <Compile Include="Domain\Entities\Card.cs" />
     <Compile Include="Domain\Entities\Client.cs" />
+    <Compile Include="Domain\Entities\ClientCard.cs" />
     <Compile Include="Domain\Entities\CNH.cs" />
     <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\Entities\Image.cs" />
     <Compile Include="Domain\Entities\Payment.cs" />
+    <Compile Include="Domain\Entities\PaymentTypeEnum.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
     <Compile Include="Domain\Entities\User.cs" />
+    <Compile Include="DataSets\Paulo\Employee.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Employee.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\ProfileAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\ProfileAdmin.Designer.cs">
+      <DependentUpon>ProfileAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Aluguel\DetalheAluguel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,10 +132,16 @@
     <Compile Include="Forms\Car\Carros.Designer.cs">
       <DependentUpon>Carros.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Clientes.cs">
+    <Compile Include="Forms\Client\Wallet.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Clientes.Designer.cs">
+    <Compile Include="Forms\Client\Wallet.Designer.cs">
+      <DependentUpon>Wallet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSources\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataSources\Clientes.Designer.cs">
       <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Car\Create.cs">
@@ -132,17 +156,23 @@
     <Compile Include="Forms\Car\Edit.Designer.cs">
       <DependentUpon>Edit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Car\List.cs">
+    <Compile Include="Forms\DataSources\ListCar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Car\List.Designer.cs">
-      <DependentUpon>List.cs</DependentUpon>
+    <Compile Include="Forms\DataSources\ListCar.Designer.cs">
+      <DependentUpon>ListCar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\AluguelCliente.cs">
+    <Compile Include="Forms\Client\NewCard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\AluguelCliente.Designer.cs">
-      <DependentUpon>AluguelCliente.cs</DependentUpon>
+    <Compile Include="Forms\Client\NewCard.Designer.cs">
+      <DependentUpon>NewCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSources\ListRent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DataSources\ListRent.Designer.cs">
+      <DependentUpon>ListRent.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Client\Profile.cs">
       <SubType>Form</SubType>
@@ -186,10 +216,10 @@
     <Compile Include="Forms\Client\FrmUsuario.Designer.cs">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Funcionarios.cs">
+    <Compile Include="Forms\DataSources\Funcionarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\Funcionarios.Designer.cs">
+    <Compile Include="Forms\DataSources\Funcionarios.Designer.cs">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Logout\Login.cs">
@@ -204,28 +234,21 @@
     <Compile Include="Forms\Logout\Registrar-se.Designer.cs">
       <DependentUpon>Registrar-se.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\IntegradoraDataSet1.Designer.cs">
+    <Compile Include="DataSets\Paulo\ListCars.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
+      <DependentUpon>ListCars.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\IntegradoraDataSet4.Designer.cs">
+    <Compile Include="DataSets\Paulo\listRent.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\LisRent.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LisRent.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ListFuncionarios.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
+      <DependentUpon>listRent.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\Admin\ProfileAdmin.resx">
+      <DependentUpon>ProfileAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Aluguel\DetalheAluguel.resx">
       <DependentUpon>DetalheAluguel.cs</DependentUpon>
     </EmbeddedResource>
@@ -235,7 +258,7 @@
     <EmbeddedResource Include="Forms\Car\Carros.resx">
       <DependentUpon>Carros.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Clientes.resx">
+    <EmbeddedResource Include="Forms\DataSources\Clientes.resx">
       <DependentUpon>Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\Create.resx">
@@ -244,14 +267,17 @@
     <EmbeddedResource Include="Forms\Car\Edit.resx">
       <DependentUpon>Edit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Car\List.resx">
-      <DependentUpon>List.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataSources\ListCar.resx">
+      <DependentUpon>ListCar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\AluguelCliente.resx">
-      <DependentUpon>AluguelCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataSources\ListRent.resx">
+      <DependentUpon>ListRent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Client\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Client\NewCard.resx">
+      <DependentUpon>NewCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
@@ -271,7 +297,7 @@
     <EmbeddedResource Include="Forms\Client\FrmUsuario.resx">
       <DependentUpon>FrmUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\Funcionarios.resx">
+    <EmbeddedResource Include="Forms\DataSources\Funcionarios.resx">
       <DependentUpon>Funcionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\Login.resx">
@@ -290,49 +316,49 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSets\IntegradoraDataSet1.xsc">
-      <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\Client.xsc">
+      <DependentUpon>Client.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\IntegradoraDataSet1.xsd">
+    <None Include="DataSets\Paulo\Client.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IntegradoraDataSet1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Client.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSets\IntegradoraDataSet1.xss">
-      <DependentUpon>IntegradoraDataSet1.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\Client.xss">
+      <DependentUpon>Client.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\IntegradoraDataSet4.xsc">
-      <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\Employee.xsc">
+      <DependentUpon>Employee.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\IntegradoraDataSet4.xsd">
+    <None Include="DataSets\Paulo\Employee.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IntegradoraDataSet4.Designer.cs</LastGenOutput>
+      <LastGenOutput>Employee.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSets\IntegradoraDataSet4.xss">
-      <DependentUpon>IntegradoraDataSet4.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\Employee.xss">
+      <DependentUpon>Employee.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\LisRent.xsc">
-      <DependentUpon>LisRent.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\ListCars.xsc">
+      <DependentUpon>ListCars.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\LisRent.xsd">
+    <None Include="DataSets\Paulo\ListCars.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LisRent.Designer.cs</LastGenOutput>
+      <LastGenOutput>ListCars.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="DataSets\LisRent.xss">
-      <DependentUpon>LisRent.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\ListCars.xss">
+      <DependentUpon>ListCars.xsd</DependentUpon>
     </None>
-    <None Include="ListFuncionarios.xsc">
-      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\listRent.xsc">
+      <DependentUpon>listRent.xsd</DependentUpon>
     </None>
-    <None Include="ListFuncionarios.xsd">
+    <None Include="DataSets\Paulo\listRent.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ListFuncionarios.Designer.cs</LastGenOutput>
+      <LastGenOutput>listRent.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="ListFuncionarios.xss">
-      <DependentUpon>ListFuncionarios.xsd</DependentUpon>
+    <None Include="DataSets\Paulo\listRent.xss">
+      <DependentUpon>listRent.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -349,6 +375,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataSets\Ramires\" />
+    <Folder Include="DataSets\Samuel\" />
     <Folder Include="Images\" />
     <Folder Include="Resources\" />
   </ItemGroup>

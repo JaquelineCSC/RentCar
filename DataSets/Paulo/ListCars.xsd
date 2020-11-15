@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="IntegradoraDataSet1" targetNamespace="http://tempuri.org/IntegradoraDataSet1.xsd" xmlns:mstns="http://tempuri.org/IntegradoraDataSet1.xsd" xmlns="http://tempuri.org/IntegradoraDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="ListCars" targetNamespace="http://tempuri.org/ListCars.xsd" xmlns:mstns="http://tempuri.org/ListCars.xsd" xmlns="http://tempuri.org/ListCars.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -103,7 +103,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="IntegradoraDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="IntegradoraDataSet1" msprop:Generator_UserDSName="IntegradoraDataSet1">
+  <xs:element name="ListCars" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ListCars" msprop:Generator_UserDSName="ListCars">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_UserTableName="Car" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_RowEvArgName="CarRowChangeEvent" msprop:Generator_RowClassName="CarRow">

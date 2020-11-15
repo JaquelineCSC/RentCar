@@ -19,8 +19,10 @@ namespace CarLand.Forms
     {
         public User User { get; set; }
         public Domain.Entities.Client Client { get; set; }
+        public CNH CNH { get; set; }
         public DBClient _appClient { get; set; }
         public DBUser _appUser { get; set; }
+        public DBCNH _appCNH { get; set; }
 
         public Completar_Cadastro(MetroStyleManager manager)
         {
@@ -29,6 +31,7 @@ namespace CarLand.Forms
             User = new User();
             _appClient = new DBClient();
             _appUser = new DBUser();
+            _appCNH = new DBCNH();
         }
 
         private void verificarPreenchimento(object sender, EventArgs e)
@@ -41,16 +44,23 @@ namespace CarLand.Forms
             {
                 Name = name.Text,
                 Email = email.Text,
-                CNH = int.Parse(cnh.Text),
-                CPF = int.Parse(cpf.Text),
+                CPF = long.Parse(cpf.Text),
                 DateOfBirth = DateTime.Parse(dateOfBirth.Text),
                 Genero = genero.Text,
-                Phone = int.Parse(telefone.Text),
+                Phone = long.Parse(telefone.Text),
+            };
+
+            CNH = new CNH()
+            {
+                Name = name.Text,
+                Number = long.Parse(cnh.Text),
+                ValidateDate = DateTime.Parse(dateValidateCNH.Text)
             };
 
             try
             {
                 User.Id = _appUser.Insert(User);
+                Client.CNH_Id = _appCNH.Insert(CNH);
                 Client.User_Id = User.Id;
                 _appClient.Insert(Client);
                 MetroMessageBox.Show(this, "Cliente Cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
@@ -59,9 +69,9 @@ namespace CarLand.Forms
                 form.ShowDialog();
                 this.Close();
             }
-            catch(Exception exp)
+            catch
             {
-                //ver erro
+                MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
 

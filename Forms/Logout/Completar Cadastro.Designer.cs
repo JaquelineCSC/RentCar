@@ -158,6 +158,7 @@
             this.email.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.email.UseSelectable = true;
             this.email.UseStyleColors = true;
+            this.email.WaterMark = "exemplo@email.com";
             this.email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.email.TextChanged += new System.EventHandler(this.verificarPreenchimento);
@@ -193,6 +194,7 @@
             this.telefone.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.telefone.UseSelectable = true;
             this.telefone.UseStyleColors = true;
+            this.telefone.WaterMark = "(35) X XXXX-XXXX";
             this.telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.telefone.TextChanged += new System.EventHandler(this.verificarPreenchimento);
@@ -228,6 +230,7 @@
             this.cnh.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cnh.UseSelectable = true;
             this.cnh.UseStyleColors = true;
+            this.cnh.WaterMark = "XXXXXXXXXXX";
             this.cnh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cnh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.cnh.TextChanged += new System.EventHandler(this.verificarPreenchimento);
@@ -263,6 +266,7 @@
             this.cpf.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cpf.UseSelectable = true;
             this.cpf.UseStyleColors = true;
+            this.cpf.WaterMark = "XXX.XXX.XXX-XX";
             this.cpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cpf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.cpf.TextChanged += new System.EventHandler(this.verificarPreenchimento);
