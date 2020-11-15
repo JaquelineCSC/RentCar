@@ -96,7 +96,16 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
               <Mapping SourceColumn="Branch" DataSetColumn="Branch" />
               <Mapping SourceColumn="Year" DataSetColumn="Year" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="IntegradoraConnectionString (Settings)" DbObjectName="Integradora.dbo.Car" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM dbo.Car where Available = 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -106,7 +115,7 @@ SELECT idCar, Color, Board, Model, Fuel, Doors, Branch, Year FROM Car WHERE (idC
   <xs:element name="ListCars" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ListCars" msprop:Generator_UserDSName="ListCars">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_UserTableName="Car" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_RowEvArgName="CarRowChangeEvent" msprop:Generator_RowClassName="CarRow">
+        <xs:element name="Car" msprop:Generator_TableClassName="CarDataTable" msprop:Generator_TableVarName="tableCar" msprop:Generator_RowChangedName="CarRowChanged" msprop:Generator_TablePropName="Car" msprop:Generator_RowDeletingName="CarRowDeleting" msprop:Generator_RowChangingName="CarRowChanging" msprop:Generator_RowEvHandlerName="CarRowChangeEventHandler" msprop:Generator_RowDeletedName="CarRowDeleted" msprop:Generator_RowClassName="CarRow" msprop:Generator_UserTableName="Car" msprop:Generator_RowEvArgName="CarRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="idCar" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnidCar" msprop:Generator_ColumnPropNameInRow="idCar" msprop:Generator_ColumnPropNameInTable="idCarColumn" msprop:Generator_UserColumnName="idCar" type="xs:int" />

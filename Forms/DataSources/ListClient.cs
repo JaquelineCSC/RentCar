@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 
 namespace CarLand.Forms
 {
-    public partial class Clientes : MetroFramework.Forms.MetroForm
+    public partial class Clients : MetroFramework.Forms.MetroForm
     {
         public User User { get; set; }
         public DataRowView RowView { get; set; }
@@ -14,7 +14,7 @@ namespace CarLand.Forms
         public DBClient _appClient { get; set; }
         public DBCNH _appCNH { get; set; }
 
-        public Clientes()
+        public Clients()
         {
             InitializeComponent();
             User = new User();

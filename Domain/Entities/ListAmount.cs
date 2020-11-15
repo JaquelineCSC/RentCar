@@ -1,0 +1,9 @@
+﻿namespace CarLand.Domain.Entities
+{
+    public class AmountCar
+    {
+        public int idCar { get; set; }
+        public double Amount { get; set; }
+
+    }
+}

@@ -31,7 +31,7 @@ namespace CarLand.Forms.Client
         {
             if (RowView != null)
             {
-                DetalheAluguel detalhealuguel = new DetalheAluguel();
+                RentDetails detalhealuguel = new RentDetails();
                 detalhealuguel.Rent.Id = int.Parse(RowView["idRent"].ToString());
                 detalhealuguel.Rent.idCar = int.Parse(RowView["idCar"].ToString());
                 if (RowView["idEmployee"].ToString() != "")
@@ -40,7 +40,7 @@ namespace CarLand.Forms.Client
                 }
                 detalhealuguel.Rent.idClient = int.Parse(RowView["idClient"].ToString());
                 detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["PickUpTime"].ToString());
-                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["DropOfTime"].ToString());
+                detalhealuguel.Rent.DropOffDate = DateTime.Parse(RowView["DropOfTime"].ToString());
                 detalhealuguel.Rent.Value = double.Parse(RowView["Amount"].ToString());
                 detalhealuguel.ShowDialog();
             }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class DetalhesCarro : MetroForm
+    public partial class CarDetails : MetroForm
     {
         private readonly DBCar _appCar = new DBCar();
         private readonly DBImage _appImage = new DBImage();
@@ -21,7 +21,7 @@ namespace CarLand.Forms
         public List<CarLand.Domain.Entities.Image> Images { get; set; }
         int i = 0;
 
-        public DetalhesCarro(int carId)
+        public CarDetails(int carId)
         {
             InitializeComponent();
             Car = _appCar.GetCar(carId);

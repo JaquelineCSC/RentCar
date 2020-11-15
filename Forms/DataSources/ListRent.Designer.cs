@@ -35,9 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroLink3 = new MetroFramework.Controls.MetroLink();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.listRent1 = new CarLand.Forms.DataSets.Paulo.listRent();
-            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rentTableAdapter1 = new CarLand.Forms.DataSets.Paulo.listRentTableAdapters.RentTableAdapter();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,9 +44,12 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listRent1 = new CarLand.Forms.DataSets.Paulo.listRent();
+            this.rentTableAdapter1 = new CarLand.Forms.DataSets.Paulo.listRentTableAdapters.RentTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listRent1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listRent1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLink3
@@ -124,20 +124,6 @@
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_SelectionChanged);
             // 
-            // listRent1
-            // 
-            this.listRent1.DataSetName = "listRent";
-            this.listRent1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rentBindingSource
-            // 
-            this.rentBindingSource.DataMember = "Rent";
-            this.rentBindingSource.DataSource = this.listRent1;
-            // 
-            // rentTableAdapter1
-            // 
-            this.rentTableAdapter1.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "idRent";
@@ -201,6 +187,20 @@
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
             this.dataGridViewTextBoxColumn16.ReadOnly = true;
             // 
+            // rentBindingSource
+            // 
+            this.rentBindingSource.DataMember = "Rent";
+            this.rentBindingSource.DataSource = this.listRent1;
+            // 
+            // listRent1
+            // 
+            this.listRent1.DataSetName = "listRent";
+            this.listRent1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // rentTableAdapter1
+            // 
+            this.rentTableAdapter1.ClearBeforeFill = true;
+            // 
             // ListCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -213,11 +213,12 @@
             this.Controls.Add(this.metroLink3);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListCar";
+            this.Resizable = false;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.AluguelCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listRent1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listRent1)).EndInit();
             this.ResumeLayout(false);
 
         }

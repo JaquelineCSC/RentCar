@@ -95,7 +95,7 @@ namespace CarLand.Forms.Logout
 
         private void metroLink16_Click(object sender, EventArgs e)
         {
-            FrmUsuario form = new FrmUsuario();
+            FormClient form = new FormClient();
             form.User = User;
             this.Hide();
             form.ShowDialog();

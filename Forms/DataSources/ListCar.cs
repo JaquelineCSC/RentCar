@@ -23,6 +23,8 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'listCars.Car' table. You can move, or remove it, as needed.
+            this.carTableAdapter.Fill(this.listCars.Car);
         }
 
         private void toolTip(object sender, EventArgs e)
@@ -97,5 +99,30 @@ namespace CarLand.Forms.Car
             ListCar_Load(this, new EventArgs());
         }
 
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.carTableAdapter.FillBy(this.listCars.Car);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.carTableAdapter.Fill(this.listCars.Car);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

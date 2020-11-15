@@ -1,6 +1,6 @@
 ﻿namespace CarLand.Forms
 {
-    partial class Completar_Cadastro
+    partial class RegisterFinish
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Completar_Cadastro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterFinish));
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.iAgreeCheck = new MetroFramework.Controls.MetroCheckBox();

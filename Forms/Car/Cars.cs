@@ -221,7 +221,7 @@ namespace CarLand.Forms
         private void metroLink2_Click(object sender, EventArgs e)
         {
             MetroLink link = (MetroLink)sender;
-            DetalhesCarro form = new DetalhesCarro(link.TabIndex);
+            CarDetails form = new CarDetails(link.TabIndex);
             form.ShowDialog();
         }
 
@@ -259,7 +259,7 @@ namespace CarLand.Forms
         {
             if (User.isAdmin)
             {
-                FrmPrincipal form = new FrmPrincipal();
+                FormMain form = new FormMain();
                 form.User = User;
                 this.Hide();
                 form.ShowDialog();
@@ -267,7 +267,7 @@ namespace CarLand.Forms
             }
             else
             {
-                FrmUsuario form = new FrmUsuario();
+                FormClient form = new FormClient();
                 form.User = User;
                 this.Hide();
                 form.ShowDialog();

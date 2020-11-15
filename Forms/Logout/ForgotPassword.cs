@@ -14,11 +14,11 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Esqueceu : MetroForm
+    public partial class ForgotPassword : MetroForm
     {
         private readonly DBUser _appUser = new DBUser();
 
-        public Esqueceu()
+        public ForgotPassword()
         {
             InitializeComponent();
         }

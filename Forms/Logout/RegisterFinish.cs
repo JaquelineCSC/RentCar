@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Completar_Cadastro : MetroForm
+    public partial class RegisterFinish : MetroForm
     {
         public User User { get; set; }
         public Domain.Entities.Client Client { get; set; }
@@ -24,7 +24,7 @@ namespace CarLand.Forms
         public DBUser _appUser { get; set; }
         public DBCNH _appCNH { get; set; }
 
-        public Completar_Cadastro(MetroStyleManager manager)
+        public RegisterFinish(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;

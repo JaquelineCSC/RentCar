@@ -75,12 +75,25 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\DBListAmount.cs" />
+    <Compile Include="Domain\Entities\ListAmount.cs" />
+    <Compile Include="Forms\Car\CarAmount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Car\CarAmount.Designer.cs">
+      <DependentUpon>CarAmount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Car\SetValueCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Car\SetValueCar.Designer.cs">
+      <DependentUpon>SetValueCar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DataSets\Paulo\Client.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Client.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Database\Connect.cs" />
     <Compile Include="Database\Connection.cs" />
     <Compile Include="Database\DBCar.cs" />
     <Compile Include="Database\DBCard.cs" />
@@ -121,23 +134,23 @@
     <Compile Include="Forms\Admin\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Aluguel\DetalheAluguel.cs">
+    <Compile Include="Forms\Rent\RentDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Aluguel\DetalheAluguel.Designer.cs">
-      <DependentUpon>DetalheAluguel.cs</DependentUpon>
+    <Compile Include="Forms\Rent\RentDetails.Designer.cs">
+      <DependentUpon>RentDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Aluguel\Rent.cs">
+    <Compile Include="Forms\Rent\Rent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Aluguel\Rent.Designer.cs">
+    <Compile Include="Forms\Rent\Rent.Designer.cs">
       <DependentUpon>Rent.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Car\Carros.cs">
+    <Compile Include="Forms\Car\Cars.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Car\Carros.Designer.cs">
-      <DependentUpon>Carros.cs</DependentUpon>
+    <Compile Include="Forms\Car\Cars.Designer.cs">
+      <DependentUpon>Cars.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Client\Wallet.cs">
       <SubType>Form</SubType>
@@ -145,11 +158,11 @@
     <Compile Include="Forms\Client\Wallet.Designer.cs">
       <DependentUpon>Wallet.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataSources\Clientes.cs">
+    <Compile Include="Forms\DataSources\ListClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataSources\Clientes.Designer.cs">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <Compile Include="Forms\DataSources\ListClient.Designer.cs">
+      <DependentUpon>ListClient.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Car\Create.cs">
       <SubType>Form</SubType>
@@ -193,41 +206,41 @@
     <Compile Include="Forms\Logout\AboutUs.Designer.cs">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Logout\Completar Cadastro.cs">
+    <Compile Include="Forms\Logout\RegisterFinish.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Logout\Completar Cadastro.Designer.cs">
-      <DependentUpon>Completar Cadastro.cs</DependentUpon>
+    <Compile Include="Forms\Logout\RegisterFinish.Designer.cs">
+      <DependentUpon>RegisterFinish.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Car\DetalhesCarro.cs">
+    <Compile Include="Forms\Car\CarDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Car\DetalhesCarro.Designer.cs">
-      <DependentUpon>DetalhesCarro.cs</DependentUpon>
+    <Compile Include="Forms\Car\CarDetails.Designer.cs">
+      <DependentUpon>CarDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Logout\Esqueceu.cs">
+    <Compile Include="Forms\Logout\ForgotPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Logout\Esqueceu.Designer.cs">
-      <DependentUpon>Esqueceu.cs</DependentUpon>
+    <Compile Include="Forms\Logout\ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\FrmPrincipal.cs">
+    <Compile Include="Forms\Admin\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin\FrmPrincipal.Designer.cs">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <Compile Include="Forms\Admin\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Client\FrmUsuario.cs">
+    <Compile Include="Forms\Client\FormClient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Client\FrmUsuario.Designer.cs">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <Compile Include="Forms\Client\FormClient.Designer.cs">
+      <DependentUpon>FormClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataSources\Funcionarios.cs">
+    <Compile Include="Forms\DataSources\ListEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DataSources\Funcionarios.Designer.cs">
-      <DependentUpon>Funcionarios.cs</DependentUpon>
+    <Compile Include="Forms\DataSources\ListEmployee.Designer.cs">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Logout\Login.cs">
       <SubType>Form</SubType>
@@ -235,11 +248,11 @@
     <Compile Include="Forms\Logout\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Logout\Registrar-se.cs">
+    <Compile Include="Forms\Logout\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Logout\Registrar-se.Designer.cs">
-      <DependentUpon>Registrar-se.cs</DependentUpon>
+    <Compile Include="Forms\Logout\Register.Designer.cs">
+      <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DataSets\Paulo\ListCars.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -259,17 +272,23 @@
     <EmbeddedResource Include="Forms\Admin\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Aluguel\DetalheAluguel.resx">
-      <DependentUpon>DetalheAluguel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Car\CarAmount.resx">
+      <DependentUpon>CarAmount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Aluguel\Rent.resx">
+    <EmbeddedResource Include="Forms\Car\SetValueCar.resx">
+      <DependentUpon>SetValueCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rent\RentDetails.resx">
+      <DependentUpon>RentDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Rent\Rent.resx">
       <DependentUpon>Rent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Car\Carros.resx">
-      <DependentUpon>Carros.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Car\Cars.resx">
+      <DependentUpon>Cars.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataSources\Clientes.resx">
-      <DependentUpon>Clientes.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataSources\ListClient.resx">
+      <DependentUpon>ListClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Car\Create.resx">
       <DependentUpon>Create.cs</DependentUpon>
@@ -292,29 +311,29 @@
     <EmbeddedResource Include="Forms\Logout\AboutUs.resx">
       <DependentUpon>AboutUs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Logout\Completar Cadastro.resx">
-      <DependentUpon>Completar Cadastro.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Logout\RegisterFinish.resx">
+      <DependentUpon>RegisterFinish.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Car\DetalhesCarro.resx">
-      <DependentUpon>DetalhesCarro.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Car\CarDetails.resx">
+      <DependentUpon>CarDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Logout\Esqueceu.resx">
-      <DependentUpon>Esqueceu.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Logout\ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin\FrmPrincipal.resx">
-      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Admin\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Client\FrmUsuario.resx">
-      <DependentUpon>FrmUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Client\FormClient.resx">
+      <DependentUpon>FormClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DataSources\Funcionarios.resx">
-      <DependentUpon>Funcionarios.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\DataSources\ListEmployee.resx">
+      <DependentUpon>ListEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Logout\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Logout\Registrar-se.resx">
-      <DependentUpon>Registrar-se.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Logout\Register.resx">
+      <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

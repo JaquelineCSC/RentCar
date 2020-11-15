@@ -16,11 +16,11 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class FrmPrincipal : MetroFramework.Forms.MetroForm
+    public partial class FormMain : MetroFramework.Forms.MetroForm
     {
         public User User { get; set; }
 
-        public FrmPrincipal()
+        public FormMain()
         {
             InitializeComponent();
             panelSettings.Visible = false;
@@ -98,7 +98,6 @@ namespace CarLand.Forms
             employeeTile.Style = style;
             listRentTile.Style = style;
             paymentTile.Style = style;
-            rentTile.Style = style;
             reportTile.Style = style;
             settingsTile.Style = style;
         }
@@ -120,7 +119,6 @@ namespace CarLand.Forms
             listRentTile.Theme = style;
             metroLabel6.Theme = style;
             paymentTile.Theme = style;
-            rentTile.Theme = style;
             reportTile.Theme = style;
             settingsTile.Theme = style;
         }
@@ -324,14 +322,14 @@ namespace CarLand.Forms
 
         private void clientsTile_Click(object sender, EventArgs e)
         {
-            Clientes clientes = new Clientes();
+            Clients clientes = new Clients();
             clientes.User = User;
             clientes.ShowDialog();
         }
 
         private void employeeTile_Click(object sender, EventArgs e)
         {
-            Funcionarios funcionarios = new Funcionarios();
+            ListEmployees funcionarios = new ListEmployees();
             funcionarios.ShowDialog();
         }
 
@@ -344,6 +342,12 @@ namespace CarLand.Forms
         private void reportTile_Click(object sender, EventArgs e)
         {
             Admin.Reports form = new Admin.Reports();
+            form.ShowDialog();
+        }
+
+        private void paymentTile_Click(object sender, EventArgs e)
+        {
+            CarAmount form = new CarAmount();
             form.ShowDialog();
         }
     }

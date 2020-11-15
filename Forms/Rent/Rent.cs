@@ -224,7 +224,7 @@ namespace CarLand.Forms.Aluguel
                     MetroMessageBox.Show(this, "Aluguel registrado.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
                     if (User.isAdmin)
                     {
-                        FrmPrincipal form = new FrmPrincipal();
+                        FormMain form = new FormMain();
                         form.User = User;
                         this.Hide();
                         form.ShowDialog();
@@ -232,7 +232,7 @@ namespace CarLand.Forms.Aluguel
                     }
                     else
                     {
-                        FrmUsuario form = new FrmUsuario();
+                        FormClient form = new FormClient();
                         form.User = User;
                         this.Hide();
                         form.ShowDialog();

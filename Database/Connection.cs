@@ -159,6 +159,7 @@ namespace CarLand.Database
                 idCar = reader.GetInt32(1),
                 Path = reader.GetString(2),
                 Name = reader.GetString(3),
+                Main = reader.GetBoolean(4),
             };
         }
 
@@ -183,22 +184,7 @@ namespace CarLand.Database
 
         #region Client
 
-        public Client GetClientByUserId(string sql)
-        {
-            Connect();
-            cd.Connection = cn;
-            cd.CommandText = sql;
-            Client client = new Client();
-            SqlDataReader reader = cd.ExecuteReader();
-            if (reader.Read())
-            {
-                client = ConstructorClient(reader);
-            }
-            cn.Close();
-            return client;
-        }
-
-        public Client GetClientByEmail(string sql)
+        public Client GetClient(string sql)
         {
             Connect();
             cd.Connection = cn;
@@ -341,6 +327,34 @@ namespace CarLand.Database
                 Number = reader.GetInt64(3),
                 CVC = reader.GetInt32(4),
                 ValidateDate = reader.GetDateTime(5)
+            };
+        }
+
+        #endregion
+
+        #region Amount
+
+        public AmountCar GetAmount(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            AmountCar amount = new AmountCar();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                amount = ConstructorAmount(reader);
+            }
+            cn.Close();
+            return amount;
+        }
+
+        public AmountCar ConstructorAmount(SqlDataReader reader)
+        {
+            return new AmountCar()
+            {
+                idCar = reader.GetInt32(0),
+                Amount = reader.GetDouble(1),
             };
         }
 

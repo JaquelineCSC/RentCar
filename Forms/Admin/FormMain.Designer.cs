@@ -1,6 +1,6 @@
 ﻿namespace CarLand.Forms
 {
-    partial class FrmPrincipal
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabControl = new MetroFramework.Controls.MetroTabControl();
             this.tabControlPrincipal = new MetroFramework.Controls.MetroTabPage();
             this.reportTile = new MetroFramework.Controls.MetroTile();
             this.listRentTile = new MetroFramework.Controls.MetroTile();
-            this.rentTile = new MetroFramework.Controls.MetroTile();
             this.paymentTile = new MetroFramework.Controls.MetroTile();
             this.clientsTile = new MetroFramework.Controls.MetroTile();
             this.employeeTile = new MetroFramework.Controls.MetroTile();
@@ -95,7 +94,6 @@
             // 
             this.tabControlPrincipal.Controls.Add(this.reportTile);
             this.tabControlPrincipal.Controls.Add(this.listRentTile);
-            this.tabControlPrincipal.Controls.Add(this.rentTile);
             this.tabControlPrincipal.Controls.Add(this.paymentTile);
             this.tabControlPrincipal.Controls.Add(this.clientsTile);
             this.tabControlPrincipal.Controls.Add(this.employeeTile);
@@ -118,7 +116,7 @@
             // 
             this.reportTile.ActiveControl = null;
             this.reportTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.reportTile.Location = new System.Drawing.Point(783, 354);
+            this.reportTile.Location = new System.Drawing.Point(496, 231);
             this.reportTile.Name = "reportTile";
             this.reportTile.Size = new System.Drawing.Size(129, 130);
             this.reportTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -134,7 +132,7 @@
             // 
             this.listRentTile.ActiveControl = null;
             this.listRentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.listRentTile.Location = new System.Drawing.Point(648, 218);
+            this.listRentTile.Location = new System.Drawing.Point(769, 231);
             this.listRentTile.Name = "listRentTile";
             this.listRentTile.Size = new System.Drawing.Size(129, 130);
             this.listRentTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -146,27 +144,11 @@
             this.listRentTile.UseTileImage = true;
             this.listRentTile.Click += new System.EventHandler(this.listRentTile_Click);
             // 
-            // rentTile
-            // 
-            this.rentTile.ActiveControl = null;
-            this.rentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rentTile.Location = new System.Drawing.Point(375, 218);
-            this.rentTile.Name = "rentTile";
-            this.rentTile.Size = new System.Drawing.Size(129, 130);
-            this.rentTile.Style = MetroFramework.MetroColorStyle.Orange;
-            this.rentTile.TabIndex = 8;
-            this.rentTile.Text = "Alugar Carros";
-            this.rentTile.TileImage = ((System.Drawing.Image)(resources.GetObject("rentTile.TileImage")));
-            this.rentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rentTile.UseSelectable = true;
-            this.rentTile.UseTileImage = true;
-            this.rentTile.Click += new System.EventHandler(this.ShowCars);
-            // 
             // paymentTile
             // 
             this.paymentTile.ActiveControl = null;
             this.paymentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.paymentTile.Location = new System.Drawing.Point(648, 354);
+            this.paymentTile.Location = new System.Drawing.Point(769, 367);
             this.paymentTile.Name = "paymentTile";
             this.paymentTile.Size = new System.Drawing.Size(129, 130);
             this.paymentTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -176,13 +158,14 @@
             this.paymentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.paymentTile.UseSelectable = true;
             this.paymentTile.UseTileImage = true;
+            this.paymentTile.Click += new System.EventHandler(this.paymentTile_Click);
             // 
             // clientsTile
             // 
             this.clientsTile.ActiveControl = null;
             this.clientsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.clientsTile.BackColor = System.Drawing.Color.Black;
-            this.clientsTile.Location = new System.Drawing.Point(375, 354);
+            this.clientsTile.Location = new System.Drawing.Point(496, 367);
             this.clientsTile.Name = "clientsTile";
             this.clientsTile.Size = new System.Drawing.Size(129, 130);
             this.clientsTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -199,7 +182,7 @@
             this.employeeTile.ActiveControl = null;
             this.employeeTile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.employeeTile.BackColor = System.Drawing.Color.Black;
-            this.employeeTile.Location = new System.Drawing.Point(240, 354);
+            this.employeeTile.Location = new System.Drawing.Point(361, 367);
             this.employeeTile.Name = "employeeTile";
             this.employeeTile.Size = new System.Drawing.Size(129, 130);
             this.employeeTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -217,7 +200,7 @@
             this.settingsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.settingsTile.BackColor = System.Drawing.Color.Black;
             this.settingsTile.ForeColor = System.Drawing.Color.Black;
-            this.settingsTile.Location = new System.Drawing.Point(510, 218);
+            this.settingsTile.Location = new System.Drawing.Point(631, 231);
             this.settingsTile.Name = "settingsTile";
             this.settingsTile.Size = new System.Drawing.Size(132, 266);
             this.settingsTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -236,7 +219,7 @@
             this.carsTile.ActiveControl = null;
             this.carsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.carsTile.BackColor = System.Drawing.Color.Black;
-            this.carsTile.Location = new System.Drawing.Point(240, 218);
+            this.carsTile.Location = new System.Drawing.Point(361, 231);
             this.carsTile.Name = "carsTile";
             this.carsTile.Size = new System.Drawing.Size(129, 130);
             this.carsTile.Style = MetroFramework.MetroColorStyle.Orange;
@@ -644,7 +627,6 @@
         private MetroFramework.Controls.MetroTile clientsTile;
         private MetroFramework.Controls.MetroTile paymentTile;
         private MetroFramework.Controls.MetroLink metroLinkLogout;
-        private MetroFramework.Controls.MetroTile rentTile;
         private MetroFramework.Controls.MetroTile listRentTile;
         private MetroFramework.Controls.MetroPanel panelSettings;
         private MetroFramework.Controls.MetroTabControl styles;

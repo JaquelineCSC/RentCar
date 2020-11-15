@@ -16,11 +16,11 @@ using System.Windows.Forms;
 
 namespace CarLand
 {
-    public partial class FrmUsuario : MetroFramework.Forms.MetroForm
+    public partial class FormClient : MetroFramework.Forms.MetroForm
     {
         public User User { get; set; }
 
-        public FrmUsuario()
+        public FormClient()
         {
             InitializeComponent();
         }

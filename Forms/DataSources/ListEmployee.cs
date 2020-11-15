@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Funcionarios : MetroFramework.Forms.MetroForm
+    public partial class ListEmployees : MetroFramework.Forms.MetroForm
     {
         public Domain.Entities.User User { get; set; }
         public DataRowView RowView { get; set; }
@@ -21,7 +21,7 @@ namespace CarLand.Forms
         public Database.DBEmployee _appEmployee { get; set; }
         public Database.DBUser _appUser { get; set; }
 
-        public Funcionarios()
+        public ListEmployees()
         {
             InitializeComponent();
             _appEmployee = new Database.DBEmployee();

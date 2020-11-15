@@ -15,5 +15,6 @@ namespace CarLand.Domain.Entities
         public int Doors { get; set; }
         public int Year { get; set; }
         public string Branch { get; set; }
+        public bool Status { get; set; }
     }
 }

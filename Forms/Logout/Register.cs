@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Registrar_se : MetroForm
+    public partial class Register : MetroForm
     {
         public Domain.Entities.User User { get; set; }
         public DBUser _appCar { get; set; }
 
-        public Registrar_se()
+        public Register()
         {
             InitializeComponent();
             _appCar = new DBUser();
@@ -68,7 +68,7 @@ namespace CarLand.Forms
                 {
                     User = new Domain.Entities.User(mtxtUsuarioClientes.Text, mtxtSenhaClientes.Text, false);
                     this.Hide();
-                    Completar_Cadastro form = new Completar_Cadastro(this.StyleManager);
+                    RegisterFinish form = new RegisterFinish(this.StyleManager);
                     form.User = User;
                     form.ShowDialog();
                     this.Close();

@@ -1,6 +1,6 @@
 ﻿namespace CarLand.Forms
 {
-    partial class Registrar_se
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registrar_se));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.mtxtSenhaClientes = new MetroFramework.Controls.MetroTextBox();
             this.mtxtUsuarioClientes = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
