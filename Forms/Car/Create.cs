@@ -100,19 +100,22 @@ namespace CarLand.Forms.Car
 
         private void metroLinkSalvar_Click(object sender, EventArgs e)
         {
+            int id = 0;
             try
             {
-                int id = _appCar.Insert(Car);
+                id = _appCar.Insert(Car);
                 Domain.Entities.Image img = new Domain.Entities.Image();
                 foreach (var item in Images)
                 {
                     _appImage.SetImage(id, item);
                 }
                 MetroMessageBox.Show(this, "Carro cadastro com sucess", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                metroLinkSalvar.Enabled = false;
             }
             catch
             {
-                MetroMessageBox.Show(this, "Ocorreu um erro ao salvar. Entre em contato com o administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
+                _appCar.Delete(id);
+                MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
     }

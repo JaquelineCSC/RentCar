@@ -34,25 +34,10 @@ namespace CarLand.Database
             _context.CommandWithoutReturn(query);
         }
 
-        public Card GetCard(string cardname)
+        public List<Card> GetCard(int idClient)
         {
-            query = $"Select idCard from [Card] where Cardname LIKE '" + cardname + "%'";
-            var reader = _context.Consult(query);
-            return ConstructorCard(reader);
+            query = $"Select * from [Card] where idClient = {idClient}";
+            return _context.GetCard(query);
         }
-
-        public Card ConstructorCard(SqlDataReader reader)
-        {
-            return new Card()
-            {
-                Id = reader.GetInt32(1),
-                idClient = reader.GetInt32(2),
-                Name = reader.GetString(3),
-                Number = reader.GetInt32(4),
-                CVC = reader.GetInt32(5),
-                ValidateDate = reader.GetDateTime(6)
-            };
-        }
-
     }
 }

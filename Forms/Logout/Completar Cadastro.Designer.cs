@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Completar_Cadastro));
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.iAgreeCheck = new MetroFramework.Controls.MetroCheckBox();
@@ -78,7 +79,7 @@
             // 
             this.metroLabel9.AutoSize = true;
             this.metroLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel9.Location = new System.Drawing.Point(264, 242);
+            this.metroLabel9.Location = new System.Drawing.Point(265, 255);
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.Size = new System.Drawing.Size(143, 19);
             this.metroLabel9.TabIndex = 59;
@@ -88,7 +89,7 @@
             // iAgreeCheck
             // 
             this.iAgreeCheck.AutoSize = true;
-            this.iAgreeCheck.Location = new System.Drawing.Point(68, 355);
+            this.iAgreeCheck.Location = new System.Drawing.Point(69, 368);
             this.iAgreeCheck.Name = "iAgreeCheck";
             this.iAgreeCheck.Size = new System.Drawing.Size(394, 15);
             this.iAgreeCheck.Style = MetroFramework.MetroColorStyle.Orange;
@@ -102,7 +103,7 @@
             // 
             // dateOfBirth
             // 
-            this.dateOfBirth.Location = new System.Drawing.Point(554, 110);
+            this.dateOfBirth.Location = new System.Drawing.Point(555, 123);
             this.dateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(223, 29);
@@ -120,7 +121,7 @@
             "Masculino",
             "Feminino",
             "Prefiro não mencionar"});
-            this.genero.Location = new System.Drawing.Point(465, 187);
+            this.genero.Location = new System.Drawing.Point(466, 200);
             this.genero.Name = "genero";
             this.genero.Size = new System.Drawing.Size(180, 29);
             this.genero.Style = MetroFramework.MetroColorStyle.Orange;
@@ -145,7 +146,7 @@
             this.email.CustomButton.UseSelectable = true;
             this.email.CustomButton.Visible = false;
             this.email.Lines = new string[0];
-            this.email.Location = new System.Drawing.Point(311, 110);
+            this.email.Location = new System.Drawing.Point(312, 123);
             this.email.MaxLength = 32767;
             this.email.Multiline = true;
             this.email.Name = "email";
@@ -161,6 +162,7 @@
             this.email.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.email.UseSelectable = true;
             this.email.UseStyleColors = true;
+            this.email.WaterMark = "exemplo@email.com";
             this.email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.email.TextChanged += new System.EventHandler(this.verificarDados);
@@ -181,7 +183,7 @@
             this.telefone.CustomButton.UseSelectable = true;
             this.telefone.CustomButton.Visible = false;
             this.telefone.Lines = new string[0];
-            this.telefone.Location = new System.Drawing.Point(279, 187);
+            this.telefone.Location = new System.Drawing.Point(280, 200);
             this.telefone.MaxLength = 32767;
             this.telefone.Multiline = true;
             this.telefone.Name = "telefone";
@@ -197,6 +199,7 @@
             this.telefone.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.telefone.UseSelectable = true;
             this.telefone.UseStyleColors = true;
+            this.telefone.WaterMark = "(35) X XXXX-XXXX";
             this.telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.telefone.TextChanged += new System.EventHandler(this.verificarDados);
@@ -217,7 +220,7 @@
             this.cnh.CustomButton.UseSelectable = true;
             this.cnh.CustomButton.Visible = false;
             this.cnh.Lines = new string[0];
-            this.cnh.Location = new System.Drawing.Point(68, 264);
+            this.cnh.Location = new System.Drawing.Point(69, 277);
             this.cnh.MaxLength = 32767;
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
@@ -233,6 +236,7 @@
             this.cnh.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cnh.UseSelectable = true;
             this.cnh.UseStyleColors = true;
+            this.cnh.WaterMark = "XXXXXXXXXXX";
             this.cnh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cnh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.cnh.TextChanged += new System.EventHandler(this.verificarDados);
@@ -253,7 +257,7 @@
             this.cpf.CustomButton.UseSelectable = true;
             this.cpf.CustomButton.Visible = false;
             this.cpf.Lines = new string[0];
-            this.cpf.Location = new System.Drawing.Point(68, 187);
+            this.cpf.Location = new System.Drawing.Point(69, 200);
             this.cpf.MaxLength = 32767;
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
@@ -269,6 +273,7 @@
             this.cpf.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.cpf.UseSelectable = true;
             this.cpf.UseStyleColors = true;
+            this.cpf.WaterMark = "XXX.XXX.XXX-XX";
             this.cpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cpf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.cpf.TextChanged += new System.EventHandler(this.verificarDados);
@@ -279,42 +284,41 @@
             // 
             // 
             // 
-            this.nomeTXT.CustomButton.Image = null;
-            this.nomeTXT.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.nomeTXT.CustomButton.Name = "";
-            this.nomeTXT.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.nomeTXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.nomeTXT.CustomButton.TabIndex = 1;
-            this.nomeTXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.nomeTXT.CustomButton.UseSelectable = true;
-            this.nomeTXT.CustomButton.Visible = false;
-            this.nomeTXT.Lines = new string[0];
-            this.nomeTXT.Location = new System.Drawing.Point(68, 110);
-            this.nomeTXT.MaxLength = 32767;
-            this.nomeTXT.Multiline = true;
-            this.nomeTXT.Name = "nomeTXT";
-            this.nomeTXT.PasswordChar = '\0';
-            this.nomeTXT.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.nomeTXT.SelectedText = "";
-            this.nomeTXT.SelectionLength = 0;
-            this.nomeTXT.SelectionStart = 0;
-            this.nomeTXT.ShortcutsEnabled = true;
-            this.nomeTXT.Size = new System.Drawing.Size(223, 29);
-            this.nomeTXT.Style = MetroFramework.MetroColorStyle.Orange;
-            this.nomeTXT.TabIndex = 51;
-            this.nomeTXT.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.nomeTXT.UseSelectable = true;
-            this.nomeTXT.UseStyleColors = true;
-            this.nomeTXT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.nomeTXT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.nomeTXT.TextChanged += new System.EventHandler(this.verificarDados);
-            this.nomeTXT.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verificarPreenchimento);
+            this.name.CustomButton.Image = null;
+            this.name.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.name.CustomButton.Name = "";
+            this.name.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.name.CustomButton.TabIndex = 1;
+            this.name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.name.CustomButton.UseSelectable = true;
+            this.name.CustomButton.Visible = false;
+            this.name.Lines = new string[0];
+            this.name.Location = new System.Drawing.Point(69, 123);
+            this.name.MaxLength = 32767;
+            this.name.Multiline = true;
+            this.name.Name = "name";
+            this.name.PasswordChar = '\0';
+            this.name.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.name.SelectedText = "";
+            this.name.SelectionLength = 0;
+            this.name.SelectionStart = 0;
+            this.name.ShortcutsEnabled = true;
+            this.name.Size = new System.Drawing.Size(223, 29);
+            this.name.Style = MetroFramework.MetroColorStyle.Orange;
+            this.name.TabIndex = 51;
+            this.name.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.name.UseSelectable = true;
+            this.name.UseStyleColors = true;
+            this.name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.name.TextChanged += new System.EventHandler(this.verificarPreenchimento);
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
             this.metroLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel8.Location = new System.Drawing.Point(465, 165);
+            this.metroLabel8.Location = new System.Drawing.Point(466, 178);
             this.metroLabel8.Name = "metroLabel8";
             this.metroLabel8.Size = new System.Drawing.Size(55, 19);
             this.metroLabel8.TabIndex = 50;
@@ -325,7 +329,7 @@
             // 
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel7.Location = new System.Drawing.Point(311, 88);
+            this.metroLabel7.Location = new System.Drawing.Point(312, 101);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(50, 19);
             this.metroLabel7.TabIndex = 49;
@@ -336,7 +340,7 @@
             // 
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel6.Location = new System.Drawing.Point(279, 165);
+            this.metroLabel6.Location = new System.Drawing.Point(280, 178);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(60, 19);
             this.metroLabel6.TabIndex = 48;
@@ -347,7 +351,7 @@
             // 
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel5.Location = new System.Drawing.Point(554, 88);
+            this.metroLabel5.Location = new System.Drawing.Point(555, 101);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(131, 19);
             this.metroLabel5.TabIndex = 47;
@@ -358,7 +362,7 @@
             // 
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel4.Location = new System.Drawing.Point(68, 242);
+            this.metroLabel4.Location = new System.Drawing.Point(69, 255);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(40, 19);
             this.metroLabel4.TabIndex = 46;
@@ -369,7 +373,7 @@
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel3.Location = new System.Drawing.Point(68, 165);
+            this.metroLabel3.Location = new System.Drawing.Point(69, 178);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(36, 19);
             this.metroLabel3.TabIndex = 45;
@@ -380,7 +384,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.metroLabel1.Location = new System.Drawing.Point(68, 88);
+            this.metroLabel1.Location = new System.Drawing.Point(69, 101);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(49, 19);
             this.metroLabel1.TabIndex = 44;
@@ -390,8 +394,7 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.buttonSave.Enabled = false;
-            this.buttonSave.Location = new System.Drawing.Point(612, 325);
+            this.buttonSave.Location = new System.Drawing.Point(613, 338);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(105, 45);
             this.buttonSave.TabIndex = 61;
@@ -405,7 +408,7 @@
             // 
             this.metroLabel2.AutoSize = true;
             this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel2.Location = new System.Drawing.Point(112, 88);
+            this.metroLabel2.Location = new System.Drawing.Point(113, 101);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(15, 19);
             this.metroLabel2.TabIndex = 62;
@@ -417,7 +420,7 @@
             // 
             this.metroLabel10.AutoSize = true;
             this.metroLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel10.Location = new System.Drawing.Point(102, 242);
+            this.metroLabel10.Location = new System.Drawing.Point(103, 255);
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.Size = new System.Drawing.Size(15, 19);
             this.metroLabel10.TabIndex = 63;
@@ -429,7 +432,7 @@
             // 
             this.metroLabel11.AutoSize = true;
             this.metroLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel11.Location = new System.Drawing.Point(102, 165);
+            this.metroLabel11.Location = new System.Drawing.Point(103, 178);
             this.metroLabel11.Name = "metroLabel11";
             this.metroLabel11.Size = new System.Drawing.Size(15, 19);
             this.metroLabel11.TabIndex = 64;
@@ -441,7 +444,7 @@
             // 
             this.metroLabel12.AutoSize = true;
             this.metroLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel12.Location = new System.Drawing.Point(335, 165);
+            this.metroLabel12.Location = new System.Drawing.Point(336, 178);
             this.metroLabel12.Name = "metroLabel12";
             this.metroLabel12.Size = new System.Drawing.Size(15, 19);
             this.metroLabel12.TabIndex = 65;
@@ -453,7 +456,7 @@
             // 
             this.metroLabel13.AutoSize = true;
             this.metroLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel13.Location = new System.Drawing.Point(519, 165);
+            this.metroLabel13.Location = new System.Drawing.Point(520, 178);
             this.metroLabel13.Name = "metroLabel13";
             this.metroLabel13.Size = new System.Drawing.Size(15, 19);
             this.metroLabel13.TabIndex = 66;
@@ -465,7 +468,7 @@
             // 
             this.metroLabel14.AutoSize = true;
             this.metroLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel14.Location = new System.Drawing.Point(680, 88);
+            this.metroLabel14.Location = new System.Drawing.Point(681, 101);
             this.metroLabel14.Name = "metroLabel14";
             this.metroLabel14.Size = new System.Drawing.Size(15, 19);
             this.metroLabel14.TabIndex = 67;
@@ -477,7 +480,7 @@
             // 
             this.metroLabel15.AutoSize = true;
             this.metroLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel15.Location = new System.Drawing.Point(358, 88);
+            this.metroLabel15.Location = new System.Drawing.Point(359, 101);
             this.metroLabel15.Name = "metroLabel15";
             this.metroLabel15.Size = new System.Drawing.Size(15, 19);
             this.metroLabel15.TabIndex = 68;
@@ -489,7 +492,7 @@
             // 
             this.metroLabel16.AutoSize = true;
             this.metroLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.metroLabel16.Location = new System.Drawing.Point(403, 242);
+            this.metroLabel16.Location = new System.Drawing.Point(404, 255);
             this.metroLabel16.Name = "metroLabel16";
             this.metroLabel16.Size = new System.Drawing.Size(15, 19);
             this.metroLabel16.TabIndex = 69;
@@ -512,6 +515,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroLabel16);
             this.Controls.Add(this.metroLabel15);
@@ -539,10 +545,10 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Completar_Cadastro";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Completar_Cadastro";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();

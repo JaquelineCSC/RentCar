@@ -34,25 +34,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListCar));
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.idCarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.boardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.branchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.integradoraDataSet1 = new CarLand.DataSets.IntegradoraDataSet1();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.metroLink3 = new MetroFramework.Controls.MetroLink();
-            this.carTableAdapter1 = new CarLand.DataSets.IntegradoraDataSet1TableAdapters.CarTableAdapter();
             this.metroLink4 = new MetroFramework.Controls.MetroLink();
             this.metrotooltipo = new MetroFramework.Components.MetroToolTip();
+            this.carBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idCarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.branchDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.boardDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doorsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGrid1
@@ -76,14 +73,14 @@
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCarDataGridViewTextBoxColumn,
-            this.boardDataGridViewTextBoxColumn,
             this.branchDataGridViewTextBoxColumn,
             this.modelDataGridViewTextBoxColumn,
             this.yearDataGridViewTextBoxColumn,
-            this.colorDataGridViewTextBoxColumn,
+            this.boardDataGridViewTextBoxColumn,
             this.doorsDataGridViewTextBoxColumn,
+            this.colorDataGridViewTextBoxColumn,
             this.fuelDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.carBindingSource1;
+            this.metroGrid1.DataSource = this.carBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -114,80 +111,6 @@
             this.metroGrid1.TabIndex = 0;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_CellContentClick);
-            // 
-            // idCarDataGridViewTextBoxColumn
-            // 
-            this.idCarDataGridViewTextBoxColumn.DataPropertyName = "idCar";
-            this.idCarDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idCarDataGridViewTextBoxColumn.Name = "idCarDataGridViewTextBoxColumn";
-            this.idCarDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCarDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // boardDataGridViewTextBoxColumn
-            // 
-            this.boardDataGridViewTextBoxColumn.DataPropertyName = "Board";
-            this.boardDataGridViewTextBoxColumn.HeaderText = "Placa";
-            this.boardDataGridViewTextBoxColumn.Name = "boardDataGridViewTextBoxColumn";
-            this.boardDataGridViewTextBoxColumn.ReadOnly = true;
-            this.boardDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // branchDataGridViewTextBoxColumn
-            // 
-            this.branchDataGridViewTextBoxColumn.DataPropertyName = "Branch";
-            this.branchDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.branchDataGridViewTextBoxColumn.Name = "branchDataGridViewTextBoxColumn";
-            this.branchDataGridViewTextBoxColumn.ReadOnly = true;
-            this.branchDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // yearDataGridViewTextBoxColumn
-            // 
-            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
-            this.yearDataGridViewTextBoxColumn.HeaderText = "Ano";
-            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
-            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
-            this.yearDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // colorDataGridViewTextBoxColumn
-            // 
-            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
-            this.colorDataGridViewTextBoxColumn.HeaderText = "Cor";
-            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
-            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.colorDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // doorsDataGridViewTextBoxColumn
-            // 
-            this.doorsDataGridViewTextBoxColumn.DataPropertyName = "Doors";
-            this.doorsDataGridViewTextBoxColumn.HeaderText = "Portas";
-            this.doorsDataGridViewTextBoxColumn.Name = "doorsDataGridViewTextBoxColumn";
-            this.doorsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.doorsDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // fuelDataGridViewTextBoxColumn
-            // 
-            this.fuelDataGridViewTextBoxColumn.DataPropertyName = "Fuel";
-            this.fuelDataGridViewTextBoxColumn.HeaderText = "Combustível";
-            this.fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
-            this.fuelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fuelDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // carBindingSource1
-            // 
-            this.carBindingSource1.DataMember = "Car";
-            this.carBindingSource1.DataSource = this.integradoraDataSet1;
-            // 
-            // integradoraDataSet1
-            // 
-            this.integradoraDataSet1.DataSetName = "IntegradoraDataSet1";
-            this.integradoraDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroLink1
             // 
@@ -228,10 +151,6 @@
             this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
             this.metroLink3.MouseHover += new System.EventHandler(this.toolTip);
             // 
-            // carTableAdapter1
-            // 
-            this.carTableAdapter1.ClearBeforeFill = true;
-            // 
             // metroLink4
             // 
             this.metroLink4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink4.BackgroundImage")));
@@ -250,25 +169,85 @@
             this.metrotooltipo.StyleManager = null;
             this.metrotooltipo.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // listCars
+            // 
+            // idCarDataGridViewTextBoxColumn
+            // 
+            this.idCarDataGridViewTextBoxColumn.DataPropertyName = "idCar";
+            this.idCarDataGridViewTextBoxColumn.HeaderText = "idCar";
+            this.idCarDataGridViewTextBoxColumn.Name = "idCarDataGridViewTextBoxColumn";
+            this.idCarDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // branchDataGridViewTextBoxColumn
+            // 
+            this.branchDataGridViewTextBoxColumn.DataPropertyName = "Branch";
+            this.branchDataGridViewTextBoxColumn.HeaderText = "Branch";
+            this.branchDataGridViewTextBoxColumn.Name = "branchDataGridViewTextBoxColumn";
+            this.branchDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "Model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // yearDataGridViewTextBoxColumn
+            // 
+            this.yearDataGridViewTextBoxColumn.DataPropertyName = "Year";
+            this.yearDataGridViewTextBoxColumn.HeaderText = "Year";
+            this.yearDataGridViewTextBoxColumn.Name = "yearDataGridViewTextBoxColumn";
+            this.yearDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // boardDataGridViewTextBoxColumn
+            // 
+            this.boardDataGridViewTextBoxColumn.DataPropertyName = "Board";
+            this.boardDataGridViewTextBoxColumn.HeaderText = "Board";
+            this.boardDataGridViewTextBoxColumn.Name = "boardDataGridViewTextBoxColumn";
+            this.boardDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // doorsDataGridViewTextBoxColumn
+            // 
+            this.doorsDataGridViewTextBoxColumn.DataPropertyName = "Doors";
+            this.doorsDataGridViewTextBoxColumn.HeaderText = "Doors";
+            this.doorsDataGridViewTextBoxColumn.Name = "doorsDataGridViewTextBoxColumn";
+            this.doorsDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // colorDataGridViewTextBoxColumn
+            // 
+            this.colorDataGridViewTextBoxColumn.DataPropertyName = "Color";
+            this.colorDataGridViewTextBoxColumn.HeaderText = "Color";
+            this.colorDataGridViewTextBoxColumn.Name = "colorDataGridViewTextBoxColumn";
+            this.colorDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fuelDataGridViewTextBoxColumn
+            // 
+            this.fuelDataGridViewTextBoxColumn.DataPropertyName = "Fuel";
+            this.fuelDataGridViewTextBoxColumn.HeaderText = "Fuel";
+            this.fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
+            this.fuelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // ListCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
+            this.BackMaxSize = 240;
             this.ClientSize = new System.Drawing.Size(923, 543);
             this.Controls.Add(this.metroLink4);
             this.Controls.Add(this.metroLink3);
             this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroGrid1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ListCar";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Carros";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.ListCar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,18 +258,16 @@
         private MetroFramework.Controls.MetroLink metroLink1;
         private MetroFramework.Controls.MetroLink metroLink2;
         private MetroFramework.Controls.MetroLink metroLink3;
-        private DataSets.IntegradoraDataSet1 integradoraDataSet1;
-        private System.Windows.Forms.BindingSource carBindingSource1;
-        private DataSets.IntegradoraDataSet1TableAdapters.CarTableAdapter carTableAdapter1;
+        private MetroFramework.Components.MetroToolTip metrotooltipo;
+        private MetroFramework.Controls.MetroLink metroLink4;
+        private System.Windows.Forms.BindingSource carBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn boardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn branchDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn yearDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn boardDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn doorsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fuelDataGridViewTextBoxColumn;
-        private MetroFramework.Components.MetroToolTip metrotooltipo;
-        private MetroFramework.Controls.MetroLink metroLink4;
     }
 }

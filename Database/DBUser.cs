@@ -16,7 +16,7 @@ namespace CarLand.Database
 
         public int Insert(User user)
         {
-            int bit = user.Admin == true ? 1 : 0;
+            int bit = user.isAdmin == true ? 1 : 0;
             query = $"Insert into Users (userName, password, isAdmin) output inserted.idUser values ('{user.Name}' , '{user.Password}' , {bit})";
             return _context.CommandWithReturnId(query);
         }
@@ -24,7 +24,7 @@ namespace CarLand.Database
         public void Update(User user)
         {
             query = $@"Update Users 
-                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.Admin} 
+                    set userName = '{user.Name}', password = '{user.Password}', isAdmin = {user.isAdmin} 
                     WHERE idUser = {user.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -34,13 +34,13 @@ namespace CarLand.Database
             _context.CommandWithoutReturn(query);
         }
 
-        public User GetUser(string userName, string password = "")
+        public User GetUser(string userName = "", string password = "", int id = 0)
         {
-            if(password == "")
-                query = $@"select * from Users where userName like '{userName}'";
+            if(id == 0)
+                query = $@"select * from Users where username like '%{userName}%' and password like '%{password}%'";
             else
-                query = $@"select * from Users where username like '{userName}' and password = '{password}'";
-            return _context.GetUserByName(query);
+                query = $@"select * from Users where idUser = {id}";
+            return _context.GetUser(query);
         }
 
     }

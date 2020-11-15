@@ -30,18 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
-            this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
-            this.metroTile7 = new MetroFramework.Controls.MetroTile();
-            this.metroTile4 = new MetroFramework.Controls.MetroTile();
-            this.metroTile6 = new MetroFramework.Controls.MetroTile();
-            this.metroTile5 = new MetroFramework.Controls.MetroTile();
-            this.metroTile3 = new MetroFramework.Controls.MetroTile();
-            this.metroTile2 = new MetroFramework.Controls.MetroTile();
-            this.metroTile1 = new MetroFramework.Controls.MetroTile();
+            this.tabControl = new MetroFramework.Controls.MetroTabControl();
+            this.tabControlPrincipal = new MetroFramework.Controls.MetroTabPage();
+            this.reportTile = new MetroFramework.Controls.MetroTile();
+            this.listRentTile = new MetroFramework.Controls.MetroTile();
+            this.rentTile = new MetroFramework.Controls.MetroTile();
+            this.paymentTile = new MetroFramework.Controls.MetroTile();
+            this.clientsTile = new MetroFramework.Controls.MetroTile();
+            this.employeeTile = new MetroFramework.Controls.MetroTile();
+            this.settingsTile = new MetroFramework.Controls.MetroTile();
+            this.carsTile = new MetroFramework.Controls.MetroTile();
             this.metroLinkLogout = new MetroFramework.Controls.MetroLink();
             this.panelSettings = new MetroFramework.Controls.MetroPanel();
-            this.metroTabControl2 = new MetroFramework.Controls.MetroTabControl();
+            this.styles = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.pink = new MetroFramework.Controls.MetroButton();
             this.lime = new MetroFramework.Controls.MetroButton();
@@ -55,7 +56,7 @@
             this.green = new MetroFramework.Controls.MetroButton();
             this.purple = new MetroFramework.Controls.MetroButton();
             this.teal = new MetroFramework.Controls.MetroButton();
-            this.settings = new MetroFramework.Controls.MetroTabControl();
+            this.themes = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage3 = new MetroFramework.Controls.MetroTabPage();
             this.metroButton12 = new MetroFramework.Controls.MetroButton();
             this.metroButton13 = new MetroFramework.Controls.MetroButton();
@@ -63,171 +64,190 @@
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.mostrar = new System.Windows.Forms.Timer(this.components);
             this.esconder = new System.Windows.Forms.Timer(this.components);
-            this.manager = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.metroTabControl1.SuspendLayout();
-            this.metroTabPage1.SuspendLayout();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.tabControl.SuspendLayout();
+            this.tabControlPrincipal.SuspendLayout();
             this.panelSettings.SuspendLayout();
-            this.metroTabControl2.SuspendLayout();
+            this.styles.SuspendLayout();
             this.metroTabPage2.SuspendLayout();
-            this.settings.SuspendLayout();
+            this.themes.SuspendLayout();
             this.metroTabPage3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
-            // metroTabControl1
+            // tabControl
             // 
-            this.metroTabControl1.Controls.Add(this.metroTabPage1);
-            this.metroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
-            this.metroTabControl1.Name = "metroTabControl1";
-            this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(1240, 708);
-            this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTabControl1.TabIndex = 0;
-            this.metroTabControl1.Tag = "";
-            this.metroTabControl1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabControl1.UseSelectable = true;
+            this.tabControl.Controls.Add(this.tabControlPrincipal);
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(20, 60);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(1240, 708);
+            this.tabControl.Style = MetroFramework.MetroColorStyle.Orange;
+            this.tabControl.TabIndex = 0;
+            this.tabControl.Tag = "";
+            this.tabControl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabControl.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabControl.UseSelectable = true;
             // 
-            // metroTabPage1
+            // tabControlPrincipal
             // 
-            this.metroTabPage1.Controls.Add(this.metroTile7);
-            this.metroTabPage1.Controls.Add(this.metroTile4);
-            this.metroTabPage1.Controls.Add(this.metroTile6);
-            this.metroTabPage1.Controls.Add(this.metroTile5);
-            this.metroTabPage1.Controls.Add(this.metroTile3);
-            this.metroTabPage1.Controls.Add(this.metroTile2);
-            this.metroTabPage1.Controls.Add(this.metroTile1);
-            this.metroTabPage1.HorizontalScrollbarBarColor = true;
-            this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.HorizontalScrollbarSize = 10;
-            this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
-            this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(1232, 666);
-            this.metroTabPage1.TabIndex = 0;
-            this.metroTabPage1.Text = "Home";
-            this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabPage1.VerticalScrollbarBarColor = true;
-            this.metroTabPage1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPage1.VerticalScrollbarSize = 10;
-            this.metroTabPage1.Click += new System.EventHandler(this.metroTabPage1_Click);
+            this.tabControlPrincipal.Controls.Add(this.reportTile);
+            this.tabControlPrincipal.Controls.Add(this.listRentTile);
+            this.tabControlPrincipal.Controls.Add(this.rentTile);
+            this.tabControlPrincipal.Controls.Add(this.paymentTile);
+            this.tabControlPrincipal.Controls.Add(this.clientsTile);
+            this.tabControlPrincipal.Controls.Add(this.employeeTile);
+            this.tabControlPrincipal.Controls.Add(this.settingsTile);
+            this.tabControlPrincipal.Controls.Add(this.carsTile);
+            this.tabControlPrincipal.HorizontalScrollbarBarColor = true;
+            this.tabControlPrincipal.HorizontalScrollbarHighlightOnWheel = false;
+            this.tabControlPrincipal.HorizontalScrollbarSize = 10;
+            this.tabControlPrincipal.Location = new System.Drawing.Point(4, 38);
+            this.tabControlPrincipal.Name = "tabControlPrincipal";
+            this.tabControlPrincipal.Size = new System.Drawing.Size(1232, 666);
+            this.tabControlPrincipal.TabIndex = 0;
+            this.tabControlPrincipal.Text = "Home";
+            this.tabControlPrincipal.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.tabControlPrincipal.VerticalScrollbarBarColor = true;
+            this.tabControlPrincipal.VerticalScrollbarHighlightOnWheel = false;
+            this.tabControlPrincipal.VerticalScrollbarSize = 10;
             // 
-            // metroTile7
+            // reportTile
             // 
-            this.metroTile7.ActiveControl = null;
-            this.metroTile7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile7.Location = new System.Drawing.Point(763, 205);
-            this.metroTile7.Name = "metroTile7";
-            this.metroTile7.Size = new System.Drawing.Size(129, 130);
-            this.metroTile7.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile7.TabIndex = 9;
-            this.metroTile7.Text = "Aluguel";
-            this.metroTile7.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile7.TileImage")));
-            this.metroTile7.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile7.UseSelectable = true;
-            this.metroTile7.UseTileImage = true;
+            this.reportTile.ActiveControl = null;
+            this.reportTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.reportTile.Location = new System.Drawing.Point(783, 354);
+            this.reportTile.Name = "reportTile";
+            this.reportTile.Size = new System.Drawing.Size(129, 130);
+            this.reportTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.reportTile.TabIndex = 10;
+            this.reportTile.Text = "Relatórios";
+            this.reportTile.TileImage = ((System.Drawing.Image)(resources.GetObject("reportTile.TileImage")));
+            this.reportTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reportTile.UseSelectable = true;
+            this.reportTile.UseTileImage = true;
+            this.reportTile.Click += new System.EventHandler(this.reportTile_Click);
             // 
-            // metroTile4
+            // listRentTile
             // 
-            this.metroTile4.ActiveControl = null;
-            this.metroTile4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile4.Location = new System.Drawing.Point(490, 205);
-            this.metroTile4.Name = "metroTile4";
-            this.metroTile4.Size = new System.Drawing.Size(129, 130);
-            this.metroTile4.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile4.TabIndex = 8;
-            this.metroTile4.Text = "Alugar Carros";
-            this.metroTile4.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile4.TileImage")));
-            this.metroTile4.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile4.UseSelectable = true;
-            this.metroTile4.UseTileImage = true;
-            this.metroTile4.Click += new System.EventHandler(this.metroTile4_Click);
+            this.listRentTile.ActiveControl = null;
+            this.listRentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.listRentTile.Location = new System.Drawing.Point(648, 218);
+            this.listRentTile.Name = "listRentTile";
+            this.listRentTile.Size = new System.Drawing.Size(129, 130);
+            this.listRentTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.listRentTile.TabIndex = 9;
+            this.listRentTile.Text = "Aluguel";
+            this.listRentTile.TileImage = ((System.Drawing.Image)(resources.GetObject("listRentTile.TileImage")));
+            this.listRentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.listRentTile.UseSelectable = true;
+            this.listRentTile.UseTileImage = true;
+            this.listRentTile.Click += new System.EventHandler(this.listRentTile_Click);
             // 
-            // metroTile6
+            // rentTile
             // 
-            this.metroTile6.ActiveControl = null;
-            this.metroTile6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile6.Location = new System.Drawing.Point(763, 341);
-            this.metroTile6.Name = "metroTile6";
-            this.metroTile6.Size = new System.Drawing.Size(129, 130);
-            this.metroTile6.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile6.TabIndex = 7;
-            this.metroTile6.Text = "Pagamentos";
-            this.metroTile6.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile6.TileImage")));
-            this.metroTile6.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile6.UseSelectable = true;
-            this.metroTile6.UseTileImage = true;
+            this.rentTile.ActiveControl = null;
+            this.rentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rentTile.Location = new System.Drawing.Point(375, 218);
+            this.rentTile.Name = "rentTile";
+            this.rentTile.Size = new System.Drawing.Size(129, 130);
+            this.rentTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.rentTile.TabIndex = 8;
+            this.rentTile.Text = "Alugar Carros";
+            this.rentTile.TileImage = ((System.Drawing.Image)(resources.GetObject("rentTile.TileImage")));
+            this.rentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rentTile.UseSelectable = true;
+            this.rentTile.UseTileImage = true;
+            this.rentTile.Click += new System.EventHandler(this.ShowCars);
             // 
-            // metroTile5
+            // paymentTile
             // 
-            this.metroTile5.ActiveControl = null;
-            this.metroTile5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile5.BackColor = System.Drawing.Color.Black;
-            this.metroTile5.Location = new System.Drawing.Point(490, 341);
-            this.metroTile5.Name = "metroTile5";
-            this.metroTile5.Size = new System.Drawing.Size(129, 130);
-            this.metroTile5.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile5.TabIndex = 5;
-            this.metroTile5.Text = "Clientes";
-            this.metroTile5.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile5.TileImage")));
-            this.metroTile5.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile5.UseSelectable = true;
-            this.metroTile5.UseTileImage = true;
+            this.paymentTile.ActiveControl = null;
+            this.paymentTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.paymentTile.Location = new System.Drawing.Point(648, 354);
+            this.paymentTile.Name = "paymentTile";
+            this.paymentTile.Size = new System.Drawing.Size(129, 130);
+            this.paymentTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.paymentTile.TabIndex = 7;
+            this.paymentTile.Text = "Tabela de Preços";
+            this.paymentTile.TileImage = ((System.Drawing.Image)(resources.GetObject("paymentTile.TileImage")));
+            this.paymentTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.paymentTile.UseSelectable = true;
+            this.paymentTile.UseTileImage = true;
             // 
-            // metroTile3
+            // clientsTile
             // 
-            this.metroTile3.ActiveControl = null;
-            this.metroTile3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile3.BackColor = System.Drawing.Color.Black;
-            this.metroTile3.Location = new System.Drawing.Point(355, 341);
-            this.metroTile3.Name = "metroTile3";
-            this.metroTile3.Size = new System.Drawing.Size(129, 130);
-            this.metroTile3.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile3.TabIndex = 4;
-            this.metroTile3.Text = "Funionários";
-            this.metroTile3.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile3.TileImage")));
-            this.metroTile3.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile3.UseSelectable = true;
-            this.metroTile3.UseTileImage = true;
+            this.clientsTile.ActiveControl = null;
+            this.clientsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clientsTile.BackColor = System.Drawing.Color.Black;
+            this.clientsTile.Location = new System.Drawing.Point(375, 354);
+            this.clientsTile.Name = "clientsTile";
+            this.clientsTile.Size = new System.Drawing.Size(129, 130);
+            this.clientsTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.clientsTile.TabIndex = 5;
+            this.clientsTile.Text = "Clientes";
+            this.clientsTile.TileImage = ((System.Drawing.Image)(resources.GetObject("clientsTile.TileImage")));
+            this.clientsTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.clientsTile.UseSelectable = true;
+            this.clientsTile.UseTileImage = true;
+            this.clientsTile.Click += new System.EventHandler(this.clientsTile_Click);
             // 
-            // metroTile2
+            // employeeTile
             // 
-            this.metroTile2.ActiveControl = null;
-            this.metroTile2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile2.BackColor = System.Drawing.Color.Black;
-            this.metroTile2.ForeColor = System.Drawing.Color.Black;
-            this.metroTile2.Location = new System.Drawing.Point(625, 205);
-            this.metroTile2.Name = "metroTile2";
-            this.metroTile2.Size = new System.Drawing.Size(132, 266);
-            this.metroTile2.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile2.TabIndex = 3;
-            this.metroTile2.Text = "Configurações";
-            this.metroTile2.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile2.TileImage")));
-            this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
-            this.metroTile2.UseMnemonic = false;
-            this.metroTile2.UseSelectable = true;
-            this.metroTile2.UseTileImage = true;
-            this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
+            this.employeeTile.ActiveControl = null;
+            this.employeeTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.employeeTile.BackColor = System.Drawing.Color.Black;
+            this.employeeTile.Location = new System.Drawing.Point(240, 354);
+            this.employeeTile.Name = "employeeTile";
+            this.employeeTile.Size = new System.Drawing.Size(129, 130);
+            this.employeeTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.employeeTile.TabIndex = 4;
+            this.employeeTile.Text = "Funionários";
+            this.employeeTile.TileImage = ((System.Drawing.Image)(resources.GetObject("employeeTile.TileImage")));
+            this.employeeTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.employeeTile.UseSelectable = true;
+            this.employeeTile.UseTileImage = true;
+            this.employeeTile.Click += new System.EventHandler(this.employeeTile_Click);
             // 
-            // metroTile1
+            // settingsTile
             // 
-            this.metroTile1.ActiveControl = null;
-            this.metroTile1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroTile1.BackColor = System.Drawing.Color.Black;
-            this.metroTile1.Location = new System.Drawing.Point(355, 205);
-            this.metroTile1.Name = "metroTile1";
-            this.metroTile1.Size = new System.Drawing.Size(129, 130);
-            this.metroTile1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTile1.TabIndex = 2;
-            this.metroTile1.Text = "Carros";
-            this.metroTile1.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTile1.TileImage = ((System.Drawing.Image)(resources.GetObject("metroTile1.TileImage")));
-            this.metroTile1.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.metroTile1.UseSelectable = true;
-            this.metroTile1.UseTileImage = true;
-            this.metroTile1.Click += new System.EventHandler(this.metroTile1_Click);
+            this.settingsTile.ActiveControl = null;
+            this.settingsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.settingsTile.BackColor = System.Drawing.Color.Black;
+            this.settingsTile.ForeColor = System.Drawing.Color.Black;
+            this.settingsTile.Location = new System.Drawing.Point(510, 218);
+            this.settingsTile.Name = "settingsTile";
+            this.settingsTile.Size = new System.Drawing.Size(132, 266);
+            this.settingsTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.settingsTile.TabIndex = 3;
+            this.settingsTile.Text = "Configurações";
+            this.settingsTile.TileImage = ((System.Drawing.Image)(resources.GetObject("settingsTile.TileImage")));
+            this.settingsTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.settingsTile.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
+            this.settingsTile.UseMnemonic = false;
+            this.settingsTile.UseSelectable = true;
+            this.settingsTile.UseTileImage = true;
+            this.settingsTile.Click += new System.EventHandler(this.settingsShowAndHide);
+            // 
+            // carsTile
+            // 
+            this.carsTile.ActiveControl = null;
+            this.carsTile.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.carsTile.BackColor = System.Drawing.Color.Black;
+            this.carsTile.Location = new System.Drawing.Point(240, 218);
+            this.carsTile.Name = "carsTile";
+            this.carsTile.Size = new System.Drawing.Size(129, 130);
+            this.carsTile.Style = MetroFramework.MetroColorStyle.Orange;
+            this.carsTile.TabIndex = 2;
+            this.carsTile.Text = "Carros";
+            this.carsTile.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.carsTile.TileImage = ((System.Drawing.Image)(resources.GetObject("carsTile.TileImage")));
+            this.carsTile.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.carsTile.UseSelectable = true;
+            this.carsTile.UseTileImage = true;
+            this.carsTile.Click += new System.EventHandler(this.ShowListCar);
             // 
             // metroLinkLogout
             // 
@@ -239,13 +259,13 @@
             this.metroLinkLogout.TabIndex = 1;
             this.metroLinkLogout.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLinkLogout.UseSelectable = true;
-            this.metroLinkLogout.Click += new System.EventHandler(this.metroLinkLogout_Click);
+            this.metroLinkLogout.Click += new System.EventHandler(this.ShowLogin);
             // 
             // panelSettings
             // 
             this.panelSettings.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelSettings.Controls.Add(this.metroTabControl2);
-            this.panelSettings.Controls.Add(this.settings);
+            this.panelSettings.Controls.Add(this.styles);
+            this.panelSettings.Controls.Add(this.themes);
             this.panelSettings.Controls.Add(this.metroPanel2);
             this.panelSettings.HorizontalScrollbarBarColor = true;
             this.panelSettings.HorizontalScrollbarHighlightOnWheel = false;
@@ -259,17 +279,17 @@
             this.panelSettings.VerticalScrollbarHighlightOnWheel = false;
             this.panelSettings.VerticalScrollbarSize = 10;
             // 
-            // metroTabControl2
+            // styles
             // 
-            this.metroTabControl2.Controls.Add(this.metroTabPage2);
-            this.metroTabControl2.Location = new System.Drawing.Point(3, 380);
-            this.metroTabControl2.Name = "metroTabControl2";
-            this.metroTabControl2.SelectedIndex = 0;
-            this.metroTabControl2.Size = new System.Drawing.Size(270, 359);
-            this.metroTabControl2.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTabControl2.TabIndex = 11;
-            this.metroTabControl2.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTabControl2.UseSelectable = true;
+            this.styles.Controls.Add(this.metroTabPage2);
+            this.styles.Location = new System.Drawing.Point(3, 380);
+            this.styles.Name = "styles";
+            this.styles.SelectedIndex = 0;
+            this.styles.Size = new System.Drawing.Size(270, 359);
+            this.styles.Style = MetroFramework.MetroColorStyle.Orange;
+            this.styles.TabIndex = 11;
+            this.styles.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.styles.UseSelectable = true;
             // 
             // metroTabPage2
             // 
@@ -308,9 +328,10 @@
             this.pink.Name = "pink";
             this.pink.Size = new System.Drawing.Size(80, 60);
             this.pink.TabIndex = 22;
+            this.pink.Tag = "Pink";
             this.pink.UseCustomBackColor = true;
             this.pink.UseSelectable = true;
-            this.pink.Click += new System.EventHandler(this.pink_Click);
+            this.pink.Click += new System.EventHandler(this.setColor);
             // 
             // lime
             // 
@@ -322,9 +343,10 @@
             this.lime.Name = "lime";
             this.lime.Size = new System.Drawing.Size(80, 60);
             this.lime.TabIndex = 21;
+            this.lime.Tag = "Lime";
             this.lime.UseCustomBackColor = true;
             this.lime.UseSelectable = true;
-            this.lime.Click += new System.EventHandler(this.lime_Click);
+            this.lime.Click += new System.EventHandler(this.setColor);
             // 
             // blue
             // 
@@ -337,9 +359,10 @@
             this.blue.Size = new System.Drawing.Size(80, 60);
             this.blue.Style = MetroFramework.MetroColorStyle.Silver;
             this.blue.TabIndex = 20;
+            this.blue.Tag = "Blue";
             this.blue.UseCustomBackColor = true;
             this.blue.UseSelectable = true;
-            this.blue.Click += new System.EventHandler(this.blue_Click);
+            this.blue.Click += new System.EventHandler(this.setColor);
             // 
             // brown
             // 
@@ -351,9 +374,10 @@
             this.brown.Name = "brown";
             this.brown.Size = new System.Drawing.Size(80, 60);
             this.brown.TabIndex = 19;
+            this.brown.Tag = "Brown";
             this.brown.UseCustomBackColor = true;
             this.brown.UseSelectable = true;
-            this.brown.Click += new System.EventHandler(this.brown_Click);
+            this.brown.Click += new System.EventHandler(this.setColor);
             // 
             // magenta
             // 
@@ -365,9 +389,10 @@
             this.magenta.Name = "magenta";
             this.magenta.Size = new System.Drawing.Size(80, 60);
             this.magenta.TabIndex = 18;
+            this.magenta.Tag = "Magenta";
             this.magenta.UseCustomBackColor = true;
             this.magenta.UseSelectable = true;
-            this.magenta.Click += new System.EventHandler(this.magenta_Click);
+            this.magenta.Click += new System.EventHandler(this.setColor);
             // 
             // yellow
             // 
@@ -380,9 +405,10 @@
             this.yellow.Size = new System.Drawing.Size(80, 60);
             this.yellow.Style = MetroFramework.MetroColorStyle.Silver;
             this.yellow.TabIndex = 17;
+            this.yellow.Tag = "Yellow";
             this.yellow.UseCustomBackColor = true;
             this.yellow.UseSelectable = true;
-            this.yellow.Click += new System.EventHandler(this.yellow_Click);
+            this.yellow.Click += new System.EventHandler(this.setColor);
             // 
             // red
             // 
@@ -394,9 +420,10 @@
             this.red.Name = "red";
             this.red.Size = new System.Drawing.Size(80, 60);
             this.red.TabIndex = 15;
+            this.red.Tag = "Red";
             this.red.UseCustomBackColor = true;
             this.red.UseSelectable = true;
-            this.red.Click += new System.EventHandler(this.red_Click);
+            this.red.Click += new System.EventHandler(this.setColor);
             // 
             // silver
             // 
@@ -408,9 +435,10 @@
             this.silver.Name = "silver";
             this.silver.Size = new System.Drawing.Size(80, 60);
             this.silver.TabIndex = 16;
+            this.silver.Tag = "Silver";
             this.silver.UseCustomBackColor = true;
             this.silver.UseSelectable = true;
-            this.silver.Click += new System.EventHandler(this.silver_Click);
+            this.silver.Click += new System.EventHandler(this.setColor);
             // 
             // orange
             // 
@@ -422,9 +450,10 @@
             this.orange.Name = "orange";
             this.orange.Size = new System.Drawing.Size(80, 60);
             this.orange.TabIndex = 11;
+            this.orange.Tag = "Orange";
             this.orange.UseCustomBackColor = true;
             this.orange.UseSelectable = true;
-            this.orange.Click += new System.EventHandler(this.orange_Click);
+            this.orange.Click += new System.EventHandler(this.setColor);
             // 
             // green
             // 
@@ -437,9 +466,10 @@
             this.green.Size = new System.Drawing.Size(80, 60);
             this.green.Style = MetroFramework.MetroColorStyle.Black;
             this.green.TabIndex = 12;
+            this.green.Tag = "Green";
             this.green.UseCustomBackColor = true;
             this.green.UseSelectable = true;
-            this.green.Click += new System.EventHandler(this.green_Click);
+            this.green.Click += new System.EventHandler(this.setColor);
             // 
             // purple
             // 
@@ -452,9 +482,10 @@
             this.purple.Size = new System.Drawing.Size(80, 60);
             this.purple.Style = MetroFramework.MetroColorStyle.White;
             this.purple.TabIndex = 14;
+            this.purple.Tag = "Purple";
             this.purple.UseCustomBackColor = true;
             this.purple.UseSelectable = true;
-            this.purple.Click += new System.EventHandler(this.purple_Click);
+            this.purple.Click += new System.EventHandler(this.setColor);
             // 
             // teal
             // 
@@ -466,21 +497,22 @@
             this.teal.Name = "teal";
             this.teal.Size = new System.Drawing.Size(80, 60);
             this.teal.TabIndex = 13;
+            this.teal.Tag = "Teal";
             this.teal.UseCustomBackColor = true;
             this.teal.UseSelectable = true;
-            this.teal.Click += new System.EventHandler(this.teal_Click);
+            this.teal.Click += new System.EventHandler(this.setColor);
             // 
-            // settings
+            // themes
             // 
-            this.settings.Controls.Add(this.metroTabPage3);
-            this.settings.Location = new System.Drawing.Point(2, 67);
-            this.settings.Name = "settings";
-            this.settings.SelectedIndex = 0;
-            this.settings.Size = new System.Drawing.Size(271, 287);
-            this.settings.Style = MetroFramework.MetroColorStyle.Orange;
-            this.settings.TabIndex = 10;
-            this.settings.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.settings.UseSelectable = true;
+            this.themes.Controls.Add(this.metroTabPage3);
+            this.themes.Location = new System.Drawing.Point(2, 67);
+            this.themes.Name = "themes";
+            this.themes.SelectedIndex = 0;
+            this.themes.Size = new System.Drawing.Size(271, 287);
+            this.themes.Style = MetroFramework.MetroColorStyle.Orange;
+            this.themes.TabIndex = 10;
+            this.themes.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.themes.UseSelectable = true;
             // 
             // metroTabPage3
             // 
@@ -511,7 +543,7 @@
             this.metroButton12.TabIndex = 21;
             this.metroButton12.UseCustomBackColor = true;
             this.metroButton12.UseSelectable = true;
-            this.metroButton12.Click += new System.EventHandler(this.metroButton12_Click);
+            this.metroButton12.Click += new System.EventHandler(this.setLight);
             // 
             // metroButton13
             // 
@@ -525,7 +557,7 @@
             this.metroButton13.TabIndex = 20;
             this.metroButton13.UseCustomBackColor = true;
             this.metroButton13.UseSelectable = true;
-            this.metroButton13.Click += new System.EventHandler(this.metroButton13_Click_2);
+            this.metroButton13.Click += new System.EventHandler(this.setDark);
             // 
             // metroPanel2
             // 
@@ -548,7 +580,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel6.Location = new System.Drawing.Point(57, 20);
+            this.metroLabel6.Location = new System.Drawing.Point(20, 19);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(134, 25);
             this.metroLabel6.TabIndex = 25;
@@ -563,13 +595,13 @@
             // esconder
             // 
             this.esconder.Interval = 10;
-            this.esconder.Tick += new System.EventHandler(this.esconder_Tick_1);
+            this.esconder.Tick += new System.EventHandler(this.esconder_Tick);
             // 
-            // manager
+            // metroStyleManager1
             // 
-            this.manager.Owner = null;
-            this.manager.Style = MetroFramework.MetroColorStyle.Orange;
-            this.manager.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroStyleManager1.Owner = this;
+            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // FrmPrincipal
             // 
@@ -580,42 +612,42 @@
             this.ClientSize = new System.Drawing.Size(1280, 788);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.metroLinkLogout);
-            this.Controls.Add(this.metroTabControl1);
+            this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPrincipal";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrador";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Reload);
-            this.metroTabControl1.ResumeLayout(false);
-            this.metroTabPage1.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
+            this.tabControlPrincipal.ResumeLayout(false);
             this.panelSettings.ResumeLayout(false);
-            this.metroTabControl2.ResumeLayout(false);
+            this.styles.ResumeLayout(false);
             this.metroTabPage2.ResumeLayout(false);
-            this.settings.ResumeLayout(false);
+            this.themes.ResumeLayout(false);
             this.metroTabPage3.ResumeLayout(false);
             this.metroPanel2.ResumeLayout(false);
             this.metroPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private MetroFramework.Controls.MetroTabControl metroTabControl1;
-        private MetroFramework.Controls.MetroTabPage metroTabPage1;
-        private MetroFramework.Controls.MetroTile metroTile3;
-        private MetroFramework.Controls.MetroTile metroTile2;
-        private MetroFramework.Controls.MetroTile metroTile1;
-        private MetroFramework.Controls.MetroTile metroTile5;
-        private MetroFramework.Controls.MetroTile metroTile6;
+        private MetroFramework.Controls.MetroTabControl tabControl;
+        private MetroFramework.Controls.MetroTabPage tabControlPrincipal;
+        private MetroFramework.Controls.MetroTile employeeTile;
+        private MetroFramework.Controls.MetroTile settingsTile;
+        private MetroFramework.Controls.MetroTile carsTile;
+        private MetroFramework.Controls.MetroTile clientsTile;
+        private MetroFramework.Controls.MetroTile paymentTile;
         private MetroFramework.Controls.MetroLink metroLinkLogout;
-        private MetroFramework.Controls.MetroTile metroTile4;
-        private MetroFramework.Controls.MetroTile metroTile7;
+        private MetroFramework.Controls.MetroTile rentTile;
+        private MetroFramework.Controls.MetroTile listRentTile;
         private MetroFramework.Controls.MetroPanel panelSettings;
-        private MetroFramework.Controls.MetroTabControl metroTabControl2;
+        private MetroFramework.Controls.MetroTabControl styles;
         private MetroFramework.Controls.MetroTabPage metroTabPage2;
         private MetroFramework.Controls.MetroButton pink;
         private MetroFramework.Controls.MetroButton lime;
@@ -629,7 +661,7 @@
         private MetroFramework.Controls.MetroButton green;
         private MetroFramework.Controls.MetroButton purple;
         private MetroFramework.Controls.MetroButton teal;
-        private MetroFramework.Controls.MetroTabControl settings;
+        private MetroFramework.Controls.MetroTabControl themes;
         private MetroFramework.Controls.MetroTabPage metroTabPage3;
         private MetroFramework.Controls.MetroButton metroButton12;
         private MetroFramework.Controls.MetroButton metroButton13;
@@ -637,6 +669,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.Timer mostrar;
         private System.Windows.Forms.Timer esconder;
-        private MetroFramework.Components.MetroStyleManager manager;
+        private MetroFramework.Controls.MetroTile reportTile;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

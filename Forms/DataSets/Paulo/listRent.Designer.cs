@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace CarLand.DataSets {
+namespace CarLand.Forms.DataSets.Paulo {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace CarLand.DataSets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("IntegradoraDataSet4")]
+    [global::System.Xml.Serialization.XmlRootAttribute("listRent")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class IntegradoraDataSet4 : global::System.Data.DataSet {
+    public partial class listRent : global::System.Data.DataSet {
         
-        private ClientDataTable tableClient;
+        private RentDataTable tableRent;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public IntegradoraDataSet4() {
+        public listRent() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace CarLand.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected IntegradoraDataSet4(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected listRent(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace CarLand.DataSets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Client"] != null)) {
-                    base.Tables.Add(new ClientDataTable(ds.Tables["Client"]));
+                if ((ds.Tables["Rent"] != null)) {
+                    base.Tables.Add(new RentDataTable(ds.Tables["Rent"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace CarLand.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ClientDataTable Client {
+        public RentDataTable Rent {
             get {
-                return this.tableClient;
+                return this.tableRent;
             }
         }
         
@@ -127,7 +127,7 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            IntegradoraDataSet4 cln = ((IntegradoraDataSet4)(base.Clone()));
+            listRent cln = ((listRent)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace CarLand.DataSets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Client"] != null)) {
-                    base.Tables.Add(new ClientDataTable(ds.Tables["Client"]));
+                if ((ds.Tables["Rent"] != null)) {
+                    base.Tables.Add(new RentDataTable(ds.Tables["Rent"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableClient = ((ClientDataTable)(base.Tables["Client"]));
+            this.tableRent = ((RentDataTable)(base.Tables["Rent"]));
             if ((initTable == true)) {
-                if ((this.tableClient != null)) {
-                    this.tableClient.InitVars();
+                if ((this.tableRent != null)) {
+                    this.tableRent.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "IntegradoraDataSet4";
+            this.DataSetName = "listRent";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/IntegradoraDataSet4.xsd";
+            this.Namespace = "http://tempuri.org/listRent.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableClient = new ClientDataTable();
-            base.Tables.Add(this.tableClient);
+            this.tableRent = new RentDataTable();
+            base.Tables.Add(this.tableRent);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeClient() {
+        private bool ShouldSerializeRent() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace CarLand.DataSets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            IntegradoraDataSet4 ds = new IntegradoraDataSet4();
+            listRent ds = new listRent();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,37 +270,37 @@ namespace CarLand.DataSets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ClientRowChangeEventHandler(object sender, ClientRowChangeEvent e);
+        public delegate void RentRowChangeEventHandler(object sender, RentRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ClientDataTable : global::System.Data.TypedTableBase<ClientRow> {
+        public partial class RentDataTable : global::System.Data.TypedTableBase<RentRow> {
+            
+            private global::System.Data.DataColumn columnidRent;
+            
+            private global::System.Data.DataColumn columnidCar;
+            
+            private global::System.Data.DataColumn columnidEmployee;
             
             private global::System.Data.DataColumn columnidClient;
             
-            private global::System.Data.DataColumn columnClientname;
+            private global::System.Data.DataColumn columnPickUpTime;
             
-            private global::System.Data.DataColumn columnidUser;
+            private global::System.Data.DataColumn columnDropOfTime;
             
-            private global::System.Data.DataColumn columnCPF;
+            private global::System.Data.DataColumn columnAmount;
             
-            private global::System.Data.DataColumn columnidCNH;
+            private global::System.Data.DataColumn columnPaymentType;
             
-            private global::System.Data.DataColumn columnBirth;
-            
-            private global::System.Data.DataColumn columnPhone;
-            
-            private global::System.Data.DataColumn columnEmail;
-            
-            private global::System.Data.DataColumn columnGener;
+            private global::System.Data.DataColumn columnidCard;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientDataTable() {
-                this.TableName = "Client";
+            public RentDataTable() {
+                this.TableName = "Rent";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -308,7 +308,7 @@ namespace CarLand.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ClientDataTable(global::System.Data.DataTable table) {
+            internal RentDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -325,9 +325,33 @@ namespace CarLand.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ClientDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected RentDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idRentColumn {
+                get {
+                    return this.columnidRent;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idCarColumn {
+                get {
+                    return this.columnidCar;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idEmployeeColumn {
+                get {
+                    return this.columnidEmployee;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -340,65 +364,41 @@ namespace CarLand.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ClientnameColumn {
+            public global::System.Data.DataColumn PickUpTimeColumn {
                 get {
-                    return this.columnClientname;
+                    return this.columnPickUpTime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idUserColumn {
+            public global::System.Data.DataColumn DropOfTimeColumn {
                 get {
-                    return this.columnidUser;
+                    return this.columnDropOfTime;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CPFColumn {
+            public global::System.Data.DataColumn AmountColumn {
                 get {
-                    return this.columnCPF;
+                    return this.columnAmount;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idCNHColumn {
+            public global::System.Data.DataColumn PaymentTypeColumn {
                 get {
-                    return this.columnidCNH;
+                    return this.columnPaymentType;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BirthColumn {
+            public global::System.Data.DataColumn idCardColumn {
                 get {
-                    return this.columnBirth;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PhoneColumn {
-                get {
-                    return this.columnPhone;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EmailColumn {
-                get {
-                    return this.columnEmail;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn GenerColumn {
-                get {
-                    return this.columnGener;
+                    return this.columnidCard;
                 }
             }
             
@@ -413,60 +413,60 @@ namespace CarLand.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRow this[int index] {
+            public RentRow this[int index] {
                 get {
-                    return ((ClientRow)(this.Rows[index]));
+                    return ((RentRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ClientRowChangeEventHandler ClientRowChanging;
+            public event RentRowChangeEventHandler RentRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ClientRowChangeEventHandler ClientRowChanged;
+            public event RentRowChangeEventHandler RentRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ClientRowChangeEventHandler ClientRowDeleting;
+            public event RentRowChangeEventHandler RentRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ClientRowChangeEventHandler ClientRowDeleted;
+            public event RentRowChangeEventHandler RentRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddClientRow(ClientRow row) {
+            public void AddRentRow(RentRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRow AddClientRow(string Clientname, int idUser, int CPF, int idCNH, System.DateTime Birth, int Phone, string Email, string Gener) {
-                ClientRow rowClientRow = ((ClientRow)(this.NewRow()));
+            public RentRow AddRentRow(int idCar, int idEmployee, int idClient, System.DateTime PickUpTime, System.DateTime DropOfTime, decimal Amount, int PaymentType, int idCard) {
+                RentRow rowRentRow = ((RentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Clientname,
-                        idUser,
-                        CPF,
-                        idCNH,
-                        Birth,
-                        Phone,
-                        Email,
-                        Gener};
-                rowClientRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowClientRow);
-                return rowClientRow;
+                        idCar,
+                        idEmployee,
+                        idClient,
+                        PickUpTime,
+                        DropOfTime,
+                        Amount,
+                        PaymentType,
+                        idCard};
+                rowRentRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowRentRow);
+                return rowRentRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRow FindByidClient(int idClient) {
-                return ((ClientRow)(this.Rows.Find(new object[] {
-                            idClient})));
+            public RentRow FindByidRent(int idRent) {
+                return ((RentRow)(this.Rows.Find(new object[] {
+                            idRent})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                ClientDataTable cln = ((ClientDataTable)(base.Clone()));
+                RentDataTable cln = ((RentDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -474,88 +474,81 @@ namespace CarLand.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new ClientDataTable();
+                return new RentDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this.columnidRent = base.Columns["idRent"];
+                this.columnidCar = base.Columns["idCar"];
+                this.columnidEmployee = base.Columns["idEmployee"];
                 this.columnidClient = base.Columns["idClient"];
-                this.columnClientname = base.Columns["Clientname"];
-                this.columnidUser = base.Columns["idUser"];
-                this.columnCPF = base.Columns["CPF"];
-                this.columnidCNH = base.Columns["idCNH"];
-                this.columnBirth = base.Columns["Birth"];
-                this.columnPhone = base.Columns["Phone"];
-                this.columnEmail = base.Columns["Email"];
-                this.columnGener = base.Columns["Gener"];
+                this.columnPickUpTime = base.Columns["PickUpTime"];
+                this.columnDropOfTime = base.Columns["DropOfTime"];
+                this.columnAmount = base.Columns["Amount"];
+                this.columnPaymentType = base.Columns["PaymentType"];
+                this.columnidCard = base.Columns["idCard"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this.columnidRent = new global::System.Data.DataColumn("idRent", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidRent);
+                this.columnidCar = new global::System.Data.DataColumn("idCar", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCar);
+                this.columnidEmployee = new global::System.Data.DataColumn("idEmployee", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidEmployee);
                 this.columnidClient = new global::System.Data.DataColumn("idClient", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnidClient);
-                this.columnClientname = new global::System.Data.DataColumn("Clientname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClientname);
-                this.columnidUser = new global::System.Data.DataColumn("idUser", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidUser);
-                this.columnCPF = new global::System.Data.DataColumn("CPF", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCPF);
-                this.columnidCNH = new global::System.Data.DataColumn("idCNH", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnidCNH);
-                this.columnBirth = new global::System.Data.DataColumn("Birth", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBirth);
-                this.columnPhone = new global::System.Data.DataColumn("Phone", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPhone);
-                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEmail);
-                this.columnGener = new global::System.Data.DataColumn("Gener", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGener);
+                this.columnPickUpTime = new global::System.Data.DataColumn("PickUpTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPickUpTime);
+                this.columnDropOfTime = new global::System.Data.DataColumn("DropOfTime", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDropOfTime);
+                this.columnAmount = new global::System.Data.DataColumn("Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmount);
+                this.columnPaymentType = new global::System.Data.DataColumn("PaymentType", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentType);
+                this.columnidCard = new global::System.Data.DataColumn("idCard", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidCard);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnidClient}, true));
-                this.columnidClient.AutoIncrement = true;
-                this.columnidClient.AutoIncrementSeed = -1;
-                this.columnidClient.AutoIncrementStep = -1;
+                                this.columnidRent}, true));
+                this.columnidRent.AutoIncrement = true;
+                this.columnidRent.AutoIncrementSeed = -1;
+                this.columnidRent.AutoIncrementStep = -1;
+                this.columnidRent.AllowDBNull = false;
+                this.columnidRent.ReadOnly = true;
+                this.columnidRent.Unique = true;
+                this.columnidCar.AllowDBNull = false;
                 this.columnidClient.AllowDBNull = false;
-                this.columnidClient.ReadOnly = true;
-                this.columnidClient.Unique = true;
-                this.columnClientname.AllowDBNull = false;
-                this.columnClientname.MaxLength = 50;
-                this.columnidUser.AllowDBNull = false;
-                this.columnCPF.AllowDBNull = false;
-                this.columnidCNH.AllowDBNull = false;
-                this.columnBirth.AllowDBNull = false;
-                this.columnPhone.AllowDBNull = false;
-                this.columnEmail.AllowDBNull = false;
-                this.columnEmail.MaxLength = 30;
-                this.columnGener.MaxLength = 20;
+                this.columnAmount.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRow NewClientRow() {
-                return ((ClientRow)(this.NewRow()));
+            public RentRow NewRentRow() {
+                return ((RentRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ClientRow(builder);
+                return new RentRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(ClientRow);
+                return typeof(RentRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.ClientRowChanged != null)) {
-                    this.ClientRowChanged(this, new ClientRowChangeEvent(((ClientRow)(e.Row)), e.Action));
+                if ((this.RentRowChanged != null)) {
+                    this.RentRowChanged(this, new RentRowChangeEvent(((RentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -563,8 +556,8 @@ namespace CarLand.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.ClientRowChanging != null)) {
-                    this.ClientRowChanging(this, new ClientRowChangeEvent(((ClientRow)(e.Row)), e.Action));
+                if ((this.RentRowChanging != null)) {
+                    this.RentRowChanging(this, new RentRowChangeEvent(((RentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -572,8 +565,8 @@ namespace CarLand.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.ClientRowDeleted != null)) {
-                    this.ClientRowDeleted(this, new ClientRowChangeEvent(((ClientRow)(e.Row)), e.Action));
+                if ((this.RentRowDeleted != null)) {
+                    this.RentRowDeleted(this, new RentRowChangeEvent(((RentRow)(e.Row)), e.Action));
                 }
             }
             
@@ -581,14 +574,14 @@ namespace CarLand.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.ClientRowDeleting != null)) {
-                    this.ClientRowDeleting(this, new ClientRowChangeEvent(((ClientRow)(e.Row)), e.Action));
+                if ((this.RentRowDeleting != null)) {
+                    this.RentRowDeleting(this, new RentRowChangeEvent(((RentRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveClientRow(ClientRow row) {
+            public void RemoveRentRow(RentRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -597,7 +590,7 @@ namespace CarLand.DataSets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                IntegradoraDataSet4 ds = new IntegradoraDataSet4();
+                listRent ds = new listRent();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -615,7 +608,7 @@ namespace CarLand.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ClientDataTable";
+                attribute2.FixedValue = "RentDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -659,131 +652,199 @@ namespace CarLand.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class ClientRow : global::System.Data.DataRow {
+        public partial class RentRow : global::System.Data.DataRow {
             
-            private ClientDataTable tableClient;
+            private RentDataTable tableRent;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ClientRow(global::System.Data.DataRowBuilder rb) : 
+            internal RentRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableClient = ((ClientDataTable)(this.Table));
+                this.tableRent = ((RentDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idRent {
+                get {
+                    return ((int)(this[this.tableRent.idRentColumn]));
+                }
+                set {
+                    this[this.tableRent.idRentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idCar {
+                get {
+                    return ((int)(this[this.tableRent.idCarColumn]));
+                }
+                set {
+                    this[this.tableRent.idCarColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idEmployee {
+                get {
+                    try {
+                        return ((int)(this[this.tableRent.idEmployeeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idEmployee\' in table \'Rent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRent.idEmployeeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int idClient {
                 get {
-                    return ((int)(this[this.tableClient.idClientColumn]));
+                    return ((int)(this[this.tableRent.idClientColumn]));
                 }
                 set {
-                    this[this.tableClient.idClientColumn] = value;
+                    this[this.tableRent.idClientColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Clientname {
-                get {
-                    return ((string)(this[this.tableClient.ClientnameColumn]));
-                }
-                set {
-                    this[this.tableClient.ClientnameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int idUser {
-                get {
-                    return ((int)(this[this.tableClient.idUserColumn]));
-                }
-                set {
-                    this[this.tableClient.idUserColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CPF {
-                get {
-                    return ((int)(this[this.tableClient.CPFColumn]));
-                }
-                set {
-                    this[this.tableClient.CPFColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int idCNH {
-                get {
-                    return ((int)(this[this.tableClient.idCNHColumn]));
-                }
-                set {
-                    this[this.tableClient.idCNHColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Birth {
-                get {
-                    return ((global::System.DateTime)(this[this.tableClient.BirthColumn]));
-                }
-                set {
-                    this[this.tableClient.BirthColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Phone {
-                get {
-                    return ((int)(this[this.tableClient.PhoneColumn]));
-                }
-                set {
-                    this[this.tableClient.PhoneColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Email {
-                get {
-                    return ((string)(this[this.tableClient.EmailColumn]));
-                }
-                set {
-                    this[this.tableClient.EmailColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Gener {
+            public System.DateTime PickUpTime {
                 get {
                     try {
-                        return ((string)(this[this.tableClient.GenerColumn]));
+                        return ((global::System.DateTime)(this[this.tableRent.PickUpTimeColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Gener\' in table \'Client\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PickUpTime\' in table \'Rent\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableClient.GenerColumn] = value;
+                    this[this.tableRent.PickUpTimeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsGenerNull() {
-                return this.IsNull(this.tableClient.GenerColumn);
+            public System.DateTime DropOfTime {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableRent.DropOfTimeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DropOfTime\' in table \'Rent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRent.DropOfTimeColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetGenerNull() {
-                this[this.tableClient.GenerColumn] = global::System.Convert.DBNull;
+            public decimal Amount {
+                get {
+                    return ((decimal)(this[this.tableRent.AmountColumn]));
+                }
+                set {
+                    this[this.tableRent.AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int PaymentType {
+                get {
+                    try {
+                        return ((int)(this[this.tableRent.PaymentTypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentType\' in table \'Rent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRent.PaymentTypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int idCard {
+                get {
+                    try {
+                        return ((int)(this[this.tableRent.idCardColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idCard\' in table \'Rent\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableRent.idCardColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidEmployeeNull() {
+                return this.IsNull(this.tableRent.idEmployeeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidEmployeeNull() {
+                this[this.tableRent.idEmployeeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPickUpTimeNull() {
+                return this.IsNull(this.tableRent.PickUpTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPickUpTimeNull() {
+                this[this.tableRent.PickUpTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDropOfTimeNull() {
+                return this.IsNull(this.tableRent.DropOfTimeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDropOfTimeNull() {
+                this[this.tableRent.DropOfTimeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentTypeNull() {
+                return this.IsNull(this.tableRent.PaymentTypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentTypeNull() {
+                this[this.tableRent.PaymentTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidCardNull() {
+                return this.IsNull(this.tableRent.idCardColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidCardNull() {
+                this[this.tableRent.idCardColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -791,22 +852,22 @@ namespace CarLand.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ClientRowChangeEvent : global::System.EventArgs {
+        public class RentRowChangeEvent : global::System.EventArgs {
             
-            private ClientRow eventRow;
+            private RentRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRowChangeEvent(ClientRow row, global::System.Data.DataRowAction action) {
+            public RentRowChangeEvent(RentRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ClientRow Row {
+            public RentRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -822,7 +883,7 @@ namespace CarLand.DataSets {
         }
     }
 }
-namespace CarLand.DataSets.IntegradoraDataSet4TableAdapters {
+namespace CarLand.Forms.DataSets.Paulo.listRentTableAdapters {
     
     
     /// <summary>
@@ -834,7 +895,7 @@ namespace CarLand.DataSets.IntegradoraDataSet4TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ClientTableAdapter : global::System.ComponentModel.Component {
+    public partial class RentTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -848,7 +909,7 @@ namespace CarLand.DataSets.IntegradoraDataSet4TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ClientTableAdapter() {
+        public RentTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -945,68 +1006,76 @@ namespace CarLand.DataSets.IntegradoraDataSet4TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Client";
+            tableMapping.DataSetTable = "Rent";
+            tableMapping.ColumnMappings.Add("idRent", "idRent");
+            tableMapping.ColumnMappings.Add("idCar", "idCar");
+            tableMapping.ColumnMappings.Add("idEmployee", "idEmployee");
             tableMapping.ColumnMappings.Add("idClient", "idClient");
-            tableMapping.ColumnMappings.Add("Clientname", "Clientname");
-            tableMapping.ColumnMappings.Add("idUser", "idUser");
-            tableMapping.ColumnMappings.Add("CPF", "CPF");
-            tableMapping.ColumnMappings.Add("idCNH", "idCNH");
-            tableMapping.ColumnMappings.Add("Birth", "Birth");
-            tableMapping.ColumnMappings.Add("Phone", "Phone");
-            tableMapping.ColumnMappings.Add("Email", "Email");
-            tableMapping.ColumnMappings.Add("Gener", "Gener");
+            tableMapping.ColumnMappings.Add("PickUpTime", "PickUpTime");
+            tableMapping.ColumnMappings.Add("DropOfTime", "DropOfTime");
+            tableMapping.ColumnMappings.Add("Amount", "Amount");
+            tableMapping.ColumnMappings.Add("PaymentType", "PaymentType");
+            tableMapping.ColumnMappings.Add("idCard", "idCard");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Client] WHERE (([idClient] = @Original_idClient) AND ([Clientname] = @Original_Clientname) AND ([idUser] = @Original_idUser) AND ([CPF] = @Original_CPF) AND ([idCNH] = @Original_idCNH) AND ([Birth] = @Original_Birth) AND ([Phone] = @Original_Phone) AND ([Email] = @Original_Email) AND ((@IsNull_Gener = 1 AND [Gener] IS NULL) OR ([Gener] = @Original_Gener)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Rent] WHERE (([idRent] = @Original_idRent) AND ([idCar] = @Original_idCar) AND ((@IsNull_idEmployee = 1 AND [idEmployee] IS NULL) OR ([idEmployee] = @Original_idEmployee)) AND ([idClient] = @Original_idClient) AND ((@IsNull_PickUpTime = 1 AND [PickUpTime] IS NULL) OR ([PickUpTime] = @Original_PickUpTime)) AND ((@IsNull_DropOfTime = 1 AND [DropOfTime] IS NULL) OR ([DropOfTime] = @Original_DropOfTime)) AND ([Amount] = @Original_Amount) AND ((@IsNull_PaymentType = 1 AND [PaymentType] IS NULL) OR ([PaymentType] = @Original_PaymentType)) AND ((@IsNull_idCard = 1 AND [idCard] IS NULL) OR ([idCard] = @Original_idCard)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idRent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idRent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idClient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Clientname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clientname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idUser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCNH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCNH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gener", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gener", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PickUpTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PickUpTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DropOfTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DropOfTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Client] ([Clientname], [idUser], [CPF], [idCNH], [Birth], [Phone], [Email], [Gener]) VALUES (@Clientname, @idUser, @CPF, @idCNH, @Birth, @Phone, @Email, @Gener);
-SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM Client WHERE (idClient = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Rent] ([idCar], [idEmployee], [idClient], [PickUpTime], [DropOfTime], [Amount], [PaymentType], [idCard]) VALUES (@idCar, @idEmployee, @idClient, @PickUpTime, @DropOfTime, @Amount, @PaymentType, @idCard);
+SELECT idRent, idCar, idEmployee, idClient, PickUpTime, DropOfTime, Amount, PaymentType, idCard FROM Rent WHERE (idRent = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clientname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clientname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCNH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCNH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gener", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickUpTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DropOfTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Client] SET [Clientname] = @Clientname, [idUser] = @idUser, [CPF] = @CPF, [idCNH] = @idCNH, [Birth] = @Birth, [Phone] = @Phone, [Email] = @Email, [Gener] = @Gener WHERE (([idClient] = @Original_idClient) AND ([Clientname] = @Original_Clientname) AND ([idUser] = @Original_idUser) AND ([CPF] = @Original_CPF) AND ([idCNH] = @Original_idCNH) AND ([Birth] = @Original_Birth) AND ([Phone] = @Original_Phone) AND ([Email] = @Original_Email) AND ((@IsNull_Gener = 1 AND [Gener] IS NULL) OR ([Gener] = @Original_Gener)));
-SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM Client WHERE (idClient = @idClient)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Rent] SET [idCar] = @idCar, [idEmployee] = @idEmployee, [idClient] = @idClient, [PickUpTime] = @PickUpTime, [DropOfTime] = @DropOfTime, [Amount] = @Amount, [PaymentType] = @PaymentType, [idCard] = @idCard WHERE (([idRent] = @Original_idRent) AND ([idCar] = @Original_idCar) AND ((@IsNull_idEmployee = 1 AND [idEmployee] IS NULL) OR ([idEmployee] = @Original_idEmployee)) AND ([idClient] = @Original_idClient) AND ((@IsNull_PickUpTime = 1 AND [PickUpTime] IS NULL) OR ([PickUpTime] = @Original_PickUpTime)) AND ((@IsNull_DropOfTime = 1 AND [DropOfTime] IS NULL) OR ([DropOfTime] = @Original_DropOfTime)) AND ([Amount] = @Original_Amount) AND ((@IsNull_PaymentType = 1 AND [PaymentType] IS NULL) OR ([PaymentType] = @Original_PaymentType)) AND ((@IsNull_idCard = 1 AND [idCard] IS NULL) OR ([idCard] = @Original_idCard)));
+SELECT idRent, idCar, idEmployee, idClient, PickUpTime, DropOfTime, Amount, PaymentType, idCard FROM Rent WHERE (idRent = @idRent)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Clientname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clientname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idUser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUser", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CPF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCNH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCNH", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gener", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCar", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PickUpTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DropOfTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idRent", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idRent", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCar", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCar", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idEmployee", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idEmployee", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idClient", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idClient", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Clientname", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Clientname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idUser", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idUser", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CPF", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CPF", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCNH", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCNH", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birth", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birth", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Phone", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Phone", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Gener", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Gener", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gener", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idClient", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idClient", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PickUpTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PickUpTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PickUpTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DropOfTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DropOfTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DropOfTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaymentType", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_idCard", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "idCard", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idRent", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idRent", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1022,8 +1091,8 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM " +
-                "dbo.Client";
+            this._commandCollection[0].CommandText = "SELECT idRent, idCar, idEmployee, idClient, PickUpTime, DropOfTime, Amount, Payme" +
+                "ntType, idCard FROM dbo.Rent";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1031,7 +1100,7 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(IntegradoraDataSet4.ClientDataTable dataTable) {
+        public virtual int Fill(listRent.RentDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1044,9 +1113,9 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual IntegradoraDataSet4.ClientDataTable GetData() {
+        public virtual listRent.RentDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            IntegradoraDataSet4.ClientDataTable dataTable = new IntegradoraDataSet4.ClientDataTable();
+            listRent.RentDataTable dataTable = new listRent.RentDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1054,15 +1123,15 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(IntegradoraDataSet4.ClientDataTable dataTable) {
+        public virtual int Update(listRent.RentDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(IntegradoraDataSet4 dataSet) {
-            return this.Adapter.Update(dataSet, "Client");
+        public virtual int Update(listRent dataSet) {
+            return this.Adapter.Update(dataSet, "Rent");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1084,32 +1153,50 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_idClient, string Original_Clientname, int Original_idUser, int Original_CPF, int Original_idCNH, System.DateTime Original_Birth, int Original_Phone, string Original_Email, string Original_Gener) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idClient));
-            if ((Original_Clientname == null)) {
-                throw new global::System.ArgumentNullException("Original_Clientname");
+        public virtual int Delete(int Original_idRent, int Original_idCar, global::System.Nullable<int> Original_idEmployee, int Original_idClient, global::System.Nullable<global::System.DateTime> Original_PickUpTime, global::System.Nullable<global::System.DateTime> Original_DropOfTime, decimal Original_Amount, global::System.Nullable<int> Original_PaymentType, global::System.Nullable<int> Original_idCard) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_idRent));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_idCar));
+            if ((Original_idEmployee.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_idEmployee.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_Clientname));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_idUser));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_CPF));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_idCNH));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((System.DateTime)(Original_Birth));
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_Phone));
-            if ((Original_Email == null)) {
-                throw new global::System.ArgumentNullException("Original_Email");
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_idClient));
+            if ((Original_PickUpTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_PickUpTime.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Email));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Gener == null)) {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            if ((Original_DropOfTime.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_DropOfTime.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Gener));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((decimal)(Original_Amount));
+            if ((Original_PaymentType.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_PaymentType.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_idCard.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_idCard.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1131,29 +1218,39 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Clientname, int idUser, int CPF, int idCNH, System.DateTime Birth, int Phone, string Email, string Gener) {
-            if ((Clientname == null)) {
-                throw new global::System.ArgumentNullException("Clientname");
+        public virtual int Insert(int idCar, global::System.Nullable<int> idEmployee, int idClient, global::System.Nullable<global::System.DateTime> PickUpTime, global::System.Nullable<global::System.DateTime> DropOfTime, decimal Amount, global::System.Nullable<int> PaymentType, global::System.Nullable<int> idCard) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(idCar));
+            if ((idEmployee.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idEmployee.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Clientname));
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(idUser));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(CPF));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(idCNH));
-            this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Birth));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Phone));
-            if ((Email == null)) {
-                throw new global::System.ArgumentNullException("Email");
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(idClient));
+            if ((PickUpTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(PickUpTime.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Email));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Gener == null)) {
+            if ((DropOfTime.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(DropOfTime.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Amount));
+            if ((PaymentType.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(PaymentType.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((idCard.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(idCard.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Gener));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1176,74 +1273,102 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string Clientname, 
-                    int idUser, 
-                    int CPF, 
-                    int idCNH, 
-                    System.DateTime Birth, 
-                    int Phone, 
-                    string Email, 
-                    string Gener, 
+                    int idCar, 
+                    global::System.Nullable<int> idEmployee, 
+                    int idClient, 
+                    global::System.Nullable<global::System.DateTime> PickUpTime, 
+                    global::System.Nullable<global::System.DateTime> DropOfTime, 
+                    decimal Amount, 
+                    global::System.Nullable<int> PaymentType, 
+                    global::System.Nullable<int> idCard, 
+                    int Original_idRent, 
+                    int Original_idCar, 
+                    global::System.Nullable<int> Original_idEmployee, 
                     int Original_idClient, 
-                    string Original_Clientname, 
-                    int Original_idUser, 
-                    int Original_CPF, 
-                    int Original_idCNH, 
-                    System.DateTime Original_Birth, 
-                    int Original_Phone, 
-                    string Original_Email, 
-                    string Original_Gener, 
-                    int idClient) {
-            if ((Clientname == null)) {
-                throw new global::System.ArgumentNullException("Clientname");
+                    global::System.Nullable<global::System.DateTime> Original_PickUpTime, 
+                    global::System.Nullable<global::System.DateTime> Original_DropOfTime, 
+                    decimal Original_Amount, 
+                    global::System.Nullable<int> Original_PaymentType, 
+                    global::System.Nullable<int> Original_idCard, 
+                    int idRent) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(idCar));
+            if ((idEmployee.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idEmployee.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Clientname));
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(idUser));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(CPF));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(idCNH));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Birth));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Phone));
-            if ((Email == null)) {
-                throw new global::System.ArgumentNullException("Email");
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(idClient));
+            if ((PickUpTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(PickUpTime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Email));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Gener == null)) {
+            if ((DropOfTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(DropOfTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Amount));
+            if ((PaymentType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(PaymentType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((idCard.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(idCard.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Gener));
-            }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_idClient));
-            if ((Original_Clientname == null)) {
-                throw new global::System.ArgumentNullException("Original_Clientname");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_Clientname));
-            }
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_idUser));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_CPF));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_idCNH));
-            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Birth));
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Phone));
-            if ((Original_Email == null)) {
-                throw new global::System.ArgumentNullException("Original_Email");
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_idRent));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_idCar));
+            if ((Original_idEmployee.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_idEmployee.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_Email));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_Gener == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_idClient));
+            if ((Original_PickUpTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_PickUpTime.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Gener));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(idClient));
+            if ((Original_DropOfTime.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_DropOfTime.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(Original_Amount));
+            if ((Original_PaymentType.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_PaymentType.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((Original_idCard.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_idCard.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(idRent));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1265,24 +1390,24 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    string Clientname, 
-                    int idUser, 
-                    int CPF, 
-                    int idCNH, 
-                    System.DateTime Birth, 
-                    int Phone, 
-                    string Email, 
-                    string Gener, 
+                    int idCar, 
+                    global::System.Nullable<int> idEmployee, 
+                    int idClient, 
+                    global::System.Nullable<global::System.DateTime> PickUpTime, 
+                    global::System.Nullable<global::System.DateTime> DropOfTime, 
+                    decimal Amount, 
+                    global::System.Nullable<int> PaymentType, 
+                    global::System.Nullable<int> idCard, 
+                    int Original_idRent, 
+                    int Original_idCar, 
+                    global::System.Nullable<int> Original_idEmployee, 
                     int Original_idClient, 
-                    string Original_Clientname, 
-                    int Original_idUser, 
-                    int Original_CPF, 
-                    int Original_idCNH, 
-                    System.DateTime Original_Birth, 
-                    int Original_Phone, 
-                    string Original_Email, 
-                    string Original_Gener) {
-            return this.Update(Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener, Original_idClient, Original_Clientname, Original_idUser, Original_CPF, Original_idCNH, Original_Birth, Original_Phone, Original_Email, Original_Gener, Original_idClient);
+                    global::System.Nullable<global::System.DateTime> Original_PickUpTime, 
+                    global::System.Nullable<global::System.DateTime> Original_DropOfTime, 
+                    decimal Original_Amount, 
+                    global::System.Nullable<int> Original_PaymentType, 
+                    global::System.Nullable<int> Original_idCard) {
+            return this.Update(idCar, idEmployee, idClient, PickUpTime, DropOfTime, Amount, PaymentType, idCard, Original_idRent, Original_idCar, Original_idEmployee, Original_idClient, Original_PickUpTime, Original_DropOfTime, Original_Amount, Original_PaymentType, Original_idCard, Original_idRent);
         }
     }
     
@@ -1298,7 +1423,7 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         
         private UpdateOrderOption _updateOrder;
         
-        private ClientTableAdapter _clientTableAdapter;
+        private RentTableAdapter _rentTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1320,12 +1445,12 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ClientTableAdapter ClientTableAdapter {
+        public RentTableAdapter RentTableAdapter {
             get {
-                return this._clientTableAdapter;
+                return this._rentTableAdapter;
             }
             set {
-                this._clientTableAdapter = value;
+                this._rentTableAdapter = value;
             }
         }
         
@@ -1348,9 +1473,9 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._clientTableAdapter != null) 
-                            && (this._clientTableAdapter.Connection != null))) {
-                    return this._clientTableAdapter.Connection;
+                if (((this._rentTableAdapter != null) 
+                            && (this._rentTableAdapter.Connection != null))) {
+                    return this._rentTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1365,7 +1490,7 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._clientTableAdapter != null)) {
+                if ((this._rentTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1377,14 +1502,14 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(IntegradoraDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(listRent dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._rentTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Rent.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(updatedRows));
+                    result = (result + this._rentTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1396,13 +1521,13 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(IntegradoraDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(listRent dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._rentTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Rent.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(addedRows));
+                    result = (result + this._rentTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1414,13 +1539,13 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(IntegradoraDataSet4 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(listRent dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._clientTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._rentTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Rent.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._clientTableAdapter.Update(deletedRows));
+                    result = (result + this._rentTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1456,15 +1581,15 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(IntegradoraDataSet4 dataSet) {
+        public virtual int UpdateAll(listRent dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._clientTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._clientTableAdapter.Connection) == false))) {
+            if (((this._rentTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._rentTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1500,13 +1625,13 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._clientTableAdapter != null)) {
-                    revertConnections.Add(this._clientTableAdapter, this._clientTableAdapter.Connection);
-                    this._clientTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._clientTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._clientTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._clientTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._clientTableAdapter.Adapter);
+                if ((this._rentTableAdapter != null)) {
+                    revertConnections.Add(this._rentTableAdapter, this._rentTableAdapter.Connection);
+                    this._rentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._rentTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._rentTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._rentTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._rentTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1567,9 +1692,9 @@ SELECT idClient, Clientname, idUser, CPF, idCNH, Birth, Phone, Email, Gener FROM
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._clientTableAdapter != null)) {
-                    this._clientTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._clientTableAdapter]));
-                    this._clientTableAdapter.Transaction = null;
+                if ((this._rentTableAdapter != null)) {
+                    this._rentTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._rentTableAdapter]));
+                    this._rentTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

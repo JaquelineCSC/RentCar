@@ -14,7 +14,7 @@ namespace CarLand.Database
         Connection _context = new Connection();
         public string query;
 
-        public int Insert(Car car)
+        public int Insert(Domain.Entities.Car car)
         {
             query = $@"INSERT INTO 
                         Car
@@ -24,16 +24,16 @@ namespace CarLand.Database
             return _context.CommandWithReturnId(query);
         }
 
-        public void Update(Car car)
+        public void Update(Domain.Entities.Car car)
         {
             query = $@"Update Car 
                     set Color = '{car.Color}', Board = '{car.Board}', Model = '{car.Model}', Fuel = '{car.Fuel}', Doors = {car.Doors}, Year = {car.Year}, Branch = '{car.Branch}'  
                     WHERE idCar = {car.Id}";
             _context.CommandWithoutReturn(query);
         }
-        public void Delete(string board)
+        public void Delete(int id)
         {
-            query = $"Delete from Car WHERE Board = '{board}'";
+            query = $"Delete from Car WHERE idCar = '{id}'";
             _context.CommandWithoutReturn(query);
         }
 
@@ -43,15 +43,21 @@ namespace CarLand.Database
             return _context.GetCar(query);
         }
 
+        public DataSet Report()
+        {
+            query = "Select * from Car";
+            return _context.ReportCars(query);
+        }
+
         public List<Car> List()
         {
             query = "SELECT * FROM Car";
             return  _context.ListCars(query);
         }
 
-        public Car ConstructorCar(SqlDataReader reader)
+        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
         {
-            return new Car()
+            return new Domain.Entities.Car()
             {
                 Id = reader.GetInt32(1),
                 Color = reader.GetString(2),

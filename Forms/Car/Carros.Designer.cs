@@ -1,6 +1,6 @@
 ﻿namespace CarLand.Forms
 {
-    partial class Carros
+    partial class Cars
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Carros));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.logout = new MetroFramework.Controls.MetroPanel();
             this.email = new MetroFramework.Controls.MetroLabel();
@@ -44,6 +44,7 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.card = new MetroFramework.Controls.MetroPanel();
+            this.metroLink3 = new MetroFramework.Controls.MetroLink();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
@@ -52,6 +53,7 @@
             this.panel = new MetroFramework.Controls.MetroPanel();
             this.record_not_found = new MetroFramework.Controls.MetroLabel();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroPanel1.SuspendLayout();
@@ -272,6 +274,7 @@
             // 
             // card
             // 
+            this.card.Controls.Add(this.metroLink3);
             this.card.Controls.Add(this.metroLink2);
             this.card.Controls.Add(this.metroLabel5);
             this.card.Controls.Add(this.metroLabel4);
@@ -289,15 +292,29 @@
             this.card.VerticalScrollbarSize = 10;
             this.card.Visible = false;
             // 
+            // metroLink3
+            // 
+            this.metroLink3.BackColor = System.Drawing.Color.LimeGreen;
+            this.metroLink3.Location = new System.Drawing.Point(117, 241);
+            this.metroLink3.Name = "metroLink3";
+            this.metroLink3.Size = new System.Drawing.Size(68, 41);
+            this.metroLink3.TabIndex = 100000001;
+            this.metroLink3.Text = "Alugar";
+            this.metroLink3.UseCustomBackColor = true;
+            this.metroLink3.UseCustomForeColor = true;
+            this.metroLink3.UseSelectable = true;
+            this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
+            // 
             // metroLink2
             // 
             this.metroLink2.BackColor = System.Drawing.Color.Gold;
-            this.metroLink2.Location = new System.Drawing.Point(166, 241);
+            this.metroLink2.Location = new System.Drawing.Point(191, 241);
             this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(80, 41);
+            this.metroLink2.Size = new System.Drawing.Size(68, 41);
             this.metroLink2.TabIndex = 100000000;
             this.metroLink2.Text = "Detalhes";
             this.metroLink2.UseCustomBackColor = true;
+            this.metroLink2.UseCustomForeColor = true;
             this.metroLink2.UseSelectable = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
@@ -381,6 +398,7 @@
             // 
             // metroPanel3
             // 
+            this.metroPanel3.Controls.Add(this.metroLabel8);
             this.metroPanel3.Controls.Add(this.metroLabel7);
             this.metroPanel3.Controls.Add(this.metroLabel6);
             this.metroPanel3.HorizontalScrollbarBarColor = true;
@@ -388,17 +406,27 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(1196, 91);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(59, 67);
+            this.metroPanel3.Size = new System.Drawing.Size(59, 81);
             this.metroPanel3.TabIndex = 6;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             this.metroPanel3.Visible = false;
             // 
+            // metroLabel8
+            // 
+            this.metroLabel8.AutoSize = true;
+            this.metroLabel8.Location = new System.Drawing.Point(6, 10);
+            this.metroLabel8.Name = "metroLabel8";
+            this.metroLabel8.Size = new System.Drawing.Size(42, 19);
+            this.metroLabel8.TabIndex = 4;
+            this.metroLabel8.Text = "Menu";
+            this.metroLabel8.Click += new System.EventHandler(this.metroLabel8_Click);
+            // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(13, 38);
+            this.metroLabel7.Location = new System.Drawing.Point(8, 58);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(31, 19);
             this.metroLabel7.TabIndex = 3;
@@ -408,13 +436,14 @@
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(13, 10);
+            this.metroLabel6.Location = new System.Drawing.Point(7, 33);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(38, 19);
             this.metroLabel6.TabIndex = 2;
             this.metroLabel6.Text = "Perfil";
+            this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
-            // Carros
+            // Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -423,7 +452,8 @@
             this.Controls.Add(this.panel);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Name = "Carros";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Cars";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Carros";
@@ -475,5 +505,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel record_not_found;
+        private MetroFramework.Controls.MetroLink metroLink3;
+        private MetroFramework.Controls.MetroLabel metroLabel8;
     }
 }

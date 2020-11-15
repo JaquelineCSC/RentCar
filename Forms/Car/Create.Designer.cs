@@ -584,6 +584,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-22, 10, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.metroLabel15);
             this.Controls.Add(this.metroLabel14);
@@ -611,10 +614,10 @@
             this.Controls.Add(this.Modelo);
             this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Create";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Novo Carro";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();

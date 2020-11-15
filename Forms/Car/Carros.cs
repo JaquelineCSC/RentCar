@@ -1,4 +1,7 @@
 ﻿using CarLand.Database;
+using CarLand.Forms.Admin;
+using CarLand.Forms.Aluguel;
+using CarLand.Forms.Client;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
@@ -11,19 +14,21 @@ using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class Carros : MetroForm
+    public partial class Cars : MetroForm
     {
         public CarLand.Domain.Entities.User User { get; set; }
+        public Domain.Entities.Client Client { get; set; }
 
         public DBCar _appCar;
         public DBImage _appImage;
 
-        public Carros()
+        public Cars()
         {
             InitializeComponent();
             _appCar = new DBCar();
             _appImage = new DBImage();
             User = new CarLand.Domain.Entities.User();
+            Client = new Domain.Entities.Client();
         }
 
         private void metroLabel2_Click(object sender, EventArgs e)
@@ -99,7 +104,15 @@ namespace CarLand.Forms
             newCard.Controls.Add(addSubscription(car));
             newCard.Controls.Add(addCifrao(car));
             newCard.Controls.Add(addButton(car.Id));
-
+            newCard.Controls.Add(addRentButton(car.Id));
+            if (User.Id != 0 && !User.isAdmin || Client.Id != 0)
+            {
+                var rentButton = newCard.Controls.OfType<MetroLink>().Where(btn => btn.Text == "Alugar");
+                foreach (var item in rentButton)
+                {
+                    item.Visible = true;
+                }
+            }
             return newCard;
         }
 
@@ -167,8 +180,27 @@ namespace CarLand.Forms
             button.UseCustomBackColor = true;
             button.Text = "Detalhes";
             button.TabIndex = i;
+            button.UseCustomForeColor = true;
+            button.ForeColor = Color.Black;
             button.Click += new System.EventHandler(metroLink2_Click);
             button.Location = metroLink2.Location;
+
+            return button;
+        }
+
+        public MetroLink addRentButton(int i)
+        {
+            MetroLink button = new MetroLink();
+            button.Size = metroLink3.Size;
+            button.BackColor = Color.LimeGreen;
+            button.UseCustomBackColor = true;
+            button.Text = "Alugar";
+            button.TabIndex = i;
+            button.Click += new System.EventHandler(metroLink3_Click);
+            button.UseCustomForeColor = true;
+            button.ForeColor = Color.Black;
+            button.Location = metroLink3.Location;
+            button.Visible = false;
 
             return button;
         }
@@ -210,6 +242,52 @@ namespace CarLand.Forms
             else
             {
                 metroPanel3.Visible = true;
+            }
+        }
+
+        private void metroLink3_Click(object sender, EventArgs e)
+        {
+            MetroLink link = (MetroLink)sender;
+            var car = _appCar.GetCar(link.TabIndex);
+            Rent form = new Rent(car, User, Client);
+            this.Hide();
+            form.ShowDialog();
+            this.Close();
+        }
+
+        private void metroLabel8_Click(object sender, EventArgs e)
+        {
+            if (User.isAdmin)
+            {
+                FrmPrincipal form = new FrmPrincipal();
+                form.User = User;
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                FrmUsuario form = new FrmUsuario();
+                form.User = User;
+                this.Hide();
+                form.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void metroLabel6_Click(object sender, EventArgs e)
+        {
+            if (User.isAdmin)
+            {
+                ProfileAdmin form = new ProfileAdmin();
+                form.User = User;
+                form.ShowDialog();
+            }
+            else
+            {
+                Profile form = new Profile();
+                form.User = User;
+                form.ShowDialog();
             }
         }
     }

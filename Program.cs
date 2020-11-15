@@ -1,4 +1,6 @@
 ﻿using CarLand.Forms;
+using CarLand.Forms.Logout;
+using CarLand.Forms.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,7 @@ namespace CarLand
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Carros());
+            Application.Run(new Cars());
         }
     }
 }

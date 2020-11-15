@@ -55,12 +55,11 @@
             this.metroTextBox1.DisplayIcon = true;
             this.metroTextBox1.Icon = ((System.Drawing.Image)(resources.GetObject("metroTextBox1.Icon")));
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(120, 97);
+            this.metroTextBox1.Location = new System.Drawing.Point(125, 121);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Multiline = true;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Usuário";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -78,7 +77,7 @@
             // metroButton1
             // 
             this.metroButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.metroButton1.Location = new System.Drawing.Point(169, 169);
+            this.metroButton1.Location = new System.Drawing.Point(174, 193);
             this.metroButton1.Name = "metroButton1";
             this.metroButton1.Size = new System.Drawing.Size(133, 41);
             this.metroButton1.Style = MetroFramework.MetroColorStyle.Silver;
@@ -104,13 +103,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 8, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(494, 319);
             this.Controls.Add(this.metroButton1);
             this.Controls.Add(this.metroTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Esqueceu";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Esqueci minha senha";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Esqueceu_Load);
             ((System.ComponentModel.ISupportInitialize)(this._manager)).EndInit();

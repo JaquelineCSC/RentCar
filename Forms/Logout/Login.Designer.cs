@@ -49,11 +49,11 @@ namespace CarLand.Forms
             // datetime
             // 
             this.datetime.AutoSize = true;
-            this.datetime.Location = new System.Drawing.Point(1079, 62);
+            this.datetime.Location = new System.Drawing.Point(1134, 63);
             this.datetime.Name = "datetime";
-            this.datetime.Size = new System.Drawing.Size(12, 19);
+            this.datetime.Size = new System.Drawing.Size(123, 19);
             this.datetime.TabIndex = 0;
-            this.datetime.Text = ".";
+            this.datetime.Text = "10/10/2020 00:00:00";
             this.datetime.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroTextBox1
@@ -79,7 +79,6 @@ namespace CarLand.Forms
             this.metroTextBox1.Multiline = true;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Usuário";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -116,8 +115,7 @@ namespace CarLand.Forms
             this.metroTextBox2.MaxLength = 16;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '*';
-            this.metroTextBox2.PromptText = "Senha";
+            this.metroTextBox2.PasswordChar = '\0';
             this.metroTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
@@ -222,6 +220,7 @@ namespace CarLand.Forms
             this.Controls.Add(this.metroTextBox2);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.datetime);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

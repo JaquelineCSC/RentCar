@@ -15,8 +15,6 @@ namespace CarLand.Database
         private SqlConnection cn = new SqlConnection();
         private SqlCommand cd = new SqlCommand();
 
-        public int Campo { get; set; }
-
         private void Connect()
         {
             cn.ConnectionString = Servers.Samuel;
@@ -52,7 +50,7 @@ namespace CarLand.Database
                 cn.Close();
                 return dr;
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
@@ -74,9 +72,9 @@ namespace CarLand.Database
             return carros;
         }
 
-        public Car ConstructorCar(SqlDataReader reader)
+        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
         {
-            return new Car()
+            return new Domain.Entities.Car()
             {
                 Id = reader.GetInt32(0),
                 Color = reader.GetString(1),
@@ -89,14 +87,14 @@ namespace CarLand.Database
             };
         }
 
-        public Car GetCar(string sql)
+        public Domain.Entities.Car GetCar(string sql)
         {
             Connect();
             cd.Connection = cn;
             cd.CommandText = sql;
             Car car = new Car();
             SqlDataReader reader = cd.ExecuteReader();
-            if(reader.Read())
+            if (reader.Read())
             {
                 car = ConstructorCar(reader);
             }
@@ -108,7 +106,7 @@ namespace CarLand.Database
 
         #region User
 
-        public User GetUserByName(string sql)
+        public User GetUser(string sql)
         {
             Connect();
             cd.Connection = cn;
@@ -130,7 +128,7 @@ namespace CarLand.Database
                 Id = reader.GetInt32(0),
                 Name = reader.GetString(1),
                 Password = reader.GetString(2),
-                Admin = reader.GetBoolean(3),
+                isAdmin = reader.GetBoolean(3),
             };
         }
 
@@ -162,6 +160,214 @@ namespace CarLand.Database
                 Path = reader.GetString(2),
                 Name = reader.GetString(3),
             };
+        }
+
+        #endregion
+
+        #region Card
+
+        public Card ConstructorCard(SqlDataReader reader, int i)
+        {
+            return new Card()
+            {
+                Id = reader.GetInt32(i),
+                idClient = reader.GetInt32(i + 1),
+                Name = reader.GetString(i + 2),
+                Number = long.Parse(reader.GetSqlInt64(i + 3).ToString()),
+                CVC = reader.GetInt32(i + 4),
+                ValidateDate = reader.GetDateTime(i + 5),
+            };
+        }
+
+        #endregion
+
+        #region Client
+
+        public Client GetClientByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Client client = new Client();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                client = ConstructorClient(reader);
+            }
+            cn.Close();
+            return client;
+        }
+
+        public Client GetClientByEmail(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Client client = new Client();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                client = ConstructorClient(reader);
+            }
+            cn.Close();
+            return client;
+        }
+
+        public Client ConstructorClient(SqlDataReader reader)
+        {
+            return new Client()
+            {
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                User_Id = reader.GetInt32(2),
+                CPF = reader.GetInt64(3),
+                CNH_Id = reader.GetInt32(4),
+                DateOfBirth = reader.GetDateTime(5),
+                Phone = reader.GetInt64(6),
+                Email = reader.GetString(7),
+                Genero = reader.GetString(8)
+            };
+        }
+        #endregion
+
+        #region CNH
+
+        public CNH ConstructorCNH(SqlDataReader reader, int i)
+        {
+            return new CNH()
+            {
+                Id = reader.GetInt32(i),
+                Name = reader.GetString(i + 1),
+                Number = long.Parse(reader.GetInt64(i + 2).ToString()),
+                ValidateDate = reader.GetDateTime(i + 3),
+            };
+        }
+
+        #endregion
+
+        #region InnerJoins
+
+        public ClientCardCNH GetClientCardCNHByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            ClientCardCNH clientCardCNH = new ClientCardCNH();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                clientCardCNH.Client = ConstructorClient(reader);
+                clientCardCNH.CNH = ConstructorCNH(reader, 15);
+                while (reader.Read())
+                {
+                    clientCardCNH.Card.Add(ConstructorCard(reader, 9));
+                }
+            }
+            cn.Close();
+            return clientCardCNH;
+        }
+
+        public ClientCardCNH GetClientCNHByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            ClientCardCNH clientCNH = new ClientCardCNH();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                clientCNH.Client = ConstructorClient(reader);
+                clientCNH.CNH = ConstructorCNH(reader, 9);
+            }
+            cn.Close();
+            return clientCNH;
+        }
+
+        #endregion
+
+        #region Employee
+
+        public Employee GetEmployeeByUserId(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            Employee employee = new Employee();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                employee = ConstructorEmployee(reader);
+            }
+            cn.Close();
+            return employee;
+        }
+
+        public Employee ConstructorEmployee(SqlDataReader reader)
+        {
+            return new Employee()
+            {
+                Id = reader.GetInt32(0),
+                Name = reader.GetString(1),
+                idUser = reader.GetInt32(2),
+            };
+        }
+
+        #endregion
+
+        #region Card
+
+        public List<Card> GetCard(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            List<Card> cards = new List<Card>();
+            SqlDataReader reader = cd.ExecuteReader();
+            while (reader.Read())
+            {
+                cards.Add(ConstructorCard(reader));
+            }
+            cn.Close();
+            return cards;
+        }
+
+        public Card ConstructorCard(SqlDataReader reader)
+        {
+            return new Card()
+            {
+                Id = reader.GetInt32(0),
+                idClient = reader.GetInt32(1),
+                Name = reader.GetString(2),
+                Number = reader.GetInt64(3),
+                CVC = reader.GetInt32(4),
+                ValidateDate = reader.GetDateTime(5)
+            };
+        }
+
+        #endregion
+
+        #region Reports
+
+        public DataSet ReportRent(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public DataSet ReportCars(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
         }
 
         #endregion

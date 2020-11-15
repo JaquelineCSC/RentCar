@@ -15,7 +15,7 @@ namespace CarLand.Database
 
         public void Open()
         {
-            _context.ConnectionString = Servers.Samuel;
+            _context.ConnectionString = Servers.Paulo;
             _context.Open();
         }
         public void CommandWithoutReturn(string sql)

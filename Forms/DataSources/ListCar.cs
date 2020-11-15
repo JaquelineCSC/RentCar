@@ -23,7 +23,6 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
-            this.carTableAdapter1.Fill(this.integradoraDataSet1.Car);
         }
 
         private void toolTip(object sender, EventArgs e)
@@ -82,10 +81,9 @@ namespace CarLand.Forms.Car
         {
             if (RowView != null)
             {
-                string board = RowView["Board"].ToString();
                 int id = int.Parse(RowView["idCar"].ToString());
                 _appImage.Delete(id);
-                _appCar.Delete(board);
+                _appCar.Delete(id);
                 MetroMessageBox.Show(this, "Carro deletado com sucesso", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
             }
             else
@@ -98,5 +96,6 @@ namespace CarLand.Forms.Car
         {
             ListCar_Load(this, new EventArgs());
         }
+
     }
 }

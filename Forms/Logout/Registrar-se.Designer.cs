@@ -60,7 +60,6 @@
             this.mtxtSenhaClientes.MaxLength = 16;
             this.mtxtSenhaClientes.Name = "mtxtSenhaClientes";
             this.mtxtSenhaClientes.PasswordChar = '\0';
-            this.mtxtSenhaClientes.PromptText = "Senha";
             this.mtxtSenhaClientes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtSenhaClientes.SelectedText = "";
             this.mtxtSenhaClientes.SelectionLength = 0;
@@ -97,7 +96,6 @@
             this.mtxtUsuarioClientes.MaxLength = 20;
             this.mtxtUsuarioClientes.Name = "mtxtUsuarioClientes";
             this.mtxtUsuarioClientes.PasswordChar = '\0';
-            this.mtxtUsuarioClientes.PromptText = "Usuário";
             this.mtxtUsuarioClientes.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtUsuarioClientes.SelectedText = "";
             this.mtxtUsuarioClientes.SelectionLength = 0;
@@ -135,7 +133,6 @@
             this.metroTextBox1.MaxLength = 16;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "Confirmar Senha";
             this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox1.SelectedText = "";
             this.metroTextBox1.SelectionLength = 0;
@@ -182,15 +179,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
+            this.BackImagePadding = new System.Windows.Forms.Padding(-19, 10, -1, -1);
+            this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(453, 330);
             this.Controls.Add(this.metroLink1);
             this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.mtxtSenhaClientes);
             this.Controls.Add(this.mtxtUsuarioClientes);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registrar_se";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
-            this.Text = "Registrar";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             ((System.ComponentModel.ISupportInitialize)(this.errors)).EndInit();
             this.ResumeLayout(false);
