@@ -73,11 +73,11 @@ namespace CarLand.Forms
                 {
                     Name = nomeTXT.Text,
                     Email = email.Text,
-                    CNH = int.Parse(cnh.Text),
-                    CPF = int.Parse(cpf.Text),
+                    CNH = long.Parse(cnh.Text),
+                    CPF = long.Parse(cpf.Text),
                     DateOfBirth = DateTime.Parse(dateOfBirth.Text),
                     Genero = genero.Text,
-                    Phone = int.Parse(telefone.Text),
+                    Phone = long.Parse(telefone.Text),
                 };
                 try
                 {
@@ -90,7 +90,7 @@ namespace CarLand.Forms
                     form.ShowDialog();
                     this.Close();
                 }
-                catch
+                catch(Exception V)
                 {
                     MetroMessageBox.Show(this, "Erro no cadastro, verifique os dados preenchidos", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
                 }
