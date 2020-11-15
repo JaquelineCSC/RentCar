@@ -156,8 +156,8 @@ namespace CarLand.Forms.Car
             MetroTextBox x = (MetroTextBox)sender;
             if (x.Name == metroTextBox1.Name)
             {
-                Regex rgx = new Regex(" [^ a-zA-Z0-9 -] ");
-                metroTextBox1.Text = rgx.Replace(metroTextBox1.Text, " ");
+                Regex rgx = new Regex("[^\\w\\.-]");
+                metroTextBox1.Text = rgx.Replace(metroTextBox1.Text, "");
             }
         }
 
@@ -166,8 +166,8 @@ namespace CarLand.Forms.Car
             MetroTextBox x = (MetroTextBox)sender;
             if (x.Name == metroTextBox2.Name)
             {
-                Regex rgx = new Regex("[^a - zà - úA - ZÀ - Ú] |[äåæËÎÏÐðÑ×÷ØÝÞß]");
-                metroTextBox2.Text = rgx.Replace(metroTextBox2.Text, " ");
+                Regex rgx = new Regex("[^a-zA-Z -]");
+                metroTextBox2.Text = rgx.Replace(metroTextBox2.Text, "");
             }
 
 
@@ -177,8 +177,8 @@ namespace CarLand.Forms.Car
             MetroTextBox x = (MetroTextBox)sender;
             if (x.Name == metroTextBox3.Name)
             {
-                Regex rgx = new Regex("/[a - zA - Z]{ 3}[0 - 9]{ 4 } / ");
-                metroTextBox3.Text = rgx.Replace(metroTextBox3.Text, " ");
+                Regex rgx = new Regex("[^A - Z0 - 9 -]");
+                metroTextBox3.Text = rgx.Replace(metroTextBox3.Text, "");
             }
         }
 

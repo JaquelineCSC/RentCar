@@ -244,6 +244,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>listRent.xsd</DependentUpon>
     </Compile>
+    <Compile Include="IntegradoraDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListaFuncRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListCarRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ListRentRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Admin\ProfileAdmin.resx">
@@ -359,6 +379,50 @@
     </None>
     <None Include="DataSets\Paulo\listRent.xss">
       <DependentUpon>listRent.xsd</DependentUpon>
+    </None>
+    <None Include="IntegradoraDataSet.xsc">
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IntegradoraDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IntegradoraDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="IntegradoraDataSet.xss">
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ListaFuncRamires.xsc">
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </None>
+    <None Include="ListaFuncRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListaFuncRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListaFuncRamires.xss">
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </None>
+    <None Include="ListCarRamires.xsc">
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </None>
+    <None Include="ListCarRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListCarRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListCarRamires.xss">
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </None>
+    <None Include="ListRentRamires.xsc">
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
+    </None>
+    <None Include="ListRentRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListRentRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ListRentRamires.xss">
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

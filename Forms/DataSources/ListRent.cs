@@ -18,6 +18,8 @@ namespace CarLand.Forms.Client
 
         private void AluguelCliente_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'listRentRamires.Rent'. Você pode movê-la ou removê-la conforme necessário.
+            this.rentTableAdapter.Fill(this.listRentRamires.Rent);
             // TODO: This line of code loads data into the 'listRent.RentViewWithoutCards' table. You can move, or remove it, as needed.
             this.rentViewWithoutCardsTableAdapter.Fill(this.listRent.RentViewWithoutCards);
         }

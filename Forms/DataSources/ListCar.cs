@@ -23,6 +23,8 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'listCarRamires.Car'. Você pode movê-la ou removê-la conforme necessário.
+            this.carTableAdapter.Fill(this.listCarRamires.Car);
         }
 
         private void toolTip(object sender, EventArgs e)

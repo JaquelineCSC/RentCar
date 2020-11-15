@@ -36,12 +36,7 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.nomeClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aniversárioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clientCNHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.client = new CarLand.DataSets.Paulo.Client();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
@@ -70,12 +65,17 @@
             this.clientCNHTableAdapter = new CarLand.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.rentLink = new MetroFramework.Controls.MetroLink();
+            this.integradoraDataSet = new CarLand.IntegradoraDataSet();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clientTableAdapter = new CarLand.IntegradoraDataSetTableAdapters.ClientTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.client)).BeginInit();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -128,13 +128,8 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomeClienteDataGridViewTextBoxColumn,
-            this.aniversárioDataGridViewTextBoxColumn,
-            this.telefoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.generoDataGridViewTextBoxColumn,
-            this.cNHDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.clientCNHBindingSource;
+            this.emailDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.clientBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -166,29 +161,6 @@
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_CellContentClick);
             // 
-            // nomeClienteDataGridViewTextBoxColumn
-            // 
-            this.nomeClienteDataGridViewTextBoxColumn.DataPropertyName = "Nome Cliente";
-            this.nomeClienteDataGridViewTextBoxColumn.FillWeight = 200F;
-            this.nomeClienteDataGridViewTextBoxColumn.HeaderText = "Nome Cliente";
-            this.nomeClienteDataGridViewTextBoxColumn.Name = "nomeClienteDataGridViewTextBoxColumn";
-            this.nomeClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeClienteDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // aniversárioDataGridViewTextBoxColumn
-            // 
-            this.aniversárioDataGridViewTextBoxColumn.DataPropertyName = "Aniversário";
-            this.aniversárioDataGridViewTextBoxColumn.HeaderText = "Aniversário";
-            this.aniversárioDataGridViewTextBoxColumn.Name = "aniversárioDataGridViewTextBoxColumn";
-            this.aniversárioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
@@ -197,22 +169,6 @@
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
             this.emailDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // generoDataGridViewTextBoxColumn
-            // 
-            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
-            this.generoDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
-            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.generoDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // cNHDataGridViewTextBoxColumn
-            // 
-            this.cNHDataGridViewTextBoxColumn.DataPropertyName = "CNH";
-            this.cNHDataGridViewTextBoxColumn.HeaderText = "CNH";
-            this.cNHDataGridViewTextBoxColumn.Name = "cNHDataGridViewTextBoxColumn";
-            this.cNHDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clientCNHBindingSource
             // 
@@ -336,7 +292,7 @@
             // validateCNHdate
             // 
             this.validateCNHdate.Location = new System.Drawing.Point(392, 209);
-            this.validateCNHdate.MinimumSize = new System.Drawing.Size(4, 29);
+            this.validateCNHdate.MinimumSize = new System.Drawing.Size(0, 29);
             this.validateCNHdate.Name = "validateCNHdate";
             this.validateCNHdate.Size = new System.Drawing.Size(223, 29);
             this.validateCNHdate.TabIndex = 41;
@@ -356,7 +312,7 @@
             // dateofBirth
             // 
             this.dateofBirth.Location = new System.Drawing.Point(503, 133);
-            this.dateofBirth.MinimumSize = new System.Drawing.Size(4, 29);
+            this.dateofBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateofBirth.Name = "dateofBirth";
             this.dateofBirth.Size = new System.Drawing.Size(223, 29);
             this.dateofBirth.TabIndex = 38;
@@ -397,6 +353,7 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
+            this.email.PromptText = "exemplo@email.com";
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -430,6 +387,7 @@
             this.phone.Multiline = true;
             this.phone.Name = "phone";
             this.phone.PasswordChar = '\0';
+            this.phone.PromptText = "(35) X XXXX-XXXX";
             this.phone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.phone.SelectedText = "";
             this.phone.SelectionLength = 0;
@@ -463,6 +421,7 @@
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
+            this.cnh.PromptText = "XXXXXXXXXXX";
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -496,6 +455,7 @@
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
+            this.cpf.PromptText = "XXX.XXX.XXX-XX";
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;
@@ -684,6 +644,20 @@
             this.rentLink.UseSelectable = true;
             this.rentLink.Click += new System.EventHandler(this.rentLink_Click);
             // 
+            // integradoraDataSet
+            // 
+            this.integradoraDataSet.DataSetName = "IntegradoraDataSet";
+            this.integradoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientBindingSource
+            // 
+            this.clientBindingSource.DataMember = "Client";
+            this.clientBindingSource.DataSource = this.integradoraDataSet;
+            // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
             // Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -707,6 +681,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.client)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -743,12 +719,10 @@
         private System.Windows.Forms.BindingSource clientCNHBindingSource;
         private CarLand.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aniversárioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNHDataGridViewTextBoxColumn;
         private MetroFramework.Controls.MetroLink rentLink;
+        private IntegradoraDataSet integradoraDataSet;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private IntegradoraDataSetTableAdapters.ClientTableAdapter clientTableAdapter;
     }
 }

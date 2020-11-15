@@ -25,6 +25,8 @@ namespace CarLand.Forms
 
         private void Clientes_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'integradoraDataSet.Client'. Você pode movê-la ou removê-la conforme necessário.
+            this.clientTableAdapter.Fill(this.integradoraDataSet.Client);
             // TODO: This line of code loads data into the 'client.ClientCNH' table. You can move, or remove it, as needed.
             this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
         }

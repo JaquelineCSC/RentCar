@@ -112,5 +112,10 @@ namespace CarLand.Forms
             metroTextBox2.CustomButton.Image = System.Drawing.Image.FromFile(Path.Combine(@"C:\Repositorio\RentCar\Database\Imagens Eye\","invisible.png"));
             metroTextBox2.CustomButton.TabIndex = 1;
         }
+
+        private void metroTextBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
