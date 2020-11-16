@@ -14,16 +14,15 @@ namespace CarLand.Database
         Connection _context = new Connection();
         private string query;
 
-
         public void Insert(Client client)
         {
-            query = $"Insert into Client (Clientname, idCNH, Birth, Email, Phone, idUser, Gener, CPF) values ('{client.Name}' , {client.CNH} , {client.DateOfBirth} , '{client.Email}' , {client.Phone} , {client.User_Id} , '{client.Genero}' , {client.CPF})";
+            query = $"Insert into Client (Clientname, idCNH, Birth, Email, Phone, idUser, Gener, CPF) values ('{client.Name}' , {client.CNH_Id} , '{client.DateOfBirth}' , '{client.Email}' , {client.Phone} , {client.User_Id} , '{client.Genero}' , {client.CPF})";
             _context.CommandWithoutReturn(query);
         }
         public void Update(Client client)
         {
             query = $@"Update Client 
-                    set Clientname = '{client.Name}', idCNH = {client.CNH}, Birth = {client.DateOfBirth}, Email = '{client.Email}', Phone = {client.Phone}, idUser = {client.User_Id}, Gener = '{client.Genero}', CPF = {client.CPF} 
+                    set Clientname = '{client.Name}', idCNH = {client.CNH_Id}, Birth = {client.DateOfBirth}, Email = '{client.Email}', Phone = {client.Phone}, idUser = {client.User_Id}, Gener = '{client.Genero}', CPF = {client.CPF} 
                     WHERE idClient = {client.Id}";
             _context.CommandWithoutReturn(query);
         }
@@ -40,6 +39,18 @@ namespace CarLand.Database
             return ConstructorClient(reader);
         }
 
+        public Client GetClientByUser(int idUser)
+        {
+            query = $"Select * from Client where idUser = {idUser}";
+            return _context.GetClientByUserId(query);
+        }
+
+        public ClientCardCNH GetClientCardCNHByUser(int idUser)
+        {
+            query = $"select c.*, cd.*, cn.* from Client c inner join Card cd on cd.idClient = c.idClient inner join CNH cn on cn.idCNH = c.idCNH where c.idUser = {idUser}";
+            return _context.GetClientCardCNHByUserId(query);
+        }
+
         public Client ConstructorClient(SqlDataReader reader)
         {
             return new Client()
@@ -48,7 +59,7 @@ namespace CarLand.Database
                 Name = reader.GetString(2),
                 Email = reader.GetString(3),
                 Phone = reader.GetInt32(4),
-                CNH = reader.GetInt32(5),
+                CNH_Id = reader.GetInt32(5),
                 DateOfBirth = reader.GetDateTime(6),
                 User_Id = reader.GetInt32(7),
                 Genero = reader.GetString(8),

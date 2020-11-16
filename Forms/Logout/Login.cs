@@ -40,7 +40,7 @@ namespace CarLand.Forms
                 var user = _appUser.GetUser(username, password);
                 if (user.Id != 0)
                 {
-                    if (user.Admin)
+                    if (user.isAdmin)
                     {
                         FrmPrincipal admin = new FrmPrincipal();
                         admin.User = user;
@@ -84,7 +84,7 @@ namespace CarLand.Forms
 
         private void metroLink2_Click(object sender, EventArgs e)
         {
-            Carros car = new Carros();
+            Cars car = new Cars();
             this.Hide();
             car.ShowDialog();
             this.Close();

@@ -10,7 +10,7 @@ namespace CarLand.Domain.Entities
     {
         public string Name { get; set; }
         public string Password { get; set; }
-        public bool Admin { get; set; }
+        public bool isAdmin { get; set; }
 
         public void Clear()
         {
@@ -23,7 +23,7 @@ namespace CarLand.Domain.Entities
         {
             Name = name;
             Password = password;
-            Admin = isAdmin;
+            this.isAdmin = isAdmin;
         }
 
         public User()

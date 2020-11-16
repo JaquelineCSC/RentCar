@@ -309,7 +309,6 @@
             this.mtxtEmail.Multiline = true;
             this.mtxtEmail.Name = "mtxtEmail";
             this.mtxtEmail.PasswordChar = '\0';
-            this.mtxtEmail.PromptText = "exemplo@email.com";
             this.mtxtEmail.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtEmail.SelectedText = "";
             this.mtxtEmail.SelectionLength = 0;
@@ -343,7 +342,7 @@
             this.mtxtTelefone.Multiline = true;
             this.mtxtTelefone.Name = "mtxtTelefone";
             this.mtxtTelefone.PasswordChar = '\0';
-            this.mtxtTelefone.PromptText = "(35) X XXXX-XXXX";
+            this.mtxtTelefone.WaterMark = "(35) X XXXX-XXXX";
             this.mtxtTelefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtTelefone.SelectedText = "";
             this.mtxtTelefone.SelectionLength = 0;
@@ -353,7 +352,6 @@
             this.mtxtTelefone.TabIndex = 35;
             this.mtxtTelefone.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.mtxtTelefone.UseSelectable = true;
-            this.mtxtTelefone.WaterMark = "(35) X XXXX-XXXX";
             this.mtxtTelefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mtxtTelefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -377,7 +375,6 @@
             this.mtxtCNH.Multiline = true;
             this.mtxtCNH.Name = "mtxtCNH";
             this.mtxtCNH.PasswordChar = '\0';
-            this.mtxtCNH.PromptText = "XXXXXXXXXXX";
             this.mtxtCNH.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtCNH.SelectedText = "";
             this.mtxtCNH.SelectionLength = 0;
@@ -411,7 +408,6 @@
             this.mtxtCPF.Multiline = true;
             this.mtxtCPF.Name = "mtxtCPF";
             this.mtxtCPF.PasswordChar = '\0';
-            this.mtxtCPF.PromptText = "XXX.XXX.XXX-XX";
             this.mtxtCPF.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.mtxtCPF.SelectedText = "";
             this.mtxtCPF.SelectionLength = 0;
