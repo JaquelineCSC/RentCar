@@ -44,14 +44,14 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.board = new MetroFramework.Controls.MetroTextBox();
             this.metottextbox = new MetroFramework.Controls.MetroLabel();
-            this.clientTxt = new MetroFramework.Controls.MetroTextBox();
+            this.client = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.email = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel13 = new MetroFramework.Controls.MetroLabel();
             this.payment = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel18 = new MetroFramework.Controls.MetroLabel();
-            this.employeeTxt = new MetroFramework.Controls.MetroTextBox();
+            this.employee = new MetroFramework.Controls.MetroTextBox();
             this.employeeTitle = new MetroFramework.Controls.MetroLabel();
             this.pickUp = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel20 = new MetroFramework.Controls.MetroLabel();
@@ -391,40 +391,40 @@
             this.metottextbox.Text = "Placa:";
             this.metottextbox.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // clientTxt
+            // client
             // 
             // 
             // 
             // 
-            this.clientTxt.CustomButton.Image = null;
-            this.clientTxt.CustomButton.Location = new System.Drawing.Point(183, 1);
-            this.clientTxt.CustomButton.Name = "";
-            this.clientTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.clientTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.clientTxt.CustomButton.TabIndex = 1;
-            this.clientTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.clientTxt.CustomButton.UseSelectable = true;
-            this.clientTxt.CustomButton.Visible = false;
-            this.clientTxt.Enabled = false;
-            this.clientTxt.Lines = new string[0];
-            this.clientTxt.Location = new System.Drawing.Point(221, 54);
-            this.clientTxt.MaxLength = 32767;
-            this.clientTxt.Name = "clientTxt";
-            this.clientTxt.PasswordChar = '\0';
-            this.clientTxt.ReadOnly = true;
-            this.clientTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.clientTxt.SelectedText = "";
-            this.clientTxt.SelectionLength = 0;
-            this.clientTxt.SelectionStart = 0;
-            this.clientTxt.ShortcutsEnabled = true;
-            this.clientTxt.Size = new System.Drawing.Size(205, 23);
-            this.clientTxt.Style = MetroFramework.MetroColorStyle.Orange;
-            this.clientTxt.TabIndex = 19;
-            this.clientTxt.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.clientTxt.UseSelectable = true;
-            this.clientTxt.UseStyleColors = true;
-            this.clientTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.clientTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.client.CustomButton.Image = null;
+            this.client.CustomButton.Location = new System.Drawing.Point(183, 1);
+            this.client.CustomButton.Name = "";
+            this.client.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.client.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.client.CustomButton.TabIndex = 1;
+            this.client.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.client.CustomButton.UseSelectable = true;
+            this.client.CustomButton.Visible = false;
+            this.client.Enabled = false;
+            this.client.Lines = new string[0];
+            this.client.Location = new System.Drawing.Point(221, 54);
+            this.client.MaxLength = 32767;
+            this.client.Name = "client";
+            this.client.PasswordChar = '\0';
+            this.client.ReadOnly = true;
+            this.client.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.client.SelectedText = "";
+            this.client.SelectionLength = 0;
+            this.client.SelectionStart = 0;
+            this.client.ShortcutsEnabled = true;
+            this.client.Size = new System.Drawing.Size(205, 23);
+            this.client.Style = MetroFramework.MetroColorStyle.Orange;
+            this.client.TabIndex = 19;
+            this.client.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.client.UseSelectable = true;
+            this.client.UseStyleColors = true;
+            this.client.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.client.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel12
             // 
@@ -536,41 +536,41 @@
             this.metroLabel18.Text = "ALUGUEL";
             this.metroLabel18.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // employeeTxt
+            // employee
             // 
             // 
             // 
             // 
-            this.employeeTxt.CustomButton.Image = null;
-            this.employeeTxt.CustomButton.Location = new System.Drawing.Point(137, 1);
-            this.employeeTxt.CustomButton.Name = "";
-            this.employeeTxt.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.employeeTxt.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.employeeTxt.CustomButton.TabIndex = 1;
-            this.employeeTxt.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.employeeTxt.CustomButton.UseSelectable = true;
-            this.employeeTxt.CustomButton.Visible = false;
-            this.employeeTxt.Enabled = false;
-            this.employeeTxt.Lines = new string[0];
-            this.employeeTxt.Location = new System.Drawing.Point(668, 54);
-            this.employeeTxt.MaxLength = 32767;
-            this.employeeTxt.Name = "employeeTxt";
-            this.employeeTxt.PasswordChar = '\0';
-            this.employeeTxt.ReadOnly = true;
-            this.employeeTxt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.employeeTxt.SelectedText = "";
-            this.employeeTxt.SelectionLength = 0;
-            this.employeeTxt.SelectionStart = 0;
-            this.employeeTxt.ShortcutsEnabled = true;
-            this.employeeTxt.Size = new System.Drawing.Size(159, 23);
-            this.employeeTxt.Style = MetroFramework.MetroColorStyle.Orange;
-            this.employeeTxt.TabIndex = 29;
-            this.employeeTxt.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.employeeTxt.UseSelectable = true;
-            this.employeeTxt.UseStyleColors = true;
-            this.employeeTxt.Visible = false;
-            this.employeeTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.employeeTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.employee.CustomButton.Image = null;
+            this.employee.CustomButton.Location = new System.Drawing.Point(137, 1);
+            this.employee.CustomButton.Name = "";
+            this.employee.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.employee.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.employee.CustomButton.TabIndex = 1;
+            this.employee.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.employee.CustomButton.UseSelectable = true;
+            this.employee.CustomButton.Visible = false;
+            this.employee.Enabled = false;
+            this.employee.Lines = new string[0];
+            this.employee.Location = new System.Drawing.Point(668, 54);
+            this.employee.MaxLength = 32767;
+            this.employee.Name = "employee";
+            this.employee.PasswordChar = '\0';
+            this.employee.ReadOnly = true;
+            this.employee.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.employee.SelectedText = "";
+            this.employee.SelectionLength = 0;
+            this.employee.SelectionStart = 0;
+            this.employee.ShortcutsEnabled = true;
+            this.employee.Size = new System.Drawing.Size(159, 23);
+            this.employee.Style = MetroFramework.MetroColorStyle.Orange;
+            this.employee.TabIndex = 29;
+            this.employee.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.employee.UseSelectable = true;
+            this.employee.UseStyleColors = true;
+            this.employee.Visible = false;
+            this.employee.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.employee.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // employeeTitle
             // 
@@ -803,14 +803,14 @@
             this.Controls.Add(this.metroLabel21);
             this.Controls.Add(this.pickUp);
             this.Controls.Add(this.metroLabel20);
-            this.Controls.Add(this.employeeTxt);
+            this.Controls.Add(this.employee);
             this.Controls.Add(this.employeeTitle);
             this.Controls.Add(this.metroLabel18);
             this.Controls.Add(this.payment);
             this.Controls.Add(this.metroLabel16);
             this.Controls.Add(this.email);
             this.Controls.Add(this.metroLabel13);
-            this.Controls.Add(this.clientTxt);
+            this.Controls.Add(this.client);
             this.Controls.Add(this.metroLabel12);
             this.Controls.Add(this.board);
             this.Controls.Add(this.metottextbox);
@@ -856,14 +856,14 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroTextBox board;
         private MetroFramework.Controls.MetroLabel metottextbox;
-        private MetroFramework.Controls.MetroTextBox clientTxt;
+        private MetroFramework.Controls.MetroTextBox client;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private MetroFramework.Controls.MetroTextBox email;
         private MetroFramework.Controls.MetroLabel metroLabel13;
         private MetroFramework.Controls.MetroTextBox payment;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Controls.MetroLabel metroLabel18;
-        private MetroFramework.Controls.MetroTextBox employeeTxt;
+        private MetroFramework.Controls.MetroTextBox employee;
         private MetroFramework.Controls.MetroLabel employeeTitle;
         private MetroFramework.Controls.MetroTextBox pickUp;
         private MetroFramework.Controls.MetroLabel metroLabel20;

@@ -269,7 +269,7 @@ namespace CarLand.Forms
 
         private void ShowListCar(object sender, EventArgs e)
         {
-            Car.ListCar listCar = new Car.ListCar();
+            Car.ListCar listCar = new Car.ListCar(this.StyleManager);
             listCar.ShowDialog();
         }
 
@@ -322,32 +322,32 @@ namespace CarLand.Forms
 
         private void clientsTile_Click(object sender, EventArgs e)
         {
-            Clients clientes = new Clients();
+            Clients clientes = new Clients(this.StyleManager);
             clientes.User = User;
             clientes.ShowDialog();
         }
 
         private void employeeTile_Click(object sender, EventArgs e)
         {
-            ListEmployees funcionarios = new ListEmployees();
+            ListEmployees funcionarios = new ListEmployees(this.StyleManager);
             funcionarios.ShowDialog();
         }
 
         private void listRentTile_Click(object sender, EventArgs e)
         {
-            Client.ListCar aluguelcliente = new Client.ListCar();
+            Client.ListCar aluguelcliente = new Client.ListCar(this.StyleManager);
             aluguelcliente.ShowDialog();
         }
 
         private void reportTile_Click(object sender, EventArgs e)
         {
-            Admin.Reports form = new Admin.Reports();
+            Admin.Reports form = new Admin.Reports(this.StyleManager);
             form.ShowDialog();
         }
 
         private void paymentTile_Click(object sender, EventArgs e)
         {
-            CarAmount form = new CarAmount();
+            CarAmount form = new CarAmount(this.StyleManager);
             form.ShowDialog();
         }
     }

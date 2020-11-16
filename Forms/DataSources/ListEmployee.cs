@@ -1,5 +1,6 @@
 ﻿using CarLand.Forms.Admin;
 using MetroFramework;
+using MetroFramework.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,12 +22,48 @@ namespace CarLand.Forms
         public Database.DBEmployee _appEmployee { get; set; }
         public Database.DBUser _appUser { get; set; }
 
-        public ListEmployees()
+        public ListEmployees(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Style_Page();
             _appEmployee = new Database.DBEmployee();
             _appUser = new Database.DBUser();
             User = new Domain.Entities.User();
+        }
+
+        public void Style_Page()
+        {
+            //Theme
+            metroTabControl1.Theme = this.StyleManager.Theme;
+            metroGrid1.Theme = this.StyleManager.Theme;
+            user.Theme = this.StyleManager.Theme;
+            password.Theme = this.StyleManager.Theme;
+            name.Theme = this.StyleManager.Theme;
+            metroTabPage1.Theme = this.StyleManager.Theme;
+            metroTabPage2.Theme = this.StyleManager.Theme;
+            metroLink2.Theme = this.StyleManager.Theme;
+            metroLinkSalvar.Theme = this.StyleManager.Theme;
+            metroLinkVoltar.Theme = this.StyleManager.Theme;
+            metroLabel11.Theme = this.StyleManager.Theme;
+            metroLabel12.Theme = this.StyleManager.Theme;
+            metroLabel13.Theme = this.StyleManager.Theme;
+
+
+            //Style
+            metroTabControl1.Style = this.StyleManager.Style;
+            metroGrid1.Style = this.StyleManager.Style;
+            user.Style = this.StyleManager.Style;
+            password.Style = this.StyleManager.Style;
+            name.Style = this.StyleManager.Style;
+            metroTabPage1.Style = this.StyleManager.Style;
+            metroTabPage2.Style = this.StyleManager.Style;
+            metroLinkSalvar.Style= this.StyleManager.Style;
+            metroLinkVoltar.Style = this.StyleManager.Style;
+            metroLabel11.Style = this.StyleManager.Style;
+            metroLabel12.Style = this.StyleManager.Style;
+            metroLabel13.Style = this.StyleManager.Style;
+
         }
 
         private void Funcionarios_Load(object sender, EventArgs e)

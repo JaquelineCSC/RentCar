@@ -25,16 +25,6 @@ namespace CarLand
             InitializeComponent();
         }
 
-        public void Load_Theme(MetroThemeStyle style)
-        {
-
-        }
-
-        public void Load_Style(MetroColorStyle style)
-        {
-
-        }
-
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
 
@@ -73,14 +63,17 @@ namespace CarLand
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            Profile form = new Profile();
+            Profile form = new Profile(this.StyleManager);
             form.User = User;
             form.ShowDialog();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-
+            Wallet form = new Wallet();
+            Database.DBClient _appClient = new Database.DBClient();
+            form.Client = _appClient.GetClientByUser(User.Id);
+            form.ShowDialog();
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using MetroFramework;
+﻿using CarLand.Domain.Interface;
+using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -18,11 +20,24 @@ namespace CarLand.Forms.Car
         public Database.DBAmount _appAmount { get; set; }
         public bool isNew { get; set; }
 
-        public SetValueCar()
+        public SetValueCar(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             Car = new Domain.Entities.Car();
             _appAmount = new Database.DBAmount();
+        }
+
+        public void Load_Page()
+        {
+            value.Theme = this.StyleManager.Theme;
+
+            value.Style = this.StyleManager.Style;
+
+            Colors colors = new Colors();
+            metroButton1.BackColor = colors.GetColor(this.StyleManager.Style);
+            
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

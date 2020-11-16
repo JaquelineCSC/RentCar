@@ -1,5 +1,6 @@
 ﻿using CarLand.Database;
 using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
@@ -14,11 +15,22 @@ namespace CarLand.Forms.Car
         public DBCar _appCar { get; set; }
         public DBImage _appImage { get; set; }
 
-        public ListCar()
+        public ListCar(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Style_Page();
             _appCar = new DBCar();
             _appImage = new DBImage();
+        }
+
+        public void Style_Page()
+        {
+            //Theme
+            metroGrid1.Theme = this.StyleManager.Theme;
+
+            //Style
+            metroGrid1.Style = this.StyleManager.Style;
         }
 
         private void ListCar_Load(object sender, EventArgs e)

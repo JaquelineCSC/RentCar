@@ -1,4 +1,5 @@
 ﻿using CarLand.Database;
+using MetroFramework.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,11 +18,85 @@ namespace CarLand.Forms.Aluguel
         public Domain.Entities.Rent Rent { get; set; }
         public List<Domain.Entities.Image> Images { get; set; }
 
-        public RentDetails()
+        public RentDetails(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             Rent = new Domain.Entities.Rent();
             Images = new List<Domain.Entities.Image>();
+        }
+
+        public void Load_Page()
+        {
+            //Style
+            metroLabel1.Style = this.StyleManager.Style;
+            metroLabel3.Style = this.StyleManager.Style;
+            metroLabel4.Style = this.StyleManager.Style;
+            metroLabel5.Style = this.StyleManager.Style;
+            metroLabel6.Style = this.StyleManager.Style;
+            metroLabel7.Style = this.StyleManager.Style;
+            metroLabel8.Style = this.StyleManager.Style;
+            metroLabel16.Style = this.StyleManager.Style;
+            metroLabel18.Style = this.StyleManager.Style;
+            metroLabel20.Style = this.StyleManager.Style;
+            metroLabel21.Style = this.StyleManager.Style;
+            metroLabel22.Style = this.StyleManager.Style;
+            metroLabel23.Style = this.StyleManager.Style;
+            metroLabel12.Style = this.StyleManager.Style;
+            metroLabel13.Style = this.StyleManager.Style;
+            client.Style = this.StyleManager.Style;
+            email.Style = this.StyleManager.Style;
+            employee.Style = this.StyleManager.Style;
+            employeeTitle.Style = this.StyleManager.Style;
+            metroLinkVoltar.Style = this.StyleManager.Style;
+            pickUp.Style = this.StyleManager.Style;
+            dropOff.Style = this.StyleManager.Style;
+            status.Style = this.StyleManager.Style;
+            amount.Style = this.StyleManager.Style;
+            payment.Style = this.StyleManager.Style;
+            branch.Style = this.StyleManager.Style;
+            model.Style = this.StyleManager.Style;
+            year.Style = this.StyleManager.Style;
+            board.Style = this.StyleManager.Style;
+            fuel.Style = this.StyleManager.Style;
+            doors.Style = this.StyleManager.Style;
+            color.Style = this.StyleManager.Style;
+
+            //Style
+            metroLabel1.Style = this.StyleManager.Style;
+            metroLabel3.Style = this.StyleManager.Style;
+            metroLabel4.Style = this.StyleManager.Style;
+            metroLabel5.Style = this.StyleManager.Style;
+            metroLabel6.Style = this.StyleManager.Style;
+            metroLabel7.Style = this.StyleManager.Style;
+            metroLabel8.Style = this.StyleManager.Style;
+            metroLabel16.Style = this.StyleManager.Style;
+            metroLabel18.Style = this.StyleManager.Style;
+            metroLabel20.Style = this.StyleManager.Style;
+            metroLabel21.Style = this.StyleManager.Style;
+            metroLabel22.Style = this.StyleManager.Style;
+            metroLabel23.Style = this.StyleManager.Style;
+            metroLabel12.Style = this.StyleManager.Style;
+            metroLabel13.Style = this.StyleManager.Style;
+            client.Style = this.StyleManager.Style;
+            email.Style = this.StyleManager.Style;
+            employee.Style = this.StyleManager.Style;
+            employeeTitle.Style = this.StyleManager.Style;
+            metroLinkVoltar.Style = this.StyleManager.Style;
+            pickUp.Style = this.StyleManager.Style;
+            dropOff.Style = this.StyleManager.Style;
+            status.Style = this.StyleManager.Style;
+            amount.Style = this.StyleManager.Style;
+            payment.Style = this.StyleManager.Style;
+            branch.Style = this.StyleManager.Style;
+            model.Style = this.StyleManager.Style;
+            year.Style = this.StyleManager.Style;
+            board.Style = this.StyleManager.Style;
+            fuel.Style = this.StyleManager.Style;
+            doors.Style = this.StyleManager.Style;
+            color.Style = this.StyleManager.Style;
+
         }
 
         private void DetalheAluguel_Load(object sender, EventArgs e)
@@ -32,11 +107,11 @@ namespace CarLand.Forms.Aluguel
             if (Rent.idEmployee != 0)
             {
                 Domain.Entities.Employee employee = Load_Employee();
-                employeeTxt.Text = employee.Name;
-                employeeTxt.Visible = true;
+                this.employee.Text = employee.Name;
+                this.employee.Visible = true;
                 employeeTitle.Visible = true;
             }
-            clientTxt.Text = client.Name;
+            this.client.Text = client.Name;
             email.Text = client.Email;
             pickUp.Text = Rent.PickUpDate.ToString("dd/MM/yyyy HH:mm");
             dropOff.Text = Rent.DropOffDate.ToString("dd/MM/yyyy HH:mm");

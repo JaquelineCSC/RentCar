@@ -150,7 +150,6 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
-            this.email.PromptText = "exemplo@email.com";
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -188,7 +187,6 @@
             this.telefone.Multiline = true;
             this.telefone.Name = "telefone";
             this.telefone.PasswordChar = '\0';
-            this.telefone.PromptText = "(35) X XXXX-XXXX";
             this.telefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.telefone.SelectedText = "";
             this.telefone.SelectionLength = 0;
@@ -226,7 +224,6 @@
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
-            this.cnh.PromptText = "XXXXXXXXXXX";
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -264,7 +261,6 @@
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
-            this.cpf.PromptText = "XXX.XXX.XXX-XX";
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;

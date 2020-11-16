@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using MetroFramework.Controls;
+using MetroFramework.Components;
 
 namespace CarLand.Forms.Client
 {
@@ -11,9 +12,23 @@ namespace CarLand.Forms.Client
     {
         public DataRowView RowView { get; set; }
 
-        public ListCar()
+        public ListCar(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
+        }
+
+        public void Load_Page()
+        {
+            //Theme
+            metroGrid1.Theme = this.StyleManager.Theme;
+            metroLink3.Theme = this.StyleManager.Theme;
+
+            //Style
+            metroGrid1.Style = this.StyleManager.Style;
+            metroLink3.Style = this.StyleManager.Style;
+
         }
 
         private void AluguelCliente_Load(object sender, EventArgs e)
@@ -31,22 +46,22 @@ namespace CarLand.Forms.Client
         {
             if (RowView != null)
             {
-                RentDetails detalhealuguel = new RentDetails();
-                detalhealuguel.Rent.Id = int.Parse(RowView["Id Aluguel"].ToString());
+                RentDetails form = new RentDetails(this.StyleManager);
+                form.Rent.Id = int.Parse(RowView["Id Aluguel"].ToString());
                 Database.DBCar _appCar = new Database.DBCar();
                 Database.DBClient _appClient = new Database.DBClient();
                 var car = _appCar.GetCar(branch: RowView["Marca"].ToString(), model: RowView["Modelo"].ToString(), color: RowView["Cor"].ToString(), year: RowView["Ano"].ToString());
-                detalhealuguel.Rent.idCar = car.Id;
+                form.Rent.idCar = car.Id;
                 if (RowView["Funcionario"].ToString() != "")
                 {
                     Database.DBEmployee _appEmployee = new Database.DBEmployee();
-                    detalhealuguel.Rent.idEmployee = _appEmployee.GetEmployee(employeeName: RowView["Funcionario"].ToString()).Id;
+                    form.Rent.idEmployee = _appEmployee.GetEmployee(employeeName: RowView["Funcionario"].ToString()).Id;
                 }
-                detalhealuguel.Rent.idClient = (_appClient.GeClientByName(RowView["Cliente"].ToString())).Id;
-                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["Data Retirada"].ToString());
-                detalhealuguel.Rent.DropOffDate = DateTime.Parse(RowView["Data Devolução"].ToString());
-                detalhealuguel.Rent.Value = double.Parse(RowView["Valor"].ToString());
-                detalhealuguel.ShowDialog();
+                form.Rent.idClient = (_appClient.GeClientByName(RowView["Cliente"].ToString())).Id;
+                form.Rent.PickUpDate = DateTime.Parse(RowView["Data Retirada"].ToString());
+                form.Rent.DropOffDate = DateTime.Parse(RowView["Data Devolução"].ToString());
+                form.Rent.Value = double.Parse(RowView["Valor"].ToString());
+                form.ShowDialog();
             }
             else
             {

@@ -54,6 +54,7 @@ namespace CarLand.Forms.Car
                 {
                     var pic = _appImage.GeneratePictureBox(img, x, y);
                     x += pic.Width + 23;
+                    pic.Click += new EventHandler(AddMain); 
                     maxHeight = Math.Max(pic.Height, maxHeight);
                     if (x > metroPanel3.ClientSize.Width - 100)
                     {
@@ -63,7 +64,16 @@ namespace CarLand.Forms.Car
                     this.metroPanel3.Controls.Add(pic);
                 }
             }
+        }
 
+        public void AddMain(object sender, EventArgs e)
+        {
+            var otherImages = metroPanel3.Controls.OfType<PictureBox>().Where(x => x.BorderStyle == System.Windows.Forms.BorderStyle.Fixed3D).ToList();
+            otherImages.ForEach(x => x.BorderStyle = System.Windows.Forms.BorderStyle.None);
+
+            PictureBox pic = (PictureBox)sender;
+            pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            verificarPreenchimento(this, new EventArgs());
         }
 
         private void verificarPreenchimento(object sender, EventArgs e)
@@ -77,7 +87,7 @@ namespace CarLand.Forms.Car
             var fuel = metroPanel2.Controls.OfType<RadioButton>().Where(x => x.Checked == true).FirstOrDefault();
             var images = metroPanel3.Controls.OfType<PictureBox>().ToList();
 
-            if (branch != "" && model != "" && year != "" && color != "" && doors != null && fuel != null && images.Any())
+            if (branch != "" && model != "" && year != "" && color != "" && doors != null && fuel != null && images.Any() && images.Where(x=> x.BorderStyle == System.Windows.Forms.BorderStyle.Fixed3D).Any())
             {
                 metroLinkSalvar.Enabled = true;
                 Car.Board = board;
@@ -147,7 +157,7 @@ namespace CarLand.Forms.Car
             MetroTextBox x = (MetroTextBox)sender;
             if (x.Name == metroTextBox3.Name)
             {
-                Regex rgx = new Regex("[^A - Z0 - 9 -]");
+                Regex rgx = new Regex("[^A-Z0-9]");
                 metroTextBox3.Text = rgx.Replace(metroTextBox3.Text, "");
             }
         }

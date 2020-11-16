@@ -282,13 +282,13 @@ namespace CarLand.Forms
         {
             if (User.isAdmin)
             {
-                ProfileAdmin form = new ProfileAdmin();
+                ProfileAdmin form = new ProfileAdmin(this.StyleManager);
                 form.User = User;
                 form.ShowDialog();
             }
             else
             {
-                Profile form = new Profile();
+                Profile form = new Profile(this.StyleManager);
                 form.User = User;
                 form.ShowDialog();
             }

@@ -18,9 +18,9 @@ namespace CarLand.Database
         {
             query = $@"INSERT INTO 
                         Car
-                        (Color,Board,Model,Fuel,Doors,Year,Branch)
+                        (Color,Board,Model,Fuel,Doors,Year,Branch,Available)
                         output inserted.idCar
-                    VALUES ('{car.Color}', '{car.Board}' , '{car.Model}', '{car.Fuel}', {car.Doors}, {car.Year}, '{car.Branch}' )";
+                    VALUES ('{car.Color}', '{car.Board}' , '{car.Model}', '{car.Fuel}', {car.Doors}, {car.Year}, '{car.Branch}', 0 )";
             return _context.CommandWithReturnId(query);
         }
 

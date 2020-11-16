@@ -1,5 +1,6 @@
 ﻿using CarLand.Database;
 using CarLand.Domain.Entities;
+using MetroFramework.Components;
 using System;
 using System.Data;
 using System.Runtime.CompilerServices;
@@ -14,21 +15,68 @@ namespace CarLand.Forms
         public DBClient _appClient { get; set; }
         public DBCNH _appCNH { get; set; }
 
-        public Clients()
+        public Clients(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             User = new User();
             _appClient = new DBClient();
             _appCNH = new DBCNH();
             _appUser = new DBUser();
         }
 
+        public void Load_Page()
+        {
+            metroGrid1.Theme = this.StyleManager.Theme;
+            metroLabel1.Theme = this.StyleManager.Theme;
+            metroLabel10.Theme = this.StyleManager.Theme;
+            metroLabel2.Theme = this.StyleManager.Theme;
+            metroLabel3.Theme = this.StyleManager.Theme;
+            metroLabel4.Theme = this.StyleManager.Theme;
+            metroLabel5.Theme = this.StyleManager.Theme;
+            metroLabel6.Theme = this.StyleManager.Theme;
+            metroLabel7.Theme = this.StyleManager.Theme;
+            metroLabel8.Theme = this.StyleManager.Theme;
+            metroLabel9.Theme = this.StyleManager.Theme;
+            metroLinkSalvar.Theme = this.StyleManager.Theme;
+            metroLinkVoltar.Theme = this.StyleManager.Theme;
+            metroTabControl1.Theme = this.StyleManager.Theme;
+            metroTabPage1.Theme = this.StyleManager.Theme;
+            metroTabPage2.Theme = this.StyleManager.Theme;
+            rentLink.Theme = this.StyleManager.Theme;
+            name.Theme = this.StyleManager.Theme;
+            email.Theme = this.StyleManager.Theme;
+            user.Theme = this.StyleManager.Theme;
+            password.Theme = this.StyleManager.Theme;
+            gener.Theme = this.StyleManager.Theme;
+            cnh.Theme = this.StyleManager.Theme;
+            dateofBirth.Theme = this.StyleManager.Theme;
+            phone.Theme = this.StyleManager.Theme;
+            validateCNHdate.Theme = this.StyleManager.Theme;
+            cpf.Theme = this.StyleManager.Theme;
+
+            metroGrid1.Style = this.StyleManager.Style;
+            metroTabControl1.Style = this.StyleManager.Style;
+            metroTabPage1.Style = this.StyleManager.Style;
+            metroTabPage2.Style = this.StyleManager.Style;
+            name.Style = this.StyleManager.Style;
+            email.Style = this.StyleManager.Style;
+            user.Style = this.StyleManager.Style;
+            password.Style = this.StyleManager.Style;
+            gener.Style = this.StyleManager.Style;
+            cnh.Style = this.StyleManager.Style;
+            dateofBirth.Style = this.StyleManager.Style;
+            phone.Style = this.StyleManager.Style;
+            validateCNHdate.Style = this.StyleManager.Style;
+            cpf.Style = this.StyleManager.Style;
+        }
+
         private void Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'client.ClientCNH' table. You can move, or remove it, as needed.
-            this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
             // TODO: esta linha de código carrega dados na tabela 'integradoraDataSet.Client'. Você pode movê-la ou removê-la conforme necessário.
             this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
+
         }
 
         private void metroLinkVoltar_Click(object sender, EventArgs e)
@@ -88,7 +136,6 @@ namespace CarLand.Forms
             this.Hide();
             form.ShowDialog();
             this.Close();
-
         }
 
         private void metroGrid1_CellContentClick(object sender, EventArgs e)

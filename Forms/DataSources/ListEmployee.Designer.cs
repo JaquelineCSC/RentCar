@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListEmployees));
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.employee = new CarLand.Forms.DataSets.Paulo.Employee();
+            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.listaFuncRamires = new CarLand.Forms.DataSets.Ramires.ListaFuncRamires();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
             this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
@@ -48,21 +48,21 @@
             this.name = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.employee = new CarLand.Forms.DataSets.Paulo.Employee();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new CarLand.Forms.DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.listaFuncRamires = new CarLand.Forms.DataSets.Ramires.ListaFuncRamires();
-            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter1 = new CarLand.Forms.DataSets.Ramires.ListaFuncRamiresTableAdapters.EmployeeTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).BeginInit();
+            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employee)).BeginInit();
-            this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -80,6 +80,7 @@
             // 
             // metroTabPage1
             // 
+            this.metroTabPage1.Controls.Add(this.metroLink2);
             this.metroTabPage1.Controls.Add(this.metroGrid1);
             this.metroTabPage1.HorizontalScrollbarBarColor = true;
             this.metroTabPage1.HorizontalScrollbarHighlightOnWheel = false;
@@ -103,40 +104,40 @@
             this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
             this.metroGrid1.DataSource = this.employeeBindingSource2;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle5;
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             this.metroGrid1.Location = new System.Drawing.Point(70, 38);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(119)))), ((int)(((byte)(53)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(133)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.metroGrid1.Size = new System.Drawing.Size(347, 226);
@@ -154,15 +155,15 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 300;
             // 
-            // employeeBindingSource1
+            // employeeBindingSource2
             // 
-            this.employeeBindingSource1.DataMember = "Employee";
-            this.employeeBindingSource1.DataSource = this.employee;
+            this.employeeBindingSource2.DataMember = "Employee";
+            this.employeeBindingSource2.DataSource = this.listaFuncRamires;
             // 
-            // employee
+            // listaFuncRamires
             // 
-            this.employee.DataSetName = "Employee";
-            this.employee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.listaFuncRamires.DataSetName = "ListaFuncRamires";
+            this.listaFuncRamires.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroTabPage2
             // 
@@ -205,9 +206,9 @@
             this.metroLinkSalvar.ForeColor = System.Drawing.Color.Black;
             this.metroLinkSalvar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkSalvar.Image")));
             this.metroLinkSalvar.ImageSize = 35;
-            this.metroLinkSalvar.Location = new System.Drawing.Point(335, 196);
+            this.metroLinkSalvar.Location = new System.Drawing.Point(343, 196);
             this.metroLinkSalvar.Name = "metroLinkSalvar";
-            this.metroLinkSalvar.Size = new System.Drawing.Size(59, 57);
+            this.metroLinkSalvar.Size = new System.Drawing.Size(51, 57);
             this.metroLinkSalvar.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroLinkSalvar.TabIndex = 27;
             this.metroLinkSalvar.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -346,6 +347,16 @@
             this.metroLabel12.Text = "Nome:";
             this.metroLabel12.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.employee;
+            // 
+            // employee
+            // 
+            this.employee.DataSetName = "Employee";
+            this.employee.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // employeeBindingSource
             // 
             this.employeeBindingSource.DataMember = "Employee";
@@ -356,30 +367,23 @@
             // 
             // metroLink2
             // 
-            this.metroLink2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink2.BackgroundImage")));
             this.metroLink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink2.Location = new System.Drawing.Point(413, 123);
+            this.metroLink2.Image = ((System.Drawing.Image)(resources.GetObject("metroLink2.Image")));
+            this.metroLink2.ImageSize = 25;
+            this.metroLink2.Location = new System.Drawing.Point(381, 3);
             this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(25, 25);
+            this.metroLink2.Size = new System.Drawing.Size(36, 31);
+            this.metroLink2.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroLink2.TabIndex = 6;
+            this.metroLink2.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLink2.UseSelectable = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
-            // 
-            // listaFuncRamires
-            // 
-            this.listaFuncRamires.DataSetName = "ListaFuncRamires";
-            this.listaFuncRamires.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeeBindingSource2
-            // 
-            this.employeeBindingSource2.DataMember = "Employee";
-            this.employeeBindingSource2.DataSource = this.listaFuncRamires;
             // 
             // employeeTableAdapter1
             // 
             this.employeeTableAdapter1.ClearBeforeFill = true;
             // 
-            // Funcionarios
+            // ListEmployees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,10 +391,9 @@
             this.BackImagePadding = new System.Windows.Forms.Padding(-22, 11, -1, -1);
             this.BackMaxSize = 210;
             this.ClientSize = new System.Drawing.Size(520, 416);
-            this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Funcionarios";
+            this.Name = "ListEmployees";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -398,13 +401,13 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
