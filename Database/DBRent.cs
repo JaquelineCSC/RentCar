@@ -48,17 +48,23 @@ namespace CarLand.Database
                     WHERE idRent = {rent.Id}";
             _context.CommandWithoutReturn(query);
         }
+
         public void Delete(int idrent)
         {
             query = $"Delete from Rent WHERE idRent = {idrent}";
             _context.CommandWithoutReturn(query);
         }
-
         public Rent GetRent(int idrent)
         {
             query = $"Select idRent from Rent where idRent =  {idrent}";
             var reader = _context.Consult(query);
             return ConstructorRent(reader);
+        }
+
+        public DataSet Report()
+        {
+            query = "Select * from Rent";
+            return _context.ReportRent(query);
         }
 
         public Rent ConstructorRent(SqlDataReader reader)

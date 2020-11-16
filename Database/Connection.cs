@@ -159,6 +159,7 @@ namespace CarLand.Database
                 idCar = reader.GetInt32(1),
                 Path = reader.GetString(2),
                 Name = reader.GetString(3),
+                Main = reader.GetBoolean(4),
             };
         }
 
@@ -183,22 +184,7 @@ namespace CarLand.Database
 
         #region Client
 
-        public Client GetClientByUserId(string sql)
-        {
-            Connect();
-            cd.Connection = cn;
-            cd.CommandText = sql;
-            Client client = new Client();
-            SqlDataReader reader = cd.ExecuteReader();
-            if (reader.Read())
-            {
-                client = ConstructorClient(reader);
-            }
-            cn.Close();
-            return client;
-        }
-
-        public Client GetClientByEmail(string sql)
+        public Client GetClient(string sql)
         {
             Connect();
             cd.Connection = cn;
@@ -345,5 +331,60 @@ namespace CarLand.Database
         }
 
         #endregion
+
+        #region Amount
+
+        public AmountCar GetAmount(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            cd.CommandText = sql;
+            AmountCar amount = new AmountCar();
+            SqlDataReader reader = cd.ExecuteReader();
+            if (reader.Read())
+            {
+                amount = ConstructorAmount(reader);
+            }
+            cn.Close();
+            return amount;
+        }
+
+        public AmountCar ConstructorAmount(SqlDataReader reader)
+        {
+            return new AmountCar()
+            {
+                idCar = reader.GetInt32(0),
+                Amount = reader.GetDouble(1),
+            };
+        }
+
+        #endregion
+
+        #region Reports
+
+        public DataSet ReportRent(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        public DataSet ReportCars(string sql)
+        {
+            Connect();
+            cd.Connection = cn;
+            SqlDataAdapter da = new SqlDataAdapter(sql, cn);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            cn.Close();
+            return ds;
+        }
+
+        #endregion
+
     }
 }

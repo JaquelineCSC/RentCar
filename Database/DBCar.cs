@@ -33,7 +33,7 @@ namespace CarLand.Database
         }
         public void Delete(int id)
         {
-            query = $"Delete from Car WHERE idCar = '{id}'";
+            query = $"update Car set Available = 0 where idCar = {id}";
             _context.CommandWithoutReturn(query);
         }
 
@@ -41,6 +41,12 @@ namespace CarLand.Database
         {
             query = $"select * from Car where idCar = '{id}'";
             return _context.GetCar(query);
+        }
+
+        public DataSet Report()
+        {
+            query = "Select * from Car";
+            return _context.ReportCars(query);
         }
 
         public List<Car> List()

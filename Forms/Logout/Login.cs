@@ -43,7 +43,7 @@ namespace CarLand.Forms
                 {
                     if (user.isAdmin)
                     {
-                        FrmPrincipal admin = new FrmPrincipal();
+                        FormMain admin = new FormMain();
                         admin.User = user;
                         this.Hide();
                         admin.ShowDialog();
@@ -51,7 +51,7 @@ namespace CarLand.Forms
                     }
                     else
                     {
-                        FrmUsuario client = new FrmUsuario();
+                        FormClient client = new FormClient();
                         client.User = user;
                         this.Hide();
                         client.ShowDialog();
@@ -73,13 +73,13 @@ namespace CarLand.Forms
 
         private void metroLabel4_Click(object sender, EventArgs e)
         {
-            Esqueceu esqueceu = new Esqueceu();
+            ForgotPassword esqueceu = new ForgotPassword();
             esqueceu.ShowDialog();
         }
 
         private void metroLabel5_Click(object sender, EventArgs e)
         {
-            Registrar_se register = new Registrar_se();
+            Register register = new Register();
             register.ShowDialog();
         }
 

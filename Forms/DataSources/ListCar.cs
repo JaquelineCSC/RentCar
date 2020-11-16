@@ -99,5 +99,30 @@ namespace CarLand.Forms.Car
             ListCar_Load(this, new EventArgs());
         }
 
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.carTableAdapter.FillBy(this.listCars.Car);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.carTableAdapter.Fill(this.listCars.Car);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }

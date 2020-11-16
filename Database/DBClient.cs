@@ -35,7 +35,13 @@ namespace CarLand.Database
         public Client GetClientByUser(int idUser)
         {
             query = $"Select * from Client where idUser = {idUser}";
-            return _context.GetClientByUserId(query);
+            return _context.GetClient(query);
+        }
+
+        public Client GetClientById(int idClient)
+        {
+            query = $"Select * from Client where idClient = {idClient}";
+            return _context.GetClient(query);
         }
 
         public ClientCardCNH GetClientCardCNHByUser(int idUser)
@@ -53,7 +59,7 @@ namespace CarLand.Database
         public Client GetClientByEmail(string email)
         {
             query = $"select * from Client where Email = '{email}'";
-            return _context.GetClientByEmail(query);
+            return _context.GetClient(query);
         }
 
     }

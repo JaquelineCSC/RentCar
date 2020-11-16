@@ -22,6 +22,8 @@ namespace CarLand.Forms.Client
             this.rentTableAdapter.Fill(this.listRentRamires.Rent);
             // TODO: This line of code loads data into the 'listRent.RentViewWithoutCards' table. You can move, or remove it, as needed.
             this.rentViewWithoutCardsTableAdapter.Fill(this.listRent.RentViewWithoutCards);
+            // TODO: This line of code loads data into the 'listRent1.Rent' table. You can move, or remove it, as needed.
+            this.rentTableAdapter1.Fill(this.listRent1.Rent);
         }
 
         private void metroLink2_Click(object sender, EventArgs e)
@@ -33,13 +35,16 @@ namespace CarLand.Forms.Client
         {
             if (RowView != null)
             {
-                DetalheAluguel detalhealuguel = new DetalheAluguel();
+                RentDetails detalhealuguel = new RentDetails();
                 detalhealuguel.Rent.Id = int.Parse(RowView["idRent"].ToString());
                 detalhealuguel.Rent.idCar = int.Parse(RowView["idCar"].ToString());
-                detalhealuguel.Rent.idEmployee = int.Parse(RowView["idEmployee"].ToString());
+                if (RowView["idEmployee"].ToString() != "")
+                {
+                    detalhealuguel.Rent.idEmployee = int.Parse(RowView["idEmployee"].ToString());
+                }
                 detalhealuguel.Rent.idClient = int.Parse(RowView["idClient"].ToString());
                 detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["PickUpTime"].ToString());
-                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["DropOfTime"].ToString());
+                detalhealuguel.Rent.DropOffDate = DateTime.Parse(RowView["DropOfTime"].ToString());
                 detalhealuguel.Rent.Value = double.Parse(RowView["Amount"].ToString());
                 detalhealuguel.ShowDialog();
             }
