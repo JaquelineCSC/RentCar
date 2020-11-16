@@ -51,6 +51,9 @@
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeTableAdapter = new CarLand.Forms.DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter();
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.listaFuncRamires = new CarLand.Forms.DataSets.Ramires.ListaFuncRamires();
+            this.employeeBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeTableAdapter1 = new CarLand.Forms.DataSets.Ramires.ListaFuncRamiresTableAdapters.EmployeeTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
@@ -58,6 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.employee)).BeginInit();
             this.metroTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -109,7 +114,7 @@
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1});
-            this.metroGrid1.DataSource = this.employeeBindingSource1;
+            this.metroGrid1.DataSource = this.employeeBindingSource2;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -360,6 +365,20 @@
             this.metroLink2.UseSelectable = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
+            // listaFuncRamires
+            // 
+            this.listaFuncRamires.DataSetName = "ListaFuncRamires";
+            this.listaFuncRamires.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeeBindingSource2
+            // 
+            this.employeeBindingSource2.DataMember = "Employee";
+            this.employeeBindingSource2.DataSource = this.listaFuncRamires;
+            // 
+            // employeeTableAdapter1
+            // 
+            this.employeeTableAdapter1.ClearBeforeFill = true;
+            // 
             // Funcionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -384,6 +403,8 @@
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaFuncRamires)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,13 +424,13 @@
         private MetroFramework.Controls.MetroLink metroLinkVoltar;
         private MetroFramework.Controls.MetroLink metroLinkSalvar;
         private System.Windows.Forms.BindingSource employeeBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEmployeeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn employeeNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idUserDataGridViewTextBoxColumn;
         private DataSets.Paulo.Employee employee;
         private System.Windows.Forms.BindingSource employeeBindingSource1;
         private DataSets.Paulo.EmployeeTableAdapters.EmployeeTableAdapter employeeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private MetroFramework.Controls.MetroLink metroLink2;
+        private DataSets.Ramires.ListaFuncRamires listaFuncRamires;
+        private System.Windows.Forms.BindingSource employeeBindingSource2;
+        private DataSets.Ramires.ListaFuncRamiresTableAdapters.EmployeeTableAdapter employeeTableAdapter1;
     }
 }

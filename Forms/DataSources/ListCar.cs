@@ -23,8 +23,8 @@ namespace CarLand.Forms.Car
 
         private void ListCar_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'listCars.Car' table. You can move, or remove it, as needed.
-            this.carTableAdapter.Fill(this.listCars.Car);
+            // TODO: This line of code loads data into the 'cars._Cars' table. You can move, or remove it, as needed.
+            this.carsTableAdapter.Fill(this.cars._Cars);
         }
 
         private void toolTip(object sender, EventArgs e)
@@ -83,10 +83,11 @@ namespace CarLand.Forms.Car
         {
             if (RowView != null)
             {
-                int id = int.Parse(RowView["idCar"].ToString());
+                int id = int.Parse(RowView["Código"].ToString());
                 _appImage.Delete(id);
                 _appCar.Delete(id);
                 MetroMessageBox.Show(this, "Carro deletado com sucesso", "Successo", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
+                ListCar_Load(this, new EventArgs());
             }
             else
             {
@@ -96,33 +97,6 @@ namespace CarLand.Forms.Car
 
         private void metroLink4_Click(object sender, EventArgs e)
         {
-            ListCar_Load(this, new EventArgs());
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.carTableAdapter.FillBy(this.listCars.Car);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.carTableAdapter.Fill(this.listCars.Car);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
         }
     }
 }

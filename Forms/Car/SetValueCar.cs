@@ -32,13 +32,15 @@ namespace CarLand.Forms.Car
                 Domain.Entities.AmountCar amount = new Domain.Entities.AmountCar()
                 {
                     idCar = Car.Id,
-                    Amount = int.Parse(value.Text.Replace(",",".")),
+                    Amount = decimal.Parse(value.Text),
                 };
                 try
                 {
                     if (isNew)
                     {
                         _appAmount.Insert(amount);
+                        Database.DBCar _appCar = new Database.DBCar();
+                        _appCar.Provide(Car.Id);
                         MetroMessageBox.Show(this, "Valor Adicionado", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
                     }
                     else

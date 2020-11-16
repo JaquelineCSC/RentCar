@@ -33,13 +33,23 @@ namespace CarLand.Database
         }
         public void Delete(int id)
         {
-            query = $"update Car set Available = 0 where idCar = {id}";
+            query = $"update Car set Status = 0 where idCar = {id}";
             _context.CommandWithoutReturn(query);
         }
 
-        public Car GetCar(int id)
+        public void Provide(int id)
         {
-            query = $"select * from Car where idCar = '{id}'";
+            query = $"update Car set Available = 1 where idCar = {id}";
+            _context.CommandWithoutReturn(query);
+        }
+
+        public Car GetCar(int id = 0, string branch = null, string model = null, string year = null, string color = null)
+        {
+            if(id == 0)
+                query = $"select * from Car where branch = '{branch}' and model = '{model}' and year = {year} and color = '{color}'";
+            else
+                query = $"select * from Car where idCar = '{id}'";
+    
             return _context.GetCar(query);
         }
 
@@ -51,7 +61,7 @@ namespace CarLand.Database
 
         public List<Car> List()
         {
-            query = "SELECT * FROM Car";
+            query = "SELECT * FROM Car where Available = 1 and Status = 1";
             return  _context.ListCars(query);
         }
 

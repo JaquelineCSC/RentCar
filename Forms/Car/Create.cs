@@ -1,5 +1,6 @@
 ﻿using CarLand.Database;
 using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -118,5 +120,42 @@ namespace CarLand.Forms.Car
                 MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
+
+        private void VerificarPreenchimentoModelo(object sender, KeyEventArgs e)
+        {
+            MetroTextBox x = (MetroTextBox)sender;
+            if (x.Name == metroTextBox1.Name)
+            {
+                Regex rgx = new Regex("[^\\w\\.-]");
+                metroTextBox1.Text = rgx.Replace(metroTextBox1.Text, "");
+            }
+        }
+
+        private void VerificarPreenchimentoCor(object sender, KeyEventArgs e)
+        {
+                MetroTextBox x = (MetroTextBox)sender;
+                if (x.Name == metroTextBox2.Name)
+                {
+                    Regex rgx = new Regex("[^a-zA-Z -]");
+                    metroTextBox2.Text = rgx.Replace(metroTextBox2.Text, "");
+                }
+         
+   
+        }
+        private void VerificarPreenchimentoPlaca(object sender, KeyEventArgs e)
+        {
+            MetroTextBox x = (MetroTextBox)sender;
+            if (x.Name == metroTextBox3.Name)
+            {
+                Regex rgx = new Regex("[^A - Z0 - 9 -]");
+                metroTextBox3.Text = rgx.Replace(metroTextBox3.Text, "");
+            }
+        }
+
+        private void Create_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

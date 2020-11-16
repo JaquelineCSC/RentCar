@@ -74,5 +74,10 @@ namespace CarLand.Forms
                 MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
+
+        private void Completar_Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

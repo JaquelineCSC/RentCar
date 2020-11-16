@@ -27,6 +27,8 @@ namespace CarLand.Forms
         {
             // TODO: This line of code loads data into the 'client.ClientCNH' table. You can move, or remove it, as needed.
             this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
+            // TODO: esta linha de código carrega dados na tabela 'integradoraDataSet.Client'. Você pode movê-la ou removê-la conforme necessário.
+            this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
         }
 
         private void metroLinkVoltar_Click(object sender, EventArgs e)

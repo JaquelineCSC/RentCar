@@ -773,6 +773,7 @@
             this.metroLinkVoltar.TabIndex = 40;
             this.metroLinkVoltar.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroLinkVoltar.UseSelectable = true;
+            this.metroLinkVoltar.Click += new System.EventHandler(this.metroLinkVoltar_Click);
             // 
             // image
             // 
@@ -784,7 +785,7 @@
             this.image.TabIndex = 39;
             this.image.TabStop = false;
             // 
-            // DetalheAluguel
+            // RentDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -827,7 +828,7 @@
             this.Controls.Add(this.branch);
             this.Controls.Add(this.metroLabel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "DetalheAluguel";
+            this.Name = "RentDetails";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;

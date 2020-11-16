@@ -75,6 +75,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\DataSets\Paulo\AmountCar.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmountCar.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSets\Paulo\Cars.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cars.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Database\DBListAmount.cs" />
     <Compile Include="Domain\Entities\ListAmount.cs" />
     <Compile Include="Forms\Car\CarAmount.cs">
@@ -264,8 +274,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>listRent.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DataSets\Ramires\IntegradoraDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSets\Ramires\ListaFuncRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSets\Ramires\ListCarRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DataSets\Ramires\ListRentRamires.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\DataSets\Paulo\RentView.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RentView.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Admin\ProfileAdmin.resx">
       <DependentUpon>ProfileAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -345,6 +380,28 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Forms\DataSets\Paulo\AmountCar.xsc">
+      <DependentUpon>AmountCar.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Paulo\AmountCar.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AmountCar.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Paulo\AmountCar.xss">
+      <DependentUpon>AmountCar.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Paulo\Cars.xsc">
+      <DependentUpon>Cars.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Paulo\Cars.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Cars.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Paulo\Cars.xss">
+      <DependentUpon>Cars.xsd</DependentUpon>
+    </None>
     <None Include="Forms\DataSets\Paulo\Client.xsc">
       <DependentUpon>Client.xsd</DependentUpon>
     </None>
@@ -389,6 +446,50 @@
     <None Include="Forms\DataSets\Paulo\listRent.xss">
       <DependentUpon>listRent.xsd</DependentUpon>
     </None>
+    <None Include="Forms\DataSets\Ramires\IntegradoraDataSet.xsc">
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\IntegradoraDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>IntegradoraDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Ramires\IntegradoraDataSet.xss">
+      <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListaFuncRamires.xsc">
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListaFuncRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListaFuncRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListaFuncRamires.xss">
+      <DependentUpon>ListaFuncRamires.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListCarRamires.xsc">
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListCarRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListCarRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListCarRamires.xss">
+      <DependentUpon>ListCarRamires.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListRentRamires.xsc">
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListRentRamires.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListRentRamires.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Ramires\ListRentRamires.xss">
+      <DependentUpon>ListRentRamires.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -399,16 +500,29 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Forms\DataSets\Paulo\RentView.xsc">
+      <DependentUpon>RentView.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\DataSets\Paulo\RentView.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RentView.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Forms\DataSets\Paulo\RentView.xss">
+      <DependentUpon>RentView.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Forms\DataSets\Ramires\" />
     <Folder Include="Forms\DataSets\Samuel\" />
     <Folder Include="Images\" />
     <Folder Include="Resources\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Database\Imagens Eye\invisible.png" />
+    <Content Include="Database\Imagens Eye\visibilidade.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

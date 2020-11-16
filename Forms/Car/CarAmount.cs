@@ -26,7 +26,8 @@ namespace CarLand.Forms.Car
 
         private void CarAmount_Load(object sender, EventArgs e)
         {
-            this.carTableAdapter.Fill(this.listCars.Car);
+            // TODO: This line of code loads data into the 'amountCar._AmountCar' table. You can move, or remove it, as needed.
+            this.amountCarTableAdapter.Fill(this.amountCar._AmountCar);
         }
 
         private void rowViewSelect(object sender, EventArgs e)
@@ -40,7 +41,7 @@ namespace CarLand.Forms.Car
         private void metroLink3_Click(object sender, EventArgs e)
         {
             SetValueCar form = new SetValueCar();
-            Domain.Entities.Car car = _appCar.GetCar(int.Parse(RowView["idCar"].ToString()));
+            Domain.Entities.Car car = _appCar.GetCar(id: int.Parse(RowView["idCar"].ToString()));
             form.Car = car;
             var isNew = _appAmount.GetAmount(car.Id);
             if(isNew.idCar != 0)

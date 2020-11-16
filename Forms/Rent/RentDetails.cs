@@ -83,7 +83,12 @@ namespace CarLand.Forms.Aluguel
         private Domain.Entities.Employee Load_Employee()
         {
             Database.DBEmployee _appEmployee = new Database.DBEmployee();
-            return _appEmployee.GetEmployee(idEmployee: Rent.idCar);
+            return _appEmployee.GetEmployee(idEmployee: Rent.idEmployee);
+        }
+
+        private void metroLinkVoltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

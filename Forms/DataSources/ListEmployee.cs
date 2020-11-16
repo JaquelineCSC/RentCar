@@ -31,6 +31,7 @@ namespace CarLand.Forms
 
         private void Funcionarios_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'listaFuncRamires.Employee'. Você pode movê-la ou removê-la conforme necessário.
             this.employeeTableAdapter.Fill(this.employee._Employee);
         }
 

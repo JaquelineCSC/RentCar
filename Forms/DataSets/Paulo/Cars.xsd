@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Cars" targetNamespace="http://tempuri.org/Cars.xsd" xmlns:mstns="http://tempuri.org/Cars.xsd" xmlns="http://tempuri.org/Cars.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IntegradoraConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IntegradoraConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CarLand.Properties.Settings.GlobalReference.Default.IntegradoraConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CarsTableAdapter" GeneratorDataComponentClassName="CarsTableAdapter" Name="Cars" UserDataComponentName="CarsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IntegradoraConnectionString (Settings)" DbObjectName="Integradora.dbo.Cars" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Código, Cor, Placa, Modelo, Combustivel, Portas, Marca, Ano FROM dbo.Cars</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Código" DataSetColumn="Código" />
+              <Mapping SourceColumn="Cor" DataSetColumn="Cor" />
+              <Mapping SourceColumn="Placa" DataSetColumn="Placa" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Combustivel" DataSetColumn="Combustivel" />
+              <Mapping SourceColumn="Portas" DataSetColumn="Portas" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Ano" DataSetColumn="Ano" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Cars" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Cars" msprop:Generator_UserDSName="Cars">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Cars" msprop:Generator_TableClassName="CarsDataTable" msprop:Generator_TableVarName="tableCars" msprop:Generator_TablePropName="_Cars" msprop:Generator_RowDeletingName="CarsRowDeleting" msprop:Generator_RowChangingName="CarsRowChanging" msprop:Generator_RowEvHandlerName="CarsRowChangeEventHandler" msprop:Generator_RowDeletedName="CarsRowDeleted" msprop:Generator_UserTableName="Cars" msprop:Generator_RowChangedName="CarsRowChanged" msprop:Generator_RowEvArgName="CarsRowChangeEvent" msprop:Generator_RowClassName="CarsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Código" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnCódigo" msprop:Generator_ColumnPropNameInRow="Código" msprop:Generator_ColumnPropNameInTable="CódigoColumn" msprop:Generator_UserColumnName="Código" type="xs:int" />
+              <xs:element name="Cor" msprop:Generator_ColumnVarNameInTable="columnCor" msprop:Generator_ColumnPropNameInRow="Cor" msprop:Generator_ColumnPropNameInTable="CorColumn" msprop:Generator_UserColumnName="Cor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Placa" msprop:Generator_ColumnVarNameInTable="columnPlaca" msprop:Generator_ColumnPropNameInRow="Placa" msprop:Generator_ColumnPropNameInTable="PlacaColumn" msprop:Generator_UserColumnName="Placa" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Combustivel" msprop:Generator_ColumnVarNameInTable="columnCombustivel" msprop:Generator_ColumnPropNameInRow="Combustivel" msprop:Generator_ColumnPropNameInTable="CombustivelColumn" msprop:Generator_UserColumnName="Combustivel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Portas" msprop:Generator_ColumnVarNameInTable="columnPortas" msprop:Generator_ColumnPropNameInRow="Portas" msprop:Generator_ColumnPropNameInTable="PortasColumn" msprop:Generator_UserColumnName="Portas" type="xs:int" minOccurs="0" />
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnPropNameInTable="AnoColumn" msprop:Generator_UserColumnName="Ano" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Cars" />
+      <xs:field xpath="mstns:Código" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

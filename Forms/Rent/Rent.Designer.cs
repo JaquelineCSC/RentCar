@@ -809,6 +809,7 @@
             this.Controls.Add(this.email);
             this.Controls.Add(this.name);
             this.Controls.Add(this.metroLabel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Rent";
             this.Resizable = false;

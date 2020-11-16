@@ -211,6 +211,7 @@
             this.metroLink1.TabIndex = 6;
             this.metroLink1.UseCustomBackColor = true;
             this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
             // metroTextBox1
             // 

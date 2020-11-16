@@ -334,12 +334,12 @@ namespace CarLand.Database
 
         #region Amount
 
-        public AmountCar GetAmount(string sql)
+        public Domain.Entities.AmountCar GetAmount(string sql)
         {
             Connect();
             cd.Connection = cn;
             cd.CommandText = sql;
-            AmountCar amount = new AmountCar();
+            Domain.Entities.AmountCar amount = new Domain.Entities.AmountCar();
             SqlDataReader reader = cd.ExecuteReader();
             if (reader.Read())
             {
@@ -349,12 +349,12 @@ namespace CarLand.Database
             return amount;
         }
 
-        public AmountCar ConstructorAmount(SqlDataReader reader)
+        public Domain.Entities.AmountCar ConstructorAmount(SqlDataReader reader)
         {
-            return new AmountCar()
+            return new Domain.Entities.AmountCar()
             {
                 idCar = reader.GetInt32(0),
-                Amount = reader.GetDouble(1),
+                Amount = reader.GetDecimal(1),
             };
         }
 
