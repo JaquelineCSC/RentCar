@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterFinish));
             this.dateValidateCNH = new MetroFramework.Controls.MetroDateTime();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.iAgreeCheck = new MetroFramework.Controls.MetroCheckBox();
@@ -39,7 +38,7 @@
             this.telefone = new MetroFramework.Controls.MetroTextBox();
             this.cnh = new MetroFramework.Controls.MetroTextBox();
             this.cpf = new MetroFramework.Controls.MetroTextBox();
-            this.name = new MetroFramework.Controls.MetroTextBox();
+            this.nomeTXT = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
@@ -57,12 +56,15 @@
             this.metroLabel15 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel16 = new MetroFramework.Controls.MetroLabel();
             this.manager = new MetroFramework.Components.MetroStyleManager(this.components);
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.manager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // dateValidateCNH
             // 
             this.dateValidateCNH.Location = new System.Drawing.Point(265, 277);
+            this.dateValidateCNH.MinDate = new System.DateTime(1920, 1, 1, 0, 0, 0, 0);
             this.dateValidateCNH.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateValidateCNH.Name = "dateValidateCNH";
             this.dateValidateCNH.Size = new System.Drawing.Size(223, 29);
@@ -70,7 +72,7 @@
             this.dateValidateCNH.TabIndex = 60;
             this.dateValidateCNH.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.dateValidateCNH.UseStyleColors = true;
-            this.dateValidateCNH.ValueChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.dateValidateCNH.ValueChanged += new System.EventHandler(this.verificarDados);
             // 
             // metroLabel9
             // 
@@ -95,7 +97,8 @@
             this.iAgreeCheck.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.iAgreeCheck.UseSelectable = true;
             this.iAgreeCheck.UseStyleColors = true;
-            this.iAgreeCheck.Click += new System.EventHandler(this.verificarPreenchimento);
+            this.iAgreeCheck.CheckedChanged += new System.EventHandler(this.verificarDados);
+            this.iAgreeCheck.CheckStateChanged += new System.EventHandler(this.verificarDados);
             // 
             // dateOfBirth
             // 
@@ -107,7 +110,7 @@
             this.dateOfBirth.TabIndex = 57;
             this.dateOfBirth.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.dateOfBirth.UseStyleColors = true;
-            this.dateOfBirth.ValueChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.dateOfBirth.ValueChanged += new System.EventHandler(this.verificarDados);
             // 
             // genero
             // 
@@ -125,7 +128,7 @@
             this.genero.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.genero.UseSelectable = true;
             this.genero.UseStyleColors = true;
-            this.genero.SelectedIndexChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.genero.SelectedIndexChanged += new System.EventHandler(this.verificarDados);
             // 
             // email
             // 
@@ -147,6 +150,7 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
+            this.email.PromptText = "exemplo@email.com";
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -161,7 +165,8 @@
             this.email.WaterMark = "exemplo@email.com";
             this.email.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.email.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.email.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.email.TextChanged += new System.EventHandler(this.verificarDados);
+            this.email.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verificarPreenchimentoEmail);
             // 
             // telefone
             // 
@@ -183,6 +188,7 @@
             this.telefone.Multiline = true;
             this.telefone.Name = "telefone";
             this.telefone.PasswordChar = '\0';
+            this.telefone.PromptText = "(35) X XXXX-XXXX";
             this.telefone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.telefone.SelectedText = "";
             this.telefone.SelectionLength = 0;
@@ -197,7 +203,8 @@
             this.telefone.WaterMark = "(35) X XXXX-XXXX";
             this.telefone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.telefone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.telefone.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.telefone.TextChanged += new System.EventHandler(this.verificarDados);
+            this.telefone.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verificarPreenchimentoTel);
             // 
             // cnh
             // 
@@ -219,6 +226,7 @@
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
+            this.cnh.PromptText = "XXXXXXXXXXX";
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -233,7 +241,8 @@
             this.cnh.WaterMark = "XXXXXXXXXXX";
             this.cnh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cnh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.cnh.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.cnh.TextChanged += new System.EventHandler(this.verificarDados);
+            this.cnh.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verificarPreenchimentoCNH);
             // 
             // cpf
             // 
@@ -255,6 +264,7 @@
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
+            this.cpf.PromptText = "XXX.XXX.XXX-XX";
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;
@@ -269,42 +279,43 @@
             this.cpf.WaterMark = "XXX.XXX.XXX-XX";
             this.cpf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.cpf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.cpf.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.cpf.TextChanged += new System.EventHandler(this.verificarDados);
+            this.cpf.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verificarPreenchimentoCPF);
             // 
-            // name
+            // nomeTXT
             // 
             // 
             // 
             // 
-            this.name.CustomButton.Image = null;
-            this.name.CustomButton.Location = new System.Drawing.Point(195, 1);
-            this.name.CustomButton.Name = "";
-            this.name.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.name.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.name.CustomButton.TabIndex = 1;
-            this.name.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.name.CustomButton.UseSelectable = true;
-            this.name.CustomButton.Visible = false;
-            this.name.Lines = new string[0];
-            this.name.Location = new System.Drawing.Point(69, 123);
-            this.name.MaxLength = 32767;
-            this.name.Multiline = true;
-            this.name.Name = "name";
-            this.name.PasswordChar = '\0';
-            this.name.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.name.SelectedText = "";
-            this.name.SelectionLength = 0;
-            this.name.SelectionStart = 0;
-            this.name.ShortcutsEnabled = true;
-            this.name.Size = new System.Drawing.Size(223, 29);
-            this.name.Style = MetroFramework.MetroColorStyle.Orange;
-            this.name.TabIndex = 51;
-            this.name.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.name.UseSelectable = true;
-            this.name.UseStyleColors = true;
-            this.name.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.name.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.name.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.nomeTXT.CustomButton.Image = null;
+            this.nomeTXT.CustomButton.Location = new System.Drawing.Point(195, 1);
+            this.nomeTXT.CustomButton.Name = "";
+            this.nomeTXT.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.nomeTXT.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.nomeTXT.CustomButton.TabIndex = 1;
+            this.nomeTXT.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.nomeTXT.CustomButton.UseSelectable = true;
+            this.nomeTXT.CustomButton.Visible = false;
+            this.nomeTXT.Lines = new string[0];
+            this.nomeTXT.Location = new System.Drawing.Point(69, 123);
+            this.nomeTXT.MaxLength = 32767;
+            this.nomeTXT.Multiline = true;
+            this.nomeTXT.Name = "nomeTXT";
+            this.nomeTXT.PasswordChar = '\0';
+            this.nomeTXT.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.nomeTXT.SelectedText = "";
+            this.nomeTXT.SelectionLength = 0;
+            this.nomeTXT.SelectionStart = 0;
+            this.nomeTXT.ShortcutsEnabled = true;
+            this.nomeTXT.Size = new System.Drawing.Size(223, 29);
+            this.nomeTXT.Style = MetroFramework.MetroColorStyle.Orange;
+            this.nomeTXT.TabIndex = 51;
+            this.nomeTXT.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.nomeTXT.UseSelectable = true;
+            this.nomeTXT.UseStyleColors = true;
+            this.nomeTXT.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.nomeTXT.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.nomeTXT.TextChanged += new System.EventHandler(this.verificarPreenchimentoNome);
             // 
             // metroLabel8
             // 
@@ -386,6 +397,7 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.buttonSave.Enabled = false;
             this.buttonSave.Location = new System.Drawing.Point(613, 338);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(105, 45);
@@ -498,11 +510,15 @@
             this.manager.Style = MetroFramework.MetroColorStyle.Orange;
             this.manager.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // Completar_Cadastro
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
+            // 
+            // RegisterFinish
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
             this.BackMaxSize = 270;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -524,7 +540,7 @@
             this.Controls.Add(this.telefone);
             this.Controls.Add(this.cnh);
             this.Controls.Add(this.cpf);
-            this.Controls.Add(this.name);
+            this.Controls.Add(this.nomeTXT);
             this.Controls.Add(this.metroLabel8);
             this.Controls.Add(this.metroLabel7);
             this.Controls.Add(this.metroLabel6);
@@ -532,13 +548,13 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Completar_Cadastro";
+            this.Name = "RegisterFinish";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.Completar_Cadastro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.manager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,7 +571,7 @@
         private MetroFramework.Controls.MetroTextBox telefone;
         private MetroFramework.Controls.MetroTextBox cnh;
         private MetroFramework.Controls.MetroTextBox cpf;
-        private MetroFramework.Controls.MetroTextBox name;
+        private MetroFramework.Controls.MetroTextBox nomeTXT;
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
@@ -573,5 +589,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel15;
         private MetroFramework.Controls.MetroLabel metroLabel16;
         private MetroFramework.Components.MetroStyleManager manager;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

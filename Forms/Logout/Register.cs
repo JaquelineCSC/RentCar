@@ -5,6 +5,7 @@ using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -14,6 +15,9 @@ namespace CarLand.Forms
     {
         public Domain.Entities.User User { get; set; }
         public DBUser _appCar { get; set; }
+        public bool userCorrect { get; set; }
+        public bool passCorrect { get; set; }
+        public bool confirmpassCorrect { get; set; }
 
         public Register()
         {
@@ -36,6 +40,7 @@ namespace CarLand.Forms
             metroLink1.Theme = style;
         }
 
+
         private void verficiarPreenchimento(object sender, System.EventArgs e)
         {
             if (mtxtUsuarioClientes.Text != "" && mtxtSenhaClientes.Text != "" && metroTextBox1.Text != "")
@@ -48,9 +53,21 @@ namespace CarLand.Forms
             {
                 errors.SetError(this.mtxtSenhaClientes, "Campo Obrigatório");
             }
+            if (mtxtSenhaClientes.Text.Length < 8)
+            {
+                errors.SetError(this.mtxtSenhaClientes, "Insira pelo menos 8 caracteres");
+            }
+            if (mtxtSenhaClientes.Text.Length > 16)
+            {
+                errors.SetError(this.mtxtSenhaClientes, "Insira no máximo 16 caracteres");
+            }
             if (metroTextBox1.Text == "")
             {
                 errors.SetError(this.metroTextBox1, "Campo Obrigatório");
+            }
+            if (metroTextBox1.Text != mtxtSenhaClientes.Text)
+            {
+                errors.SetError(this.metroTextBox1, "Os campos são incompatíveis");
             }
             if (mtxtUsuarioClientes.Text != "")
             {
@@ -61,7 +78,7 @@ namespace CarLand.Forms
                 errors.SetError(this.mtxtSenhaClientes, "Os campos não conferem");
                 errors.SetError(this.metroTextBox1, "Os campos não conferem");
             }
-            if (mtxtUsuarioClientes.Text != "" && metroTextBox1.Text == mtxtSenhaClientes.Text)
+            else if(mtxtUsuarioClientes.Text != "" && metroTextBox1.Text == mtxtSenhaClientes.Text)
             {
                 var userDomain = _appCar.GetUser(userName: mtxtUsuarioClientes.Text);
                 if (userDomain.Name == null)
@@ -84,6 +101,23 @@ namespace CarLand.Forms
         {
             metroLink1.Enabled = true;
             metroToolTip1.Show("Preencha os campos para prosseguir", metroLink1);
+        }
+
+        private void verficiarPreenchimento(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void verficiarPreenchimento(object sender, KeyEventArgs e)
+        {
+
+            MetroTextBox x = (MetroTextBox)sender;
+            if (x.Name == mtxtUsuarioClientes.Name)
+            {
+                Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+                mtxtUsuarioClientes.Text = rgx.Replace(mtxtUsuarioClientes.Text, "");
+
+            }
         }
     }
 }

@@ -49,7 +49,7 @@ namespace CarLand.Forms.Car
                         MetroMessageBox.Show(this, "Valor Editado", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
                     }
                 }
-                catch(Exception exp)
+                catch
                 {
                     MetroMessageBox.Show(this, "Erro inesperado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
                 }
