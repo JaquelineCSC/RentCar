@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cars));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.logout = new MetroFramework.Controls.MetroPanel();
@@ -37,9 +38,9 @@
             this.metroLinkLogout = new MetroFramework.Controls.MetroLink();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.metroDateTime1 = new MetroFramework.Controls.MetroDateTime();
+            this.dateCar = new MetroFramework.Controls.MetroDateTime();
             this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.carName = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
@@ -56,6 +57,7 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             this.metroPanel1.SuspendLayout();
             this.logout.SuspendLayout();
             this.login.SuspendLayout();
@@ -65,6 +67,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel.SuspendLayout();
             this.metroPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -172,9 +175,9 @@
             // 
             // metroPanel2
             // 
-            this.metroPanel2.Controls.Add(this.metroDateTime1);
+            this.metroPanel2.Controls.Add(this.dateCar);
             this.metroPanel2.Controls.Add(this.metroLink1);
-            this.metroPanel2.Controls.Add(this.metroTextBox1);
+            this.metroPanel2.Controls.Add(this.carName);
             this.metroPanel2.Controls.Add(this.metroLabel2);
             this.metroPanel2.Controls.Add(this.metroLabel1);
             this.metroPanel2.HorizontalScrollbarBarColor = true;
@@ -189,15 +192,17 @@
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // metroDateTime1
+            // dateCar
             // 
-            this.metroDateTime1.Location = new System.Drawing.Point(501, 22);
-            this.metroDateTime1.MinimumSize = new System.Drawing.Size(0, 29);
-            this.metroDateTime1.Name = "metroDateTime1";
-            this.metroDateTime1.Size = new System.Drawing.Size(250, 29);
-            this.metroDateTime1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroDateTime1.TabIndex = 8;
-            this.metroDateTime1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.dateCar.CustomFormat = "dd/MM/yyyy";
+            this.dateCar.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateCar.Location = new System.Drawing.Point(501, 22);
+            this.dateCar.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dateCar.Name = "dateCar";
+            this.dateCar.Size = new System.Drawing.Size(250, 29);
+            this.dateCar.Style = MetroFramework.MetroColorStyle.Orange;
+            this.dateCar.TabIndex = 8;
+            this.dateCar.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroLink1
             // 
@@ -213,38 +218,38 @@
             this.metroLink1.UseSelectable = true;
             this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
             // 
-            // metroTextBox1
+            // carName
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(222, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(27, 27);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(114, 22);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Multiline = true;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(250, 29);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metroTextBox1.TabIndex = 4;
-            this.metroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.carName.CustomButton.Image = null;
+            this.carName.CustomButton.Location = new System.Drawing.Point(222, 1);
+            this.carName.CustomButton.Name = "";
+            this.carName.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.carName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.carName.CustomButton.TabIndex = 1;
+            this.carName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.carName.CustomButton.UseSelectable = true;
+            this.carName.CustomButton.Visible = false;
+            this.carName.Lines = new string[0];
+            this.carName.Location = new System.Drawing.Point(139, 22);
+            this.carName.MaxLength = 32767;
+            this.carName.Multiline = true;
+            this.carName.Name = "carName";
+            this.carName.PasswordChar = '\0';
+            this.carName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.carName.SelectedText = "";
+            this.carName.SelectionLength = 0;
+            this.carName.SelectionStart = 0;
+            this.carName.ShortcutsEnabled = true;
+            this.carName.Size = new System.Drawing.Size(250, 29);
+            this.carName.Style = MetroFramework.MetroColorStyle.Orange;
+            this.carName.TabIndex = 4;
+            this.carName.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.carName.UseSelectable = true;
+            this.carName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.carName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel2
             // 
@@ -260,11 +265,11 @@
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(50, 27);
+            this.metroLabel1.Location = new System.Drawing.Point(17, 27);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(46, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(116, 19);
             this.metroLabel1.TabIndex = 2;
-            this.metroLabel1.Text = "Carro:";
+            this.metroLabel1.Text = "Modelo do Carro:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
             // metroToolTip1
@@ -444,6 +449,12 @@
             this.metroLabel6.Text = "Perfil";
             this.metroLabel6.Click += new System.EventHandler(this.metroLabel6_Click);
             // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
+            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Cars
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,6 +486,7 @@
             this.panel.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -483,12 +495,12 @@
 
         private MetroFramework.Controls.MetroPanel metroPanel1;
         private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox carName;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroLink metroLink1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private MetroFramework.Controls.MetroDateTime metroDateTime1;
+        private MetroFramework.Controls.MetroDateTime dateCar;
         private MetroFramework.Controls.MetroPanel login;
         private MetroFramework.Controls.MetroLink metroLinkLogout;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
@@ -508,5 +520,6 @@
         private MetroFramework.Controls.MetroLabel record_not_found;
         private MetroFramework.Controls.MetroLink metroLink3;
         private MetroFramework.Controls.MetroLabel metroLabel8;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

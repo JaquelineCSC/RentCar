@@ -3,9 +3,11 @@ using CarLand.Forms.Admin;
 using CarLand.Forms.Aluguel;
 using CarLand.Forms.Client;
 using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -18,19 +20,70 @@ namespace CarLand.Forms
     {
         public CarLand.Domain.Entities.User User { get; set; }
         public Domain.Entities.Client Client { get; set; }
+        public List<Domain.Entities.Car> ListCars { get; set; }
 
         public DBCar _appCar;
         public DBImage _appImage;
         public DBAmount _appAmount;
 
-        public Cars()
+        public Cars(MetroStyleManager manager = null)
         {
             InitializeComponent();
+            if (manager != null)
+                this.StyleManager = manager;
             _appCar = new DBCar();
             _appImage = new DBImage();
             _appAmount = new DBAmount();
             User = new CarLand.Domain.Entities.User();
             Client = new Domain.Entities.Client();
+            ListCars = new List<Domain.Entities.Car>();
+
+            this.StyleManager = metroStyleManager1;
+
+            if (int.Parse(Properties.Settings.Default["Theme"].ToString()) == 0)
+            {
+                StyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else
+            {
+                StyleManager.Theme = MetroThemeStyle.Light;
+            }
+            Load_Page();
+        }
+
+        public void Load_Page()
+        {
+            metroLabel1.Theme = this.StyleManager.Theme;
+            metroLabel2.Theme = this.StyleManager.Theme;
+            record_not_found.Theme = this.StyleManager.Theme;
+            carName.Theme = this.StyleManager.Theme;
+            dateCar.Theme = this.StyleManager.Theme;
+            panel.Theme = this.StyleManager.Theme;
+            metroPanel2.Theme = this.StyleManager.Theme;
+            if(this.StyleManager.Theme == MetroThemeStyle.Dark)
+            {
+                card.Theme = MetroThemeStyle.Light;
+                metroLabel3.Theme = MetroThemeStyle.Light;
+                metroLabel4.Theme = MetroThemeStyle.Light;
+                metroLabel5.Theme = MetroThemeStyle.Light;
+
+                metroPanel3.Theme = MetroThemeStyle.Light;
+                metroLabel6.Theme = MetroThemeStyle.Light;
+                metroLabel7.Theme = MetroThemeStyle.Light;
+                metroLabel8.Theme = MetroThemeStyle.Light;
+            }
+            else
+            {
+                card.Theme = MetroThemeStyle.Dark;
+                metroLabel3.Theme = MetroThemeStyle.Dark;
+                metroLabel4.Theme = MetroThemeStyle.Dark;
+                metroLabel5.Theme = MetroThemeStyle.Dark;
+                metroPanel3.Theme = MetroThemeStyle.Dark;
+                metroLabel6.Theme = MetroThemeStyle.Dark;
+                metroLabel7.Theme = MetroThemeStyle.Dark;
+                metroLabel8.Theme = MetroThemeStyle.Dark;
+            }
+
         }
 
         private void metroLabel2_Click(object sender, EventArgs e)
@@ -45,16 +98,20 @@ namespace CarLand.Forms
 
         private void Carros_Load(object sender, EventArgs e)
         {
-            var cars = _appCar.List();
-            var count = cars.Count;
+            var cardsDeleted = panel.Controls.OfType<MetroPanel>().Where(card => card.Name != "card").ToList();
+            cardsDeleted.ForEach(delegate(MetroPanel item) {
+                panel.Controls.Remove(item);
+            });
+            Filter();
+            var count = ListCars.Count;
             int x = card.Location.X, y = card.Location.Y, i = 0, linhas, colunas = 0;
             if (count % 3 == 0)
             {
-                linhas = cars.Count / 3;
+                linhas = ListCars.Count / 3;
             }
             else
             {
-                linhas = cars.Count / 3 + 1;
+                linhas = ListCars.Count / 3 + 1;
             }
             for (int l = 0; l < linhas; l++, i++, y += 333)
             {
@@ -66,14 +123,14 @@ namespace CarLand.Forms
                 {
                     colunas = count + 1;
                 }
-                for (int c = 0; c < colunas && i < cars.Count; c++, i++, x += 318)
+                for (int c = 0; c < colunas && i < ListCars.Count; c++, i++, x += 318)
                 {
-                    panel.Controls.Add(addCard(cars[i], i, x, y));
+                    panel.Controls.Add(addCard(ListCars[i], i, x, y));
                 }
                 x = card.Location.X;
                 count -= 3;
             }
-            if (cars.Count == 0)
+            if (ListCars.Count == 0)
             {
                 record_not_found.Visible = true;
             }
@@ -98,6 +155,7 @@ namespace CarLand.Forms
         {
             MetroPanel newCard = new MetroPanel();
             newCard.Size = card.Size;
+            newCard.Theme = card.Theme;
             newCard.Name = "Card" + i;
             newCard.TabIndex = i + 1;
             newCard.Location = new Point(x, y);
@@ -146,6 +204,7 @@ namespace CarLand.Forms
             title.Name = "Title" + car.Id;
             title.TextAlign = ContentAlignment.MiddleCenter;
             title.MinimumSize = new Size(280, 0);
+            title.Theme = metroLabel3.Theme;
             title.MinimumSize = new Size(280, 0);
             title.FontSize = metroLabel3.FontSize;
             title.FontWeight = MetroLabelWeight.Bold;
@@ -157,6 +216,8 @@ namespace CarLand.Forms
         {
             MetroLabel Preco = new MetroLabel();
             Preco.Text = metroLabel4.Text;
+            Preco.Theme = metroLabel4.Theme;
+
             Preco.Location = metroLabel4.Location;
 
             return Preco;
@@ -168,6 +229,7 @@ namespace CarLand.Forms
             MetroLabel Cifrao = new MetroLabel();
             Cifrao.Text = $"R$ {amount.Amount}";
             Cifrao.Location = metroLabel5.Location;
+            Cifrao.Theme = metroLabel5.Theme;
             Cifrao.FontSize = metroLabel5.FontSize;
             Cifrao.FontWeight = MetroLabelWeight.Bold;
 
@@ -294,9 +356,19 @@ namespace CarLand.Forms
             }
         }
 
+        public void Filter()
+        {
+            var car = carName.Text;
+            var date = dateCar.Text;
+
+             ListCars.Clear();
+            metroPanel3.Controls.OfType<MetroPanel>();
+             ListCars = _appCar.List(car, date);
+        }
+
         private void metroLink1_Click(object sender, EventArgs e)
         {
-
+            Carros_Load(this, new EventArgs());
         }
     }
 }

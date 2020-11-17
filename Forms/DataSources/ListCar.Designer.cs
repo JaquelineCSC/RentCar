@@ -34,14 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListCar));
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.metroLink1 = new MetroFramework.Controls.MetroLink();
-            this.metroLink2 = new MetroFramework.Controls.MetroLink();
-            this.metroLink3 = new MetroFramework.Controls.MetroLink();
-            this.metroLink4 = new MetroFramework.Controls.MetroLink();
-            this.metrotooltipo = new MetroFramework.Components.MetroToolTip();
-            this.cars = new CarLand.Forms.DataSets.Paulo.Cars();
-            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.carsTableAdapter = new CarLand.Forms.DataSets.Paulo.CarsTableAdapters.CarsTableAdapter();
             this.códigoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,9 +42,16 @@
             this.corDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.combustivelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.portasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cars = new CarLand.Forms.DataSets.Paulo.Cars();
+            this.metroLink1 = new MetroFramework.Controls.MetroLink();
+            this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroLink3 = new MetroFramework.Controls.MetroLink();
+            this.metrotooltipo = new MetroFramework.Components.MetroToolTip();
+            this.carsTableAdapter = new CarLand.Forms.DataSets.Paulo.CarsTableAdapters.CarsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cars)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cars)).BeginInit();
             this.SuspendLayout();
             // 
             // metroGrid1
@@ -115,77 +114,6 @@
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_CellContentClick);
             // 
-            // metroLink1
-            // 
-            this.metroLink1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink1.BackgroundImage")));
-            this.metroLink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink1.Location = new System.Drawing.Point(737, 54);
-            this.metroLink1.Name = "metroLink1";
-            this.metroLink1.Size = new System.Drawing.Size(25, 25);
-            this.metroLink1.TabIndex = 1;
-            this.metrotooltipo.SetToolTip(this.metroLink1, "Adicionar");
-            this.metroLink1.UseSelectable = true;
-            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
-            this.metroLink1.MouseHover += new System.EventHandler(this.toolTip);
-            // 
-            // metroLink2
-            // 
-            this.metroLink2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink2.BackgroundImage")));
-            this.metroLink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink2.Location = new System.Drawing.Point(810, 54);
-            this.metroLink2.Name = "metroLink2";
-            this.metroLink2.Size = new System.Drawing.Size(25, 25);
-            this.metroLink2.TabIndex = 3;
-            this.metrotooltipo.SetToolTip(this.metroLink2, "Deletar");
-            this.metroLink2.UseSelectable = true;
-            this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
-            this.metroLink2.MouseHover += new System.EventHandler(this.toolTip);
-            // 
-            // metroLink3
-            // 
-            this.metroLink3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink3.BackgroundImage")));
-            this.metroLink3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink3.Location = new System.Drawing.Point(774, 54);
-            this.metroLink3.Name = "metroLink3";
-            this.metroLink3.Size = new System.Drawing.Size(25, 25);
-            this.metroLink3.TabIndex = 2;
-            this.metrotooltipo.SetToolTip(this.metroLink3, "Editar");
-            this.metroLink3.UseSelectable = true;
-            this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
-            this.metroLink3.MouseHover += new System.EventHandler(this.toolTip);
-            // 
-            // metroLink4
-            // 
-            this.metroLink4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink4.BackgroundImage")));
-            this.metroLink4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.metroLink4.Location = new System.Drawing.Point(841, 54);
-            this.metroLink4.Name = "metroLink4";
-            this.metroLink4.Size = new System.Drawing.Size(25, 25);
-            this.metroLink4.TabIndex = 4;
-            this.metrotooltipo.SetToolTip(this.metroLink4, "Recarregar Pagina");
-            this.metroLink4.UseSelectable = true;
-            this.metroLink4.Click += new System.EventHandler(this.metroLink4_Click);
-            // 
-            // metrotooltipo
-            // 
-            this.metrotooltipo.Style = MetroFramework.MetroColorStyle.Orange;
-            this.metrotooltipo.StyleManager = null;
-            this.metrotooltipo.Theme = MetroFramework.MetroThemeStyle.Dark;
-            // 
-            // cars
-            // 
-            this.cars.DataSetName = "Cars";
-            this.cars.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // carsBindingSource
-            // 
-            this.carsBindingSource.DataMember = "Cars";
-            this.carsBindingSource.DataSource = this.cars;
-            // 
-            // carsTableAdapter
-            // 
-            this.carsTableAdapter.ClearBeforeFill = true;
-            // 
             // códigoDataGridViewTextBoxColumn
             // 
             this.códigoDataGridViewTextBoxColumn.DataPropertyName = "Código";
@@ -242,6 +170,65 @@
             this.portasDataGridViewTextBoxColumn.Name = "portasDataGridViewTextBoxColumn";
             this.portasDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // carsBindingSource
+            // 
+            this.carsBindingSource.DataMember = "Cars";
+            this.carsBindingSource.DataSource = this.cars;
+            // 
+            // cars
+            // 
+            this.cars.DataSetName = "Cars";
+            this.cars.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // metroLink1
+            // 
+            this.metroLink1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink1.BackgroundImage")));
+            this.metroLink1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroLink1.Location = new System.Drawing.Point(737, 54);
+            this.metroLink1.Name = "metroLink1";
+            this.metroLink1.Size = new System.Drawing.Size(25, 25);
+            this.metroLink1.TabIndex = 1;
+            this.metrotooltipo.SetToolTip(this.metroLink1, "Adicionar");
+            this.metroLink1.UseSelectable = true;
+            this.metroLink1.Click += new System.EventHandler(this.metroLink1_Click);
+            this.metroLink1.MouseHover += new System.EventHandler(this.toolTip);
+            // 
+            // metroLink2
+            // 
+            this.metroLink2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink2.BackgroundImage")));
+            this.metroLink2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroLink2.Location = new System.Drawing.Point(810, 54);
+            this.metroLink2.Name = "metroLink2";
+            this.metroLink2.Size = new System.Drawing.Size(25, 25);
+            this.metroLink2.TabIndex = 3;
+            this.metrotooltipo.SetToolTip(this.metroLink2, "Deletar");
+            this.metroLink2.UseSelectable = true;
+            this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
+            this.metroLink2.MouseHover += new System.EventHandler(this.toolTip);
+            // 
+            // metroLink3
+            // 
+            this.metroLink3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("metroLink3.BackgroundImage")));
+            this.metroLink3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.metroLink3.Location = new System.Drawing.Point(774, 54);
+            this.metroLink3.Name = "metroLink3";
+            this.metroLink3.Size = new System.Drawing.Size(25, 25);
+            this.metroLink3.TabIndex = 2;
+            this.metrotooltipo.SetToolTip(this.metroLink3, "Editar");
+            this.metroLink3.UseSelectable = true;
+            this.metroLink3.Click += new System.EventHandler(this.metroLink3_Click);
+            this.metroLink3.MouseHover += new System.EventHandler(this.toolTip);
+            // 
+            // metrotooltipo
+            // 
+            this.metrotooltipo.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metrotooltipo.StyleManager = null;
+            this.metrotooltipo.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
+            // carsTableAdapter
+            // 
+            this.carsTableAdapter.ClearBeforeFill = true;
+            // 
             // ListCar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -250,7 +237,6 @@
             this.BackImagePadding = new System.Windows.Forms.Padding(-19, 7, -1, -1);
             this.BackMaxSize = 240;
             this.ClientSize = new System.Drawing.Size(923, 543);
-            this.Controls.Add(this.metroLink4);
             this.Controls.Add(this.metroLink3);
             this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroLink1);
@@ -262,8 +248,8 @@
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.ListCar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cars)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.carsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cars)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,7 +261,6 @@
         private MetroFramework.Controls.MetroLink metroLink2;
         private MetroFramework.Controls.MetroLink metroLink3;
         private MetroFramework.Components.MetroToolTip metrotooltipo;
-        private MetroFramework.Controls.MetroLink metroLink4;
         private CarLand.Forms.DataSets.Paulo.Cars cars;
         private System.Windows.Forms.BindingSource carsBindingSource;
         private DataSets.Paulo.CarsTableAdapters.CarsTableAdapter carsTableAdapter;

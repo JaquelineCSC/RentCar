@@ -45,11 +45,11 @@ namespace CarLand.Database
 
         public Car GetCar(int id = 0, string branch = null, string model = null, string year = null, string color = null)
         {
-            if(id == 0)
+            if (id == 0)
                 query = $"select * from Car where branch = '{branch}' and model = '{model}' and year = {year} and color = '{color}'";
             else
                 query = $"select * from Car where idCar = '{id}'";
-    
+
             return _context.GetCar(query);
         }
 
@@ -59,10 +59,24 @@ namespace CarLand.Database
             return _context.ReportCars(query);
         }
 
-        public List<Car> List()
+        public List<Car> List(string name = "", string date = null)
         {
-            query = "SELECT * FROM Car where Available = 1 and Status = 1";
-            return  _context.ListCars(query);
+            DateTime datetime = DateTime.Parse(date);
+            query = $@"
+                if(Exists(select idRent from Rent R inner join Car C on R.idCar in (select idCar from Car where Model like '%{name}%')))
+                    select C.* from Car C 
+                            left join Rent R on C.idCar = R.idCar 
+                            where C.Model like '%{name}%' 
+                            and '{date}' between R.PickUpTime and R.DropOfTime
+                            and C.Available = 1 
+                            and C.Status = 1
+                    ELSE
+                    select C.* from Car C 
+                            left join Rent R on C.idCar = R.idCar 
+                            where C.Model like '%{name}%' 
+                            and C.Available = 1 
+                            and C.Status = 1";
+            return _context.ListCars(query);
         }
     }
 }

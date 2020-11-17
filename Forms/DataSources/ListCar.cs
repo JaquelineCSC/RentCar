@@ -67,14 +67,14 @@ namespace CarLand.Forms.Car
             if(RowView != null)
             {
                 EditCar form = new EditCar();
-                form.Car.Id = int.Parse(RowView["idCar"].ToString());
-                form.Car.Board = RowView["Board"].ToString();
-                form.Car.Branch = RowView["Branch"].ToString();
-                form.Car.Color = RowView["Color"].ToString();
-                form.Car.Doors = int.Parse(RowView["Doors"].ToString());
-                form.Car.Fuel = RowView["Fuel"].ToString();
-                form.Car.Model = RowView["Model"].ToString();
-                form.Car.Year = int.Parse(RowView["Year"].ToString());
+                form.Car.Id = int.Parse(RowView["Código"].ToString());
+                form.Car.Board = RowView["Placa"].ToString();
+                form.Car.Branch = RowView["Marca"].ToString();
+                form.Car.Color = RowView["Cor"].ToString();
+                form.Car.Doors = int.Parse(RowView["Portas"].ToString());
+                form.Car.Fuel = RowView["Combustivel"].ToString();
+                form.Car.Model = RowView["Modelo"].ToString();
+                form.Car.Year = int.Parse(RowView["Ano"].ToString());
                 form.ShowDialog();
             }
             else
@@ -105,10 +105,6 @@ namespace CarLand.Forms.Car
             {
                 MetroMessageBox.Show(this, "Selecione a linha que deseja editar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, 100);
             }
-        }
-
-        private void metroLink4_Click(object sender, EventArgs e)
-        {
         }
     }
 }

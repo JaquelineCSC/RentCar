@@ -58,6 +58,8 @@ namespace CarLand.Forms.Car
                         pic.Location = new Point(x, y);
                         pic.SizeMode = PictureBoxSizeMode.StretchImage;
                         x += pic.Width + 23;
+                        pic.Click += new EventHandler(AddMain);
+                        if (item.Main == true) pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
                         maxHeight = Math.Max(pic.Height, maxHeight);
                         if (x > metroPanel3.ClientSize.Width - 100)
                         {
@@ -68,6 +70,16 @@ namespace CarLand.Forms.Car
                     }
                 }
             }
+        }
+
+        public void AddMain(object sender, EventArgs e)
+        {
+            var otherImages = metroPanel3.Controls.OfType<PictureBox>().Where(x => x.BorderStyle == System.Windows.Forms.BorderStyle.Fixed3D).ToList();
+            otherImages.ForEach(x => x.BorderStyle = System.Windows.Forms.BorderStyle.None);
+
+            PictureBox pic = (PictureBox)sender;
+            pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            verificarPreenchimento(this, new EventArgs());
         }
 
         private void metroButton1_Click(object sender, EventArgs e)

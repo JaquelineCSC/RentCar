@@ -18,14 +18,16 @@ namespace CarLand.Database
 
         public void Insert(Image image)
         {
-            query = $"Insert into [Image] (idCar,Path,Name) values ({image.idCar} , '{image.Path}' , '{image.Name}')";
+            int main = image.Main == true ? 1 : 0;
+            query = $"Insert into [Image] (idCar,Path,Name,Main) values ({image.idCar} , '{image.Path}' , '{image.Name}', {main})";
             _context.CommandWithoutReturn(query);
         }
 
         public void Update(Image image)
         {
+            int main = image.Main == true ? 1 : 0;
             query = $@"Update [Image] 
-                    set Name = '{image.Name}
+                    set Name = '{image.Name}, Main = {main}
                     WHERE idImage = {image.Id}";
             _context.CommandWithoutReturn(query);
         }

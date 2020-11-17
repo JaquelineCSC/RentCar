@@ -86,43 +86,143 @@ namespace CarLand.Forms
 
         private void metroLinkSalvar_Click(object sender, EventArgs e)
         {
-            Domain.Entities.Client Client = new Domain.Entities.Client()
+            error.Tag = 0;
+            error.Clear();
+            if (name.Text.Length < 3)
             {
-                Name = name.Text,
-                Email = email.Text,
-                Phone = long.Parse(phone.Text),
-                Genero = gener.Text,
-                CPF = long.Parse(cpf.Text),
-                DateOfBirth = DateTime.Parse(dateofBirth.Text),
-            };
-            Domain.Entities.CNH CNH = new CNH()
-            {
-                Name = name.Text,
-                Number = long.Parse(cnh.Text),
-                ValidateDate = DateTime.Parse(validateCNHdate.Text),
-            };
-            Domain.Entities.User User = new User()
-            {
-                Name = user.Text,
-                Password = password.Text,
-                isAdmin = false
-            };
-            try
-            {
-                var idCNH = _appCNH.Insert(CNH);
-                var idUser = _appUser.Insert(User);
-                Client.CNH_Id = idCNH;
-                Client.User_Id = idUser;
-                _appClient.Insert(Client);
-                MetroFramework.MetroMessageBox.Show(this, "Cliente Cadastrado com sucesso", "Sucesso", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
-                this.Close();
+                error.SetError(this.name, "O nome tem que ter de 3 a 50 caracteres");
+                error.Tag = 1;
             }
-            catch
+            if (!email.Text.Contains("@") && !email.Text.Contains(".com"))
             {
-                MetroFramework.MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
+                error.SetError(this.email, "Insira um endereço de email válido");
+                error.Tag = 1;
+            }
+            if (email.Text.Length < 5)
+            {
+                error.SetError(this.email, "Insira um endereço de email válido");
+                error.Tag = 1;
+            }
+            if (cpf.Text.Length < 11)
+            {
+                error.SetError(this.cpf, "Insira um CPF válido");
+                error.Tag = 1;
+            }
+            else
+            {
+                if (!Check_CPF(cpf.Text))
+                {
+                    error.SetError(this.cpf, "Insira um CPF válido");
+                    error.Tag = 1;
+                }
+            }
+            if (phone.Text.Length < 11)
+            {
+                error.SetError(this.phone, "Insira um número de phone válido");
+                error.Tag = 1;
+            }
+            if (cnh.Text.Length < 11)
+            {
+                error.SetError(this.cnh, "Insira um número de CNH válido");
+                error.Tag = 1;
+            }
+            if (validateCNHdate.Value < dateofBirth.Value)
+            {
+                error.SetError(this.validateCNHdate, "Insira uma data válida");
+                error.Tag = 1;
+            }
+            DateTime dateExpected = DateTime.Now.AddYears(-18);
+            if (dateofBirth.Value > dateExpected)
+            {
+                error.SetError(this.dateofBirth, "Você deve ter no mínimo 18 anos para realizar o cadastro");
+                error.Tag = 1;
+            }
+            if ((int)error.Tag == 0)
+            {
+
+                Domain.Entities.Client Client = new Domain.Entities.Client()
+                {
+                    Name = name.Text,
+                    Email = email.Text,
+                    Phone = long.Parse(phone.Text),
+                    Genero = gener.Text,
+                    CPF = long.Parse(cpf.Text),
+                    DateOfBirth = DateTime.Parse(dateofBirth.Text),
+                };
+                Domain.Entities.CNH CNH = new CNH()
+                {
+                    Name = name.Text,
+                    Number = long.Parse(cnh.Text),
+                    ValidateDate = DateTime.Parse(validateCNHdate.Text),
+                };
+                Domain.Entities.User User = new User()
+                {
+                    Name = user.Text,
+                    Password = password.Text,
+                    isAdmin = false
+                };
+                try
+                {
+                    var idCNH = _appCNH.Insert(CNH);
+                    var idUser = _appUser.Insert(User);
+                    Client.CNH_Id = idCNH;
+                    Client.User_Id = idUser;
+                    _appClient.Insert(Client);
+                    MetroFramework.MetroMessageBox.Show(this, "Cliente Cadastrado com sucesso", "Sucesso", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
+                    this.Close();
+                }
+                catch
+                {
+                    MetroFramework.MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Question, 100);
+                }
             }
         }
 
+        private bool Check_CPF(string cpf)
+        {
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+            string tempCpf;
+            string digito;
+            int soma;
+            int resto;
+
+            cpf = cpf.Trim();
+            cpf = cpf.Replace(".", "").Replace("-", "");
+
+            if (cpf.Length != 11)
+                return false;
+
+            tempCpf = cpf.Substring(0, 9);
+            soma = 0;
+
+            for (int i = 0; i < 9; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = resto.ToString();
+
+            tempCpf = tempCpf + digito;
+
+            soma = 0;
+            for (int i = 0; i < 10; i++)
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+            if (resto < 2)
+                resto = 0;
+            else
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            return cpf.EndsWith(digito);
+        }
         private void rentLink_Click(object sender, EventArgs e)
         {
             if (RowView == null)

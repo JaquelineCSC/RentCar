@@ -23,16 +23,25 @@ namespace CarLand
         public FormClient()
         {
             InitializeComponent();
+
+            this.StyleManager = metroStyleManager1;
+
+            if (int.Parse(Properties.Settings.Default["Theme"].ToString()) == 0)
+            {
+                StyleManager.Theme = MetroThemeStyle.Dark;
+            }
+            else
+            {
+                StyleManager.Theme = MetroThemeStyle.Light;
+            }
+            Load_Page();
         }
 
-        private void FrmUsuario_Load(object sender, EventArgs e)
+        private void Load_Page()
         {
-
-        }
-
-        private void metroTabPage1_Click(object sender, EventArgs e)
-        {
-
+            metroLinkLogout.Theme = this.StyleManager.Theme;
+            metroTabControl1.Theme = this.StyleManager.Theme;
+            metroTabPage1.Theme = this.StyleManager.Theme;
         }
 
         private void metroLinkLogout_Click(object sender, EventArgs e)
@@ -54,7 +63,7 @@ namespace CarLand
 
         private void metroTile4_Click(object sender, EventArgs e)
         {
-            Cars form = new Cars();
+            Cars form = new Cars(this.StyleManager);
             form.User = User;
             this.Hide();
             form.ShowDialog();
@@ -70,7 +79,7 @@ namespace CarLand
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
-            Wallet form = new Wallet();
+            Wallet form = new Wallet(this.StyleManager);
             Database.DBClient _appClient = new Database.DBClient();
             form.Client = _appClient.GetClientByUser(User.Id);
             form.ShowDialog();
