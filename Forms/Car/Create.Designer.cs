@@ -155,6 +155,7 @@
             this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox1.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.metroTextBox1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VerificarPreenchimentoModelo);
             // 
             // metroLabel2
             // 
@@ -248,6 +249,7 @@
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox2.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.metroTextBox2.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VerificarPreenchimentoCor);
             // 
             // metroLabel4
             // 
@@ -320,6 +322,7 @@
             this.metroTextBox3.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox3.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             this.metroTextBox3.TextChanged += new System.EventHandler(this.verificarPreenchimento);
+            this.metroTextBox3.KeyUp += new System.Windows.Forms.KeyEventHandler(this.VerificarPreenchimentoPlaca);
             // 
             // metroLabel5
             // 
@@ -619,6 +622,7 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.Load += new System.EventHandler(this.Create_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.metroPanel2.ResumeLayout(false);

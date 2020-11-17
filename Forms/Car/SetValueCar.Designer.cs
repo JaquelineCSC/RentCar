@@ -51,7 +51,6 @@
             this.value.MaxLength = 32767;
             this.value.Name = "value";
             this.value.PasswordChar = '\0';
-            this.value.PromptText = "R$ 0,00";
             this.value.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.value.SelectedText = "";
             this.value.SelectionLength = 0;

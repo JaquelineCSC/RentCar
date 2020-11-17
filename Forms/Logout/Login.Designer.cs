@@ -98,31 +98,32 @@ namespace CarLand.Forms
             // 
             // 
             // 
+            this.metroTextBox2.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(239, 1);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(237, 1);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.DisplayIcon = true;
             this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.metroTextBox2.Icon = ((System.Drawing.Image)(resources.GetObject("metroTextBox2.Icon")));
             this.metroTextBox2.Lines = new string[0];
             this.metroTextBox2.Location = new System.Drawing.Point(507, 347);
-            this.metroTextBox2.MaxLength = 12;
+            this.metroTextBox2.MaxLength = 16;
             this.metroTextBox2.Multiline = true;
             this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
+            this.metroTextBox2.PasswordChar = '*';
             this.metroTextBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.metroTextBox2.SelectedText = "";
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(271, 33);
+            this.metroTextBox2.ShowButton = true;
+            this.metroTextBox2.Size = new System.Drawing.Size(271, 35);
             this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTextBox2.TabIndex = 4;
             this.metroTextBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -130,6 +131,8 @@ namespace CarLand.Forms
             this.metroTextBox2.WaterMark = "Senha";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.metroTextBox2_ButtonClick);
+            this.metroTextBox2.Click += new System.EventHandler(this.metroTextBox2_Click);
             // 
             // metroButton1
             // 
@@ -211,6 +214,7 @@ namespace CarLand.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1280, 788);
             this.Controls.Add(this.metroLink2);
             this.Controls.Add(this.metroLabel2);
@@ -227,6 +231,7 @@ namespace CarLand.Forms
             this.Text = "Login";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

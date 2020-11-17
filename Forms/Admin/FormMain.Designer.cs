@@ -586,7 +586,7 @@
             this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // FrmPrincipal
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -597,12 +597,13 @@
             this.Controls.Add(this.metroLinkLogout);
             this.Controls.Add(this.tabControl);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FrmPrincipal";
+            this.Name = "FormMain";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Text = "Administrador";
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.tabControl.ResumeLayout(false);
             this.tabControlPrincipal.ResumeLayout(false);
             this.panelSettings.ResumeLayout(false);

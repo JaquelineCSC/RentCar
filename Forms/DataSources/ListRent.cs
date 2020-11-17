@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using MetroFramework.Controls;
+using MetroFramework.Components;
 
 namespace CarLand.Forms.Client
 {
@@ -11,15 +12,33 @@ namespace CarLand.Forms.Client
     {
         public DataRowView RowView { get; set; }
 
-        public ListCar()
+        public ListCar(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
+        }
+
+        public void Load_Page()
+        {
+            //Theme
+            metroGrid1.Theme = this.StyleManager.Theme;
+            metroLink3.Theme = this.StyleManager.Theme;
+
+            //Style
+            metroGrid1.Style = this.StyleManager.Style;
+            metroLink3.Style = this.StyleManager.Style;
+
         }
 
         private void AluguelCliente_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'listRent1.Rent' table. You can move, or remove it, as needed.
-            this.rentTableAdapter1.Fill(this.listRent1.Rent);
+            // TODO: esta linha de código carrega dados na tabela 'listaRent.RentView'. Você pode movê-la ou removê-la conforme necessário.
+            this.rentViewTableAdapter1.Fill(this.listaRent.RentView);
+            // TODO: esta linha de código carrega dados na tabela 'listRentRamires.Rent'. Você pode movê-la ou removê-la conforme necessário.
+            this.rentTableAdapter.Fill(this.listRentRamires.Rent);
+            // TODO: This line of code loads data into the 'rentView._RentView' table. You can move, or remove it, as needed.
+            this.rentViewTableAdapter.Fill(this.rentView._RentView);
         }
 
         private void metroLink2_Click(object sender, EventArgs e)
@@ -31,18 +50,22 @@ namespace CarLand.Forms.Client
         {
             if (RowView != null)
             {
-                RentDetails detalhealuguel = new RentDetails();
-                detalhealuguel.Rent.Id = int.Parse(RowView["idRent"].ToString());
-                detalhealuguel.Rent.idCar = int.Parse(RowView["idCar"].ToString());
-                if (RowView["idEmployee"].ToString() != "")
+                RentDetails form = new RentDetails(this.StyleManager);
+                form.Rent.Id = int.Parse(RowView["Id Aluguel"].ToString());
+                Database.DBCar _appCar = new Database.DBCar();
+                Database.DBClient _appClient = new Database.DBClient();
+                var car = _appCar.GetCar(branch: RowView["Marca"].ToString(), model: RowView["Modelo"].ToString(), color: RowView["Cor"].ToString(), year: RowView["Ano"].ToString());
+                form.Rent.idCar = car.Id;
+                if (RowView["Funcionario"].ToString() != "")
                 {
-                    detalhealuguel.Rent.idEmployee = int.Parse(RowView["idEmployee"].ToString());
+                    Database.DBEmployee _appEmployee = new Database.DBEmployee();
+                    form.Rent.idEmployee = _appEmployee.GetEmployee(employeeName: RowView["Funcionario"].ToString()).Id;
                 }
-                detalhealuguel.Rent.idClient = int.Parse(RowView["idClient"].ToString());
-                detalhealuguel.Rent.PickUpDate = DateTime.Parse(RowView["PickUpTime"].ToString());
-                detalhealuguel.Rent.DropOffDate = DateTime.Parse(RowView["DropOfTime"].ToString());
-                detalhealuguel.Rent.Value = double.Parse(RowView["Amount"].ToString());
-                detalhealuguel.ShowDialog();
+                form.Rent.idClient = (_appClient.GeClientByName(RowView["Cliente"].ToString())).Id;
+                form.Rent.PickUpDate = DateTime.Parse(RowView["Data Retirada"].ToString());
+                form.Rent.DropOffDate = DateTime.Parse(RowView["Data Devolução"].ToString());
+                form.Rent.Value = double.Parse(RowView["Valor"].ToString());
+                form.ShowDialog();
             }
             else
             {
@@ -53,11 +76,6 @@ namespace CarLand.Forms.Client
         private void metroLink4_Click(object sender, EventArgs e)
         {
             AluguelCliente_Load(this, new EventArgs());
-        }
-
-        private void metroLink1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)

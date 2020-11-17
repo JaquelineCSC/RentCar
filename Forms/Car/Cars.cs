@@ -21,12 +21,14 @@ namespace CarLand.Forms
 
         public DBCar _appCar;
         public DBImage _appImage;
+        public DBAmount _appAmount;
 
         public Cars()
         {
             InitializeComponent();
             _appCar = new DBCar();
             _appImage = new DBImage();
+            _appAmount = new DBAmount();
             User = new CarLand.Domain.Entities.User();
             Client = new Domain.Entities.Client();
         }
@@ -162,8 +164,9 @@ namespace CarLand.Forms
 
         public MetroLabel addCifrao(CarLand.Domain.Entities.Car car)
         {
+            var amount = _appAmount.GetAmount(car.Id);
             MetroLabel Cifrao = new MetroLabel();
-            Cifrao.Text = metroLabel5.Text;
+            Cifrao.Text = $"R$ {amount.Amount}";
             Cifrao.Location = metroLabel5.Location;
             Cifrao.FontSize = metroLabel5.FontSize;
             Cifrao.FontWeight = MetroLabelWeight.Bold;
@@ -248,7 +251,7 @@ namespace CarLand.Forms
         private void metroLink3_Click(object sender, EventArgs e)
         {
             MetroLink link = (MetroLink)sender;
-            var car = _appCar.GetCar(link.TabIndex);
+            var car = _appCar.GetCar(id: link.TabIndex);
             Rent form = new Rent(car, User, Client);
             this.Hide();
             form.ShowDialog();
@@ -279,16 +282,21 @@ namespace CarLand.Forms
         {
             if (User.isAdmin)
             {
-                ProfileAdmin form = new ProfileAdmin();
+                ProfileAdmin form = new ProfileAdmin(this.StyleManager);
                 form.User = User;
                 form.ShowDialog();
             }
             else
             {
-                Profile form = new Profile();
+                Profile form = new Profile(this.StyleManager);
                 form.User = User;
                 form.ShowDialog();
             }
+        }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

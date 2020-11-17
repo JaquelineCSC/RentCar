@@ -239,7 +239,7 @@ namespace CarLand.Forms.Aluguel
                         this.Close();
                     }
                 }
-                catch(Exception ecp)
+                catch
                 {
                     MetroMessageBox.Show(this, "Erro Inesperado. Por favor entre em contato com seu administrador", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
                 }

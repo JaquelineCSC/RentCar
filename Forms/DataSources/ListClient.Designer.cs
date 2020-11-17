@@ -36,14 +36,9 @@
             this.metroTabControl1 = new MetroFramework.Controls.MetroTabControl();
             this.metroTabPage1 = new MetroFramework.Controls.MetroTabPage();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.nomeClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aniversárioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cNHDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clientCNHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.client = new CarLand.Forms.DataSets.Paulo.Client();
+            this.clientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.integradoraDataSet = new CarLand.Forms.DataSets.Ramires.IntegradoraDataSet();
             this.metroTabPage2 = new MetroFramework.Controls.MetroTabPage();
             this.metroLinkVoltar = new MetroFramework.Controls.MetroLink();
             this.metroLinkSalvar = new MetroFramework.Controls.MetroLink();
@@ -67,15 +62,25 @@
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.clientCNHTableAdapter = new CarLand.Forms.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter();
+            this.client = new CarLand.Forms.DataSets.Paulo.Client();
+            this.clientCNHBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.metroToolTip1 = new MetroFramework.Components.MetroToolTip();
             this.rentLink = new MetroFramework.Controls.MetroLink();
+            this.clientCNHTableAdapter = new CarLand.Forms.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter();
+            this.clientTableAdapter = new CarLand.Forms.DataSets.Ramires.IntegradoraDataSetTableAdapters.ClientTableAdapter();
+            this.listaCliente = new CarLand.ListaCliente();
+            this.clientCNHBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.clientCNHTableAdapter1 = new CarLand.ListaClienteTableAdapters.ClientCNHTableAdapter();
             this.metroTabControl1.SuspendLayout();
             this.metroTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet)).BeginInit();
             this.metroTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.client)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroTabControl1
@@ -86,7 +91,7 @@
             this.metroTabControl1.Location = new System.Drawing.Point(20, 60);
             this.metroTabControl1.Name = "metroTabControl1";
             this.metroTabControl1.SelectedIndex = 0;
-            this.metroTabControl1.Size = new System.Drawing.Size(874, 405);
+            this.metroTabControl1.Size = new System.Drawing.Size(743, 405);
             this.metroTabControl1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroTabControl1.TabIndex = 0;
             this.metroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -100,7 +105,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(866, 363);
+            this.metroTabPage1.Size = new System.Drawing.Size(735, 363);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Lista de Clientes";
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -128,13 +133,8 @@
             this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nomeClienteDataGridViewTextBoxColumn,
-            this.aniversárioDataGridViewTextBoxColumn,
-            this.telefoneDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.generoDataGridViewTextBoxColumn,
-            this.cNHDataGridViewTextBoxColumn});
-            this.metroGrid1.DataSource = this.clientCNHBindingSource;
+            this.emailDataGridViewTextBoxColumn});
+            this.metroGrid1.DataSource = this.clientCNHBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -146,7 +146,7 @@
             this.metroGrid1.EnableHeadersVisualStyles = false;
             this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            this.metroGrid1.Location = new System.Drawing.Point(-4, 19);
+            this.metroGrid1.Location = new System.Drawing.Point(44, 21);
             this.metroGrid1.Name = "metroGrid1";
             this.metroGrid1.ReadOnly = true;
             this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -160,69 +160,28 @@
             this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(876, 339);
+            this.metroGrid1.Size = new System.Drawing.Size(648, 339);
             this.metroGrid1.Style = MetroFramework.MetroColorStyle.Orange;
             this.metroGrid1.TabIndex = 2;
             this.metroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.metroGrid1.SelectionChanged += new System.EventHandler(this.metroGrid1_CellContentClick);
             // 
-            // nomeClienteDataGridViewTextBoxColumn
-            // 
-            this.nomeClienteDataGridViewTextBoxColumn.DataPropertyName = "Nome Cliente";
-            this.nomeClienteDataGridViewTextBoxColumn.FillWeight = 200F;
-            this.nomeClienteDataGridViewTextBoxColumn.HeaderText = "Nome Cliente";
-            this.nomeClienteDataGridViewTextBoxColumn.Name = "nomeClienteDataGridViewTextBoxColumn";
-            this.nomeClienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeClienteDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // aniversárioDataGridViewTextBoxColumn
-            // 
-            this.aniversárioDataGridViewTextBoxColumn.DataPropertyName = "Aniversário";
-            this.aniversárioDataGridViewTextBoxColumn.HeaderText = "Aniversário";
-            this.aniversárioDataGridViewTextBoxColumn.Name = "aniversárioDataGridViewTextBoxColumn";
-            this.aniversárioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // emailDataGridViewTextBoxColumn
             // 
             this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.FillWeight = 200F;
             this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
             this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
             this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 200;
             // 
-            // generoDataGridViewTextBoxColumn
+            // clientBindingSource
             // 
-            this.generoDataGridViewTextBoxColumn.DataPropertyName = "Genero";
-            this.generoDataGridViewTextBoxColumn.FillWeight = 120F;
-            this.generoDataGridViewTextBoxColumn.HeaderText = "Genero";
-            this.generoDataGridViewTextBoxColumn.Name = "generoDataGridViewTextBoxColumn";
-            this.generoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.generoDataGridViewTextBoxColumn.Width = 120;
+            this.clientBindingSource.DataMember = "Client";
+            this.clientBindingSource.DataSource = this.integradoraDataSet;
             // 
-            // cNHDataGridViewTextBoxColumn
+            // integradoraDataSet
             // 
-            this.cNHDataGridViewTextBoxColumn.DataPropertyName = "CNH";
-            this.cNHDataGridViewTextBoxColumn.HeaderText = "CNH";
-            this.cNHDataGridViewTextBoxColumn.Name = "cNHDataGridViewTextBoxColumn";
-            this.cNHDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clientCNHBindingSource
-            // 
-            this.clientCNHBindingSource.DataMember = "ClientCNH";
-            this.clientCNHBindingSource.DataSource = this.client;
-            // 
-            // client
-            // 
-            this.client.DataSetName = "Client";
-            this.client.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.integradoraDataSet.DataSetName = "IntegradoraDataSet";
+            this.integradoraDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // metroTabPage2
             // 
@@ -253,7 +212,7 @@
             this.metroTabPage2.HorizontalScrollbarSize = 10;
             this.metroTabPage2.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage2.Name = "metroTabPage2";
-            this.metroTabPage2.Size = new System.Drawing.Size(866, 363);
+            this.metroTabPage2.Size = new System.Drawing.Size(735, 363);
             this.metroTabPage2.TabIndex = 1;
             this.metroTabPage2.Text = "Novo";
             this.metroTabPage2.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -265,7 +224,7 @@
             // 
             this.metroLinkVoltar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkVoltar.Image")));
             this.metroLinkVoltar.ImageSize = 45;
-            this.metroLinkVoltar.Location = new System.Drawing.Point(697, 309);
+            this.metroLinkVoltar.Location = new System.Drawing.Point(591, 306);
             this.metroLinkVoltar.Name = "metroLinkVoltar";
             this.metroLinkVoltar.Size = new System.Drawing.Size(46, 43);
             this.metroLinkVoltar.TabIndex = 24;
@@ -280,7 +239,7 @@
             this.metroLinkSalvar.ForeColor = System.Drawing.Color.Black;
             this.metroLinkSalvar.Image = ((System.Drawing.Image)(resources.GetObject("metroLinkSalvar.Image")));
             this.metroLinkSalvar.ImageSize = 40;
-            this.metroLinkSalvar.Location = new System.Drawing.Point(749, 309);
+            this.metroLinkSalvar.Location = new System.Drawing.Point(658, 306);
             this.metroLinkSalvar.Name = "metroLinkSalvar";
             this.metroLinkSalvar.Size = new System.Drawing.Size(50, 43);
             this.metroLinkSalvar.Style = MetroFramework.MetroColorStyle.Orange;
@@ -397,6 +356,7 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
+            this.email.PromptText = "exemplo@email.com";
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -430,6 +390,7 @@
             this.phone.Multiline = true;
             this.phone.Name = "phone";
             this.phone.PasswordChar = '\0';
+            this.phone.PromptText = "(35) X XXXX-XXXX";
             this.phone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.phone.SelectedText = "";
             this.phone.SelectionLength = 0;
@@ -463,6 +424,7 @@
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
+            this.cnh.PromptText = "XXXXXXXXXXX";
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -496,6 +458,7 @@
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
+            this.cpf.PromptText = "XXX.XXX.XXX-XX";
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;
@@ -661,9 +624,15 @@
             this.metroLabel1.Text = "Nome:";
             this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // clientCNHTableAdapter
+            // client
             // 
-            this.clientCNHTableAdapter.ClearBeforeFill = true;
+            this.client.DataSetName = "Client";
+            this.client.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientCNHBindingSource
+            // 
+            this.clientCNHBindingSource.DataMember = "ClientCNH";
+            this.clientCNHBindingSource.DataSource = this.client;
             // 
             // metroToolTip1
             // 
@@ -675,7 +644,7 @@
             // 
             this.rentLink.Image = ((System.Drawing.Image)(resources.GetObject("rentLink.Image")));
             this.rentLink.ImageSize = 45;
-            this.rentLink.Location = new System.Drawing.Point(812, 40);
+            this.rentLink.Location = new System.Drawing.Point(691, 40);
             this.rentLink.Name = "rentLink";
             this.rentLink.Size = new System.Drawing.Size(55, 52);
             this.rentLink.TabIndex = 1;
@@ -684,18 +653,40 @@
             this.rentLink.UseSelectable = true;
             this.rentLink.Click += new System.EventHandler(this.rentLink_Click);
             // 
-            // Clientes
+            // clientCNHTableAdapter
+            // 
+            this.clientCNHTableAdapter.ClearBeforeFill = true;
+            // 
+            // clientTableAdapter
+            // 
+            this.clientTableAdapter.ClearBeforeFill = true;
+            // 
+            // listaCliente
+            // 
+            this.listaCliente.DataSetName = "ListaCliente";
+            this.listaCliente.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clientCNHBindingSource1
+            // 
+            this.clientCNHBindingSource1.DataMember = "ClientCNH";
+            this.clientCNHBindingSource1.DataSource = this.listaCliente;
+            // 
+            // clientCNHTableAdapter1
+            // 
+            this.clientCNHTableAdapter1.ClearBeforeFill = true;
+            // 
+            // Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackImage = ((System.Drawing.Image)(resources.GetObject("$this.BackImage")));
             this.BackImagePadding = new System.Windows.Forms.Padding(-19, 6, -1, -1);
             this.BackMaxSize = 210;
-            this.ClientSize = new System.Drawing.Size(914, 485);
+            this.ClientSize = new System.Drawing.Size(783, 485);
             this.Controls.Add(this.rentLink);
             this.Controls.Add(this.metroTabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Clientes";
+            this.Name = "Clients";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -703,10 +694,14 @@
             this.metroTabControl1.ResumeLayout(false);
             this.metroTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.client)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.integradoraDataSet)).EndInit();
             this.metroTabPage2.ResumeLayout(false);
             this.metroTabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.client)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientCNHBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -739,16 +734,17 @@
         private MetroFramework.Controls.MetroGrid metroGrid1;
         private MetroFramework.Controls.MetroLink metroLinkVoltar;
         private MetroFramework.Controls.MetroLink metroLinkSalvar;
-        private CarLand.Forms.DataSets.Paulo.Client client;
-        private System.Windows.Forms.BindingSource clientCNHBindingSource;
-        private CarLand.Forms.DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter;
         private MetroFramework.Components.MetroToolTip metroToolTip1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aniversárioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn generoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cNHDataGridViewTextBoxColumn;
         private MetroFramework.Controls.MetroLink rentLink;
+        private DataSets.Paulo.Client client;
+        private System.Windows.Forms.BindingSource clientCNHBindingSource;
+        private DataSets.Paulo.ClientTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter;
+        private DataSets.Ramires.IntegradoraDataSet integradoraDataSet;
+        private System.Windows.Forms.BindingSource clientBindingSource;
+        private DataSets.Ramires.IntegradoraDataSetTableAdapters.ClientTableAdapter clientTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private ListaCliente listaCliente;
+        private System.Windows.Forms.BindingSource clientCNHBindingSource1;
+        private ListaClienteTableAdapters.ClientCNHTableAdapter clientCNHTableAdapter1;
     }
 }

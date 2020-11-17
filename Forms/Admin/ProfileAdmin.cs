@@ -1,6 +1,7 @@
 ﻿using CarLand.Database;
 using CarLand.Domain.Entities;
 using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -19,12 +20,33 @@ namespace CarLand.Forms.Admin
         public User User { get; set; }
         public DBEmployee _appEmployee { get; set; }
         public DBUser _appUser { get; set; }
-        public ProfileAdmin()
+        public ProfileAdmin(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             User = new User();
             _appUser = new DBUser();
             _appEmployee = new DBEmployee();
+        }
+
+        public void Load_Page()
+        {
+            name.Theme = this.StyleManager.Theme;
+            password.Theme = this.StyleManager.Theme;
+            newPassword.Theme = this.StyleManager.Theme;
+            newConfirmPassword.Theme = this.StyleManager.Theme;
+            user.Theme = this.StyleManager.Theme;
+
+            metroLinkSalvar.Theme = this.StyleManager.Theme;
+            metroLinkVoltar.Theme = this.StyleManager.Theme;
+
+            metroLabel1.Theme = this.StyleManager.Theme;
+            metroLabel2.Theme = this.StyleManager.Theme;
+            metroLabel3.Theme = this.StyleManager.Theme;
+            metroLabel5.Theme = this.StyleManager.Theme;
+            metroLabel7.Theme = this.StyleManager.Theme;
+
         }
 
         private void metroLinkVoltar_Click(object sender, EventArgs e)

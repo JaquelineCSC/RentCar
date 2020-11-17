@@ -44,6 +44,12 @@ namespace CarLand.Database
             return _context.GetClient(query);
         }
 
+        public Client GeClientByName(string name)
+        {
+            query = $"Select * from Client where Clientname = '{name}'";
+            return _context.GetClient(query);
+        }
+
         public ClientCardCNH GetClientCardCNHByUser(int idUser)
         {
             query = $"select c.*, cd.*, cn.* from Client c inner join Card cd on cd.idClient = c.idClient inner join CNH cn on cn.idCNH = c.idCNH where c.idUser = {idUser}";

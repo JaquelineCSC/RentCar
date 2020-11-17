@@ -2,6 +2,7 @@
 using CarLand.Domain.Entities;
 using MetroFramework;
 using MetroFramework.Forms;
+using MetroFramework.Components;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,12 +21,26 @@ namespace CarLand.Forms.Client
         public DBClient _appClient { get; set; }
         public DBCard _appCard { get; set; }
 
-        public NewCard()
+        public NewCard(MetroStyleManager manager)
         {
             InitializeComponent();
             User = new User();
             _appClient = new DBClient();
             _appCard = new DBCard();
+            this.StyleManager = manager;
+            Style_Page();
+        }
+
+        private void Style_Page()
+        {
+            OwnerCard.Theme = this.StyleManager.Theme;
+            numberCard.Theme = this.StyleManager.Theme;
+            CVC.Theme = this.StyleManager.Theme;
+            month.Theme = this.StyleManager.Theme;
+            year.Theme = this.StyleManager.Theme;
+            CvcExplain.Theme = this.StyleManager.Theme;
+            metroLabel6.Theme = this.StyleManager.Theme;
+            
         }
 
         private void NewCard_Load(object sender, EventArgs e)

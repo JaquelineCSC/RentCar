@@ -1,5 +1,6 @@
 ﻿using CarLand.Database;
 using MetroFramework;
+using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
@@ -52,6 +54,7 @@ namespace CarLand.Forms.Car
                 {
                     var pic = _appImage.GeneratePictureBox(img, x, y);
                     x += pic.Width + 23;
+                    pic.Click += new EventHandler(AddMain); 
                     maxHeight = Math.Max(pic.Height, maxHeight);
                     if (x > metroPanel3.ClientSize.Width - 100)
                     {
@@ -61,7 +64,16 @@ namespace CarLand.Forms.Car
                     this.metroPanel3.Controls.Add(pic);
                 }
             }
+        }
 
+        public void AddMain(object sender, EventArgs e)
+        {
+            var otherImages = metroPanel3.Controls.OfType<PictureBox>().Where(x => x.BorderStyle == System.Windows.Forms.BorderStyle.Fixed3D).ToList();
+            otherImages.ForEach(x => x.BorderStyle = System.Windows.Forms.BorderStyle.None);
+
+            PictureBox pic = (PictureBox)sender;
+            pic.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            verificarPreenchimento(this, new EventArgs());
         }
 
         private void verificarPreenchimento(object sender, EventArgs e)
@@ -75,7 +87,7 @@ namespace CarLand.Forms.Car
             var fuel = metroPanel2.Controls.OfType<RadioButton>().Where(x => x.Checked == true).FirstOrDefault();
             var images = metroPanel3.Controls.OfType<PictureBox>().ToList();
 
-            if (branch != "" && model != "" && year != "" && color != "" && doors != null && fuel != null && images.Any())
+            if (branch != "" && model != "" && year != "" && color != "" && doors != null && fuel != null && images.Any() && images.Where(x=> x.BorderStyle == System.Windows.Forms.BorderStyle.Fixed3D).Any())
             {
                 metroLinkSalvar.Enabled = true;
                 Car.Board = board;
@@ -118,5 +130,42 @@ namespace CarLand.Forms.Car
                 MetroMessageBox.Show(this, "Erro inesperado. Por favor entre em contato com seu administrador", "Erro" ,MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
+
+        private void VerificarPreenchimentoModelo(object sender, KeyEventArgs e)
+        {
+            MetroTextBox x = (MetroTextBox)sender;
+            if (x.Name == metroTextBox1.Name)
+            {
+                Regex rgx = new Regex("[^\\w\\.-]");
+                metroTextBox1.Text = rgx.Replace(metroTextBox1.Text, "");
+            }
+        }
+
+        private void VerificarPreenchimentoCor(object sender, KeyEventArgs e)
+        {
+                MetroTextBox x = (MetroTextBox)sender;
+                if (x.Name == metroTextBox2.Name)
+                {
+                    Regex rgx = new Regex("[^a-zA-Z -]");
+                    metroTextBox2.Text = rgx.Replace(metroTextBox2.Text, "");
+                }
+         
+   
+        }
+        private void VerificarPreenchimentoPlaca(object sender, KeyEventArgs e)
+        {
+            MetroTextBox x = (MetroTextBox)sender;
+            if (x.Name == metroTextBox3.Name)
+            {
+                Regex rgx = new Regex("[^A-Z0-9]");
+                metroTextBox3.Text = rgx.Replace(metroTextBox3.Text, "");
+            }
+        }
+
+        private void Create_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+

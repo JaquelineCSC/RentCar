@@ -7,19 +7,19 @@ namespace CarLand.Database
         Connection _context = new Connection();
         private string query;
 
-        public void Insert(AmountCar amount)
+        public void Insert(Domain.Entities.AmountCar amount)
         {
-            query = $"insert into AmountsCar(idCar, Amount) values ({amount.idCar}, {amount.Amount})";
+            query = $"insert into AmountsCar(idCar, Amount) values ({amount.idCar}, {(float)amount.Amount})";
             _context.CommandWithoutReturn(query);
         }
 
-        public void Update(AmountCar amount)
+        public void Update(Domain.Entities.AmountCar amount)
         {
-            query = $@"update AmountsCar set Amount = {amount.Amount} where idCar = {amount.idCar}";
+            query = $@"update AmountsCar set Amount = {(float)amount.Amount} where idCar = {amount.idCar}";
             _context.CommandWithoutReturn(query);
         }
 
-        public AmountCar GetAmount(int idCar)
+        public Domain.Entities.AmountCar GetAmount(int idCar)
         {
             query = $"select * from AmountsCar where idCar = {idCar}";
             return _context.GetAmount(query);

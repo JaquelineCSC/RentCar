@@ -1,5 +1,8 @@
-﻿using CarLand.Forms.DataSets.Paulo;
+﻿using CarLand.Domain;
+using CarLand.Domain.Interface;
+using CarLand.Forms.DataSets.Paulo;
 using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using Microsoft.Build.Framework.XamlTypes;
 using System;
@@ -20,12 +23,26 @@ namespace CarLand.Forms.Admin
         private int i;
         public Database.DBCar Car { get; set; }
         public Database.DBRent Rent { get; set; }
+        public Colors IColors { get; set; }
 
-        public Reports()
+        public Reports(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            IColors = new Colors();
+            Load_Page();
             Rent = new Database.DBRent();
             Car = new Database.DBCar();
+        }
+
+        public void Load_Page()
+        {
+            //Theme
+            metroComboBox1.Theme = this.StyleManager.Theme;
+
+            //Style
+            metroComboBox1.Style = this.StyleManager.Style;
+            metroButton1.BackColor = IColors.GetColor(this.StyleManager.Style);
         }
 
         private void metroButton1_Click(object sender, EventArgs e)
@@ -241,6 +258,11 @@ namespace CarLand.Forms.Admin
             {
                 ev.HasMorePages = false;
             }
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

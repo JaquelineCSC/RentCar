@@ -47,6 +47,7 @@ namespace CarLand.Database
             img.idCar = carId;
             img.Name = DateTime.Now.Ticks + "_" + Path.GetFileName(image.Name);
             img.Path = Servers.PathImages;
+            img.Main = image.BorderStyle == BorderStyle.Fixed3D ? true : false;
             var extensions = Path.GetExtension(image.Name);
             if (extensions.Contains(".jp"))
             {

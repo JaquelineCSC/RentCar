@@ -76,6 +76,7 @@
             this.OwnerCard.Multiline = true;
             this.OwnerCard.Name = "OwnerCard";
             this.OwnerCard.PasswordChar = '\0';
+            this.OwnerCard.PromptText = "Nome do Titular do Cartão";
             this.OwnerCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.OwnerCard.SelectedText = "";
             this.OwnerCard.SelectionLength = 0;
@@ -113,6 +114,7 @@
             this.CVC.Multiline = true;
             this.CVC.Name = "CVC";
             this.CVC.PasswordChar = '\0';
+            this.CVC.PromptText = "CVC";
             this.CVC.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CVC.SelectedText = "";
             this.CVC.SelectionLength = 0;
@@ -151,6 +153,7 @@
             this.numberCard.Multiline = true;
             this.numberCard.Name = "numberCard";
             this.numberCard.PasswordChar = '\0';
+            this.numberCard.PromptText = "Numero do Cartão";
             this.numberCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.numberCard.SelectedText = "";
             this.numberCard.SelectionLength = 0;

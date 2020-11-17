@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework.Components;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,16 +18,30 @@ namespace CarLand.Forms.Car
         public Database.DBCar _appCar { get; set; }
         public Database.DBAmount _appAmount { get; set; }
 
-        public CarAmount()
+        public CarAmount(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             _appCar = new Database.DBCar();
             _appAmount = new Database.DBAmount();
         }
 
+        public void Load_Page()
+        {
+            //Theme
+            metroGrid1.Theme = this.StyleManager.Theme;
+            metroLink3.Theme = this.StyleManager.Theme;
+
+            //Style
+            metroGrid1.Style = this.StyleManager.Style;
+            metroLink3.Style = this.StyleManager.Style;
+        }
+
         private void CarAmount_Load(object sender, EventArgs e)
         {
-            this.carTableAdapter.Fill(this.listCars.Car);
+            // TODO: This line of code loads data into the 'amountCar._AmountCar' table. You can move, or remove it, as needed.
+            this.amountCarTableAdapter.Fill(this.amountCar._AmountCar);
         }
 
         private void rowViewSelect(object sender, EventArgs e)
@@ -39,8 +54,8 @@ namespace CarLand.Forms.Car
 
         private void metroLink3_Click(object sender, EventArgs e)
         {
-            SetValueCar form = new SetValueCar();
-            Domain.Entities.Car car = _appCar.GetCar(int.Parse(RowView["idCar"].ToString()));
+            SetValueCar form = new SetValueCar(this.StyleManager);
+            Domain.Entities.Car car = _appCar.GetCar(id: int.Parse(RowView["idCar"].ToString()));
             form.Car = car;
             var isNew = _appAmount.GetAmount(car.Id);
             if(isNew.idCar != 0)

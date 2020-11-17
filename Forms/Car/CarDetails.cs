@@ -24,7 +24,7 @@ namespace CarLand.Forms
         public CarDetails(int carId)
         {
             InitializeComponent();
-            Car = _appCar.GetCar(carId);
+            Car = _appCar.GetCar(id: carId);
             Images = _appImage.GetImages(Car.Id);
         }
 
