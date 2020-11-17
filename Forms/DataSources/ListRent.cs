@@ -63,6 +63,18 @@ namespace CarLand.Forms.Client
                 form.Rent.PickUpDate = DateTime.Parse(RowView["Retirada"].ToString());
                 form.Rent.DropOffDate = DateTime.Parse(RowView["Devolução"].ToString());
                 form.Rent.Value = double.Parse(RowView["Valor"].ToString().Replace("R$", ""));
+                switch (RowView["Tipo Pagamento"].ToString())
+                {
+                    case "1":
+                        form.Rent.PaymentType = Domain.Entities.PaymentTypeEnum.Billet;
+                        break;
+                    case "2":
+                        form.Rent.PaymentType = Domain.Entities.PaymentTypeEnum.Money;
+                        break;
+                    case "3":
+                        form.Rent.PaymentType = Domain.Entities.PaymentTypeEnum.Card;
+                        break;
+                }
                 form.ShowDialog();
             }
             else

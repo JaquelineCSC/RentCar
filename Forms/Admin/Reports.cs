@@ -11,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -100,52 +101,61 @@ namespace CarLand.Forms.Admin
             linha = "Cod";
             posicaoVertical = margemSuperior + contador * alturaFonte;
             ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
-            linha = "Cod Carro";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 100, posicaoVertical);
+            linha = "| Cod Carro";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 50, posicaoVertical);
             contador += 1;
-            linha = "Cod Cliente";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 300, posicaoVertical);
+            linha = "| Cod Cliente";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 160, posicaoVertical);
             contador += 1;
-            linha = "Data Retirada";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 400, posicaoVertical);
+            linha = "| Data Retirada";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 290, posicaoVertical);
             contador += 1;
-            linha = "Data Devolução";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 500, posicaoVertical);
+            linha = "| Data Devolução";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 428, posicaoVertical);
             contador += 1;
-            linha = "Valor";
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 600, posicaoVertical);
+            linha = "| Valor";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 588, posicaoVertical);
             contador += 1;
-            linha = "-------------------------------------------------------------------------------------------------";
+            linha = "| Pagamento";
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 652, posicaoVertical);
+            contador += 1;
+            linha = "-------------------------------------------------------------------------------------------------------------------";
             posicaoVertical = margemSuperior + contador * alturaFonte;
-            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
+            ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, 140);
             contador++;
             DataSet ds = new DataSet();
             ds = Rent.Report();
             if (ds.Tables[0] != null)
             {
+                posicaoVertical = 120;
                 while (i < ds.Tables[0].Rows.Count && contador < linhaPorPagina)
                 {
                     DataRow item = ds.Tables[0].Rows[i];
                     linha = item["idRent"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
+                    posicaoVertical = posicaoVertical + 40;
                     ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
                     linha = item["idCar"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 200, posicaoVertical);
+                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 50, posicaoVertical);
                     linha = item["idClient"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 300, posicaoVertical);
-                    linha = item["PickUpTime"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 400, posicaoVertical);
-                    linha = item["DropOfTime"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
-                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 500, posicaoVertical);
-                    linha = item["Amount"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
+                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 160, posicaoVertical);
+                    linha = DateTime.Parse(item["PickUpTime"].ToString()).ToString("dd/MM/yyyy");
+                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 290, posicaoVertical);
+                    linha = DateTime.Parse(item["DropOfTime"].ToString()).ToString("dd/MM/yyyy");
+                    ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 428, posicaoVertical);
+                    linha = item["Amount"].ToString().Substring(0, item["Amount"].ToString().Length - 2);
                     ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 600, posicaoVertical);
-                    linha = item["PaymentType"].ToString();
-                    posicaoVertical = margemSuperior + contador * alturaFonte;
+                    switch (item["PaymentType"].ToString())
+                    {
+                        case "1":
+                            linha = "Boleto";
+                            break;
+                        case "2":
+                            linha = "Dinheiro";
+                            break;
+                        case "3":
+                            linha = "Cartão";
+                            break;
+                    }
                     ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 700, posicaoVertical);
                     contador += 2;
                     i++;
@@ -155,7 +165,7 @@ namespace CarLand.Forms.Admin
             {
                 linha = "Total de Alugueis: " + i.ToString();
                 posicaoVertical = margemSuperior + contador * alturaFonte;
-                ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda + 100, posicaoVertical);
+                ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsqueda, posicaoVertical);
             }
             else MessageBox.Show("Não existe Aluguel cadastrada!");
             if (contador > linhaPorPagina)
@@ -183,7 +193,7 @@ namespace CarLand.Forms.Admin
             linhaPorPagina = Convert.ToInt32(ev.MarginBounds.Height / alturaFonte);
             //Título
             linha = "Lista de Carros";
-            posicaoVertical = margemSuperior + contador ;
+            posicaoVertical = margemSuperior + contador;
             ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsquerda, posicaoVertical);
             contador += 4;
             linha = "Código";
@@ -215,11 +225,12 @@ namespace CarLand.Forms.Admin
             ds = Car.Report();
             if (ds.Tables[0] != null)
             {
+                posicaoVertical = 120;
                 while (i < ds.Tables[0].Rows.Count && contador < linhaPorPagina)
                 {
                     DataRow item = ds.Tables[0].Rows[i];
                     linha = item["idCar"].ToString();
-                    posicaoVertical = 140 + 40;
+                    posicaoVertical = posicaoVertical + 40;
                     ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsquerda, posicaoVertical);
                     linha = item["Branch"].ToString();
                     ev.Graphics.DrawString(linha, fonte, Brushes.Black, margemEsquerda + 80, posicaoVertical);
