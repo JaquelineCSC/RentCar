@@ -35,6 +35,8 @@ namespace CarLand.Forms.Client
         {
             // TODO: This line of code loads data into the 'rentView._RentView' table. You can move, or remove it, as needed.
             this.rentViewTableAdapter.Fill(this.rentView._RentView);
+            // TODO: This line of code loads data into the 'rentView._RentView' table. You can move, or remove it, as needed.
+            this.rentViewTableAdapter.Fill(this.rentView._RentView);
         }
 
         private void metroLink2_Click(object sender, EventArgs e)
@@ -58,9 +60,9 @@ namespace CarLand.Forms.Client
                     form.Rent.idEmployee = _appEmployee.GetEmployee(employeeName: RowView["Funcionario"].ToString()).Id;
                 }
                 form.Rent.idClient = (_appClient.GeClientByName(RowView["Cliente"].ToString())).Id;
-                form.Rent.PickUpDate = DateTime.Parse(RowView["Data Retirada"].ToString());
-                form.Rent.DropOffDate = DateTime.Parse(RowView["Data Devolução"].ToString());
-                form.Rent.Value = double.Parse(RowView["Valor"].ToString());
+                form.Rent.PickUpDate = DateTime.Parse(RowView["Retirada"].ToString());
+                form.Rent.DropOffDate = DateTime.Parse(RowView["Devolução"].ToString());
+                form.Rent.Value = double.Parse(RowView["Valor"].ToString().Replace("R$", ""));
                 form.ShowDialog();
             }
             else

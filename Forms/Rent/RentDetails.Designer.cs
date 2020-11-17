@@ -784,6 +784,7 @@
             this.image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.image.TabIndex = 39;
             this.image.TabStop = false;
+            this.image.Click += new System.EventHandler(this.image_Click);
             // 
             // RentDetails
             // 

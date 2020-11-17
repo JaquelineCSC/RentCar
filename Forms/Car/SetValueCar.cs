@@ -63,6 +63,7 @@ namespace CarLand.Forms.Car
                         _appAmount.Update(amount);
                         MetroMessageBox.Show(this, "Valor Editado", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Question, 100);
                     }
+                    this.Close();
                 }
                 catch
                 {

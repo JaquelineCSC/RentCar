@@ -12,7 +12,7 @@
               <DbSource ConnectionRef="IntegradoraConnectionString (Settings)" DbObjectName="Integradora.dbo.RentView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT [Id Aluguel], Marca, Modelo, Ano, Cor, Funcionario, Cliente, [Data Retirada], [Data Devolução], Valor, [Final Cartão], PaymentType FROM dbo.RentView</CommandText>
+                    <CommandText>SELECT [Id Aluguel], Marca, Modelo, Ano, Cor, Funcionario, Cliente, Retirada, Devolução, Valor, [Final Cartão], [Tipo Pagamento] FROM dbo.RentView</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -26,11 +26,11 @@
               <Mapping SourceColumn="Cor" DataSetColumn="Cor" />
               <Mapping SourceColumn="Funcionario" DataSetColumn="Funcionario" />
               <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
-              <Mapping SourceColumn="Data Retirada" DataSetColumn="Data Retirada" />
-              <Mapping SourceColumn="Data Devolução" DataSetColumn="Data Devolução" />
+              <Mapping SourceColumn="Retirada" DataSetColumn="Retirada" />
+              <Mapping SourceColumn="Devolução" DataSetColumn="Devolução" />
               <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
               <Mapping SourceColumn="Final Cartão" DataSetColumn="Final Cartão" />
-              <Mapping SourceColumn="PaymentType" DataSetColumn="PaymentType" />
+              <Mapping SourceColumn="Tipo Pagamento" DataSetColumn="Tipo Pagamento" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -68,35 +68,41 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Funcionario" msprop:Generator_ColumnVarNameInTable="columnFuncionario" msprop:Generator_ColumnPropNameInRow="Funcionario" msprop:Generator_ColumnPropNameInTable="FuncionarioColumn" msprop:Generator_UserColumnName="Funcionario">
+              <xs:element name="Funcionario" msprop:Generator_ColumnVarNameInTable="columnFuncionario" msprop:Generator_ColumnPropNameInRow="Funcionario" msprop:Generator_ColumnPropNameInTable="FuncionarioColumn" msprop:Generator_UserColumnName="Funcionario" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente">
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Data_x0020_Retirada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnData_Retirada" msprop:Generator_ColumnPropNameInRow="Data_Retirada" msprop:Generator_ColumnPropNameInTable="Data_RetiradaColumn" msprop:Generator_UserColumnName="Data Retirada" minOccurs="0">
+              <xs:element name="Retirada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnRetirada" msprop:Generator_ColumnPropNameInRow="Retirada" msprop:Generator_ColumnPropNameInTable="RetiradaColumn" msprop:Generator_UserColumnName="Retirada" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Data_x0020_Devolução" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnData_Devolução" msprop:Generator_ColumnPropNameInRow="Data_Devolução" msprop:Generator_ColumnPropNameInTable="Data_DevoluçãoColumn" msprop:Generator_UserColumnName="Data Devolução" minOccurs="0">
+              <xs:element name="Devolução" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnDevolução" msprop:Generator_ColumnPropNameInRow="Devolução" msprop:Generator_ColumnPropNameInTable="DevoluçãoColumn" msprop:Generator_UserColumnName="Devolução" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" />
+              <xs:element name="Valor" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="Final_x0020_Cartão" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFinal_Cartão" msprop:Generator_ColumnPropNameInRow="Final_Cartão" msprop:Generator_ColumnPropNameInTable="Final_CartãoColumn" msprop:Generator_UserColumnName="Final Cartão" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -104,7 +110,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PaymentType" msprop:Generator_ColumnVarNameInTable="columnPaymentType" msprop:Generator_ColumnPropNameInRow="PaymentType" msprop:Generator_ColumnPropNameInTable="PaymentTypeColumn" msprop:Generator_UserColumnName="PaymentType" type="xs:int" minOccurs="0" />
+              <xs:element name="Tipo_x0020_Pagamento" msprop:Generator_ColumnVarNameInTable="columnTipo_Pagamento" msprop:Generator_ColumnPropNameInRow="Tipo_Pagamento" msprop:Generator_ColumnPropNameInTable="Tipo_PagamentoColumn" msprop:Generator_UserColumnName="Tipo Pagamento" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

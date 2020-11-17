@@ -270,11 +270,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ListCars.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DataSets\Paulo\listRent.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>listRent.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DataSets\Ramires\IntegradoraDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -438,17 +433,6 @@
     </None>
     <None Include="Forms\DataSets\Paulo\ListCars.xss">
       <DependentUpon>ListCars.xsd</DependentUpon>
-    </None>
-    <None Include="Forms\DataSets\Paulo\listRent.xsc">
-      <DependentUpon>listRent.xsd</DependentUpon>
-    </None>
-    <None Include="Forms\DataSets\Paulo\listRent.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>listRent.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Forms\DataSets\Paulo\listRent.xss">
-      <DependentUpon>listRent.xsd</DependentUpon>
     </None>
     <None Include="Forms\DataSets\Ramires\IntegradoraDataSet.xsc">
       <DependentUpon>IntegradoraDataSet.xsd</DependentUpon>

@@ -35,13 +35,14 @@
             // card
             // 
             this.card.AutoSize = true;
-            this.card.Location = new System.Drawing.Point(36, 74);
+            this.card.Location = new System.Drawing.Point(34, 82);
             this.card.Name = "card";
             this.card.Size = new System.Drawing.Size(46, 15);
             this.card.TabIndex = 0;
             this.card.Text = "card";
             this.card.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.card.UseSelectable = true;
+            this.card.Visible = false;
             // 
             // metroButton1
             // 

@@ -64,20 +64,5 @@ namespace CarLand.Database
             query = "SELECT * FROM Car where Available = 1 and Status = 1";
             return  _context.ListCars(query);
         }
-
-        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
-        {
-            return new Domain.Entities.Car()
-            {
-                Id = reader.GetInt32(1),
-                Color = reader.GetString(2),
-                Board = reader.GetString(3),
-                Model = reader.GetString(4),
-                Fuel = reader.GetString(5),
-                Doors = reader.GetInt32(6),
-                Year = reader.GetInt32(7),
-                Branch = reader.GetString(8)
-            };
-        }
     }
 }

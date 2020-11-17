@@ -293,15 +293,15 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             private global::System.Data.DataColumn columnCliente;
             
-            private global::System.Data.DataColumn columnData_Retirada;
+            private global::System.Data.DataColumn columnRetirada;
             
-            private global::System.Data.DataColumn columnData_Devolução;
+            private global::System.Data.DataColumn columnDevolução;
             
             private global::System.Data.DataColumn columnValor;
             
             private global::System.Data.DataColumn columnFinal_Cartão;
             
-            private global::System.Data.DataColumn columnPaymentType;
+            private global::System.Data.DataColumn columnTipo_Pagamento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -394,17 +394,17 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Data_RetiradaColumn {
+            public global::System.Data.DataColumn RetiradaColumn {
                 get {
-                    return this.columnData_Retirada;
+                    return this.columnRetirada;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Data_DevoluçãoColumn {
+            public global::System.Data.DataColumn DevoluçãoColumn {
                 get {
-                    return this.columnData_Devolução;
+                    return this.columnDevolução;
                 }
             }
             
@@ -426,9 +426,9 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn PaymentTypeColumn {
+            public global::System.Data.DataColumn Tipo_PagamentoColumn {
                 get {
-                    return this.columnPaymentType;
+                    return this.columnTipo_Pagamento;
                 }
             }
             
@@ -469,7 +469,7 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RentViewRow AddRentViewRow(int Id_Aluguel, string Marca, string Modelo, int Ano, string Cor, string Funcionario, string Cliente, string Data_Retirada, string Data_Devolução, decimal Valor, string Final_Cartão, int PaymentType) {
+            public RentViewRow AddRentViewRow(int Id_Aluguel, string Marca, string Modelo, int Ano, string Cor, string Funcionario, string Cliente, string Retirada, string Devolução, string Valor, string Final_Cartão, int Tipo_Pagamento) {
                 RentViewRow rowRentViewRow = ((RentViewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Id_Aluguel,
@@ -479,11 +479,11 @@ namespace CarLand.Forms.DataSets.Paulo {
                         Cor,
                         Funcionario,
                         Cliente,
-                        Data_Retirada,
-                        Data_Devolução,
+                        Retirada,
+                        Devolução,
                         Valor,
                         Final_Cartão,
-                        PaymentType};
+                        Tipo_Pagamento};
                 rowRentViewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRentViewRow);
                 return rowRentViewRow;
@@ -520,11 +520,11 @@ namespace CarLand.Forms.DataSets.Paulo {
                 this.columnCor = base.Columns["Cor"];
                 this.columnFuncionario = base.Columns["Funcionario"];
                 this.columnCliente = base.Columns["Cliente"];
-                this.columnData_Retirada = base.Columns["Data Retirada"];
-                this.columnData_Devolução = base.Columns["Data Devolução"];
+                this.columnRetirada = base.Columns["Retirada"];
+                this.columnDevolução = base.Columns["Devolução"];
                 this.columnValor = base.Columns["Valor"];
                 this.columnFinal_Cartão = base.Columns["Final Cartão"];
-                this.columnPaymentType = base.Columns["PaymentType"];
+                this.columnTipo_Pagamento = base.Columns["Tipo Pagamento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -544,16 +544,16 @@ namespace CarLand.Forms.DataSets.Paulo {
                 base.Columns.Add(this.columnFuncionario);
                 this.columnCliente = new global::System.Data.DataColumn("Cliente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCliente);
-                this.columnData_Retirada = new global::System.Data.DataColumn("Data Retirada", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnData_Retirada);
-                this.columnData_Devolução = new global::System.Data.DataColumn("Data Devolução", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnData_Devolução);
-                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(decimal), null, global::System.Data.MappingType.Element);
+                this.columnRetirada = new global::System.Data.DataColumn("Retirada", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRetirada);
+                this.columnDevolução = new global::System.Data.DataColumn("Devolução", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDevolução);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnValor);
                 this.columnFinal_Cartão = new global::System.Data.DataColumn("Final Cartão", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFinal_Cartão);
-                this.columnPaymentType = new global::System.Data.DataColumn("PaymentType", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPaymentType);
+                this.columnTipo_Pagamento = new global::System.Data.DataColumn("Tipo Pagamento", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo_Pagamento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId_Aluguel}, true));
                 this.columnId_Aluguel.AllowDBNull = false;
@@ -561,15 +561,14 @@ namespace CarLand.Forms.DataSets.Paulo {
                 this.columnMarca.MaxLength = 30;
                 this.columnModelo.MaxLength = 50;
                 this.columnCor.MaxLength = 30;
-                this.columnFuncionario.AllowDBNull = false;
                 this.columnFuncionario.MaxLength = 150;
-                this.columnCliente.AllowDBNull = false;
                 this.columnCliente.MaxLength = 50;
-                this.columnData_Retirada.ReadOnly = true;
-                this.columnData_Retirada.MaxLength = 4000;
-                this.columnData_Devolução.ReadOnly = true;
-                this.columnData_Devolução.MaxLength = 4000;
-                this.columnValor.AllowDBNull = false;
+                this.columnRetirada.ReadOnly = true;
+                this.columnRetirada.MaxLength = 4000;
+                this.columnDevolução.ReadOnly = true;
+                this.columnDevolução.MaxLength = 4000;
+                this.columnValor.ReadOnly = true;
+                this.columnValor.MaxLength = 4000;
                 this.columnFinal_Cartão.ReadOnly = true;
                 this.columnFinal_Cartão.MaxLength = 4;
                 this.ExtendedProperties.Add("Generator_TablePropName", "_RentView");
@@ -793,7 +792,12 @@ namespace CarLand.Forms.DataSets.Paulo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Funcionario {
                 get {
-                    return ((string)(this[this.tableRentView.FuncionarioColumn]));
+                    try {
+                        return ((string)(this[this.tableRentView.FuncionarioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Funcionario\' in table \'RentView\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRentView.FuncionarioColumn] = value;
@@ -804,7 +808,12 @@ namespace CarLand.Forms.DataSets.Paulo {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Cliente {
                 get {
-                    return ((string)(this[this.tableRentView.ClienteColumn]));
+                    try {
+                        return ((string)(this[this.tableRentView.ClienteColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Cliente\' in table \'RentView\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRentView.ClienteColumn] = value;
@@ -813,41 +822,46 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Data_Retirada {
+            public string Retirada {
                 get {
                     try {
-                        return ((string)(this[this.tableRentView.Data_RetiradaColumn]));
+                        return ((string)(this[this.tableRentView.RetiradaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Data Retirada\' in table \'RentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Retirada\' in table \'RentView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRentView.Data_RetiradaColumn] = value;
+                    this[this.tableRentView.RetiradaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Data_Devolução {
+            public string Devolução {
                 get {
                     try {
-                        return ((string)(this[this.tableRentView.Data_DevoluçãoColumn]));
+                        return ((string)(this[this.tableRentView.DevoluçãoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Data Devolução\' in table \'RentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Devolução\' in table \'RentView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRentView.Data_DevoluçãoColumn] = value;
+                    this[this.tableRentView.DevoluçãoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public decimal Valor {
+            public string Valor {
                 get {
-                    return ((decimal)(this[this.tableRentView.ValorColumn]));
+                    try {
+                        return ((string)(this[this.tableRentView.ValorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Valor\' in table \'RentView\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableRentView.ValorColumn] = value;
@@ -872,17 +886,17 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int PaymentType {
+            public int Tipo_Pagamento {
                 get {
                     try {
-                        return ((int)(this[this.tableRentView.PaymentTypeColumn]));
+                        return ((int)(this[this.tableRentView.Tipo_PagamentoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentType\' in table \'RentView\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Tipo Pagamento\' in table \'RentView\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRentView.PaymentTypeColumn] = value;
+                    this[this.tableRentView.Tipo_PagamentoColumn] = value;
                 }
             }
             
@@ -936,26 +950,62 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsData_RetiradaNull() {
-                return this.IsNull(this.tableRentView.Data_RetiradaColumn);
+            public bool IsFuncionarioNull() {
+                return this.IsNull(this.tableRentView.FuncionarioColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetData_RetiradaNull() {
-                this[this.tableRentView.Data_RetiradaColumn] = global::System.Convert.DBNull;
+            public void SetFuncionarioNull() {
+                this[this.tableRentView.FuncionarioColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsData_DevoluçãoNull() {
-                return this.IsNull(this.tableRentView.Data_DevoluçãoColumn);
+            public bool IsClienteNull() {
+                return this.IsNull(this.tableRentView.ClienteColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetData_DevoluçãoNull() {
-                this[this.tableRentView.Data_DevoluçãoColumn] = global::System.Convert.DBNull;
+            public void SetClienteNull() {
+                this[this.tableRentView.ClienteColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsRetiradaNull() {
+                return this.IsNull(this.tableRentView.RetiradaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetRetiradaNull() {
+                this[this.tableRentView.RetiradaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDevoluçãoNull() {
+                return this.IsNull(this.tableRentView.DevoluçãoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDevoluçãoNull() {
+                this[this.tableRentView.DevoluçãoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorNull() {
+                return this.IsNull(this.tableRentView.ValorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorNull() {
+                this[this.tableRentView.ValorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,14 +1022,14 @@ namespace CarLand.Forms.DataSets.Paulo {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsPaymentTypeNull() {
-                return this.IsNull(this.tableRentView.PaymentTypeColumn);
+            public bool IsTipo_PagamentoNull() {
+                return this.IsNull(this.tableRentView.Tipo_PagamentoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetPaymentTypeNull() {
-                this[this.tableRentView.PaymentTypeColumn] = global::System.Convert.DBNull;
+            public void SetTipo_PagamentoNull() {
+                this[this.tableRentView.Tipo_PagamentoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1149,11 +1199,11 @@ namespace CarLand.Forms.DataSets.Paulo.RentViewTableAdapters {
             tableMapping.ColumnMappings.Add("Cor", "Cor");
             tableMapping.ColumnMappings.Add("Funcionario", "Funcionario");
             tableMapping.ColumnMappings.Add("Cliente", "Cliente");
-            tableMapping.ColumnMappings.Add("Data Retirada", "Data Retirada");
-            tableMapping.ColumnMappings.Add("Data Devolução", "Data Devolução");
+            tableMapping.ColumnMappings.Add("Retirada", "Retirada");
+            tableMapping.ColumnMappings.Add("Devolução", "Devolução");
             tableMapping.ColumnMappings.Add("Valor", "Valor");
             tableMapping.ColumnMappings.Add("Final Cartão", "Final Cartão");
-            tableMapping.ColumnMappings.Add("PaymentType", "PaymentType");
+            tableMapping.ColumnMappings.Add("Tipo Pagamento", "Tipo Pagamento");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1170,8 +1220,8 @@ namespace CarLand.Forms.DataSets.Paulo.RentViewTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT [Id Aluguel], Marca, Modelo, Ano, Cor, Funcionario, Cliente, [Data Retirad" +
-                "a], [Data Devolução], Valor, [Final Cartão], PaymentType FROM dbo.RentView";
+            this._commandCollection[0].CommandText = "SELECT [Id Aluguel], Marca, Modelo, Ano, Cor, Funcionario, Cliente, Retirada, Dev" +
+                "olução, Valor, [Final Cartão], [Tipo Pagamento] FROM dbo.RentView";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

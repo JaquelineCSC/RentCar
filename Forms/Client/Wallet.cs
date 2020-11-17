@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework.Controls;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,14 @@ namespace CarLand.Forms.Client
         {
             Database.DBCard _appCard = new Database.DBCard();
             var cards = _appCard.GetCard(Client.Id);
-
+            for(int i=0, y = 0; i < cards.Count; i++, y += 28)
+            {
+                MetroRadioButton button = new MetroRadioButton();
+                button.Name = "Card" + (i + 1);
+                button.TabIndex = i + 1;
+                button.Location = new Point(card.Location.X, card.Location.Y + y);
+                button.Text = "Cartão Final " + (cards[i].Number);
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ namespace CarLand.Database
                     WHERE idImage = {image.Id}";
             _context.CommandWithoutReturn(query);
         }
+
         public void Delete(int idCar)
         {
             query = $"Delete from [Image] WHERE idCar = '{idCar}'";
@@ -38,7 +39,7 @@ namespace CarLand.Database
         public List<Image> GetImages(int carId)
         {
             query = $"Select * from [Image] where idCar = {carId}";
-            return _context.GetImages(query); 
+            return _context.GetImages(query).OrderBy(x=> x.Main).ToList(); 
         }
 
         public void SetImage(int carId, PictureBox image)

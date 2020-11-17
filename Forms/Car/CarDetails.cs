@@ -19,13 +19,15 @@ namespace CarLand.Forms
         private readonly DBImage _appImage = new DBImage();
         public CarLand.Domain.Entities.Car Car { get; set; }
         public List<CarLand.Domain.Entities.Image> Images { get; set; }
-        int i = 0;
+        private int imageCount;
+        private int iImage = 0;
 
         public CarDetails(int carId)
         {
             InitializeComponent();
             Car = _appCar.GetCar(id: carId);
             Images = _appImage.GetImages(Car.Id);
+            imageCount = Images.Count;
         }
 
         private void DetalhesCarro_Load(object sender, EventArgs e)
@@ -38,13 +40,16 @@ namespace CarLand.Forms
             combustivelTxt.Text = Car.Fuel;
             if(Images.Count > 0)
             {
-                pictureBox1.Image = (Bitmap)System.Drawing.Image.FromFile(Servers.path + Images[i].Path + Images[i].Name);
+                pictureBox1.Image = (Bitmap)System.Drawing.Image.FromFile(Servers.path + Images[iImage].Path + Images[iImage].Name);
             }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            iImage++;
+            if (iImage == imageCount)
+                iImage = 0;
+            pictureBox1.Image = System.Drawing.Image.FromFile(Servers.path + Images[iImage].Path + Images[iImage].Name);
         }
     }
 }
