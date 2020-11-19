@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using CarLand.Domain.Entities;
+﻿using CarLand.Domain.Entities;
 
 namespace CarLand.Database
 {
@@ -26,46 +19,35 @@ namespace CarLand.Database
                     WHERE idClient = {client.Id}";
             _context.CommandWithoutReturn(query);
         }
-        public void Delete(string clientName)
-        {
-            query = $"Delete from Client WHERE Clientename = '{clientName}'";
-            _context.CommandWithoutReturn(query);
-        }
-
-        public Client GetClientByUser(int idUser)
-        {
-            query = $"Select * from Client where idUser = {idUser}";
-            return _context.GetClient(query);
-        }
-
         public Client GetClientById(int idClient)
         {
             query = $"Select * from Client where idClient = {idClient}";
             return _context.GetClient(query);
         }
-
-        public Client GeClientByName(string name)
+        public Client GetClientByUser(int idUser)
+        {
+            query = $"Select * from Client where idUser = {idUser}";
+            return _context.GetClient(query);
+        }
+        public Client GetClientByName(string name)
         {
             query = $"Select * from Client where Clientname = '{name}'";
             return _context.GetClient(query);
         }
-
+        public Client GetClientByEmail(string email)
+        {
+            query = $"select * from Client where Email = '{email}'";
+            return _context.GetClient(query);
+        }
         public ClientCardCNH GetClientCardCNHByUser(int idUser)
         {
             query = $"select c.*, cd.*, cn.* from Client c inner join Card cd on cd.idClient = c.idClient inner join CNH cn on cn.idCNH = c.idCNH where c.idUser = {idUser}";
             return _context.GetClientCardCNHByUserId(query);
         }
-
         public ClientCardCNH GetClientCNHByUser(int idUser)
         {
             query = $"select c.*, cn.* from Client c inner join CNH cn on cn.idCNH = c.idCNH where c.idUser = {idUser}";
             return _context.GetClientCNHByUserId(query);
-        }
-
-        public Client GetClientByEmail(string email)
-        {
-            query = $"select * from Client where Email = '{email}'";
-            return _context.GetClient(query);
         }
 
     }

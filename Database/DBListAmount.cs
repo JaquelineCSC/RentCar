@@ -12,13 +12,11 @@ namespace CarLand.Database
             query = $"insert into AmountsCar(idCar, Amount) values ({amount.idCar}, {(float)amount.Amount})";
             _context.CommandWithoutReturn(query);
         }
-
         public void Update(Domain.Entities.AmountCar amount)
         {
             query = $@"update AmountsCar set Amount = {(float)amount.Amount} where idCar = {amount.idCar}";
             _context.CommandWithoutReturn(query);
         }
-
         public Domain.Entities.AmountCar GetAmount(int idCar)
         {
             query = $"select * from AmountsCar where idCar = {idCar}";

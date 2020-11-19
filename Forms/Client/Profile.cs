@@ -3,14 +3,6 @@ using CarLand.Domain.Entities;
 using MetroFramework;
 using MetroFramework.Components;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms.Client
@@ -18,9 +10,10 @@ namespace CarLand.Forms.Client
     public partial class Profile : MetroFramework.Forms.MetroForm
     {
         public User User { get; set; }
-        public DBClient _appClient { get; set; }
-        public DBCNH _appCNH { get; set; }
         public ClientCardCNH FullClient { get; set; }
+
+        public readonly DBClient _appClient = new DBClient();
+        public readonly DBCNH _appCNH = new DBCNH();
 
         public Profile(MetroStyleManager manager)
         {
@@ -28,8 +21,6 @@ namespace CarLand.Forms.Client
             this.StyleManager = manager;
             Load_Page();
             User = new User();
-            _appClient = new DBClient();
-            _appCNH = new DBCNH();
             FullClient = new ClientCardCNH();
         }
 

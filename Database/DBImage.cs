@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
 using CarLand.Domain.Entities;
 using System.Data;
 using System.IO;
@@ -22,28 +19,16 @@ namespace CarLand.Database
             query = $"Insert into [Image] (idCar,Path,Name,Main) values ({image.idCar} , '{image.Path}' , '{image.Name}', {main})";
             _context.CommandWithoutReturn(query);
         }
-
-        public void Update(Image image)
-        {
-            int main = image.Main == true ? 1 : 0;
-            query = $@"Update [Image] 
-                    set Name = '{image.Name}, Main = {main}
-                    WHERE idImage = {image.Id}";
-            _context.CommandWithoutReturn(query);
-        }
-
         public void Delete(int idCar)
         {
             query = $"Delete from [Image] WHERE idCar = '{idCar}'";
             _context.CommandWithoutReturn(query);
         }
-
         public List<Image> GetImages(int carId)
         {
             query = $"Select * from [Image] where idCar = {carId}";
-            return _context.GetImages(query).OrderBy(x=> x.Main).ToList(); 
+            return _context.GetImages(query).OrderByDescending(x=> x.Main).ToList(); 
         }
-
         public void SetImage(int carId, PictureBox image)
         {
             Image img = new Image();
@@ -62,7 +47,6 @@ namespace CarLand.Database
             }
             Insert(img);
         }
-
         public PictureBox GeneratePictureBox( string img, int x, int y )
         {
             PictureBox pic = new PictureBox();

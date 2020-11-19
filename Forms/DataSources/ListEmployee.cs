@@ -1,34 +1,28 @@
-﻿using CarLand.Forms.Admin;
-using MetroFramework;
+﻿using MetroFramework;
 using MetroFramework.Components;
+using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class ListEmployees : MetroFramework.Forms.MetroForm
+    public partial class ListEmployees : MetroForm
     {
         public Domain.Entities.User User { get; set; }
-        public DataRowView RowView { get; set; }
-        public DataRowView NewRowView { get; set; }
-        string employeeName;
-        public Database.DBEmployee _appEmployee { get; set; }
-        public Database.DBUser _appUser { get; set; }
+        private string employeeName;
+        
+        public DataRowView RowView;
+        public DataRowView NewRowView;
+        
+        public readonly Database.DBEmployee _appEmployee = new Database.DBEmployee();
+        public readonly Database.DBUser _appUser = new Database.DBUser();
 
         public ListEmployees(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;
             Style_Page();
-            _appEmployee = new Database.DBEmployee();
-            _appUser = new Database.DBUser();
             User = new Domain.Entities.User();
         }
 
@@ -68,16 +62,17 @@ namespace CarLand.Forms
 
         private void Funcionarios_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'listaFuncRamires.Employee'. Você pode movê-la ou removê-la conforme necessário.
             this.employeeTableAdapter.Fill(this.employee._Employee);
         }
 
         private void metroLinkSalvar_Click(object sender, EventArgs e)
         {
             Domain.Entities.Employee Employee = new Domain.Entities.Employee();
-            Employee.Name = name.Text;
             Domain.Entities.User User = new Domain.Entities.User();
+            
+            Employee.Name = name.Text;
             User.Name = user.Text;
+            User.isAdmin = true;
             User.Password = password.Text;
             try
             {
@@ -101,7 +96,7 @@ namespace CarLand.Forms
         {
             if (metroGrid1.SelectedRows.Count > 0)
             {
-                var currentEmployee = _appEmployee.GetEmployee(User.Id);
+                var currentEmployee = _appEmployee.GetEmployee(idUser: User.Id);
                 DialogResult result;
                 if (currentEmployee.Name == RowView["EmployeeName"].ToString())
                 {
@@ -123,7 +118,6 @@ namespace CarLand.Forms
                         MetroMessageBox.Show(this, "Seu usuário foi deletado", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, 100);
                         Cars form = new Cars();
                         form.ShowDialog();
-                        this.ParentForm.Close();
                         this.Close();
                     }
                     else

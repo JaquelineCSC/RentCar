@@ -102,7 +102,7 @@
             this.metroTabPage1.HorizontalScrollbarSize = 10;
             this.metroTabPage1.Location = new System.Drawing.Point(4, 38);
             this.metroTabPage1.Name = "metroTabPage1";
-            this.metroTabPage1.Size = new System.Drawing.Size(735, 363);
+            this.metroTabPage1.Size = new System.Drawing.Size(770, 363);
             this.metroTabPage1.TabIndex = 0;
             this.metroTabPage1.Text = "Lista de Clientes";
             this.metroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -331,6 +331,7 @@
             // 
             // validateCNHdate
             // 
+            this.validateCNHdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.validateCNHdate.Location = new System.Drawing.Point(392, 209);
             this.validateCNHdate.MinimumSize = new System.Drawing.Size(0, 29);
             this.validateCNHdate.Name = "validateCNHdate";
@@ -351,6 +352,7 @@
             // 
             // dateofBirth
             // 
+            this.dateofBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateofBirth.Location = new System.Drawing.Point(503, 133);
             this.dateofBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateofBirth.Name = "dateofBirth";
@@ -393,7 +395,6 @@
             this.email.Multiline = true;
             this.email.Name = "email";
             this.email.PasswordChar = '\0';
-            this.email.PromptText = "exemplo@email.com";
             this.email.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.email.SelectedText = "";
             this.email.SelectionLength = 0;
@@ -427,7 +428,6 @@
             this.phone.Multiline = true;
             this.phone.Name = "phone";
             this.phone.PasswordChar = '\0';
-            this.phone.PromptText = "(35) X XXXX-XXXX";
             this.phone.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.phone.SelectedText = "";
             this.phone.SelectionLength = 0;
@@ -437,7 +437,7 @@
             this.phone.TabIndex = 35;
             this.phone.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.phone.UseSelectable = true;
-            this.phone.WaterMark = "(35) X XXXX-XXXX";
+            this.phone.WaterMark = "(XX) X XXXX-XXXX";
             this.phone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.phone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
@@ -461,7 +461,6 @@
             this.cnh.Multiline = true;
             this.cnh.Name = "cnh";
             this.cnh.PasswordChar = '\0';
-            this.cnh.PromptText = "XXXXXXXXXXX";
             this.cnh.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cnh.SelectedText = "";
             this.cnh.SelectionLength = 0;
@@ -495,7 +494,6 @@
             this.cpf.Multiline = true;
             this.cpf.Name = "cpf";
             this.cpf.PasswordChar = '\0';
-            this.cpf.PromptText = "XXX.XXX.XXX-XX";
             this.cpf.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.cpf.SelectedText = "";
             this.cpf.SelectionLength = 0;

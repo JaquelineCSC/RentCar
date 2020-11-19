@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ListaRent" targetNamespace="http://tempuri.org/ListaRent.xsd" xmlns:mstns="http://tempuri.org/ListaRent.xsd" xmlns="http://tempuri.org/ListaRent.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IntegradoraConnectionStringRamires" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IntegradoraConnectionStringRamires (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CarLand.Properties.Settings.GlobalReference.Default.IntegradoraConnectionStringRamires" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RentViewTableAdapter" GeneratorDataComponentClassName="RentViewTableAdapter" Name="RentView" UserDataComponentName="RentViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IntegradoraConnectionStringRamires (Settings)" DbObjectName="Integradora.dbo.RentView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT [Id Aluguel], Marca, Modelo, Ano, Cor, Funcionario, Cliente, [Data Retirada], [Data Devolução], Valor, [Final Cartão], PaymentType FROM dbo.RentView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id Aluguel" DataSetColumn="Id Aluguel" />
+              <Mapping SourceColumn="Marca" DataSetColumn="Marca" />
+              <Mapping SourceColumn="Modelo" DataSetColumn="Modelo" />
+              <Mapping SourceColumn="Ano" DataSetColumn="Ano" />
+              <Mapping SourceColumn="Cor" DataSetColumn="Cor" />
+              <Mapping SourceColumn="Funcionario" DataSetColumn="Funcionario" />
+              <Mapping SourceColumn="Cliente" DataSetColumn="Cliente" />
+              <Mapping SourceColumn="Data Retirada" DataSetColumn="Data Retirada" />
+              <Mapping SourceColumn="Data Devolução" DataSetColumn="Data Devolução" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+              <Mapping SourceColumn="Final Cartão" DataSetColumn="Final Cartão" />
+              <Mapping SourceColumn="PaymentType" DataSetColumn="PaymentType" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ListaRent" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ListaRent" msprop:Generator_UserDSName="ListaRent">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RentView" msprop:Generator_TableClassName="RentViewDataTable" msprop:Generator_TableVarName="tableRentView" msprop:Generator_TablePropName="RentView" msprop:Generator_RowDeletingName="RentViewRowDeleting" msprop:Generator_RowChangingName="RentViewRowChanging" msprop:Generator_RowEvHandlerName="RentViewRowChangeEventHandler" msprop:Generator_RowDeletedName="RentViewRowDeleted" msprop:Generator_UserTableName="RentView" msprop:Generator_RowChangedName="RentViewRowChanged" msprop:Generator_RowEvArgName="RentViewRowChangeEvent" msprop:Generator_RowClassName="RentViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id_x0020_Aluguel" msprop:Generator_ColumnVarNameInTable="columnId_Aluguel" msprop:Generator_ColumnPropNameInRow="Id_Aluguel" msprop:Generator_ColumnPropNameInTable="Id_AluguelColumn" msprop:Generator_UserColumnName="Id Aluguel" type="xs:int" />
+              <xs:element name="Marca" msprop:Generator_ColumnVarNameInTable="columnMarca" msprop:Generator_ColumnPropNameInRow="Marca" msprop:Generator_ColumnPropNameInTable="MarcaColumn" msprop:Generator_UserColumnName="Marca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Modelo" msprop:Generator_ColumnVarNameInTable="columnModelo" msprop:Generator_ColumnPropNameInRow="Modelo" msprop:Generator_ColumnPropNameInTable="ModeloColumn" msprop:Generator_UserColumnName="Modelo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ano" msprop:Generator_ColumnVarNameInTable="columnAno" msprop:Generator_ColumnPropNameInRow="Ano" msprop:Generator_ColumnPropNameInTable="AnoColumn" msprop:Generator_UserColumnName="Ano" type="xs:int" minOccurs="0" />
+              <xs:element name="Cor" msprop:Generator_ColumnVarNameInTable="columnCor" msprop:Generator_ColumnPropNameInRow="Cor" msprop:Generator_ColumnPropNameInTable="CorColumn" msprop:Generator_UserColumnName="Cor" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Funcionario" msprop:Generator_ColumnVarNameInTable="columnFuncionario" msprop:Generator_ColumnPropNameInRow="Funcionario" msprop:Generator_ColumnPropNameInTable="FuncionarioColumn" msprop:Generator_UserColumnName="Funcionario">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cliente" msprop:Generator_ColumnVarNameInTable="columnCliente" msprop:Generator_ColumnPropNameInRow="Cliente" msprop:Generator_ColumnPropNameInTable="ClienteColumn" msprop:Generator_UserColumnName="Cliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data_x0020_Retirada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnData_Retirada" msprop:Generator_ColumnPropNameInRow="Data_Retirada" msprop:Generator_ColumnPropNameInTable="Data_RetiradaColumn" msprop:Generator_UserColumnName="Data Retirada" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Data_x0020_Devolução" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnData_Devolução" msprop:Generator_ColumnPropNameInRow="Data_Devolução" msprop:Generator_ColumnPropNameInTable="Data_DevoluçãoColumn" msprop:Generator_UserColumnName="Data Devolução" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" />
+              <xs:element name="Final_x0020_Cartão" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFinal_Cartão" msprop:Generator_ColumnPropNameInRow="Final_Cartão" msprop:Generator_ColumnPropNameInTable="Final_CartãoColumn" msprop:Generator_UserColumnName="Final Cartão" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaymentType" msprop:Generator_ColumnVarNameInTable="columnPaymentType" msprop:Generator_ColumnPropNameInRow="PaymentType" msprop:Generator_ColumnPropNameInTable="PaymentTypeColumn" msprop:Generator_UserColumnName="PaymentType" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RentView" />
+      <xs:field xpath="mstns:Id_x0020_Aluguel" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

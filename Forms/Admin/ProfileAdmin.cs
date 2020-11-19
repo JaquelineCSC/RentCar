@@ -4,13 +4,6 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms.Admin
@@ -18,16 +11,15 @@ namespace CarLand.Forms.Admin
     public partial class ProfileAdmin : MetroForm
     {
         public User User { get; set; }
-        public DBEmployee _appEmployee { get; set; }
-        public DBUser _appUser { get; set; }
+        public readonly DBEmployee _appEmployee = new DBEmployee();
+        public readonly DBUser _appUser = new DBUser();
+
         public ProfileAdmin(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;
             Load_Page();
             User = new User();
-            _appUser = new DBUser();
-            _appEmployee = new DBEmployee();
         }
 
         public void Load_Page()
@@ -48,12 +40,10 @@ namespace CarLand.Forms.Admin
             metroLabel7.Theme = this.StyleManager.Theme;
 
         }
-
         private void metroLinkVoltar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void metroLinkSalvar_Click(object sender, EventArgs e)
         {
             User.Name = user.Text;
@@ -71,7 +61,6 @@ namespace CarLand.Forms.Admin
                 MetroMessageBox.Show(this, "Funcionário não encontrado", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error, 100);
             }
         }
-
         private void ProfileAdmin_Load(object sender, EventArgs e)
         {
             Employee employee = _appEmployee.GetEmployee(User.Id);

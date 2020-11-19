@@ -1,33 +1,48 @@
 ﻿using CarLand.Database;
-using CarLand.Domain.Entities;
+using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
     public partial class CarDetails : MetroForm
     {
+        public Domain.Entities.Car Car { get; set; }
+        public List<Domain.Entities.Image> Images = new List<Domain.Entities.Image>();
+
         private readonly DBCar _appCar = new DBCar();
         private readonly DBImage _appImage = new DBImage();
-        public CarLand.Domain.Entities.Car Car { get; set; }
-        public List<CarLand.Domain.Entities.Image> Images { get; set; }
+
         private int imageCount;
         private int iImage = 0;
 
-        public CarDetails(int carId)
+        public CarDetails(int carId, MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
             Car = _appCar.GetCar(id: carId);
             Images = _appImage.GetImages(Car.Id);
             imageCount = Images.Count;
+        }
+
+        private void Load_Page()
+        {
+            //Theme
+            metroLabel1.Theme = this.StyleManager.Theme;
+            metroLabel14.Theme = this.StyleManager.Theme;
+            metroLabel2.Theme = this.StyleManager.Theme;
+            metroLabel3.Theme = this.StyleManager.Theme;
+            metroLabel4.Theme = this.StyleManager.Theme;
+            metroLabel5.Theme = this.StyleManager.Theme;
+            anoTxt.Theme = this.StyleManager.Theme;
+            combustivelTxt.Theme = this.StyleManager.Theme;
+            corTxt.Theme = this.StyleManager.Theme;
+            marcaTxt.Theme = this.StyleManager.Theme;
+            modeloTxt.Theme = this.StyleManager.Theme;
+            portaTxt.Theme = this.StyleManager.Theme;
         }
 
         private void DetalhesCarro_Load(object sender, EventArgs e)
@@ -38,7 +53,7 @@ namespace CarLand.Forms
             anoTxt.Text = Car.Year.ToString();
             corTxt.Text = Car.Color;
             combustivelTxt.Text = Car.Fuel;
-            if(Images.Count > 0)
+            if (Images.Count > 0)
             {
                 pictureBox1.Image = (Bitmap)System.Drawing.Image.FromFile(Servers.path + Images[iImage].Path + Images[iImage].Name);
             }

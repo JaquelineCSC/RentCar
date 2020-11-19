@@ -3,32 +3,23 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms.Car
 {
     public partial class SetValueCar : MetroForm
     {
-        public Domain.Entities.Car Car { get; set; }
-        public Database.DBAmount _appAmount { get; set; }
         public bool isNew { get; set; }
 
+        public Domain.Entities.Car Car = new Domain.Entities.Car();
+        public readonly Database.DBAmount _appAmount = new Database.DBAmount();
+        
         public SetValueCar(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;
             Load_Page();
-            Car = new Domain.Entities.Car();
-            _appAmount = new Database.DBAmount();
         }
-
         public void Load_Page()
         {
             value.Theme = this.StyleManager.Theme;
@@ -37,9 +28,7 @@ namespace CarLand.Forms.Car
 
             Colors colors = new Colors();
             metroButton1.BackColor = colors.GetColor(this.StyleManager.Style);
-            
         }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             if(value.Text != "")

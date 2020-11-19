@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
-using CarLand.Domain.Entities;
-using System.Data;
+﻿using CarLand.Domain.Entities;
 
 namespace CarLand.Database
 {
@@ -19,7 +12,6 @@ namespace CarLand.Database
             query = $"Insert into Employee (EmployeeName, idUser) values ('{employee.Name}' , {employee.idUser})";
             _context.CommandWithoutReturn(query);
         }
-
         public void Update(Employee employee)
         {
             query = $@"Update Employee 
@@ -32,7 +24,6 @@ namespace CarLand.Database
             query = $"Delete from Employee WHERE EmployeeName = '{employname}'";
             _context.CommandWithoutReturn(query);
         }
-
         public Employee GetEmployee(int idEmployee = 0, int idUser = 0, string employeeName = null)
         {
             if (idEmployee != 0)

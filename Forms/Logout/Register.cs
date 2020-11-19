@@ -3,10 +3,7 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace CarLand.Forms
@@ -14,32 +11,27 @@ namespace CarLand.Forms
     public partial class Register : MetroForm
     {
         public Domain.Entities.User User { get; set; }
-        public DBUser _appCar { get; set; }
-        public bool userCorrect { get; set; }
-        public bool passCorrect { get; set; }
-        public bool confirmpassCorrect { get; set; }
+        
+        public readonly DBUser _appCar = new DBUser();
 
-        public Register()
+        public Register(MetroStyleManager manager)
         {
             InitializeComponent();
-            _appCar = new DBUser();
+            this.StyleManager = manager;
+            Load_Page();
         }
 
-        public void Load_Style(MetroColorStyle style)
+        private void Load_Page()
         {
-            mtxtUsuarioClientes.Style = style;
-            mtxtSenhaClientes.Style = style;
-            metroTextBox1.Style = style;
-        }
+            mtxtUsuarioClientes.Theme = this.StyleManager.Theme;
+            mtxtSenhaClientes.Theme = this.StyleManager.Theme;
+            metroTextBox1.Theme = this.StyleManager.Theme;
+            metroLink1.Theme = this.StyleManager.Theme;
 
-        public void Load_Theme(MetroThemeStyle style)
-        {
-            mtxtUsuarioClientes.Theme = style;
-            mtxtSenhaClientes.Theme = style;
-            metroTextBox1.Theme = style;
-            metroLink1.Theme = style;
+            mtxtUsuarioClientes.Style = this.StyleManager.Style;
+            mtxtSenhaClientes.Style = this.StyleManager.Style;
+            metroTextBox1.Style = this.StyleManager.Style;
         }
-
 
         private void verficiarPreenchimento(object sender, System.EventArgs e)
         {
@@ -108,14 +100,8 @@ namespace CarLand.Forms
             metroToolTip1.Show("Preencha os campos para prosseguir", metroLink1);
         }
 
-        private void verficiarPreenchimento(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void verficiarPreenchimento(object sender, KeyEventArgs e)
         {
-
             MetroTextBox x = (MetroTextBox)sender;
             if (x.Name == mtxtUsuarioClientes.Name)
             {

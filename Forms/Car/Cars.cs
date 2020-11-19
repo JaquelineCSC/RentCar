@@ -8,7 +8,6 @@ using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -18,25 +17,19 @@ namespace CarLand.Forms
 {
     public partial class Cars : MetroForm
     {
-        public CarLand.Domain.Entities.User User { get; set; }
-        public Domain.Entities.Client Client { get; set; }
-        public List<Domain.Entities.Car> ListCars { get; set; }
+        public CarLand.Domain.Entities.User User = new Domain.Entities.User();
+        public Domain.Entities.Client Client = new Domain.Entities.Client();
+        public List<Domain.Entities.Car> ListCars = new List<Domain.Entities.Car>();
 
-        public DBCar _appCar;
-        public DBImage _appImage;
-        public DBAmount _appAmount;
+        public DBCar _appCar = new DBCar();
+        public DBImage _appImage = new DBImage();
+        public DBAmount _appAmount = new DBAmount();
 
         public Cars(MetroStyleManager manager = null)
         {
             InitializeComponent();
             if (manager != null)
                 this.StyleManager = manager;
-            _appCar = new DBCar();
-            _appImage = new DBImage();
-            _appAmount = new DBAmount();
-            User = new CarLand.Domain.Entities.User();
-            Client = new Domain.Entities.Client();
-            ListCars = new List<Domain.Entities.Car>();
 
             this.StyleManager = metroStyleManager1;
 
@@ -286,7 +279,7 @@ namespace CarLand.Forms
         private void metroLink2_Click(object sender, EventArgs e)
         {
             MetroLink link = (MetroLink)sender;
-            CarDetails form = new CarDetails(link.TabIndex);
+            CarDetails form = new CarDetails(link.TabIndex, this.StyleManager);
             form.ShowDialog();
         }
 
@@ -314,7 +307,8 @@ namespace CarLand.Forms
         {
             MetroLink link = (MetroLink)sender;
             var car = _appCar.GetCar(id: link.TabIndex);
-            Rent form = new Rent(car, User, Client);
+            var amount = _appAmount.GetAmount(car.Id);
+            Rent form = new Rent(car, amount, User, this.StyleManager, Client);
             this.Hide();
             form.ShowDialog();
             this.Close();

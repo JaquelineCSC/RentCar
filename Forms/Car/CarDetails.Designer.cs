@@ -43,7 +43,7 @@
             this.anoTxt = new MetroFramework.Controls.MetroTextBox();
             this.modeloTxt = new MetroFramework.Controls.MetroTextBox();
             this.combustivelTxt = new MetroFramework.Controls.MetroTextBox();
-            this.textLabel = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel14 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -327,18 +327,18 @@
             this.combustivelTxt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.combustivelTxt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // textLabel
+            // metroLabel14
             // 
-            this.textLabel.AutoSize = true;
-            this.textLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.textLabel.Location = new System.Drawing.Point(393, 193);
-            this.textLabel.Name = "textLabel";
-            this.textLabel.Size = new System.Drawing.Size(105, 25);
-            this.textLabel.TabIndex = 11;
-            this.textLabel.Text = "Combustível";
-            this.textLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroLabel14.AutoSize = true;
+            this.metroLabel14.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel14.Location = new System.Drawing.Point(393, 193);
+            this.metroLabel14.Name = "metroLabel14";
+            this.metroLabel14.Size = new System.Drawing.Size(105, 25);
+            this.metroLabel14.TabIndex = 11;
+            this.metroLabel14.Text = "Combustível";
+            this.metroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // DetalhesCarro
+            // CarDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -347,7 +347,7 @@
             this.BackMaxSize = 240;
             this.ClientSize = new System.Drawing.Size(873, 341);
             this.Controls.Add(this.combustivelTxt);
-            this.Controls.Add(this.textLabel);
+            this.Controls.Add(this.metroLabel14);
             this.Controls.Add(this.modeloTxt);
             this.Controls.Add(this.anoTxt);
             this.Controls.Add(this.corTxt);
@@ -361,7 +361,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "DetalhesCarro";
+            this.Name = "CarDetails";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
@@ -387,6 +387,6 @@
         private MetroFramework.Controls.MetroTextBox anoTxt;
         private MetroFramework.Controls.MetroTextBox modeloTxt;
         private MetroFramework.Controls.MetroTextBox combustivelTxt;
-        private MetroFramework.Controls.MetroLabel textLabel;
+        private MetroFramework.Controls.MetroLabel metroLabel14;
     }
 }

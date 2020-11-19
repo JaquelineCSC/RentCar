@@ -1,22 +1,14 @@
 ﻿using CarLand.Domain.Entities;
 using CarLand.Forms.Car;
-using CarLand.Forms.Client;
 using MetroFramework;
-using MetroFramework.Components;
 using MetroFramework.Controls;
+using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CarLand.Forms
 {
-    public partial class FormMain : MetroFramework.Forms.MetroForm
+    public partial class FormMain : MetroForm
     {
         public User User { get; set; }
 
@@ -101,7 +93,6 @@ namespace CarLand.Forms
             reportTile.Style = style;
             settingsTile.Style = style;
         }
-
         public void setThemeInControls(MetroThemeStyle style)
         {
             tabControlPrincipal.Theme = style;
@@ -122,7 +113,6 @@ namespace CarLand.Forms
             reportTile.Theme = style;
             settingsTile.Theme = style;
         }
-
         private void setColor(object sender, EventArgs e)
         {
             MetroButton linkSender = (MetroButton)sender;
@@ -190,6 +180,7 @@ namespace CarLand.Forms
             Properties.Settings.Default.Save();
         }
 
+
         private void setDark(object sender, EventArgs e)
         {
             for (int i = 0; i < 2; i++)
@@ -201,7 +192,6 @@ namespace CarLand.Forms
             Properties.Settings.Default["Theme"] = 0;
             Properties.Settings.Default.Save();
         }
-
         private void setLight(object sender, EventArgs e)
         {
             for (int i = 0; i < 2; i++)
@@ -213,52 +203,6 @@ namespace CarLand.Forms
             Properties.Settings.Default["Theme"] = 1;
             Properties.Settings.Default.Save();
         }
-
-        public Color GetColor(MetroColorStyle color)
-        {
-            Color retorno = new Color();
-            switch (color)
-            {
-                case MetroColorStyle.Orange:
-                    retorno = Color.DarkOrange;
-                    break;
-                case MetroColorStyle.Green:
-                    retorno = Color.Green;
-                    break;
-                case MetroColorStyle.Pink:
-                    retorno = Color.Pink;
-                    break;
-                case MetroColorStyle.Purple:
-                    retorno = Color.Purple;
-                    break;
-                case MetroColorStyle.Red:
-                    retorno = Color.Red;
-                    break;
-                case MetroColorStyle.Silver:
-                    retorno = Color.Silver;
-                    break;
-                case MetroColorStyle.Yellow:
-                    retorno = Color.Yellow;
-                    break;
-                case MetroColorStyle.Brown:
-                    retorno = Color.SaddleBrown;
-                    break;
-                case MetroColorStyle.Magenta:
-                    retorno = Color.Magenta;
-                    break;
-                case MetroColorStyle.Blue:
-                    retorno = Color.DeepSkyBlue;
-                    break;
-                case MetroColorStyle.Lime:
-                    retorno = Color.Lime;
-                    break;
-                case MetroColorStyle.Teal:
-                    retorno = Color.Teal;
-                    break;
-            }
-            return retorno;
-        }
-
         private void ShowLogin(object sender, EventArgs e)
         {
             Login login = new Login();
@@ -266,22 +210,11 @@ namespace CarLand.Forms
             login.ShowDialog();
             this.Close();
         }
-
         private void ShowListCar(object sender, EventArgs e)
         {
             Car.ListCar listCar = new Car.ListCar(this.StyleManager);
             listCar.ShowDialog();
         }
-
-        private void ShowCars(object sender, EventArgs e)
-        {
-            Cars car = new Cars();
-            car.User = User;
-            this.Hide();
-            car.ShowDialog();
-            this.Close();
-        }
-
         private void settingsShowAndHide(object sender, EventArgs e)
         {
             if (panelSettings.Visible)
@@ -294,7 +227,6 @@ namespace CarLand.Forms
                 mostrar.Enabled = true;
             }
         }
-
         private void mostrar_Tick(object sender, EventArgs e)
         {
             if (panelSettings.Location.X > 1007)
@@ -306,7 +238,6 @@ namespace CarLand.Forms
                 mostrar.Enabled = false;
             }
         }
-
         private void esconder_Tick(object sender, EventArgs e)
         {
             if (panelSettings.Location.X < 1276)
@@ -319,32 +250,28 @@ namespace CarLand.Forms
                 esconder.Enabled = false;
             }
         }
-
         private void clientsTile_Click(object sender, EventArgs e)
         {
             Clients clientes = new Clients(this.StyleManager);
             clientes.User = User;
             clientes.ShowDialog();
         }
-
         private void employeeTile_Click(object sender, EventArgs e)
         {
             ListEmployees funcionarios = new ListEmployees(this.StyleManager);
+            funcionarios.User = User;
             funcionarios.ShowDialog();
         }
-
         private void listRentTile_Click(object sender, EventArgs e)
         {
             Client.ListCar aluguelcliente = new Client.ListCar(this.StyleManager);
             aluguelcliente.ShowDialog();
         }
-
         private void reportTile_Click(object sender, EventArgs e)
         {
             Admin.Reports form = new Admin.Reports(this.StyleManager);
             form.ShowDialog();
         }
-
         private void paymentTile_Click(object sender, EventArgs e)
         {
             CarAmount form = new CarAmount(this.StyleManager);

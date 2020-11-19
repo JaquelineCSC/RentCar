@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 using CarLand.Domain.Entities;
@@ -28,7 +25,6 @@ namespace CarLand.Database
             cd.ExecuteNonQuery();
             cn.Close();
         }
-
         public int CommandWithReturnId(string sql)
         {
             Connect();
@@ -39,24 +35,8 @@ namespace CarLand.Database
             return id;
         }
 
-        public SqlDataReader Consult(string sql)
-        {
-            Connect();
-            cd.Connection = cn;
-            cd.CommandText = sql;
-            try
-            {
-                var dr = cd.ExecuteReader();
-                cn.Close();
-                return dr;
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-        }
-
         #region Cars
+
         public List<Car> ListCars(string sql)
         {
             Connect();
@@ -71,22 +51,6 @@ namespace CarLand.Database
             cn.Close();
             return carros;
         }
-
-        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
-        {
-            return new Domain.Entities.Car()
-            {
-                Id = reader.GetInt32(0),
-                Color = reader.GetString(1),
-                Board = reader.GetString(2),
-                Model = reader.GetString(3),
-                Fuel = reader.GetString(4),
-                Doors = reader.GetInt32(5),
-                Branch = reader.GetString(6),
-                Year = reader.GetInt32(7),
-            };
-        }
-
         public Domain.Entities.Car GetCar(string sql)
         {
             Connect();
@@ -100,6 +64,20 @@ namespace CarLand.Database
             }
             cn.Close();
             return car;
+        }
+        public Domain.Entities.Car ConstructorCar(SqlDataReader reader)
+        {
+            return new Domain.Entities.Car()
+            {
+                Id = reader.GetInt32(0),
+                Color = reader.GetString(1),
+                Board = reader.GetString(2),
+                Model = reader.GetString(3),
+                Fuel = reader.GetString(4),
+                Doors = reader.GetInt32(5),
+                Branch = reader.GetString(6),
+                Year = reader.GetInt32(7),
+            };
         }
 
         #endregion
@@ -120,7 +98,6 @@ namespace CarLand.Database
             cn.Close();
             return user;
         }
-
         public User ConstructorUser(SqlDataReader reader)
         {
             return new User()
@@ -165,23 +142,6 @@ namespace CarLand.Database
 
         #endregion
 
-        #region Card
-
-        public Card ConstructorCard(SqlDataReader reader, int i)
-        {
-            return new Card()
-            {
-                Id = reader.GetInt32(i),
-                idClient = reader.GetInt32(i + 1),
-                Name = reader.GetString(i + 2),
-                Number = long.Parse(reader.GetSqlInt64(i + 3).ToString()),
-                CVC = reader.GetInt32(i + 4),
-                ValidateDate = reader.GetDateTime(i + 5),
-            };
-        }
-
-        #endregion
-
         #region Client
 
         public Client GetClient(string sql)
@@ -198,7 +158,6 @@ namespace CarLand.Database
             cn.Close();
             return client;
         }
-
         public Client ConstructorClient(SqlDataReader reader)
         {
             return new Client()
@@ -214,6 +173,7 @@ namespace CarLand.Database
                 Genero = reader.GetString(8)
             };
         }
+     
         #endregion
 
         #region CNH
@@ -252,7 +212,6 @@ namespace CarLand.Database
             cn.Close();
             return clientCardCNH;
         }
-
         public ClientCardCNH GetClientCNHByUserId(string sql)
         {
             Connect();
@@ -287,7 +246,6 @@ namespace CarLand.Database
             cn.Close();
             return employee;
         }
-
         public Employee ConstructorEmployee(SqlDataReader reader)
         {
             return new Employee()
@@ -316,7 +274,6 @@ namespace CarLand.Database
             cn.Close();
             return cards;
         }
-
         public Card ConstructorCard(SqlDataReader reader)
         {
             return new Card()
@@ -327,6 +284,18 @@ namespace CarLand.Database
                 Number = reader.GetInt64(3),
                 CVC = reader.GetInt32(4),
                 ValidateDate = reader.GetDateTime(5)
+            };
+        }
+        public Card ConstructorCard(SqlDataReader reader, int i)
+        {
+            return new Card()
+            {
+                Id = reader.GetInt32(i),
+                idClient = reader.GetInt32(i + 1),
+                Name = reader.GetString(i + 2),
+                Number = long.Parse(reader.GetSqlInt64(i + 3).ToString()),
+                CVC = reader.GetInt32(i + 4),
+                ValidateDate = reader.GetDateTime(i + 5),
             };
         }
 
@@ -348,7 +317,6 @@ namespace CarLand.Database
             cn.Close();
             return amount;
         }
-
         public Domain.Entities.AmountCar ConstructorAmount(SqlDataReader reader)
         {
             return new Domain.Entities.AmountCar()
@@ -372,7 +340,6 @@ namespace CarLand.Database
             cn.Close();
             return ds;
         }
-
         public DataSet ReportCars(string sql)
         {
             Connect();

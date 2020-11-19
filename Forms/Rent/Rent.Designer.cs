@@ -57,8 +57,6 @@
             this.daysRight = new MetroFramework.Controls.MetroLabel();
             this.nDays = new MetroFramework.Controls.MetroLabel();
             this.carousselImages = new MetroFramework.Controls.MetroPanel();
-            this.arrow_right = new MetroFramework.Controls.MetroLink();
-            this.arrow_left = new MetroFramework.Controls.MetroLink();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.payments = new MetroFramework.Controls.MetroPanel();
             this.panelMoney = new MetroFramework.Controls.MetroPanel();
@@ -74,13 +72,12 @@
             this.metroLabel8 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel9 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
-            this.hour_PickUp = new MetroFramework.Controls.MetroDateTime();
-            this.hour_DropOff = new MetroFramework.Controls.MetroDateTime();
             this.drop_offDate = new MetroFramework.Controls.MetroDateTime();
             this.pick_upDate = new MetroFramework.Controls.MetroDateTime();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.metroPanel1.SuspendLayout();
             this.metroPanel5.SuspendLayout();
-            this.carousselImages.SuspendLayout();
             this.payments.SuspendLayout();
             this.panelMoney.SuspendLayout();
             this.panelCard.SuspendLayout();
@@ -505,8 +502,6 @@
             // 
             this.carousselImages.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("carousselImages.BackgroundImage")));
             this.carousselImages.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.carousselImages.Controls.Add(this.arrow_right);
-            this.carousselImages.Controls.Add(this.arrow_left);
             this.carousselImages.HorizontalScrollbarBarColor = true;
             this.carousselImages.HorizontalScrollbarHighlightOnWheel = false;
             this.carousselImages.HorizontalScrollbarSize = 10;
@@ -517,29 +512,7 @@
             this.carousselImages.VerticalScrollbarBarColor = true;
             this.carousselImages.VerticalScrollbarHighlightOnWheel = false;
             this.carousselImages.VerticalScrollbarSize = 10;
-            // 
-            // arrow_right
-            // 
-            this.arrow_right.BackColor = System.Drawing.Color.Transparent;
-            this.arrow_right.Image = ((System.Drawing.Image)(resources.GetObject("arrow_right.Image")));
-            this.arrow_right.Location = new System.Drawing.Point(304, 110);
-            this.arrow_right.Name = "arrow_right";
-            this.arrow_right.Size = new System.Drawing.Size(28, 19);
-            this.arrow_right.TabIndex = 80;
-            this.arrow_right.UseCustomForeColor = true;
-            this.arrow_right.UseSelectable = true;
-            // 
-            // arrow_left
-            // 
-            this.arrow_left.BackColor = System.Drawing.Color.Transparent;
-            this.arrow_left.ForeColor = System.Drawing.Color.Transparent;
-            this.arrow_left.Image = ((System.Drawing.Image)(resources.GetObject("arrow_left.Image")));
-            this.arrow_left.Location = new System.Drawing.Point(25, 110);
-            this.arrow_left.Name = "arrow_left";
-            this.arrow_left.Size = new System.Drawing.Size(28, 19);
-            this.arrow_left.TabIndex = 79;
-            this.arrow_left.UseCustomForeColor = true;
-            this.arrow_left.UseSelectable = true;
+            this.carousselImages.Click += new System.EventHandler(this.changeImage);
             // 
             // metroLabel2
             // 
@@ -729,37 +702,6 @@
             this.metroLabel10.Text = "Data de Devolução";
             this.metroLabel10.Theme = MetroFramework.MetroThemeStyle.Dark;
             // 
-            // hour_PickUp
-            // 
-            this.hour_PickUp.CustomFormat = "HH:mm";
-            this.hour_PickUp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.hour_PickUp.Location = new System.Drawing.Point(617, 130);
-            this.hour_PickUp.MinDate = new System.DateTime(2020, 11, 11, 0, 0, 0, 0);
-            this.hour_PickUp.MinimumSize = new System.Drawing.Size(4, 29);
-            this.hour_PickUp.Name = "hour_PickUp";
-            this.hour_PickUp.Size = new System.Drawing.Size(165, 29);
-            this.hour_PickUp.Style = MetroFramework.MetroColorStyle.Orange;
-            this.hour_PickUp.TabIndex = 94;
-            this.hour_PickUp.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.hour_PickUp.UseStyleColors = true;
-            this.hour_PickUp.Value = new System.DateTime(2020, 11, 11, 11, 34, 19, 0);
-            this.hour_PickUp.ValueChanged += new System.EventHandler(this.Set_date);
-            // 
-            // hour_DropOff
-            // 
-            this.hour_DropOff.CustomFormat = "HH:mm";
-            this.hour_DropOff.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.hour_DropOff.Location = new System.Drawing.Point(617, 218);
-            this.hour_DropOff.MinimumSize = new System.Drawing.Size(0, 29);
-            this.hour_DropOff.Name = "hour_DropOff";
-            this.hour_DropOff.Size = new System.Drawing.Size(165, 29);
-            this.hour_DropOff.Style = MetroFramework.MetroColorStyle.Orange;
-            this.hour_DropOff.TabIndex = 95;
-            this.hour_DropOff.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.hour_DropOff.UseStyleColors = true;
-            this.hour_DropOff.Value = new System.DateTime(2020, 11, 11, 11, 34, 19, 0);
-            this.hour_DropOff.ValueChanged += new System.EventHandler(this.Set_date);
-            // 
             // drop_offDate
             // 
             this.drop_offDate.CustomFormat = "dd/MM/yyyy";
@@ -772,7 +714,7 @@
             this.drop_offDate.TabIndex = 97;
             this.drop_offDate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.drop_offDate.UseStyleColors = true;
-            this.drop_offDate.ValueChanged += new System.EventHandler(this.Set_date);
+            this.drop_offDate.CloseUp += new System.EventHandler(this.Set_date);
             // 
             // pick_upDate
             // 
@@ -788,17 +730,39 @@
             this.pick_upDate.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.pick_upDate.UseStyleColors = true;
             this.pick_upDate.Value = new System.DateTime(2020, 11, 11, 20, 21, 9, 0);
-            this.pick_upDate.ValueChanged += new System.EventHandler(this.Set_date);
+            this.pick_upDate.CloseUp += new System.EventHandler(this.Set_date);
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 23;
+            this.metroComboBox1.Location = new System.Drawing.Point(621, 130);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox1.TabIndex = 98;
+            this.metroComboBox1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 23;
+            this.metroComboBox2.Location = new System.Drawing.Point(621, 218);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.Size = new System.Drawing.Size(121, 29);
+            this.metroComboBox2.TabIndex = 99;
+            this.metroComboBox2.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.metroComboBox2.UseSelectable = true;
             // 
             // Rent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 788);
+            this.Controls.Add(this.metroComboBox2);
+            this.Controls.Add(this.metroComboBox1);
             this.Controls.Add(this.drop_offDate);
             this.Controls.Add(this.pick_upDate);
-            this.Controls.Add(this.hour_DropOff);
-            this.Controls.Add(this.hour_PickUp);
             this.Controls.Add(this.metroLabel9);
             this.Controls.Add(this.metroLabel10);
             this.Controls.Add(this.metroLabel8);
@@ -821,7 +785,6 @@
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);
             this.metroPanel5.PerformLayout();
-            this.carousselImages.ResumeLayout(false);
             this.payments.ResumeLayout(false);
             this.payments.PerformLayout();
             this.panelMoney.ResumeLayout(false);
@@ -842,8 +805,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroTextBox name;
         private MetroFramework.Controls.MetroPanel metroPanel1;
-        private MetroFramework.Controls.MetroLink arrow_right;
-        private MetroFramework.Controls.MetroLink arrow_left;
         private MetroFramework.Controls.MetroPanel carousselImages;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroPanel payments;
@@ -857,8 +818,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel8;
         private MetroFramework.Controls.MetroLabel metroLabel9;
         private MetroFramework.Controls.MetroLabel metroLabel10;
-        private MetroFramework.Controls.MetroDateTime hour_PickUp;
-        private MetroFramework.Controls.MetroDateTime hour_DropOff;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroLabel value;
         private MetroFramework.Controls.MetroLabel metroLabel21;
@@ -885,5 +844,7 @@
         private MetroFramework.Controls.MetroRadioButton money;
         private MetroFramework.Controls.MetroLabel metroLabel17;
         private MetroFramework.Controls.MetroLabel label14;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
     }
 }

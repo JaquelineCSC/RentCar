@@ -108,8 +108,7 @@
             this.mtxtUsuarioClientes.UseSelectable = true;
             this.mtxtUsuarioClientes.WaterMark = "Usuário";
             this.mtxtUsuarioClientes.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mtxtUsuarioClientes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.mtxtUsuarioClientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.verficiarPreenchimento);
+            this.mtxtUsuarioClientes.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);           
             this.mtxtUsuarioClientes.KeyUp += new System.Windows.Forms.KeyEventHandler(this.verficiarPreenchimento);
             // 
             // metroTextBox1

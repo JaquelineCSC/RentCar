@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NewCard));
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.OwnerCard = new MetroFramework.Controls.MetroTextBox();
@@ -41,8 +42,10 @@
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.register = new MetroFramework.Controls.MetroButton();
             this.cancel = new MetroFramework.Controls.MetroButton();
+            this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.CvcExplain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
             this.SuspendLayout();
             // 
             // metroLabel3
@@ -76,6 +79,7 @@
             this.OwnerCard.Multiline = true;
             this.OwnerCard.Name = "OwnerCard";
             this.OwnerCard.PasswordChar = '\0';
+            this.OwnerCard.PromptText = "Nome do Titular do Cartão";
             this.OwnerCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.OwnerCard.SelectedText = "";
             this.OwnerCard.SelectionLength = 0;
@@ -113,6 +117,7 @@
             this.CVC.Multiline = true;
             this.CVC.Name = "CVC";
             this.CVC.PasswordChar = '\0';
+            this.CVC.PromptText = "CVC";
             this.CVC.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.CVC.SelectedText = "";
             this.CVC.SelectionLength = 0;
@@ -151,6 +156,7 @@
             this.numberCard.Multiline = true;
             this.numberCard.Name = "numberCard";
             this.numberCard.PasswordChar = '\0';
+            this.numberCard.PromptText = "Numero do Cartão";
             this.numberCard.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.numberCard.SelectedText = "";
             this.numberCard.SelectionLength = 0;
@@ -292,6 +298,12 @@
             this.cancel.UseSelectable = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // error
+            // 
+            this.error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error.ContainerControl = this;
+            this.error.Icon = ((System.Drawing.Icon)(resources.GetObject("error.Icon")));
+            // 
             // NewCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,6 +328,7 @@
             this.CvcExplain.ResumeLayout(false);
             this.CvcExplain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,5 +347,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private MetroFramework.Controls.MetroButton register;
         private MetroFramework.Controls.MetroButton cancel;
+        private System.Windows.Forms.ErrorProvider error;
     }
 }

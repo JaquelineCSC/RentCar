@@ -43,7 +43,9 @@ namespace CarLand.Forms
             this.relogio = new System.Windows.Forms.Timer(this.components);
             this.error = new System.Windows.Forms.ErrorProvider(this.components);
             this.metroLink2 = new MetroFramework.Controls.MetroLink();
+            this.metroStyleManager1 = new MetroFramework.Components.MetroStyleManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // datetime
@@ -210,6 +212,12 @@ namespace CarLand.Forms
             this.metroLink2.UseSelectable = true;
             this.metroLink2.Click += new System.EventHandler(this.metroLink2_Click);
             // 
+            // metroStyleManager1
+            // 
+            this.metroStyleManager1.Owner = null;
+            this.metroStyleManager1.Style = MetroFramework.MetroColorStyle.Orange;
+            this.metroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,6 +241,7 @@ namespace CarLand.Forms
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +259,6 @@ namespace CarLand.Forms
         private Timer relogio;
         private ErrorProvider error;
         private MetroFramework.Controls.MetroLink metroLink2;
+        private MetroFramework.Components.MetroStyleManager metroStyleManager1;
     }
 }

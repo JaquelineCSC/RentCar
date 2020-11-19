@@ -3,13 +3,7 @@ using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms
@@ -18,24 +12,19 @@ namespace CarLand.Forms
     {
         private readonly DBUser _appUser = new DBUser();
 
-        public ForgotPassword()
+        public ForgotPassword(MetroStyleManager manager)
         {
             InitializeComponent();
+            this.StyleManager = manager;
+            Load_Page();
         }
 
-        private void Esqueceu_Load(object sender, EventArgs e)
+        private void Load_Page()
         {
-        }
+            metroButton1.BackColor = GetColor(this.StyleManager.Style);
+            metroTextBox1.Style = this.StyleManager.Style;
 
-        public void Load_Style(MetroColorStyle color)
-        {  
-            metroButton1.BackColor = GetColor(color);
-            metroTextBox1.Style = color;
-        }
-
-        public void Load_Theme(MetroThemeStyle style)
-        {
-            metroTextBox1.Theme = style;
+            metroTextBox1.Theme = this.StyleManager.Theme;
         }
 
         public Color GetColor(MetroColorStyle color)
@@ -82,7 +71,6 @@ namespace CarLand.Forms
             }
             return retorno;
         }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             var usuario = metroTextBox1.Text;

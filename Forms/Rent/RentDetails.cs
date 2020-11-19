@@ -1,22 +1,20 @@
 ﻿using CarLand.Database;
 using MetroFramework.Components;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CarLand.Forms.Aluguel
 {
-    public partial class RentDetails : MetroFramework.Forms.MetroForm
+    public partial class RentDetails : MetroForm
     {
         public Domain.Entities.Rent Rent { get; set; }
         public List<Domain.Entities.Image> Images { get; set; }
+
         private int imageCount;
         private int iImage = 0;
 

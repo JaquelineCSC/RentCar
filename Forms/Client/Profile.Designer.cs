@@ -51,6 +51,7 @@
             // 
             // dateValidateCNH
             // 
+            this.dateValidateCNH.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateValidateCNH.Location = new System.Drawing.Point(245, 297);
             this.dateValidateCNH.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateValidateCNH.Name = "dateValidateCNH";
@@ -73,6 +74,7 @@
             // 
             // dateOfBirth
             // 
+            this.dateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateOfBirth.Location = new System.Drawing.Point(535, 143);
             this.dateOfBirth.MinimumSize = new System.Drawing.Size(0, 29);
             this.dateOfBirth.Name = "dateOfBirth";
@@ -403,7 +405,6 @@
             this.Controls.Add(this.metroLabel4);
             this.Controls.Add(this.metroLabel3);
             this.Controls.Add(this.metroLabel1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Profile";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Orange;

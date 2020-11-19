@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using CarLand.Domain.Entities;
+﻿using CarLand.Domain.Entities;
 
 namespace CarLand.Database
 {
@@ -20,7 +13,6 @@ namespace CarLand.Database
             query = $"Insert into Users (userName, password, isAdmin) output inserted.idUser values ('{user.Name}' , '{user.Password}' , {bit})";
             return _context.CommandWithReturnId(query);
         }
-
         public void Update(User user)
         {
             query = $@"Update Users 
@@ -33,7 +25,6 @@ namespace CarLand.Database
             query = $"Delete from [Users] WHERE userName = '{userName}'";
             _context.CommandWithoutReturn(query);
         }
-
         public User GetUser(string userName = "", string password = "", int id = 0)
         {
             if(id == 0)

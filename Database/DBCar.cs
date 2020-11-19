@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
 using CarLand.Domain.Entities;
 
 namespace CarLand.Database
@@ -23,7 +19,6 @@ namespace CarLand.Database
                     VALUES ('{car.Color}', '{car.Board}' , '{car.Model}', '{car.Fuel}', {car.Doors}, {car.Year}, '{car.Branch}', 0 )";
             return _context.CommandWithReturnId(query);
         }
-
         public void Update(Domain.Entities.Car car)
         {
             query = $@"Update Car 
@@ -36,13 +31,11 @@ namespace CarLand.Database
             query = $"update Car set Status = 0 where idCar = {id}";
             _context.CommandWithoutReturn(query);
         }
-
         public void Provide(int id)
         {
             query = $"update Car set Available = 1 where idCar = {id}";
             _context.CommandWithoutReturn(query);
         }
-
         public Car GetCar(int id = 0, string branch = null, string model = null, string year = null, string color = null)
         {
             if (id == 0)
@@ -52,30 +45,15 @@ namespace CarLand.Database
 
             return _context.GetCar(query);
         }
-
         public DataSet Report()
         {
-            query = "Select * from Car";
+            query = "Select * from Car where Status = 1";
             return _context.ReportCars(query);
         }
-
         public List<Car> List(string name = "", string date = null)
         {
             DateTime datetime = DateTime.Parse(date);
-            query = $@"
-                if(Exists(select idRent from Rent R inner join Car C on R.idCar in (select idCar from Car where Model like '%{name}%')))
-                    select C.* from Car C 
-                            left join Rent R on C.idCar = R.idCar 
-                            where C.Model like '%{name}%' 
-                            and '{date}' between R.PickUpTime and R.DropOfTime
-                            and C.Available = 1 
-                            and C.Status = 1
-                    ELSE
-                    select C.* from Car C 
-                            left join Rent R on C.idCar = R.idCar 
-                            where C.Model like '%{name}%' 
-                            and C.Available = 1 
-                            and C.Status = 1";
+            query = $@"select * from Car where Model like '%{name}%' and Available = 1 and Status = 1";
             return _context.ListCars(query);
         }
     }

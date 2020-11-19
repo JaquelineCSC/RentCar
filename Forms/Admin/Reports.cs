@@ -1,39 +1,27 @@
-﻿using CarLand.Domain;
-using CarLand.Domain.Interface;
-using CarLand.Forms.DataSets.Paulo;
+﻿using CarLand.Domain.Interface;
 using MetroFramework;
 using MetroFramework.Components;
 using MetroFramework.Forms;
-using Microsoft.Build.Framework.XamlTypes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CarLand.Forms.Admin
 {
     public partial class Reports : MetroForm
     {
+        public readonly Database.DBCar Car = new Database.DBCar();
+        public readonly Database.DBRent Rent = new Database.DBRent();
+        public Colors IColors = new Colors();
         private int i;
-        public Database.DBCar Car { get; set; }
-        public Database.DBRent Rent { get; set; }
-        public Colors IColors { get; set; }
 
         public Reports(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;
-            IColors = new Colors();
             Load_Page();
-            Rent = new Database.DBRent();
-            Car = new Database.DBCar();
         }
 
         public void Load_Page()
@@ -45,7 +33,6 @@ namespace CarLand.Forms.Admin
             metroComboBox1.Style = this.StyleManager.Style;
             metroButton1.BackColor = IColors.GetColor(this.StyleManager.Style);
         }
-
         private void metroButton1_Click(object sender, EventArgs e)
         {
             PrintDocument pd = new PrintDocument();
@@ -73,13 +60,11 @@ namespace CarLand.Forms.Admin
                 ppd.ShowDialog();
             }
         }
-
         private void Pd_BeginPrint(object sender, PrintEventArgs e)
         {
             //O que deve ocorrer antes de iniciar a impressão
             i = 0;
         }
-
         private void PrintRents(object sender, PrintPageEventArgs ev)
         {
             //Configurações da página
@@ -177,7 +162,6 @@ namespace CarLand.Forms.Admin
                 ev.HasMorePages = false;
             }
         }
-
         private void PrintCars(object sender, PrintPageEventArgs ev)
         {
             //Configurações da página

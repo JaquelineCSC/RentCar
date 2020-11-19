@@ -87,7 +87,7 @@
       <DependentUpon>Cars.xsd</DependentUpon>
     </Compile>
     <Compile Include="Database\DBListAmount.cs" />
-    <Compile Include="Domain\Entities\ListAmount.cs" />
+    <Compile Include="Domain\Entities\AmountCar.cs" />
     <Compile Include="Forms\Car\CarAmount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,7 +112,6 @@
     <Compile Include="Database\DBCNH.cs" />
     <Compile Include="Database\DBEmployee.cs" />
     <Compile Include="Database\DBImage.cs" />
-    <Compile Include="Database\DBPayment.cs" />
     <Compile Include="Database\DBRent.cs" />
     <Compile Include="Database\DBUser.cs" />
     <Compile Include="Database\Servers.cs" />
@@ -120,11 +119,10 @@
     <Compile Include="Domain\Entities\Car.cs" />
     <Compile Include="Domain\Entities\Card.cs" />
     <Compile Include="Domain\Entities\Client.cs" />
-    <Compile Include="Domain\Entities\ClientCard.cs" />
+    <Compile Include="Domain\Entities\ClientCardCNH.cs" />
     <Compile Include="Domain\Entities\CNH.cs" />
     <Compile Include="Domain\Entities\Employee.cs" />
     <Compile Include="Domain\Entities\Image.cs" />
-    <Compile Include="Domain\Entities\Payment.cs" />
     <Compile Include="Domain\Entities\PaymentTypeEnum.cs" />
     <Compile Include="Domain\Entities\Rent.cs" />
     <Compile Include="Domain\Entities\User.cs" />

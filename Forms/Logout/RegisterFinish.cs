@@ -2,7 +2,6 @@
 using CarLand.Domain.Entities;
 using MetroFramework;
 using MetroFramework.Components;
-using MetroFramework.Controls;
 using MetroFramework.Forms;
 using System;
 using System.Text.RegularExpressions;
@@ -15,59 +14,97 @@ namespace CarLand.Forms
         public User User { get; set; }
         public Domain.Entities.Client Client { get; set; }
         public CNH CNH { get; set; }
-        public DBClient _appClient { get; set; }
-        public DBUser _appUser { get; set; }
-        public DBCNH _appCNH { get; set; }
+
+        public readonly DBClient _appClient = new DBClient();
+        public readonly DBUser _appUser = new DBUser();
+        public readonly DBCNH _appCNH = new DBCNH();
 
         public RegisterFinish(MetroStyleManager manager)
         {
             InitializeComponent();
             this.StyleManager = manager;
+            Load_Page();
             User = new User();
-            _appClient = new DBClient();
-            _appCNH = new DBCNH();
-            _appClient = new DBClient();
-            _appUser = new DBUser();
+        }
+
+        private void Load_Page()
+        {
+            metroLabel1.Theme = this.StyleManager.Theme;
+            metroLabel10.Theme = this.StyleManager.Theme;
+            metroLabel11.Theme = this.StyleManager.Theme;
+            metroLabel12.Theme = this.StyleManager.Theme;
+            metroLabel13.Theme = this.StyleManager.Theme;
+            metroLabel14.Theme = this.StyleManager.Theme;
+            metroLabel15.Theme = this.StyleManager.Theme;
+            metroLabel16.Theme = this.StyleManager.Theme;
+            metroLabel2.Theme = this.StyleManager.Theme;
+            metroLabel3.Theme = this.StyleManager.Theme;
+            metroLabel4.Theme = this.StyleManager.Theme;
+            metroLabel5.Theme = this.StyleManager.Theme;
+            metroLabel6.Theme = this.StyleManager.Theme;
+            metroLabel7.Theme = this.StyleManager.Theme;
+            metroLabel8.Theme = this.StyleManager.Theme;
+            metroLabel9.Theme = this.StyleManager.Theme;
+            telefone.Theme = this.StyleManager.Theme;
+            nomeTXT.Theme = this.StyleManager.Theme;
+            cnh.Theme = this.StyleManager.Theme;
+            cpf.Theme = this.StyleManager.Theme;
+            dateOfBirth.Theme = this.StyleManager.Theme;
+            dateValidateCNH.Theme = this.StyleManager.Theme;
+            email.Theme = this.StyleManager.Theme;
+            genero.Theme = this.StyleManager.Theme;
+            iAgreeCheck.Theme = this.StyleManager.Theme;
+
+            iAgreeCheck.Style = this.StyleManager.Style;
+            metroLabel1.Style = this.StyleManager.Style;
+            metroLabel10.Style = this.StyleManager.Style;
+            metroLabel11.Style = this.StyleManager.Style;
+            metroLabel12.Style = this.StyleManager.Style;
+            metroLabel13.Style = this.StyleManager.Style;
+            metroLabel14.Style = this.StyleManager.Style;
+            metroLabel15.Style = this.StyleManager.Style;
+            metroLabel16.Style = this.StyleManager.Style;
+            metroLabel2.Style = this.StyleManager.Style;
+            metroLabel3.Style = this.StyleManager.Style;
+            metroLabel4.Style = this.StyleManager.Style;
+            metroLabel5.Style = this.StyleManager.Style;
+            metroLabel6.Style = this.StyleManager.Style;
+            metroLabel7.Style = this.StyleManager.Style;
+            metroLabel8.Style = this.StyleManager.Style;
+            metroLabel9.Style = this.StyleManager.Style;
+            telefone.Style = this.StyleManager.Style;
+            nomeTXT.Style = this.StyleManager.Style;
+            cnh.Style = this.StyleManager.Style;
+            cpf.Style = this.StyleManager.Style;
+            dateOfBirth.Style = this.StyleManager.Style;
+            dateValidateCNH.Style = this.StyleManager.Style;
+            email.Style = this.StyleManager.Style;
+            genero.Style = this.StyleManager.Style;
+
         }
 
         private void verificarPreenchimentoEmail(object sender, KeyEventArgs e)
         {
-            MetroTextBox x = (MetroTextBox)sender;
-            if (x.Name == email.Name)
-            {
-                Regex rgx = new Regex("[^\\w\\.@-]");
-                email.Text = rgx.Replace(email.Text, "");
-            }
+            Regex rgx = new Regex("[^\\w\\.@-]");
+            email.Text = rgx.Replace(email.Text, "");
         }
 
         private void verificarPreenchimentoTel(object sender, KeyEventArgs e)
         {
-            MetroTextBox x = (MetroTextBox)sender;
-            if (x.Name == telefone.Name)
-            {
-                Regex rgx = new Regex("[^- 0-9 -]");
-                telefone.Text = rgx.Replace(telefone.Text, "");
-            }
+            Regex rgx = new Regex("[^- 0-9 -]");
+            telefone.Text = rgx.Replace(telefone.Text, "");
         }
 
         private void verificarPreenchimentoCPF(object sender, KeyEventArgs e)
         {
-            MetroTextBox x = (MetroTextBox)sender;
-            if (x.Name == cpf.Name)
-            {
-                Regex rgx = new Regex("[^- .0-9 -]");
-                cpf.Text = rgx.Replace(cpf.Text, "");
-            }
+            Regex rgx = new Regex("[^- .0-9 -]");
+            cpf.Text = rgx.Replace(cpf.Text, "");
         }
 
         private void verificarPreenchimentoCNH(object sender, KeyEventArgs e)
         {
-            MetroTextBox x = (MetroTextBox)sender;
-            if (x.Name == cnh.Name)
-            {
-                Regex rgx = new Regex("[^ 0-9 ]");
-                cnh.Text = rgx.Replace(cnh.Text, "");
-            }
+            Regex rgx = new Regex("[^ 0-9 ]");
+            cnh.Text = rgx.Replace(cnh.Text, "");
         }
 
         private void verificarDados(object sender, EventArgs e)
@@ -109,7 +146,7 @@ namespace CarLand.Forms
                 if (!Check_CPF(cpf.Text))
                 {
                     error.SetError(this.cpf, "Insira um CPF válido");
-                error.Tag = 1;
+                    error.Tag = 1;
                 }
             }
             if (telefone.Text.Length < 11)
@@ -171,11 +208,6 @@ namespace CarLand.Forms
             }
         }
 
-        private void Completar_Cadastro_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private bool Check_CPF(string cpf)
         {
             int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
@@ -224,12 +256,8 @@ namespace CarLand.Forms
 
         private void verificarPreenchimentoNome(object sender, EventArgs e)
         {
-            MetroTextBox x = (MetroTextBox)sender;
-            if (x.Name == nomeTXT.Name)
-            {
-                Regex rgx = new Regex("[^a-zA-Z0-9 -]");
-                nomeTXT.Text = rgx.Replace(nomeTXT.Text, "");
-            }
+            Regex rgx = new Regex("[^a-zA-Z0-9 -]");
+            nomeTXT.Text = rgx.Replace(nomeTXT.Text, "");
         }
     }
 }

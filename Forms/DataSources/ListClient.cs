@@ -3,7 +3,6 @@ using CarLand.Domain.Entities;
 using MetroFramework.Components;
 using System;
 using System.Data;
-using System.Runtime.CompilerServices;
 
 namespace CarLand.Forms
 {
@@ -11,9 +10,10 @@ namespace CarLand.Forms
     {
         public User User { get; set; }
         public DataRowView RowView { get; set; }
-        public DBUser _appUser { get; set; }
-        public DBClient _appClient { get; set; }
-        public DBCNH _appCNH { get; set; }
+
+        public readonly DBUser _appUser = new DBUser();
+        public readonly DBClient _appClient = new DBClient();
+        public readonly DBCNH _appCNH = new DBCNH();
 
         public Clients(MetroStyleManager manager)
         {
@@ -21,9 +21,6 @@ namespace CarLand.Forms
             this.StyleManager = manager;
             Load_Page();
             User = new User();
-            _appClient = new DBClient();
-            _appCNH = new DBCNH();
-            _appUser = new DBUser();
         }
 
         public void Load_Page()
@@ -74,9 +71,7 @@ namespace CarLand.Forms
 
         private void Clientes_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'integradoraDataSet.Client'. Você pode movê-la ou removê-la conforme necessário.
             this.clientCNHTableAdapter.Fill(this.client.ClientCNH);
-
         }
 
         private void metroLinkVoltar_Click(object sender, EventArgs e)

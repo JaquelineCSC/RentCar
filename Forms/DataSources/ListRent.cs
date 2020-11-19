@@ -3,12 +3,12 @@ using MetroFramework;
 using System;
 using System.Data;
 using System.Windows.Forms;
-using MetroFramework.Controls;
 using MetroFramework.Components;
+using MetroFramework.Forms;
 
 namespace CarLand.Forms.Client
 {
-    public partial class ListCar : MetroFramework.Forms.MetroForm
+    public partial class ListCar : MetroForm
     {
         public DataRowView RowView { get; set; }
 
@@ -33,17 +33,8 @@ namespace CarLand.Forms.Client
 
         private void AluguelCliente_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'rentView._RentView' table. You can move, or remove it, as needed.
-            this.rentViewTableAdapter.Fill(this.rentView._RentView);
-            // TODO: This line of code loads data into the 'rentView._RentView' table. You can move, or remove it, as needed.
             this.rentViewTableAdapter.Fill(this.rentView._RentView);
         }
-
-        private void metroLink2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void metroLink3_Click(object sender, EventArgs e)
         {
             if (RowView != null)
@@ -59,7 +50,7 @@ namespace CarLand.Forms.Client
                     Database.DBEmployee _appEmployee = new Database.DBEmployee();
                     form.Rent.idEmployee = _appEmployee.GetEmployee(employeeName: RowView["Funcionario"].ToString()).Id;
                 }
-                form.Rent.idClient = (_appClient.GeClientByName(RowView["Cliente"].ToString())).Id;
+                form.Rent.idClient = (_appClient.GetClientByName(RowView["Cliente"].ToString())).Id;
                 form.Rent.PickUpDate = DateTime.Parse(RowView["Retirada"].ToString());
                 form.Rent.DropOffDate = DateTime.Parse(RowView["Devolução"].ToString());
                 form.Rent.Value = double.Parse(RowView["Valor"].ToString().Replace("R$", ""));
@@ -82,12 +73,6 @@ namespace CarLand.Forms.Client
                 MetroMessageBox.Show(this, "Selecione a linha que deseja editar", "", MessageBoxButtons.OK, MessageBoxIcon.Warning, 100);
             }
         }
-
-        private void metroLink4_Click(object sender, EventArgs e)
-        {
-            AluguelCliente_Load(this, new EventArgs());
-        }
-
         private void metroGrid1_SelectionChanged(object sender, EventArgs e)
         {
             if (metroGrid1.SelectedRows.Count > 0)
