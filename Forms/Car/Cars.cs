@@ -106,7 +106,7 @@ namespace CarLand.Forms
             {
                 linhas = ListCars.Count / 3 + 1;
             }
-            for (int l = 0; l < linhas; l++, i++, y += 333)
+            for (int l = 0; l < linhas; l++, y += 333)
             {
                 if (count > 3)
                 {
